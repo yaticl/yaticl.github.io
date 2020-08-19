@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="Cascadia Code 是微軟在 Build 2019 隨著Windows Terminal一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的部落格文章。 在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能 Cascadia Code 的安裝方法在官方的維基中可以找到，可在GitHub直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟： 安裝好Cascadia Code字體 打開Visual Studio Code的設定頁面，接著打開Text Editor …" />
+<meta name="keywords" content="Visual Studio Code, Cascadia Code">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="如何在 Visual Studio Code 中使用 Cascadia Code 字體"/>
+<meta property="og:description" content="Cascadia Code 是微軟在 Build 2019 隨著Windows Terminal一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的部落格文章。 在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能 Cascadia Code 的安裝方法在官方的維基中可以找到，可在GitHub直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟： 安裝好Cascadia Code字體 打開Visual Studio Code的設定頁面，接著打開Text Editor …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-12-30 14:55:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/ya-ti.html">
+<meta property="article:section" content="Tips"/>
+<meta property="article:tag" content="Visual Studio Code"/>
+<meta property="article:tag" content="Cascadia Code"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 如何在 Visual Studio Code 中使用 Cascadia Code 字體</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體">如何在 Visual Studio Code 中使用 Cascadia Code 字體</h1>
+    <p>
+      Posted on Mon 30 December 2019 in <a href="http://localhost:8000/category/tips.html">Tips</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://github.com/microsoft/cascadia-code">Cascadia Code</a> 是微軟在 Build 2019 隨著<a href="https://github.com/microsoft/terminal">Windows Terminal</a>一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的<a href="https://devblogs.microsoft.com/commandline/cascadia-code/">部落格文章</a>。</p>
+<h2>在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能</h2>
+<p>Cascadia Code 的安裝方法在官方的<a href="https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code">維基</a>中可以找到，可在<a href="https://github.com/microsoft/cascadia-code/releases">GitHub</a>直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟：</p>
+<ol>
+<li>安裝好<strong>Cascadia Code</strong>字體</li>
+<li>打開<strong>Visual Studio Code</strong>的設定頁面，接著打開<strong>Text Editor -&gt; Font</strong> 子頁面，將 <strong>Editor: Font Family</strong> 中的內容修改為<code>'Cascadia Code', Consolas, 'Courier New', monospace</code></li>
+<li>最後一步啟用跟官方的教學不一樣，需要在<strong>Font Ligatures</strong> 選項中編輯<strong>setting.json</strong>檔案，在檔案中加入一行<code>"editor.fontLigatures": true</code>來啟用合字功能。</li>
+</ol>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/visual-studio-code.html">Visual Studio Code</a>
+      <a href="http://localhost:8000/tag/cascadia-code.html">Cascadia Code</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="http://localhost:8000/如何解決執行-bash-script-時遇到-command-not-found-的問題.html" title="如何解決執行 bash script 時遇到 " '\r': command not found" 的問題">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+    <a class="btn float-right" href="http://localhost:8000/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html" title="如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題">
+      Next Post <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html&hashtags=visual-studio-code,cascadia-code" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html&title=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94&summary=Cascadia%20Code%20%E6%98%AF%E5%BE%AE%E8%BB%9F%E5%9C%A8%20Build%202019%20%E9%9A%A8%E8%91%97Windows%20Terminal%E4%B8%80%E8%B5%B7%E7%99%BC%E8%A1%A8%E7%9A%84%E5%AD%97%E9%AB%94%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A8%AE%E5%B0%88%E7%82%BA%E5%91%BD%E4%BB%A4%E5%88%97%E8%88%87%E7%A8%8B%E5%BC%8F%E7%A2%BC%E7%B7%A8%E8%BC%AF%E5%99%A8%E9%96%8B%E7%99%BC%E7%9A%84%E7%AD%89%E5%AF%AC%E5%AD%97%E9%AB%94%EF%BC%8C%E4%B8%A6%E6%94%AF%E6%8F%B4%E7%A8%8B%E5%BC%8F%E5%90%88%E5%AD%97%E6%88%96%E9%80%A3%E5%AD%97%E7%AC%A6%E8%99%9F%EF%BC%8C%E8%A9%B3%E7%B4%B0%E7%9A%84%E4%BB%8B%E7%B4%B9%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83%E5%8E%9F%E5%A7%8B%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E3%80%82%0A%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94%E4%B8%A6%E5%95%9F%E7%94%A8%E5%90%88%E5%AD%97%E5%8A%9F%E8%83%BD%0ACascadia%20Code%20%E7%9A%84%E5%AE%89%E8%A3%9D%E6%96%B9%E6%B3%95%E5%9C%A8%E5%AE%98%E6%96%B9%E7%9A%84%E7%B6%AD%E5%9F%BA%E4%B8%AD%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%EF%BC%8C%E5%8F%AF%E5%9C%A8GitHub%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BC%89%E6%9C%80%E6%96%B0%E7%89%88%E7%9A%84%E5%AD%97%E9%AB%94%E3%80%82%E7%94%B1%E6%96%BC%E5%AE%98%E6%96%B9%E7%9A%84%E7%B6%AD%E5%9F%BA%E4%B8%AD%E7%9A%84%20Visual%20Studio%20Code%20%E5%AE%89%E8%A3%9D%E6%95%99%E5%AD%B8%E5%8F%AF%E8%83%BD%E5%9B%A0%E7%82%BA%E7%89%88%E6%9C%AC%E4%B8%8D%E5%90%8C%E6%88%96%E6%98%AF%E6%9C%89%E5%AE%89%E8%A3%9D%E5%85%B6%E4%BB%96%20Extensions%20%E7%9A%84%E9%97%9C%E4%BF%82%EF%BC%8C%E5%95%9F%E7%94%A8%E5%AD%97%E9%AB%94%E7%9A%84%E6%96%B9%E6%B3%95%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%EF%BC%8C%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E7%9B%AE%E5%89%8D%E7%9A%84%E5%95%9F%E7%94%A8%E6%AD%A5%E9%A9%9F%EF%BC%9A%0A%0A%E5%AE%89%E8%A3%9D%E5%A5%BDCascadia%20Code%E5%AD%97%E9%AB%94%0A%E6%89%93%E9%96%8BVisual%20Studio%20Code%E7%9A%84%E8%A8%AD%E5%AE%9A%E9%A0%81%E9%9D%A2%EF%BC%8C%E6%8E%A5%E8%91%97%E6%89%93%E9%96%8BText%20Editor%20%E2%80%A6&source=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94&u=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94&amp;body=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html&title=%E5%A6%82%E4%BD%95%E5%9C%A8%20Visual%20Studio%20Code%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Cascadia%20Code%20%E5%AD%97%E9%AB%94" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

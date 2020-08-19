@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Category Digital Signal Processing</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/maximum-length-sequence.html#maximum-length-sequence">Maximum-Length Sequence</a></h2>
+    <p>
+      Posted on Fri 16 March 2018 in <a href="http://localhost:8000/category/digital-signal-processing.html">Digital Signal Processing</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/digital-signal-processing.html">Digital signal processing</a>,              <a href="http://localhost:8000/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&height=214&cropmode=none">
+      <h2>簡介</h2>
+<p>Maximum-Length Sequence (MLS) 是一種二值序列，長度<span class="math">\(P=2^N-1\)</span>，其中<span class="math">\(N\)</span>代表整數。MLS 可以利用以下的關係式遞迴產生：</p>
+<div class="math">$$n(k+3)=n(k) \oplus n(k+2),$$</div>
+<p>其中<span class="math">\(\oplus\)</span>代表 XOR 運算。若將將產生出來的<span class="math">\(0,1\)</span>邏輯值由下式轉換成<span class="math">\(1,-1\)</span>，則為 MLS 訊號：</p>
+<div class="math">$$0 \rightarrow 1$$</div>
+<p><br>
+</p>
+<div class="math">$$1 \rightarrow -1.$$</div>
+<h2>性質</h2>
+<p>在 MLS 當中，<span class="math">\(0\)</span>與<span class="math">\(1 …</span></p>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/maximum-length-sequence.html#maximum-length-sequence">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

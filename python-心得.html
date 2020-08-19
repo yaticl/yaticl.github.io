@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="Python Python是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。 為什麼我要選擇 Python？ 我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …" />
+<meta name="keywords" content="Python, MATLAB, Anaconda">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="Python 心得"/>
+<meta property="og:description" content="Python Python是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。 為什麼我要選擇 Python？ 我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/python-心得.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-07-04 17:22:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/ya-ti.html">
+<meta property="article:section" content="Python"/>
+<meta property="article:tag" content="Python"/>
+<meta property="article:tag" content="MATLAB"/>
+<meta property="article:tag" content="Anaconda"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Python 心得</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="python-心得">Python 心得</h1>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="http://localhost:8000/category/python.html">Python</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Python</h1>
+<p><a href="https://zh.wikipedia.org/zh-tw/Python">Python</a>是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。</p>
+<h2>為什麼我要選擇 Python？</h2>
+<p>我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 Python。</p>
+<h2>Anaconda Distribution</h2>
+<h3>簡介</h3>
+<p><a href="https://www.anaconda.com/distribution/">Anaconda Distribution</a>是一個面相資料科學的免費 Python 發行版，收集了超過 1000 種的開源套件，並有自己的套件與環境管理工具，適合 Python 的新手使用，安裝方式很像 MATLAB，主程式 +Toolbox。</p>
+<p>Anaconda 對 Windows、macOS 與 Linux 都有提供支援，同時支援 Python 2 和 Python 3，安裝包預裝超過 150 個套件，並可以選擇性安裝開源的 IDE <a href="https://github.com/spyder-ide/spyder-docs">Spyder</a>或是<a href="https://code.visualstudio.com/">Visual Studio Code</a>，但是也可以搭配任何支援 Python 的開發環境或是編輯器使用，可以選自己喜歡的用法，像我目前偏好搭配 Visual Studio Code 使用，因為它輕量且與<a href="https://git-scm.com/">Git</a>整合度高。</p>
+<h3>Conda</h3>
+<p><a href="https://conda.io">conda</a>是 Anaconda 自帶的套件管理工具，conda 的用法，官方有提供簡單上手的表格如下</p>
+<p><img alt="conda_1" src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&amp;height=1024&amp;cropmode=none"></p>
+<p><img alt="conda_2" src="https://scuseg.bn.files.1drv.com/y4mwoS4LZkGNLbw296g_0dLumzjGWs1cm3sCbg1mLU7bL1t36xB9MNyoBCN5VvleLo32IjI9F1dmQtMMH2E6DmpfWJnDo9wIJkO0qaebMHH4T16af6WlMEl3VQT2Rjo1JdO3ERaN5HgjIOXXdHMBACu5afCPnAn3TsYShI1rpTcX9Bzx-WdKLt0DYi0P6AovfOZPAYkV3BeHT2L5Keo3BfPIA?width=970&amp;height=1024&amp;cropmode=none"></p>
+<h2>常用套件</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Package</th>
+<th align="center">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="http://imageio.github.io/">imageio</a></td>
+<td align="center">a library for reading and writing image</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ipython.org/">IPython</a></td>
+<td align="center">Productive Interactive Computing</td>
+</tr>
+<tr>
+<td align="center"><a href="http://jupyter.org/">Jupyter</a></td>
+<td align="center">Jupyter Notebook</td>
+</tr>
+<tr>
+<td align="center"><a href="https://matplotlib.org/">Matplotlib</a></td>
+<td align="center">a rich architecture for interactive computing</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.numpy.org/">NumPy</a></td>
+<td align="center">array processing for numbers, strings, records, and objects</td>
+</tr>
+<tr>
+<td align="center"><a href="http://opencv.org/">OpenCV</a></td>
+<td align="center">computer vision and machine learning library</td>
+</tr>
+<tr>
+<td align="center"><a href="http://scikit-image.org/">scikit-image</a></td>
+<td align="center">a collection of algorithms for image processing</td>
+</tr>
+<tr>
+<td align="center"><a href="http://scikit-learn.org/stable/">scikit-learn</a></td>
+<td align="center">a set of python modules for machine learning and data mining</td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.scipy.org/">SciPy</a></td>
+<td align="center">scientific library for mathematics, science, and engineering</td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/Microsoft/CNTK">CNTK</a></td>
+<td align="center">a unified deep learning toolkit from Microsoft and native support <a href="https://onnx.ai/">ONNX</a></td>
+</tr>
+<tr>
+<td align="center"><a href="http://tensorflow.org/">TensorFlow</a></td>
+<td align="center">a machine learning library from Google</td>
+</tr>
+</tbody>
+</table>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/python.html">Python</a>
+      <a href="http://localhost:8000/tag/matlab.html">MATLAB</a>
+      <a href="http://localhost:8000/tag/anaconda.html">Anaconda</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="http://localhost:8000/北京天壇.html" title="北京天壇">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+    <a class="btn float-right" href="http://localhost:8000/histogram-equalization.html" title="直方圖等化 (Histogram Equalization)">
+      Next Post <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>You might enjoy</h4>
+    <ul class="related-posts">
+      <li><a href="http://localhost:8000/miniconda.html">Miniconda</a></li>
+      <li><a href="http://localhost:8000/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="http://localhost:8000/bayesian-model-fitting-instance.html">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></li>
+      <li><a href="http://localhost:8000/2d-discrete-wavelet-transform.html">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></li>
+      <li><a href="http://localhost:8000/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=Python%20%E5%BF%83%E5%BE%97&url=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=Python%20%E5%BF%83%E5%BE%97&url=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html&hashtags=python,matlab,anaconda" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html&title=Python%20%E5%BF%83%E5%BE%97&summary=Python%0APython%E6%98%AF%E4%B8%80%E7%A8%AE%E7%9B%B4%E8%AD%AF%E5%BC%8F%E9%AB%98%E9%9A%8E%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80%EF%BC%8C%E7%94%B1%20Guido%20van%20Rossum%20%E7%99%BC%E6%98%8E%EF%BC%8C%E5%85%B6%E5%93%B2%E5%AD%B8%E6%98%AF%E5%BC%B7%E8%AA%BF%20code%20%E7%9A%84%E5%8F%AF%E8%AE%80%E6%80%A7%E5%92%8C%E7%B0%A1%E6%BD%94%E7%9A%84%E8%AA%9E%E6%B3%95%EF%BC%8C%E8%80%8C%E4%B8%94%E5%85%B7%E6%9C%89%E5%8B%95%E6%85%8B%E5%9E%8B%E5%88%A5%E8%88%87%E8%87%AA%E5%8B%95%E8%A8%98%E6%86%B6%E9%AB%94%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E3%80%82Python%20%E5%B8%B8%E8%A2%AB%E7%94%A8%E6%96%BC%20Web%20%E9%96%8B%E7%99%BC%E8%88%87%E7%A7%91%E5%AD%B8%E8%A8%88%E7%AE%97%EF%BC%8C%E7%89%B9%E5%88%A5%E6%98%AF%E6%9C%80%E8%BF%91%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%87%BD%E5%BC%8F%E5%BA%AB%E5%B9%BE%E4%B9%8E%E9%83%BD%E6%9C%89%E6%8F%90%E4%BE%9B%20Python%20API%E3%80%82%0A%E7%82%BA%E4%BB%80%E9%BA%BC%E6%88%91%E8%A6%81%E9%81%B8%E6%93%87%20Python%EF%BC%9F%0A%E6%88%91%E5%9C%A8%E5%A4%A7%E5%AD%B8%E6%99%82%E6%9C%9F%E6%AF%94%E8%BC%83%E5%B8%B8%E7%94%A8%E7%9A%84%E6%98%AF%20MATLAB%20%E4%BE%86%E5%81%9A%E7%A7%91%E5%AD%B8%E8%A8%88%E7%AE%97%EF%BC%8CMATLAB%20%E7%A2%BA%E5%AF%A6%E6%96%B9%E4%BE%BF%E5%A5%BD%E7%94%A8%EF%BC%8C%E4%BD%86%E7%95%A2%E7%AB%9F%E6%98%AF%E4%BB%98%E8%B2%BB%E8%BB%9F%E9%AB%94%EF%BC%8C%E9%80%9A%E5%B8%B8%E5%80%8B%E4%BA%BA%E4%B9%9F%E8%B2%B7%E4%B8%8D%E8%B5%B7%EF%BC%8C%E5%87%BA%E4%BA%86%E6%A0%A1%E9%96%80%E5%8F%AF%E8%83%BD%E5%B0%B1%E6%B2%92%E8%BE%A6%E6%B3%95%E7%94%A8%EF%BC%8C%E5%9B%A0%E6%AD%A4%E5%98%97%E8%A9%A6%E8%BD%89%E7%94%A8%20Python%E3%80%82%E5%9B%A0%E7%82%BA%20Python%20%E6%98%AF%E9%96%8B%E6%BA%90%E7%9A%84%E9%AB%98%E9%9A%8E%E8%AA%9E%E8%A8%80%EF%BC%8C%E8%97%89%E7%94%B1%E9%96%8B%E6%BA%90%E7%A4%BE%E7%BE%A4%E7%9A%84%E5%8A%9B%E9%87%8F%EF%BC%8C%E6%9C%89%E8%91%97%E5%A4%A7%E9%87%8F%E7%9A%84%E5%87%BD%E5%BC%8F%E5%BA%AB%EF%BC%8C%E8%83%BD%E5%81%9A%E7%9A%84%E4%BA%8B%E5%85%B6%E5%AF%A6%E6%AF%94%20MATLAB%20%E9%82%84%E5%A4%9A%EF%BC%8C%E8%80%8C%E4%B8%94%E7%94%A8%E8%B5%B7%E4%BE%86%E6%9B%B4%E8%87%AA%E7%94%B1%EF%BC%8C%E4%B8%8D%E7%94%A8%E5%83%8F%20MATLAB%20%E7%B6%81%E5%AE%9A%E5%82%BB%E5%A4%A7%E7%B2%97%E5%8F%88%E4%B8%8D%E7%A9%A9%E7%9A%84%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E3%80%82%E5%80%8B%E4%BA%BA%E8%A6%BA%E5%BE%97%E4%BB%A5%E7%A7%91%E5%AD%B8%E8%A8%88%E7%AE%97%E8%80%8C%E8%A8%80%EF%BC%8CPython%20%E7%9A%84%E4%B8%8A%E6%89%8B%E9%9B%A3%E5%BA%A6%E6%B2%92%E6%9C%89%E6%AF%94%20MATLAB%20%E9%9B%A3%E4%B8%8A%E5%A4%9A%E5%B0%91%EF%BC%8C%E4%BD%86%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%8D%B2%E5%BE%97%E8%87%AA%E7%94%B1%EF%BC%8C%E6%89%80%E4%BB%A5%E5%85%A5%E5%9D%91%20%E2%80%A6&source=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=Python%20%E5%BF%83%E5%BE%97&u=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=Python%20%E5%BF%83%E5%BE%97&amp;body=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/python-%E5%BF%83%E5%BE%97.html&title=Python%20%E5%BF%83%E5%BE%97" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

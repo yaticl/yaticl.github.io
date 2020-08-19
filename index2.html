@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/miniconda.html#miniconda">Miniconda</a></h2>
+    <p>
+      Posted on Thu 11 April 2019 in <a href="http://localhost:8000/category/python.html">Python</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/python.html">Python</a>,              <a href="http://localhost:8000/tag/anaconda.html">Anaconda</a>
+    </p>
+  </header>
+  <div>
+      <p>對剛入們 Python 的人，安裝整個<a href="https://blog.ya-ti.nctu.me/2018/07/python-%E5%BF%83%E5%BE%97/#Anaconda-Distribution">Anaconda Distribution</a>是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>，它只會安裝最基本 conda 管理工具。</p>
+<p>Miniconda 裡面不包含 Anaconda Navigator，如果想用 Anaconda Navigator，這個圖形化管理介面來管理環境， 可以在<code>base</code>環境中將它安裝回來，在文字介面的 Shell 輸入：</p>
+<div class="highlight"><pre><span></span><code><span class="err">conda install anaconda-navigator</span>
+</code></pre></div>
+
+
+<p>如此就能簡單的安裝完成了。</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/bayesian-model-fitting-instance.html#bayesian-model-fitting-instance">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></h2>
+    <p>
+      Posted on Thu 13 December 2018 in <a href="http://localhost:8000/category/statistical-optics.html">Statistical Optics</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/statistical-optics.html">Statistical Optics</a>,              <a href="http://localhost:8000/tag/bayesian.html">Bayesian</a>,              <a href="http://localhost:8000/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://jg7ggg.bn.files.1drv.com/y4mOTCh4-zjos-6wrwg-Qkw3Fk1SK0POua2Mjw4PGffnbni0Zdfmeu3JVv172oFN9PQVWieXLBWt1B7JlYw96k5sgK8gmqjCp7A2d1un8kC8S70b074Ek5E0t-6LTtM4bsbqsYnpxUv60hjhm-jFWDcGGMN_ABrZmpGq3CrAinA9QSlxe0hWEmzUEm5gPqEigRdB059qgkcPSEVObs8VIgPWg?width=388&height=252&cropmode=none">
+      <p>一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。</p>
+<h2>Bayes rule</h2>
+<p>定義一個 likelihood <span class="math">\(P(D | M)\)</span>，其中<span class="math">\(D\)</span>為來自於 model <span class="math">\(M\)</span>的實驗數據。</p>
+<p>基於預期知識<span class="math">\(C\)</span>，定義一個 model <span class="math">\(M\)</span>的 prior <span class="math">\(P(M | C)\)</span>，其中 model <span class="math">\(M\)</span>包含一些我們想要找的參數。</p>
+<p>則由 Bayes' theorem 可以得知 posterior：</p>
+<div class="math">$$P(M \| D) \propto P(M | C)P(D …</div>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/bayesian-model-fitting-instance.html#bayesian-model-fitting-instance">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></h2>
+    <p>
+      Posted on Thu 30 August 2018 in <a href="http://localhost:8000/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/digital-image-processing.html">Digital Image Processing</a>,              <a href="http://localhost:8000/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&height=405&cropmode=none">
+      <h2>簡介</h2>
+<p>小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。</p>
+<h2>實作</h2>
+<p>一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2<br>
+<img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;height=405&amp;cropmode=none"></p>
+<p><span class="math">\(cA_{i}\)</span>:approximation coefficients at level <span class="math">\(i\)</span></p>
+<p><span class="math">\(cH_{i}\)</span>:horizontal coefficients at level <span class="math">\(i\)</span></p>
+<p><span class="math">\(cV_{i …</span></p>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/local-normalization.html#local-normalization">局部歸一化 (Local Normalization)</a></h2>
+    <p>
+      Posted on Wed 29 August 2018 in <a href="http://localhost:8000/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/digital-image-processing.html">Digital image processing</a>,              <a href="http://localhost:8000/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&height=137&cropmode=none">
+      <h2>簡介</h2>
+<p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
+<h2>實作</h2>
+<p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
+<div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
+<p>其中</p>
+<ul>
+<li><span class="math">\(m_f(x,y)\)</span>是<span class="math">\(f(x,y)\)</span>的 local mean 估算值</li>
+<li><span class="math">\(\sigma_f(x,y)\)</span>是 local variance 的估算值</li>
+<li><span class="math">\(g(x …</span></li></ul>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/local-normalization.html#local-normalization">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/edge-detection.html#edge-detection">邊界偵測 (Edge Detection)</a></h2>
+    <p>
+      Posted on Fri 06 July 2018 in <a href="http://localhost:8000/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/digital-image-processing.html">Digital image processing</a>,              <a href="http://localhost:8000/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&height=264&cropmode=none">
+      <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2>影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end …</div>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/edge-detection.html#edge-detection">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn float-left" href="http://localhost:8000/index3.html">
+      <i class="fa fa-angle-left"></i> Older Posts
+    </a>
+    <a class="btn float-right" href="http://localhost:8000/index.html">
+      Newer Posts <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Tag Windows</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="http://localhost:8000/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html#解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></h2>
+    <p>
+      Posted on Tue 23 April 2019 in <a href="http://localhost:8000/category/python.html">Python</a>
+
+          &#8226; Tagged with
+              <a href="http://localhost:8000/tag/python.html">Python</a>,              <a href="http://localhost:8000/tag/tips.html">Tips</a>,              <a href="http://localhost:8000/tag/windows.html">Windows</a>
+    </p>
+  </header>
+  <div>
+      <h2>前言</h2>
+<p>由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。</p>
+<p><strong>更新</strong>：新增如何在 Qt5 中啟用 DPI 縮放的功能。</p>
+<h2>方法一：啟用 Qt5 中的 DPI 縮放功能</h2>
+<p><strong>如何啟用 Qt5 DPI scaling 的範例 code：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 需要先 import matplotlib 的 backend Qt5</span>
+<span class="kn">import</span> <span class="nn">PyQt5</span> <span class="k">as</span> <span class="nn">qt …</span></code></pre></div>
+        <br>
+        <a class="btn"
+           href="http://localhost:8000/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html#解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="背景 由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇報導讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。 方法 Windows Central與Reddit提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下： 登入 YouTube 首頁。 打開瀏覽器的開發者工具，各家瀏覽器開啟的方式略有不同，不知道怎麼開的自行搜尋。 找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同，不知道在哪自行搜尋。以 …" />
+<meta name="keywords" content="YouTube">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="如何將 YouTube 切換回舊版介面"/>
+<meta property="og:description" content="背景 由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇報導讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。 方法 Windows Central與Reddit提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下： 登入 YouTube 首頁。 打開瀏覽器的開發者工具，各家瀏覽器開啟的方式略有不同，不知道怎麼開的自行搜尋。 找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同，不知道在哪自行搜尋。以 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/如何將-YouTube-切換回舊版介面.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-04-23 01:11:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/ya-ti.html">
+<meta property="article:section" content="Tips"/>
+<meta property="article:tag" content="YouTube"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 如何將 YouTube 切換回舊版介面</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="如何將-YouTube-切換回舊版介面">如何將 YouTube 切換回舊版介面</h1>
+    <p>
+      Posted on Tue 23 April 2019 in <a href="http://localhost:8000/category/tips.html">Tips</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>背景</h2>
+<p>由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇<a href="https://www.zdnet.com/article/former-mozilla-exec-google-has-sabotaged-firefox-for-years/">報導</a>讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。</p>
+<h2>方法</h2>
+<p><a href="https://www.windowscentral.com/how-to-fix-slow-edge-youtube">Windows Central</a>與<a href="https://www.reddit.com/r/youtube/comments/82whs4/old_layout_option_gonegoogle_dead_to_me/?sort=confidence&amp;limit=500">Reddit</a>提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下：</p>
+<ol>
+<li>登入 YouTube 首頁。</li>
+<li>打開瀏覽器的開發者工具，各家瀏覽器開啟的方式略有不同，不知道怎麼開的自行搜尋。</li>
+<li>找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同，不知道在哪自行搜尋。以 Microsoft Edge 44.18362.1.0 為例，位置在儲存空間頁面。</li>
+<li>切換到紀錄 YouTube Cookies 的頁面，找到<code>Name</code>為<code>"PREF"</code>的 Cookies，位置參考 Windows Central 提供的圖。</li>
+</ol>
+<p><img alt="Cookies" src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/07/debugger-edge-youtube2.png?itok=WcVPG2om"></p>
+<ol>
+<li>
+<p>修改 Value，替換為<code>"al=zh-TW&amp;f5=30030&amp;f6=8"</code>。</p>
+</li>
+<li>
+<p>重新整理 YouTube，應該就能切換為舊版介面。</p>
+</li>
+</ol>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/youtube.html">YouTube</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="http://localhost:8000/miniconda.html" title="Miniconda">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+    <a class="btn float-right" href="http://localhost:8000/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html" title="如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題">
+      Next Post <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html&hashtags=youtube" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html&title=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2&summary=%E8%83%8C%E6%99%AF%0A%E7%94%B1%E6%96%BC%20Google%20%E4%B8%8D%E7%9F%A5%E9%81%93%E6%98%AF%E5%90%A6%E7%82%BA%E4%BA%86%E4%BD%BF%E8%87%AA%E5%AE%B6%E6%9C%8D%E5%8B%99%E5%8F%AA%E5%9C%A8%E8%87%AA%E5%AE%B6%E7%9A%84%20Chrome%20%E7%80%8F%E8%A6%BD%E5%99%A8%E5%85%B7%E6%9C%89%E7%9B%B8%E5%B0%8D%E5%84%AA%E5%8B%A2%EF%BC%8C%E4%BE%8B%E5%A6%82%E6%9C%80%E8%BF%91%E6%AD%A4%E7%AF%87%E5%A0%B1%E5%B0%8E%E8%AE%93%E6%88%91%E6%83%B3%E5%AF%AB%E9%80%99%E7%AF%87%E6%96%87%E7%AB%A0%E3%80%82%E5%85%B6%E4%B8%AD%E4%B8%80%E4%BE%8B%E6%98%AF%E5%9C%A8%E6%96%B0%E7%89%88%E7%9A%84%20YouTube%20%E4%BB%8B%E9%9D%A2%E4%BD%BF%E7%94%A8%E9%81%8E%E6%99%82%E7%9A%84%20API%EF%BC%8C%E5%B0%8E%E8%87%B4%E9%99%A4%E4%BA%86%20Chromium%20based%20%E7%9A%84%E7%80%8F%E8%A6%BD%E5%99%A8%E6%80%A7%E8%83%BD%E8%A1%A8%E7%8F%BE%E4%BD%8E%E8%90%BD%EF%BC%8C%E7%84%B6%E5%BE%8C%20Google%20%E5%8F%88%E6%8A%8A%E9%82%84%E5%8E%9F%E6%88%90%E8%88%8A%E7%89%88%E7%9A%84%E6%8C%89%E9%8D%B5%E7%A7%BB%E9%99%A4%EF%BC%8C%E5%8F%AA%E5%A5%BD%E6%89%BE%E5%88%A5%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%87%E6%8F%9B%E7%82%BA%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2%E3%80%82%0A%E6%96%B9%E6%B3%95%0AWindows%20Central%E8%88%87Reddit%E6%8F%90%E4%BE%9B%E4%BA%86%E5%B9%BE%E7%A8%AE%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E7%82%BA%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%88%91%E6%B8%AC%E8%A9%A6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%8C%E8%A6%BA%E5%BE%97%E7%B0%A1%E5%96%AE%E6%96%B9%E4%BE%BF%EF%BC%8C%E8%80%8C%E4%B8%94%E4%B8%8D%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%9D%E4%BB%BB%E4%BD%95%E8%80%8C%E5%A4%96%E7%9A%84%E6%9D%B1%E8%A5%BF%EF%BC%8C%E5%8F%AA%E8%A6%81%E4%B8%8D%E5%88%AA%E9%99%A4%20Cookies%20%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BF%9D%E6%8C%81%E8%A8%AD%E5%AE%9A%EF%BC%8C%E5%AE%8C%E5%85%A8%E6%8C%89%E7%85%A7%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%B5%81%E7%A8%8B%E6%9C%83%E8%AE%8A%E6%88%90%E8%8B%B1%E6%96%87%E7%89%88%EF%BC%8C%E6%88%91%E5%81%9A%E4%BA%86%E5%B0%8F%E4%BF%AE%E6%94%B9%E8%AE%93%E4%BB%96%E8%AE%8A%E6%88%90%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%8C%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A%0A%0A%E7%99%BB%E5%85%A5%20YouTube%20%E9%A6%96%E9%A0%81%E3%80%82%0A%E6%89%93%E9%96%8B%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E9%96%8B%E7%99%BC%E8%80%85%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%90%84%E5%AE%B6%E7%80%8F%E8%A6%BD%E5%99%A8%E9%96%8B%E5%95%9F%E7%9A%84%E6%96%B9%E5%BC%8F%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%EF%BC%8C%E4%B8%8D%E7%9F%A5%E9%81%93%E6%80%8E%E9%BA%BC%E9%96%8B%E7%9A%84%E8%87%AA%E8%A1%8C%E6%90%9C%E5%B0%8B%E3%80%82%0A%E6%89%BE%E5%88%B0%E7%B4%80%E9%8C%84%20Cookies%20%E7%9A%84%E5%88%86%E9%A0%81%EF%BC%8C%E4%B9%9F%E6%98%AF%E5%90%84%E5%80%8B%E7%80%8F%E8%A6%BD%E5%99%A8%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%EF%BC%8C%E4%B8%8D%E7%9F%A5%E9%81%93%E5%9C%A8%E5%93%AA%E8%87%AA%E8%A1%8C%E6%90%9C%E5%B0%8B%E3%80%82%E4%BB%A5%20%E2%80%A6&source=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2&u=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2&amp;body=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html&title=%E5%A6%82%E4%BD%95%E5%B0%87%20YouTube%20%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

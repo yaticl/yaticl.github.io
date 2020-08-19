@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度\(L\)，但是\(L\)必須為一質數，則一維的 MURA 加密序列\(A\)可以表示為： $$A_i=\begin{cases} 0 &amp; \text{ if } i=0 \\ 1 &amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp; \text{ otherwise } \end …" />
+<meta name="keywords" content="Computational Imaging, Digital signal processing, Coded aperture">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="Modified Uniformly Redundant Array (MURA) Mask"/>
+<meta property="og:description" content="MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度\(L\)，但是\(L\)必須為一質數，則一維的 MURA 加密序列\(A\)可以表示為： $$A_i=\begin{cases} 0 &amp; \text{ if } i=0 \\ 1 &amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp; \text{ otherwise } \end …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/modified-uniformly-redundant-array-mura-mask.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-02-21 21:03:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/ya-ti.html">
+<meta property="article:section" content="Computational Imaging"/>
+<meta property="article:tag" content="Computational Imaging"/>
+<meta property="article:tag" content="Digital signal processing"/>
+<meta property="article:tag" content="Coded aperture"/>
+<meta property="og:image" content="http://localhost:8000/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Modified Uniformly Redundant Array (MURA) Mask</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="http://localhost:8000"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="http://localhost:8000/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="modified-uniformly-redundant-array-mura-mask">Modified Uniformly Redundant Array (MURA) Mask</h1>
+    <p>
+      Posted on Wed 21 February 2018 in <a href="http://localhost:8000/category/computational-imaging.html">Computational Imaging</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度<span class="math">\(L\)</span>，但是<span class="math">\(L\)</span>必須為一質數，則一維的 MURA 加密序列<span class="math">\(A\)</span>可以表示為：</p>
+<div class="math">$$A_i=\begin{cases} 0 &amp; \text{ if } i=0 \\ 1 &amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp; \text{ otherwise } \end{cases}.$$</div>
+<p>根據<span class="math">\(A\)</span>，則可以得到解碼序列<span class="math">\(G\)</span>：</p>
+<div class="math">$$G_i=\begin{cases} +1 &amp; \text{ if } i=0 \\ +1 &amp; \text{ if } A_i=1,i \neq 0 \\ -1 &amp; \text{ if } A_i=0,i \neq 0 \\ \end{cases}.$$</div>
+<p>長寬為<span class="math">\(p \times p\)</span>的二維 MURA 編碼遮罩可以表示成<span class="math">\(\mathbf{A}= \{ A_{ij} \}\)</span>，其中：</p>
+<div class="math">$$A_{i_j}=\begin{cases} 0 &amp; \text{ if } i=0 \\ 1 &amp; \text{ if } j=0,i\neq 0 \\ 1 &amp; \text{ if } C_i C_j=1 \\ 0 &amp; \text{ otherwise } \end{cases} \text{ 當中 } C_i=\begin{cases} +1 &amp; \text{ if } i \text{ is a quadratic residue modulo } p \\ -1 &amp; \text{ otherwise } \end{cases}.$$</div>
+<p>則二維的解碼遮罩<span class="math">\(\mathbf{G}\)</span>一樣可以由<span class="math">\(\mathbf{A}\)</span>求得：</p>
+<div class="math">$$G_{ij}=\begin{cases} +1 &amp; \text{ if } i=0,j=0 \\ +1 &amp; \text{ if } A_{ij}=1 \\ -1 &amp; \text{ if } A_{ij}=0 \end{cases}.$$</div>
+<p>上述的 quadratic residue 為二次剩餘，當存在某個<span class="math">\(x\)</span>，且<span class="math">\(x^2 \equiv q(\text{mod }n)\)</span>，則<span class="math">\(q\)</span>是<span class="math">\(n\)</span>的二次剩餘。由於長寬必須要為質數，因此可以用 Euler's criterion 來判斷一個整數是否為某質數的二次剩餘：</p>
+<div class="math">$$a^{\frac{p-1}{2}}\equiv \begin{cases} +1 (\text{mod } p) &amp; \text{ if there is an integer x such that } a \equiv x^2(\text{mod }p) \\ -1 (\text{mod } p)&amp; \text{ if there is no such integer} \end{cases}.$$</div>
+<hr>
+<p>以下為二維 MURA 編碼遮罩的 MATLAB 範例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>[ t ] <span class="p">=</span><span class="w"> </span><span class="nf">generateMURAs2D</span><span class="p">(</span> p <span class="p">)</span><span class="w"></span>
+<span class="c">% Generate MURA mask</span>
+<span class="c">% Input: MURAs length p</span>
+<span class="c">% Output: MURA mask t</span>
+
+<span class="n">if</span> <span class="s">isprime(p)</span>
+<span class="n">t</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">);</span>
+<span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">ndgrid</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">);</span>
+
+<span class="n">residuelist</span><span class="p">=</span><span class="n">unique</span><span class="p">(</span> <span class="nb">mod</span><span class="p">(</span> <span class="p">(</span><span class="mi">0</span><span class="p">:(</span><span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span> <span class="p">)</span> <span class="p">);</span>
+
+<span class="n">i_qrm</span><span class="p">=</span><span class="n">ismember</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">residuelist</span><span class="p">);</span>
+<span class="n">j_qrm</span><span class="p">=</span><span class="n">ismember</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">residuelist</span><span class="p">);</span>
+<span class="n">ij_AndNor</span><span class="p">=</span><span class="o">~</span><span class="n">xor</span><span class="p">(</span><span class="n">i_qrm</span><span class="p">,</span><span class="n">j_qrm</span><span class="p">);</span>
+<span class="n">t</span><span class="p">(</span><span class="n">ij_AndNor</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">t</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">else</span>
+<span class="s">fprintf(&#39;p is NOT a prime number.\n&#39;)</span><span class="p">;</span>
+<span class="n">t</span><span class="p">=[];</span>
+<span class="n">end</span>
+
+<span class="s">end</span>
+</code></pre></div>
+
+
+<p>如果輸入的質數為 59，則結果如下：</p>
+<p><img alt="" src="https://bwpixw.bn.files.1drv.com/y4mOQqdLDyCIgNADbCX0bblruHMLw4kQ1B329F4sYXK3_tj26RsA-juHeH9WgJm-_9jM4sP9yR2dHw-wFSq2bSWrlpjAfgdXRFydpXysw2ajC3LCmdyeqJIGcnvlZ7de0O7U0DmZC201UBDfX7xNPdq-8Ew0hfyVup7Bl0kPlsr6-n7yJLBJEhmvsgOWL73pKX-ERb58OwdjEE1ceQ-iKFRoA?width=236&amp;height=236&amp;cropmode=none"></p>
+<p>而其對應的解碼矩陣的 MATLAB 範例如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>[ t_hat ] <span class="p">=</span><span class="w"> </span><span class="nf">decodeMURAs2D</span><span class="p">(</span> t <span class="p">)</span><span class="w"></span>
+<span class="c">%Generate decode MURAs mask</span>
+<span class="c">% Input: encoded mask A</span>
+<span class="c">% output: decoding mask G</span>
+
+<span class="n">t_hat</span> <span class="p">=</span> <span class="n">double</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">t_hat</span> <span class="p">=</span> <span class="n">t_hat</span> <span class="o">+</span> <span class="n">double</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">t_hat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="n">end</span>
+</code></pre></div>
+
+
+<hr>
+<h3>Reference</h3>
+<ul>
+<li>Optical Imaging and Spectroscopy. By David J. Brady</li>
+<li><a href="https://en.wikipedia.org/wiki/Modified_Uniformly_Redundant_Array">維基百科</a></li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/computational-imaging.html">Computational Imaging</a>
+      <a href="http://localhost:8000/tag/digital-signal-processing.html">Digital signal processing</a>
+      <a href="http://localhost:8000/tag/coded-aperture.html">Coded aperture</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="http://localhost:8000/my-super-post.html" title="My super title">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+    <a class="btn float-right" href="http://localhost:8000/如何取得免費-SSL-憑證.html" title="如何取得免費 SSL 憑證">
+      Next Post <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>You might enjoy</h4>
+    <ul class="related-posts">
+      <li><a href="http://localhost:8000/maximum-length-sequence.html">Maximum-Length Sequence</a></li>
+      <li><a href="http://localhost:8000/hadamard-matrix.html">Hadamard Matrix</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask&url=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask&url=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html&hashtags=computational-imaging,digital-signal-processing,coded-aperture" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html&title=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask&summary=MURA%20%E5%B8%B8%E8%A2%AB%E6%87%89%E7%94%A8%E6%96%BC%E7%B7%A8%E7%A2%BC%EF%BC%8C%E8%80%8C%20MURA%20mask%20%E6%98%AF%E4%B8%80%E7%A8%AE%E5%88%A9%E7%94%A8%20MURA%20sequence%20%E7%94%9F%E6%88%90%E7%9A%84%E9%81%AE%E7%BD%A9%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%A6%96%E5%85%88%E4%BB%8B%E7%B4%B9%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E7%B6%AD%E5%BA%8F%E5%88%97%E3%80%82MURA%20%E5%BA%8F%E5%88%97%E6%98%AF%E4%BA%8C%E5%85%83%E5%BA%8F%E5%88%97%EF%BC%8C%E5%8F%AF%E7%82%BA%E4%BB%BB%E4%BD%95%E7%9A%84%E8%87%AA%E5%AE%9A%E7%BE%A9%E9%95%B7%E5%BA%A6%5C%28L%5C%29%EF%BC%8C%E4%BD%86%E6%98%AF%5C%28L%5C%29%E5%BF%85%E9%A0%88%E7%82%BA%E4%B8%80%E8%B3%AA%E6%95%B8%EF%BC%8C%E5%89%87%E4%B8%80%E7%B6%AD%E7%9A%84%20MURA%20%E5%8A%A0%E5%AF%86%E5%BA%8F%E5%88%97%5C%28A%5C%29%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E7%82%BA%EF%BC%9A%0A%24%24A_i%3D%5Cbegin%7Bcases%7D%200%20%26%20%5Ctext%7B%20if%20%7D%20i%3D0%20%5C%5C%201%20%26%20%5Ctext%7B%20if%20%7D%20i%20%5Ctext%7B%20is%20a%20quadratic%20residue%20modulo%20%7D%20L%20%5Ctext%7B%20and%20%7D%20i%5Cneq%200%20%5C%5C%200%20%26%20%5Ctext%7B%20otherwise%20%7D%20%5Cend%20%E2%80%A6&source=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask&u=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask&amp;body=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/modified-uniformly-redundant-array-mura-mask.html&title=Modified%20Uniformly%20Redundant%20Array%20%28MURA%29%20Mask" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>
