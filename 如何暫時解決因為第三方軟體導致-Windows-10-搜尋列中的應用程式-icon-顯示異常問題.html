@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="問題原因 某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。 解決方法 此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自該篇文章的第三篇，方法如下： 執行登入檔編輯程式 到 HKEY_CLASSES_ROOT\.png 位置 尋找 shellex 下是否存在機碼 刪除機碼 在 shellex 點右鍵選擇 使用權限 在 群組與使用者名稱 中選擇 Administrators 將 完全控制 與 讀取 的 拒絕 框都打勾 …" />
+<meta name="keywords" content="Tips, Windows 10, Google Drive">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題"/>
+<meta property="og:description" content="問題原因 某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。 解決方法 此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自該篇文章的第三篇，方法如下： 執行登入檔編輯程式 到 HKEY_CLASSES_ROOT\.png 位置 尋找 shellex 下是否存在機碼 刪除機碼 在 shellex 點右鍵選擇 使用權限 在 群組與使用者名稱 中選擇 Administrators 將 完全控制 與 讀取 的 拒絕 框都打勾 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.ya-ti.nctu.me/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-03-11 11:59:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://blog.ya-ti.nctu.me/author/ya-ti.html">
+<meta property="article:section" content="Tips"/>
+<meta property="article:tag" content="Tips"/>
+<meta property="article:tag" content="Windows 10"/>
+<meta property="article:tag" content="Google Drive"/>
+<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://blog.ya-ti.nctu.me">
+        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://blog.ya-ti.nctu.me"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://blog.ya-ti.nctu.me">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題">如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題</h1>
+    <p>
+      Posted on Wed 11 March 2020 in <a href="https://blog.ya-ti.nctu.me/category/tips.html">Tips</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>問題原因</h2>
+<p>某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。</p>
+<h2>解決方法</h2>
+<p>此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自<a href="https://superuser.com/questions/1319157/some-windows-10-uwp-icons-not-displaying-on-search-or-in-settings">該篇文章</a>的第三篇，方法如下：</p>
+<ol>
+<li>執行登入檔編輯程式</li>
+<li>到 <strong>HKEY_CLASSES_ROOT\.png</strong> 位置</li>
+<li>尋找 <strong>shellex</strong> 下是否存在機碼</li>
+<li>刪除機碼</li>
+<li>在 <strong>shellex</strong> 點右鍵選擇 <strong>使用權限</strong></li>
+<li>在 <strong>群組與使用者名稱</strong> 中選擇 <strong>Administrators</strong></li>
+<li>將 <strong>完全控制</strong> 與 <strong>讀取</strong> 的 <strong>拒絕</strong> 框都打勾</li>
+<li>重開機</li>
+<li>打開系統顯示設定，若有使用多個顯示器先改成單一顯示器顯示</li>
+<li>修改 <strong>縮放與版面配置</strong> 中的縮放設定，從<strong>100%</strong>( 或是當前推薦數值 ) 調整至<strong>125%</strong>( 或是更高或更低的<strong>X25%</strong>數值 )，此步驟應是希望系統重新 cache icon</li>
+<li>打開搜尋列，看 icon 顯示是否正常，若沒有則重複上個步驟</li>
+</ol>
+<p>親測 icon 恢復之後可以先把權限改回來，可以在系統重新 cache 之前保持正常，以避免潛在問題。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://blog.ya-ti.nctu.me/tag/tips.html">Tips</a>
+      <a href="https://blog.ya-ti.nctu.me/tag/windows-10.html">Windows 10</a>
+      <a href="https://blog.ya-ti.nctu.me/tag/google-drive.html">Google Drive</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://blog.ya-ti.nctu.me/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html" title="如何在 Visual Studio Code 中使用 Cascadia Code 字體">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>You might enjoy</h4>
+    <ul class="related-posts">
+      <li><a href="https://blog.ya-ti.nctu.me/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C&url=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C&url=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html&hashtags=tips,windows-10,google-drive" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C&summary=%E5%95%8F%E9%A1%8C%E5%8E%9F%E5%9B%A0%0A%E6%9F%90%E4%BA%9B%E7%AC%AC%E4%B8%89%E6%96%B9%E7%9A%84%E6%AA%94%E6%A1%88%E5%90%8C%E6%AD%A5%E8%BB%9F%E9%AB%94%EF%BC%8C%E4%BE%8B%E5%A6%82%20Google%20%E7%9A%84%20Drive%20File%20Stream%EF%BC%8C%E5%9B%A0%E7%82%BA%E6%9C%83%E5%9C%A8%E7%99%BB%E9%8C%84%E6%AA%94%E6%96%B0%E5%A2%9E%E6%A9%9F%E7%A2%BC%EF%BC%8C%E5%B0%8E%E8%87%B4%E7%B3%BB%E7%B5%B1%E6%9F%90%E4%BA%9B%E5%9C%B0%E6%96%B9%E7%95%B0%E5%B8%B8%EF%BC%8C%E4%BD%BF%E5%BE%97%20Windows%2010%20%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E5%9C%A8%E6%90%9C%E5%B0%8B%E5%88%97%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E3%80%82%0A%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95%0A%E6%AD%A4%E5%95%8F%E9%A1%8C%E4%BC%BC%E4%B9%8E%E5%B7%B2%E7%B6%93%E5%AD%98%E5%9C%A8%E5%A4%9A%E5%B9%B4%EF%BC%8CGoogle%20%E4%BE%9D%E7%84%B6%E6%B2%92%E6%9C%89%E4%BF%AE%E5%BE%A9%EF%BC%8C%E7%9B%AE%E5%89%8D%E8%A6%81%E6%A0%B9%E6%B2%BB%E5%8F%AA%E8%83%BD%E7%9B%B4%E6%8E%A5%E7%A7%BB%E9%99%A4%EF%BC%8C%E4%B8%8D%E9%81%8E%E6%9C%89%E6%9A%AB%E6%99%82%E6%80%A7%E7%9A%84%E8%99%95%E7%90%86%E3%80%82%E6%9A%AB%E6%99%82%E6%80%A7%E7%9A%84%E8%99%95%E8%A3%A1%E4%BE%86%E8%87%AA%E8%A9%B2%E7%AF%87%E6%96%87%E7%AB%A0%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%EF%BC%8C%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A%0A%0A%E5%9F%B7%E8%A1%8C%E7%99%BB%E5%85%A5%E6%AA%94%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8F%0A%E5%88%B0%20HKEY_CLASSES_ROOT%5C.png%20%E4%BD%8D%E7%BD%AE%0A%E5%B0%8B%E6%89%BE%20shellex%20%E4%B8%8B%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%A9%9F%E7%A2%BC%0A%E5%88%AA%E9%99%A4%E6%A9%9F%E7%A2%BC%0A%E5%9C%A8%20shellex%20%E9%BB%9E%E5%8F%B3%E9%8D%B5%E9%81%B8%E6%93%87%20%E4%BD%BF%E7%94%A8%E6%AC%8A%E9%99%90%0A%E5%9C%A8%20%E7%BE%A4%E7%B5%84%E8%88%87%E4%BD%BF%E7%94%A8%E8%80%85%E5%90%8D%E7%A8%B1%20%E4%B8%AD%E9%81%B8%E6%93%87%20Administrators%0A%E5%B0%87%20%E5%AE%8C%E5%85%A8%E6%8E%A7%E5%88%B6%20%E8%88%87%20%E8%AE%80%E5%8F%96%20%E7%9A%84%20%E6%8B%92%E7%B5%95%20%E6%A1%86%E9%83%BD%E6%89%93%E5%8B%BE%20%E2%80%A6&source=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C&u=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C&amp;body=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.nctu.me/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4%20Windows%2010%20%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%20icon%20%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://blog.ya-ti.nctu.me",
+  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

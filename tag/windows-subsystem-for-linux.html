@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.ya-ti.nctu.me"/>
+<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Tag Windows Subsystem for Linux</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://blog.ya-ti.nctu.me">
+        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://blog.ya-ti.nctu.me"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://blog.ya-ti.nctu.me">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/如何解決執行-bash-script-時遇到-command-not-found-的問題.html#如何解決執行-bash-script-時遇到-command-not-found-的問題">如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</a></h2>
+    <p>
+      Posted on Wed 24 April 2019 in <a href="https://blog.ya-ti.nctu.me/category/tips.html">Tips</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/bash.html">Bash</a>,              <a href="https://blog.ya-ti.nctu.me/tag/shell-scripts.html">Shell scripts</a>,              <a href="https://blog.ya-ti.nctu.me/tag/linux.html">Linux</a>,              <a href="https://blog.ya-ti.nctu.me/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
+    </p>
+  </header>
+  <div>
+      <h2>前言</h2>
+<p>在使用<a href="https://docs.microsoft.com/zh-tw/windows/wsl/about">WSL</a>執行 bash script 有時會遇到像這樣的錯誤：</p>
+<div class="highlight"><pre><span></span><code>-bash: <span class="s1">&#39;\r&#39;</span>: <span class="nb">command</span> not found
+</code></pre></div>
+
+
+<p>經過搜尋之後在<a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile">stackoverflow</a>找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。</p>
+<h2>解決方法</h2>
+<p>由 stackoverflow 提供的解答，方法為在 WSL 之中安裝<code>dos2unix</code>，以 Debian/Ubuntu 為範例，安裝方法為：</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install dos2unix
+</code></pre></div>
+
+
+<p>使用方法為：</p>
+<div class="highlight"><pre><span></span><code>dos2unix …</code></pre></div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/如何解決執行-bash-script-時遇到-command-not-found-的問題.html#如何解決執行-bash-script-時遇到-command-not-found-的問題">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://blog.ya-ti.nctu.me",
+  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

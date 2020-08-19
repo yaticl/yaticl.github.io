@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.ya-ti.nctu.me"/>
+<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Tag Python</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://blog.ya-ti.nctu.me">
+        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://blog.ya-ti.nctu.me"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://blog.ya-ti.nctu.me">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/edge-detection.html#edge-detection">邊界偵測 (Edge Detection)</a></h2>
+    <p>
+      Posted on Fri 06 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&height=264&cropmode=none">
+      <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2>影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end …</div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/edge-detection.html#edge-detection">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2>數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/histogram-equalization.html#histogram-equalization">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/python-心得.html#python-心得">Python 心得</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/python.html">Python</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.nctu.me/tag/matlab.html">MATLAB</a>,              <a href="https://blog.ya-ti.nctu.me/tag/anaconda.html">Anaconda</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&height=1024&cropmode=none">
+      <h1>Python</h1>
+<p><a href="https://zh.wikipedia.org/zh-tw/Python">Python</a>是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。</p>
+<h2>為什麼我要選擇 Python？</h2>
+<p>我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/python-心得.html#python-心得">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/maximum-length-sequence.html#maximum-length-sequence">Maximum-Length Sequence</a></h2>
+    <p>
+      Posted on Fri 16 March 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-signal-processing.html">Digital Signal Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/digital-signal-processing.html">Digital signal processing</a>,              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&height=214&cropmode=none">
+      <h2>簡介</h2>
+<p>Maximum-Length Sequence (MLS) 是一種二值序列，長度<span class="math">\(P=2^N-1\)</span>，其中<span class="math">\(N\)</span>代表整數。MLS 可以利用以下的關係式遞迴產生：</p>
+<div class="math">$$n(k+3)=n(k) \oplus n(k+2),$$</div>
+<p>其中<span class="math">\(\oplus\)</span>代表 XOR 運算。若將將產生出來的<span class="math">\(0,1\)</span>邏輯值由下式轉換成<span class="math">\(1,-1\)</span>，則為 MLS 訊號：</p>
+<div class="math">$$0 \rightarrow 1$$</div>
+<p><br>
+</p>
+<div class="math">$$1 \rightarrow -1.$$</div>
+<h2>性質</h2>
+<p>在 MLS 當中，<span class="math">\(0\)</span>與<span class="math">\(1 …</span></p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/maximum-length-sequence.html#maximum-length-sequence">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/toeplitz-matrix.html#toeplitz-matrix">Toeplitz Matrix</a></h2>
+    <p>
+      Posted on Fri 09 March 2018 in <a href="https://blog.ya-ti.nctu.me/category/linear-algebra.html">Linear algebra</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/linear-algebra.html">Linear algebra</a>,              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+      <h2>簡介</h2>
+<p>Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。<br>
+對任一<span class="math">\(n \times n\)</span>的矩陣<span class="math">\(\mathbf{A}\)</span>，可以表示成：</p>
+<div class="math">$$\mathbf{A}=\begin{bmatrix}  
+a_0 &amp; a_{-1} &amp; a_{-2} &amp; \cdots &amp; a_{-(n-1)} \\  
+a_1 &amp; a_0 &amp; a_{-1} &amp; \ddots &amp; \vdots \\  
+a_2 &amp; a_1 &amp; \ddots &amp; \ddots &amp; \vdots \\  
+\vdots &amp; \ddots &amp; \ddots &amp; a_0 &amp; a_{-1} \\  
+a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0  
+\end{bmatrix …</div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/toeplitz-matrix.html#toeplitz-matrix">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn float-left" href="https://blog.ya-ti.nctu.me/tag/python3.html">
+      <i class="fa fa-angle-left"></i> Older Posts
+    </a>
+    <a class="btn float-right" href="https://blog.ya-ti.nctu.me/tag/python.html">
+      Newer Posts <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://blog.ya-ti.nctu.me",
+  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

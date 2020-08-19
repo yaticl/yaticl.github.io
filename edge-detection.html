@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。 影像梯度 (Image gradient) 由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。 Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點\((x,y)\)的梯度可以表示為 $$\triangledown f = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} g_x \\ g_y \end …" />
+<meta name="keywords" content="Digital image processing, Python">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="邊界偵測 (Edge Detection)"/>
+<meta property="og:description" content="通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。 影像梯度 (Image gradient) 由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。 Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點\((x,y)\)的梯度可以表示為 $$\triangledown f = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} g_x \\ g_y \end …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.ya-ti.nctu.me/edge-detection.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-07-06 21:52:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://blog.ya-ti.nctu.me/author/ya-ti.html">
+<meta property="article:section" content="Digital Image Processing"/>
+<meta property="article:tag" content="Digital image processing"/>
+<meta property="article:tag" content="Python"/>
+<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 邊界偵測 (Edge Detection)</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://blog.ya-ti.nctu.me">
+        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://blog.ya-ti.nctu.me"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://blog.ya-ti.nctu.me">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="edge-detection">邊界偵測 (Edge Detection)</h1>
+    <p>
+      Posted on Fri 06 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-image-processing.html">Digital Image Processing</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2>影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end{bmatrix},$$</div>
+<p>其方向為</p>
+<div class="math">$$\theta = \tan^{-1} \begin{bmatrix}  
+\frac{g_y}{g_x}  
+\end{bmatrix},$$</div>
+<p>其長度為</p>
+<div class="math">$$g = \sqrt{g_{x}^2+g_{y}^2}.$$</div>
+<h2>Sobel operator</h2>
+<p>Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用<span class="math">\(3 \times 3\)</span>的 kernel 對影像做 convolution ( 摺積 )。</p>
+<p>假設<span class="math">\(\mathbf{A}\)</span>為來源影像，<span class="math">\(\mathbf{G_x}\)</span>與<span class="math">\(\mathbf{G_y}\)</span>分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為</p>
+<div class="math">$$\mathbf{G_x}=\begin{bmatrix}  
+1 &amp; 0 &amp; -1\\ 
+2 &amp;0 &amp; -2\\
+1 &amp; 0 &amp; -1 
+\end{bmatrix} \ast \mathbf{A} \text{ and }  
+\mathbf{G_y}=\begin{bmatrix}  
+1 &amp; 2 &amp; 1\\ 
+0 &amp; 0 &amp; 0\\
+-1 &amp; -2 &amp; -1  
+\end{bmatrix} \ast \mathbf{A}.$$</div>
+<p>所以梯度的強度圖可以寫成</p>
+<div class="math">$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$</div>
+<p>同理梯度的方向圖可以寫成</p>
+<div class="math">$$\Theta = \tan^{-1} \begin{bmatrix}  
+\frac{\mathbf{G_y}}{\mathbf{G_x}}  
+\end{bmatrix}.$$</div>
+<h2>Canny edge detector</h2>
+<p>Canny edge detector 是一種用來偵測影像中邊界的演算法，基本版的流程分為五個步驟：</p>
+<ol>
+<li>使用 Gaussian filter 平滑化影像，目的是為了降噪</li>
+<li>計算影像梯度的強度</li>
+<li>利用 non-maximum suppression 找出強邊界，比較每一個像素，只留下強度比相鄰像素的強度都強的像素</li>
+<li>應用 double threshold 分出強邊界與弱邊界，設定 high threshold 與 low threshold，如果強度大於 high threshold 分為強邊界，若強度小於 high threshold 且大於 low threshold 分為弱邊界，其他則會被排除</li>
+<li>排除沒有跟強邊界相連的弱邊界</li>
+</ol>
+<h2>範例</h2>
+<p>scikit-image 有實作 Sobel filter 與 Canny edge detector，Sobel filter 輸出為梯度強度影像，Canny edge detector 輸出為二值影像，如下所示：</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
+<span class="kn">from</span> <span class="nn">skimage.filters</span> <span class="kn">import</span> <span class="n">sobel</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">feature</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
+
+<span class="n">edge_sobel</span> <span class="o">=</span> <span class="n">sobel</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">edge_canny</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">canny</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">edge_sobel</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sobel Edge Detection&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">edge_canny</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Canny Edge Detection&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&amp;height=264&amp;cropmode=none"></p>
+<p>可執行範例放在我的 Azure Notebook <a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"><img alt="" src="https://notebooks.azure.com/launch.png"></a></p>
+<h2>參考</h2>
+<p><a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py">Edge operators</a><br>
+<a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py">Canny edge detector</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://blog.ya-ti.nctu.me/tag/digital-image-processing.html">Digital image processing</a>
+      <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://blog.ya-ti.nctu.me/histogram-equalization.html" title="直方圖等化 (Histogram Equalization)">
+      <i class="fa fa-angle-left"></i> Previous Post
+    </a>
+    <a class="btn float-right" href="https://blog.ya-ti.nctu.me/local-normalization.html" title="局部歸一化 (Local Normalization)">
+      Next Post <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>You might enjoy</h4>
+    <ul class="related-posts">
+      <li><a href="https://blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></li>
+      <li><a href="https://blog.ya-ti.nctu.me/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
+      <li><a href="https://blog.ya-ti.nctu.me/histogram-equalization.html">直方圖等化 (Histogram Equalization)</a></li>
+      <li><a href="https://blog.ya-ti.nctu.me/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="https://blog.ya-ti.nctu.me/miniconda.html">Miniconda</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      Share on:
+      <a href="https://sharetodiaspora.github.io/?title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//blog.ya-ti.nctu.me/edge-detection.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//blog.ya-ti.nctu.me/edge-detection.html&hashtags=digital-image-processing,python" target="_blank" title="Share on Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.nctu.me/edge-detection.html" target="_blank" title="Share on Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.nctu.me/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&summary=%E9%80%9A%E5%B8%B8%E5%9C%A8%E4%B8%80%E5%BC%B5%E5%BD%B1%E5%83%8F%E7%95%B6%E4%B8%AD%EF%BC%8C%E6%88%91%E5%80%91%E6%9C%83%E6%84%9F%E8%88%88%E8%B6%A3%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%83%E6%98%AF%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E6%AF%94%E8%BC%83%E5%A4%A7%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%8C%E5%9B%A0%E7%82%BA%E9%80%99%E4%BA%9B%E5%9C%B0%E6%96%B9%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%95%B6%E4%BD%9C%E7%94%A8%E4%BE%86%E6%8F%8F%E8%BF%B0%E8%A9%B2%E5%BD%B1%E5%83%8F%E7%9A%84%E7%89%B9%E5%BE%B5%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%B8%80%E7%A8%AE%E7%94%B1%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E5%BD%A2%E6%88%90%E7%9A%84%E7%89%B9%E5%BE%B5%E5%B0%B1%E6%98%AF%E5%BD%B1%E5%83%8F%E7%9A%84%E9%82%8A%E7%95%8C%20%28edge%29%20%E4%BD%8D%E7%BD%AE%E3%80%82%0A%E5%BD%B1%E5%83%8F%E6%A2%AF%E5%BA%A6%20%28Image%20gradient%29%0A%E7%94%B1%E6%96%BC%E6%88%91%E5%80%91%E5%B0%8D%E5%BD%B1%E5%83%8F%E6%9C%89%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%89%E8%88%88%E8%B6%A3%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E4%B8%80%E7%A8%AE%E6%95%B8%E5%AD%B8%E6%8F%8F%E8%BF%B0%E9%80%99%E7%A8%AE%E8%AE%8A%E5%8C%96%EF%BC%8C%E5%8D%B3%E7%82%BA%20image%20gradient%E3%80%82%0AImage%20gradient%20%E6%98%AF%E4%B8%80%202D%20%E5%90%91%E9%87%8F%20%28vector%29%EF%BC%8C%E5%B0%8D%E6%87%89%E6%B0%B4%E5%B9%B3%E5%92%8C%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%EF%BC%8C%E6%96%B9%E5%90%91%E5%AE%9A%E7%BE%A9%E7%82%BA%E4%BA%AE%E5%BA%A6%E6%9C%80%E6%9C%89%E5%8F%AF%E8%83%BD%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%96%B9%E5%90%91%EF%BC%8C%E7%B0%A1%E5%96%AE%E4%BE%86%E8%AA%AA%E5%B0%B1%E6%98%AF%E6%9A%97%20-%3E%20%E4%BA%AE%EF%BC%8C%E9%95%B7%E5%BA%A6%E5%B0%8D%E6%87%89%E8%AE%8A%E5%8C%96%E7%8E%87%E3%80%82%E5%9C%A8%E5%BD%B1%E5%83%8F%E4%B8%AD%E4%B8%80%E9%BB%9E%5C%28%28x%2Cy%29%5C%29%E7%9A%84%E6%A2%AF%E5%BA%A6%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E7%82%BA%0A%24%24%5Ctriangledown%20f%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D%20%5C%5C%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D%20%20%0A%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0Ag_x%20%5C%5C%20%20%0Ag_y%20%5Cend%20%E2%80%A6&source=https%3A//blog.ya-ti.nctu.me/edge-detection.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&u=https%3A//blog.ya-ti.nctu.me/edge-detection.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&amp;body=https%3A//blog.ya-ti.nctu.me/edge-detection.html" target="_blank" title="Share via Email">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.nctu.me/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29" target="_blank" title="Share via Reddit">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://blog.ya-ti.nctu.me",
+  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

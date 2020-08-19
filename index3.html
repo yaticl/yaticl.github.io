@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
+
+
+
+
+    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.ya-ti.nctu.me"/>
+<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+
+  <title>Ya-Ti's Blog</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://blog.ya-ti.nctu.me">
+        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://blog.ya-ti.nctu.me"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-You can add links in your config file" href="#" target="_blank">
+              <i class="fab fa-You can add links in your config file"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://blog.ya-ti.nctu.me">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2>數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/histogram-equalization.html#histogram-equalization">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/python-心得.html#python-心得">Python 心得</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.nctu.me/category/python.html">Python</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.nctu.me/tag/matlab.html">MATLAB</a>,              <a href="https://blog.ya-ti.nctu.me/tag/anaconda.html">Anaconda</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&height=1024&cropmode=none">
+      <h1>Python</h1>
+<p><a href="https://zh.wikipedia.org/zh-tw/Python">Python</a>是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。</p>
+<h2>為什麼我要選擇 Python？</h2>
+<p>我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/python-心得.html#python-心得">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/北京天壇.html#北京天壇">北京天壇</a></h2>
+    <p>
+      Posted on Sun 15 April 2018 in <a href="https://blog.ya-ti.nctu.me/category/lu-you.html">旅遊</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/zhong-guo.html">中國</a>,              <a href="https://blog.ya-ti.nctu.me/tag/bei-jing.html">北京</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://ux3s9q.bn.files.1drv.com/y4mM0ixAKeIUjY_sglGIM8j-BbtIvHWQEfHnpCfbYIWjoWxJ5aTfUZU04Z-bPY2ft6hSg_tyeVfqfliAZlBJpkBL3-deaHnlmif82vFaU4BdzCFp4juSWlQPzSSBNXkWIv_NUw-QSwqP27PGayuXYN5S6IVZbvt49cxYRUETU_zII-4hQtY_V4vcEPwgIBY7ItlHfSqFnkyVJuNB4MDkUlD5g?width=1024&height=768&cropmode=none">
+      <p>天壇，坐地鐵到天壇東門站就可以到，現在是個收門票的公園景點，也有很多各國的觀光客。</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/北京天壇.html#北京天壇">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/上海豫園.html#上海豫園">上海豫園</a></h2>
+    <p>
+      Posted on Sun 15 April 2018 in <a href="https://blog.ya-ti.nctu.me/category/lu-you.html">旅遊</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/zhong-guo.html">中國</a>,              <a href="https://blog.ya-ti.nctu.me/tag/shang-hai.html">上海</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://9ff1ma.bn.files.1drv.com/y4mvC9pOQFZ_gVn67E4PCnlFIumNhcZMAWnb1xKgpTRxcsurAOQTVmL4RkQE5JNnTmruDxs3rUbEZg5A4_CYxwG-I2CRb8iCDDCapujZLfWMlqky706oWmYIfScCHRhafsWhXDWy3OhNyQ1GG5UIqm3ZuHw0st1gI3BWltqu9vZqL6h7weYL8FtWFIz5VGzc8MrKR1JPf0ux2tpG8bg--HfqQ?width=1024&height=768&cropmode=none">
+      <p>上海的著名景點。</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/上海豫園.html#上海豫園">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.nctu.me/上海交通大學.html#上海交通大學">上海交通大學</a></h2>
+    <p>
+      Posted on Sun 15 April 2018 in <a href="https://blog.ya-ti.nctu.me/category/lu-you.html">旅遊</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.nctu.me/tag/zhong-guo.html">中國</a>,              <a href="https://blog.ya-ti.nctu.me/tag/shang-hai.html">上海</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://kgycow.bn.files.1drv.com/y4mWlWp0olw1NIsdPJoQ-Suet-gl881df-F9ejM_AeJLxsGCzpDL9n31BXtJyOBxQgDVWJMnXR_YaSELFuk5AYh2o3yfVZUNgYIKW8b6XA7ACo24nY-kORt_106gBC41fUSTDlTZlY7JPDFuNHakzYkTdohydzzYfbK8N0AgxeHf146DE0x8d802UeoC1vmW4i4NmyKOzPZ_Pq470Ea4TNwVg?width=1024&height=768&cropmode=none">
+      <p>上海交通大學是地鐵的一站，因此交通也很方便。這裡剛好是我要去豫園轉車的站，就順便來逛逛。</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.nctu.me/上海交通大學.html#上海交通大學">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn float-left" href="https://blog.ya-ti.nctu.me/index4.html">
+      <i class="fa fa-angle-left"></i> Older Posts
+    </a>
+    <a class="btn float-right" href="https://blog.ya-ti.nctu.me/index2.html">
+      Newer Posts <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://blog.ya-ti.nctu.me",
+  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>
