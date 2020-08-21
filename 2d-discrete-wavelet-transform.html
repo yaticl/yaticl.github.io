@@ -10,28 +10,28 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
 
 
     <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.ya-ti.nctu.me/theme/pygments/github.min.css">
+          href="http://localhost:8000/theme/pygments/github.min.css">
 
-    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/jquery.min.js"></script>
-    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch_set.min.js"></script>
-    <script src="https://blog.ya-ti.nctu.me/tipuesearch_content.js"></script>
-    <link rel="stylesheet" href="https://blog.ya-ti.nctu.me/theme/tipuesearch/tipuesearch.min.css" />
+    <script src="http://localhost:8000/theme/tipuesearch/jquery.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="http://localhost:8000/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="http://localhost:8000/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="http://localhost:8000/theme/tipuesearch/tipuesearch.min.css" />
 
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.nctu.me/theme/font-awesome/css/solid.css">
-
-
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.nctu.me//icons/favicon.ico" type="image/x-icon">
+
+
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -44,15 +44,15 @@
 <meta property="og:title" content="二維離散小波轉換 (2D Discrete Wavelet Transform)"/>
 <meta property="og:description" content="簡介 小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。 實作 一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2 \(cA_{i}\):approximation coefficients at level \(i\) \(cH_{i}\):horizontal coefficients at level \(i\) \(cV_{i …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html"/>
+<meta property="og:url" content="http://localhost:8000/2d-discrete-wavelet-transform.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-08-30 17:43:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://blog.ya-ti.nctu.me/author/ya-ti.html">
+<meta property="article:author" content="http://localhost:8000/author/ya-ti.html">
 <meta property="article:section" content="Digital Image Processing"/>
 <meta property="article:tag" content="Digital Image Processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.nctu.me//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 二維離散小波轉換 (2D Discrete Wavelet Transform)</title>
 
@@ -82,12 +82,12 @@
 <body class="light-theme">
   <aside>
     <div>
-      <a href="https://blog.ya-ti.nctu.me">
-        <img src="https://blog.ya-ti.nctu.me//images/profile.jpg" alt="" title="">
+      <a href="http://localhost:8000">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
-        <a href="https://blog.ya-ti.nctu.me"></a>
+        <a href="http://localhost:8000"></a>
       </h1>
 
 
@@ -101,7 +101,7 @@
 
               <li>
                 <a target="_self"
-                   href="https://blog.ya-ti.nctu.me/pages/about.html#about">
+                   href="http://localhost:8000/pages/about.html#about">
                   關於我
                 </a>
               </li>
@@ -127,7 +127,7 @@
   <main>
 
     <nav>
-      <a href="https://blog.ya-ti.nctu.me">Home</a>
+      <a href="http://localhost:8000">Home</a>
 
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
@@ -140,7 +140,7 @@
       
     <h1 id="2d-discrete-wavelet-transform">二維離散小波轉換 (2D Discrete Wavelet Transform)</h1>
     <p>
-      Posted on Thu 30 August 2018 in <a href="https://blog.ya-ti.nctu.me/category/digital-image-processing.html">Digital Image Processing</a>
+      Posted on Thu 30 August 2018 in <a href="http://localhost:8000/category/digital-image-processing.html">Digital Image Processing</a>
 
     </p>
   </header>
@@ -272,17 +272,17 @@
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://blog.ya-ti.nctu.me/tag/digital-image-processing.html">Digital Image Processing</a>
-      <a href="https://blog.ya-ti.nctu.me/tag/python.html">Python</a>
+      <a href="http://localhost:8000/tag/digital-image-processing.html">Digital Image Processing</a>
+      <a href="http://localhost:8000/tag/python.html">Python</a>
     </p>
   </div>
 
 
   <div class="neighbors">
-    <a class="btn float-left" href="https://blog.ya-ti.nctu.me/local-normalization.html" title="局部歸一化 (Local Normalization)">
+    <a class="btn float-left" href="http://localhost:8000/local-normalization.html" title="局部歸一化 (Local Normalization)">
       <i class="fa fa-angle-left"></i> Previous Post
     </a>
-    <a class="btn float-right" href="https://blog.ya-ti.nctu.me/bayesian-model-fitting-instance.html" title="貝氏模型擬合範例 (Bayesian Model Fitting Instance)">
+    <a class="btn float-right" href="http://localhost:8000/bayesian-model-fitting-instance.html" title="貝氏模型擬合範例 (Bayesian Model Fitting Instance)">
       Next Post <i class="fa fa-angle-right"></i>
     </a>
   </div>
@@ -290,11 +290,11 @@
   <div class="related-posts">
     <h4>You might enjoy</h4>
     <ul class="related-posts">
-      <li><a href="https://blog.ya-ti.nctu.me/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
-      <li><a href="https://blog.ya-ti.nctu.me/edge-detection.html">邊界偵測 (Edge Detection)</a></li>
-      <li><a href="https://blog.ya-ti.nctu.me/histogram-equalization.html">直方圖等化 (Histogram Equalization)</a></li>
-      <li><a href="https://blog.ya-ti.nctu.me/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
-      <li><a href="https://blog.ya-ti.nctu.me/miniconda.html">Miniconda</a></li>
+      <li><a href="http://localhost:8000/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
+      <li><a href="http://localhost:8000/edge-detection.html">邊界偵測 (Edge Detection)</a></li>
+      <li><a href="http://localhost:8000/histogram-equalization.html">直方圖等化 (Histogram Equalization)</a></li>
+      <li><a href="http://localhost:8000/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="http://localhost:8000/miniconda.html">Miniconda</a></li>
     </ul>
   </div>
 
@@ -303,19 +303,19 @@
   <section>
     <p id="post-share-links">
       Share on:
-      <a href="https://sharetodiaspora.github.io/?title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&url=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      <a href="https://sharetodiaspora.github.io/?title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&url=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&url=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html&hashtags=digital-image-processing,python" target="_blank" title="Share on Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&url=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html&hashtags=digital-image-processing,python" target="_blank" title="Share on Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html" target="_blank" title="Share on Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html" target="_blank" title="Share on Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html&title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&summary=%E7%B0%A1%E4%BB%8B%0A%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%28Wavelete%20transform%29%20%E8%88%87%E5%82%85%E7%AB%8B%E8%91%89%E8%BD%89%E6%8F%9B%20%28Fourier%20transform%29%20%E9%A1%9E%E4%BC%BC%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A8%AE%E4%BF%A1%E8%99%9F%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E7%89%B9%E8%89%B2%E6%98%AF%E6%98%AF%E5%90%8C%E6%99%82%E5%85%B7%E6%9C%89%E7%A9%BA%E9%96%93%E8%A7%A3%E6%9E%90%E5%BA%A6%20%28spatial%20resolution%29%20%E8%88%87%E9%A0%BB%E7%8E%87%E8%A7%A3%E6%9E%90%E5%BA%A6%20%28frequency%20resolution%29%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%BA%8C%E7%B6%AD%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29%20%E7%B6%93%E5%B8%B8%E8%A2%AB%E7%94%A8%E6%96%BC%E5%BD%B1%E5%83%8F%E5%88%86%E6%9E%90%E3%80%82%0A%E5%AF%A6%E4%BD%9C%0A%E4%B8%80%E5%B1%A4%202D%20%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%E7%9A%84%E5%AF%A6%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9C%96%E5%A6%82%E4%B8%8B%EF%BC%8C%E5%85%88%E5%B0%8D%20rows%20%E5%81%9A%E5%88%86%E8%A7%A3%E5%86%8D%E5%B0%8D%20columns%20%E5%81%9A%E5%88%86%E8%A7%A3%EF%BC%8C%E6%9C%80%E5%BE%8C%E6%9C%83%E5%88%86%E8%A7%A3%E6%88%90%E5%9B%9B%E7%A8%AE%E6%88%90%E5%88%86%EF%BC%8C%E8%A7%A3%E6%9E%90%E5%BA%A6%E8%AE%8A%E6%88%90%E5%89%8D%E4%B8%80%E5%B1%A4%E7%9A%84%201/2%0A%0A%5C%28cA_%7Bi%7D%5C%29%3Aapproximation%20coefficients%20at%20level%20%5C%28i%5C%29%0A%5C%28cH_%7Bi%7D%5C%29%3Ahorizontal%20coefficients%20at%20level%20%5C%28i%5C%29%0A%5C%28cV_%7Bi%20%E2%80%A6&source=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html&title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&summary=%E7%B0%A1%E4%BB%8B%0A%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%28Wavelete%20transform%29%20%E8%88%87%E5%82%85%E7%AB%8B%E8%91%89%E8%BD%89%E6%8F%9B%20%28Fourier%20transform%29%20%E9%A1%9E%E4%BC%BC%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A8%AE%E4%BF%A1%E8%99%9F%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E7%89%B9%E8%89%B2%E6%98%AF%E6%98%AF%E5%90%8C%E6%99%82%E5%85%B7%E6%9C%89%E7%A9%BA%E9%96%93%E8%A7%A3%E6%9E%90%E5%BA%A6%20%28spatial%20resolution%29%20%E8%88%87%E9%A0%BB%E7%8E%87%E8%A7%A3%E6%9E%90%E5%BA%A6%20%28frequency%20resolution%29%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%BA%8C%E7%B6%AD%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29%20%E7%B6%93%E5%B8%B8%E8%A2%AB%E7%94%A8%E6%96%BC%E5%BD%B1%E5%83%8F%E5%88%86%E6%9E%90%E3%80%82%0A%E5%AF%A6%E4%BD%9C%0A%E4%B8%80%E5%B1%A4%202D%20%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%E7%9A%84%E5%AF%A6%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9C%96%E5%A6%82%E4%B8%8B%EF%BC%8C%E5%85%88%E5%B0%8D%20rows%20%E5%81%9A%E5%88%86%E8%A7%A3%E5%86%8D%E5%B0%8D%20columns%20%E5%81%9A%E5%88%86%E8%A7%A3%EF%BC%8C%E6%9C%80%E5%BE%8C%E6%9C%83%E5%88%86%E8%A7%A3%E6%88%90%E5%9B%9B%E7%A8%AE%E6%88%90%E5%88%86%EF%BC%8C%E8%A7%A3%E6%9E%90%E5%BA%A6%E8%AE%8A%E6%88%90%E5%89%8D%E4%B8%80%E5%B1%A4%E7%9A%84%201/2%0A%0A%5C%28cA_%7Bi%7D%5C%29%3Aapproximation%20coefficients%20at%20level%20%5C%28i%5C%29%0A%5C%28cH_%7Bi%7D%5C%29%3Ahorizontal%20coefficients%20at%20level%20%5C%28i%5C%29%0A%5C%28cV_%7Bi%20%E2%80%A6&source=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&u=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&u=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html" target="_blank" title="Share on HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&amp;body=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html" target="_blank" title="Share via Email">Email</a>
+      <a href="mailto:?subject=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29&amp;body=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html" target="_blank" title="Share via Email">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.nctu.me/2d-discrete-wavelet-transform.html&title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29" target="_blank" title="Share via Reddit">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/2d-discrete-wavelet-transform.html&title=%E4%BA%8C%E7%B6%AD%E9%9B%A2%E6%95%A3%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%20%282D%20Discrete%20Wavelet%20Transform%29" target="_blank" title="Share via Reddit">Reddit</a>
     </p>
   </section>
 </article>
@@ -335,8 +335,8 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
-  "url" : "https://blog.ya-ti.nctu.me",
-  "image": "https://blog.ya-ti.nctu.me//images/profile.jpg",
+  "url" : "http://localhost:8000",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>
