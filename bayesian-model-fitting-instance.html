@@ -93,7 +93,7 @@
 
 
         <form class="navbar-search" action="/search.html" role="search">
-          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
         </form>
 
       <nav>
@@ -202,7 +202,7 @@
 </code></pre></div>
 
 
-<p><img alt="" src="https://jg7ggg.bn.files.1drv.com/y4mOTCh4-zjos-6wrwg-Qkw3Fk1SK0POua2Mjw4PGffnbni0Zdfmeu3JVv172oFN9PQVWieXLBWt1B7JlYw96k5sgK8gmqjCp7A2d1un8kC8S70b074Ek5E0t-6LTtM4bsbqsYnpxUv60hjhm-jFWDcGGMN_ABrZmpGq3CrAinA9QSlxe0hWEmzUEm5gPqEigRdB059qgkcPSEVObs8VIgPWg?width=388&amp;height=252&amp;cropmode=none"></p>
+<p><img alt="scatter(y)" src="https://jg7ggg.bn.files.1drv.com/y4mOTCh4-zjos-6wrwg-Qkw3Fk1SK0POua2Mjw4PGffnbni0Zdfmeu3JVv172oFN9PQVWieXLBWt1B7JlYw96k5sgK8gmqjCp7A2d1un8kC8S70b074Ek5E0t-6LTtM4bsbqsYnpxUv60hjhm-jFWDcGGMN_ABrZmpGq3CrAinA9QSlxe0hWEmzUEm5gPqEigRdB059qgkcPSEVObs8VIgPWg?width=388&amp;height=252&amp;cropmode=none"></p>
 <div class="highlight"><pre><span></span><code><span class="n">The</span> <span class="n">value</span> <span class="k">of</span> <span class="k">variable</span> <span class="n">a</span> <span class="k">with</span> <span class="n">maximum</span> <span class="n">likelihood</span> <span class="k">is</span> <span class="mi">4</span><span class="p">.</span><span class="mi">4595</span>
 
 <span class="n">The</span> <span class="n">value</span> <span class="k">of</span> <span class="k">variable</span> <span class="n">a</span> <span class="k">with</span> <span class="n">maximum</span> <span class="n">posterior</span> <span class="k">is</span> <span class="mi">4</span><span class="p">.</span><span class="mi">3393</span>
@@ -228,7 +228,7 @@
 </code></pre></div>
 
 
-<p><img alt="" src="https://jpohvq.bn.files.1drv.com/y4mmo5ZJ58Y0pS2HbUe-s0xVMGYkGLvwBAZ43NkxxVdL7VHJ4Unp9BNOdCVxd5hBKx4Fx4jFP3EvKYSZ9COJs6xL021ZLIhyOKPScfyZnycAMTN0KzYHX7hMNZJVpWcukMZXOt-vMX4OZikBOPG6ZESYjqu-nUjpDU8GHytYFACoF61u7eGfhRuRHwIM2lbAAdHl70bXR--VRX4glDulr__Yg?width=388&amp;height=278&amp;cropmode=none"></p>
+<p><img alt="scatter(x,y)" src="https://jpohvq.bn.files.1drv.com/y4mmo5ZJ58Y0pS2HbUe-s0xVMGYkGLvwBAZ43NkxxVdL7VHJ4Unp9BNOdCVxd5hBKx4Fx4jFP3EvKYSZ9COJs6xL021ZLIhyOKPScfyZnycAMTN0KzYHX7hMNZJVpWcukMZXOt-vMX4OZikBOPG6ZESYjqu-nUjpDU8GHytYFACoF61u7eGfhRuRHwIM2lbAAdHl70bXR--VRX4glDulr__Yg?width=388&amp;height=278&amp;cropmode=none"></p>
 <p>Grid search 就是取樣大量的參數來尋找最佳的參數組合，因此我們對<span class="math">\(a\)</span>與<span class="math">\(\sigma^2\)</span>取樣，希望計算 posterior 最高的參數組合：</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">normpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
     <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
@@ -261,7 +261,7 @@
 </code></pre></div>
 
 
-<p><img alt="" src="https://wlcvya.bn.files.1drv.com/y4mDSI_TA12jRQVxblosCKhmzcHMeJVhcuH6nCaux7iHIo4E6V6_otKHKDyFul2UHK_K01_7OkePCy3Uu53kwkghVo5PdOrrwIt2FqF6pROB6xa7y20PZ7cKzyqlkMcwMN-G0RIVAEJ7jFJF_10qZhZzzmOjf7T7mPU9cFo4GwDpBOGEaTaCNwZfTuSxTH0TSfUE9TgZ0hn5FgWKdvQ_1gEFA?width=385&amp;height=278&amp;cropmode=none"></p>
+<p><img alt="imshow(posterior)" src="https://wlcvya.bn.files.1drv.com/y4mDSI_TA12jRQVxblosCKhmzcHMeJVhcuH6nCaux7iHIo4E6V6_otKHKDyFul2UHK_K01_7OkePCy3Uu53kwkghVo5PdOrrwIt2FqF6pROB6xa7y20PZ7cKzyqlkMcwMN-G0RIVAEJ7jFJF_10qZhZzzmOjf7T7mPU9cFo4GwDpBOGEaTaCNwZfTuSxTH0TSfUE9TgZ0hn5FgWKdvQ_1gEFA?width=385&amp;height=278&amp;cropmode=none"></p>
 <p>然後藉由對中一個參數做積分，我們可以畫出 marginal probability，也就是兩個參數的機率分布：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># plot marginals</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -277,7 +277,7 @@
 </code></pre></div>
 
 
-<p><img alt="" src="https://xczwag.bn.files.1drv.com/y4mf0YvbtFX4xCVp_d4wa2aSyA8itn0XmHJ4WvjeF3R5YXrtSki7ZxiOcAooLtiljipMEXwk0zizMNYtmLFs7frHrc_34_IeyHdL3Nt0VYu_UIv5JMlatKIGRwyCW-TlD2Q6MAB5odDz7ds027PZe7kBN6PhIhZHG8KoHMQtRSTt-k4i6l24IOVNXAqq8WyxX6HNG7i93QGFtn4VTk0DdTD6Q?width=605&amp;height=319&amp;cropmode=none"></p>
+<p><img alt="plot_marginals" src="https://xczwag.bn.files.1drv.com/y4mf0YvbtFX4xCVp_d4wa2aSyA8itn0XmHJ4WvjeF3R5YXrtSki7ZxiOcAooLtiljipMEXwk0zizMNYtmLFs7frHrc_34_IeyHdL3Nt0VYu_UIv5JMlatKIGRwyCW-TlD2Q6MAB5odDz7ds027PZe7kBN6PhIhZHG8KoHMQtRSTt-k4i6l24IOVNXAqq8WyxX6HNG7i93QGFtn4VTk0DdTD6Q?width=605&amp;height=319&amp;cropmode=none"></p>
 <div class="highlight"><pre><span></span><code><span class="err">The value of variables with maxium posterior are 1.8687 and 17.6832</span>
 </code></pre></div>
 
@@ -360,15 +360,15 @@
 
   <div class="neighbors">
     <a class="btn float-left" href="https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html" title="二維離散小波轉換 (2D Discrete Wavelet Transform)">
-      <i class="fa fa-angle-left"></i> Previous Post
+      <i class="fa fa-angle-left"></i> 上一篇文章
     </a>
     <a class="btn float-right" href="https://blog.ya-ti.ml/miniconda.html" title="Miniconda">
-      Next Post <i class="fa fa-angle-right"></i>
+      下一篇貼文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
 
   <div class="related-posts">
-    <h4>You might enjoy</h4>
+    <h4>你可能也感興趣</h4>
     <ul class="related-posts">
       <li><a href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
       <li><a href="https://blog.ya-ti.ml/miniconda.html">Miniconda</a></li>
@@ -382,20 +382,20 @@
 
   <section>
     <p id="post-share-links">
-      Share on:
-      <a href="https://sharetodiaspora.github.io/?title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="Share on Diaspora">Diaspora*</a>
+      分享到:
+      <a href="https://sharetodiaspora.github.io/?title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&hashtags=statistical-optics,bayesian,python" target="_blank" title="Share on Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&hashtags=statistical-optics,bayesian,python" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="Share on Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&summary=%E4%B8%80%E5%80%8B%20Bayesian%20model%20fitting%20%E7%9A%84%E7%AF%84%E4%BE%8B%EF%BC%8C%E5%B9%AB%E5%8A%A9%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20Bayesian%20model%20%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E3%80%82%0ABayes%20rule%0A%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20likelihood%20%5C%28P%28D%20%7C%20M%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%5C%28D%5C%29%E7%82%BA%E4%BE%86%E8%87%AA%E6%96%BC%20model%20%5C%28M%5C%29%E7%9A%84%E5%AF%A6%E9%A9%97%E6%95%B8%E6%93%9A%E3%80%82%0A%E5%9F%BA%E6%96%BC%E9%A0%90%E6%9C%9F%E7%9F%A5%E8%AD%98%5C%28C%5C%29%EF%BC%8C%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20model%20%5C%28M%5C%29%E7%9A%84%20prior%20%5C%28P%28M%20%7C%20C%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%20model%20%5C%28M%5C%29%E5%8C%85%E5%90%AB%E4%B8%80%E4%BA%9B%E6%88%91%E5%80%91%E6%83%B3%E8%A6%81%E6%89%BE%E7%9A%84%E5%8F%83%E6%95%B8%E3%80%82%0A%E5%89%87%E7%94%B1%20Bayes%27%20theorem%20%E5%8F%AF%E4%BB%A5%E5%BE%97%E7%9F%A5%20posterior%EF%BC%9A%0A%24%24P%28M%20%5C%7C%20D%29%20%5Cpropto%20P%28M%20%7C%20C%29P%28D%20%E2%80%A6&source=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="Share on LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&summary=%E4%B8%80%E5%80%8B%20Bayesian%20model%20fitting%20%E7%9A%84%E7%AF%84%E4%BE%8B%EF%BC%8C%E5%B9%AB%E5%8A%A9%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20Bayesian%20model%20%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E3%80%82%0ABayes%20rule%0A%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20likelihood%20%5C%28P%28D%20%7C%20M%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%5C%28D%5C%29%E7%82%BA%E4%BE%86%E8%87%AA%E6%96%BC%20model%20%5C%28M%5C%29%E7%9A%84%E5%AF%A6%E9%A9%97%E6%95%B8%E6%93%9A%E3%80%82%0A%E5%9F%BA%E6%96%BC%E9%A0%90%E6%9C%9F%E7%9F%A5%E8%AD%98%5C%28C%5C%29%EF%BC%8C%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20model%20%5C%28M%5C%29%E7%9A%84%20prior%20%5C%28P%28M%20%7C%20C%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%20model%20%5C%28M%5C%29%E5%8C%85%E5%90%AB%E4%B8%80%E4%BA%9B%E6%88%91%E5%80%91%E6%83%B3%E8%A6%81%E6%89%BE%E7%9A%84%E5%8F%83%E6%95%B8%E3%80%82%0A%E5%89%87%E7%94%B1%20Bayes%27%20theorem%20%E5%8F%AF%E4%BB%A5%E5%BE%97%E7%9F%A5%20posterior%EF%BC%9A%0A%24%24P%28M%20%5C%7C%20D%29%20%5Cpropto%20P%28M%20%7C%20C%29P%28D%20%E2%80%A6&source=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&u=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="Share on HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&u=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&amp;body=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="Share via Email">Email</a>
+      <a href="mailto:?subject=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&amp;body=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html" target="_blank" title="從 Email 分享">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29" target="_blank" title="Share via Reddit">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.ml/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29" target="_blank" title="從 Reddit 分享">Reddit</a>
     </p>
   </section>
 </article>
