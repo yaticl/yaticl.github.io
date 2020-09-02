@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -43,7 +44,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://blog.ya-ti.ml"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Category Tips</title>
 
@@ -74,7 +75,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -123,6 +124,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -139,9 +141,9 @@
     </p>
   </header>
   <div>
-      <h2>問題原因</h2>
+      <h2 id="_1">問題原因</h2>
 <p>某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。</p>
-<h2>解決方法</h2>
+<h2 id="_2">解決方法</h2>
 <p>此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自<a href="https://superuser.com/questions/1319157/some-windows-10-uwp-icons-not-displaying-on-search-or-in-settings">該篇文章</a>的第三篇，方法如下：</p>
 <ol>
 <li>執行登入檔編輯程式</li>
@@ -171,7 +173,7 @@
   </header>
   <div>
       <p><a href="https://github.com/microsoft/cascadia-code">Cascadia Code</a> 是微軟在 Build 2019 隨著<a href="https://github.com/microsoft/terminal">Windows Terminal</a>一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的<a href="https://devblogs.microsoft.com/commandline/cascadia-code/">部落格文章</a>。</p>
-<h2>在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能</h2>
+<h2 id="visual-studio-codecascadia-code">在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能</h2>
 <p>Cascadia Code 的安裝方法在官方的<a href="https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code">維基</a>中可以找到，可在<a href="https://github.com/microsoft/cascadia-code/releases">GitHub</a>直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟：</p>
 <ol>
 <li>安裝好<strong>Cascadia Code</strong>字體</li>
@@ -195,14 +197,14 @@
     </p>
   </header>
   <div>
-      <h2>前言</h2>
+      <h2 id="_1">前言</h2>
 <p>在使用<a href="https://docs.microsoft.com/zh-tw/windows/wsl/about">WSL</a>執行 bash script 有時會遇到像這樣的錯誤：</p>
 <div class="highlight"><pre><span></span><code>-bash: <span class="s1">&#39;\r&#39;</span>: <span class="nb">command</span> not found
 </code></pre></div>
 
 
 <p>經過搜尋之後在<a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile">stackoverflow</a>找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。</p>
-<h2>解決方法</h2>
+<h2 id="_2">解決方法</h2>
 <p>由 stackoverflow 提供的解答，方法為在 WSL 之中安裝<code>dos2unix</code>，以 Debian/Ubuntu 為範例，安裝方法為：</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install dos2unix
 </code></pre></div>
@@ -230,9 +232,9 @@
   </header>
   <div>
         <img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/07/debugger-edge-youtube2.png?itok=WcVPG2om">
-      <h2>背景</h2>
+      <h2 id="_1">背景</h2>
 <p>由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇<a href="https://www.zdnet.com/article/former-mozilla-exec-google-has-sabotaged-firefox-for-years/">報導</a>讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。</p>
-<h2>方法</h2>
+<h2 id="_2">方法</h2>
 <p><a href="https://www.windowscentral.com/how-to-fix-slow-edge-youtube">Windows Central</a>與<a href="https://www.reddit.com/r/youtube/comments/82whs4/old_layout_option_gonegoogle_dead_to_me/?sort=confidence&amp;limit=500">Reddit</a>提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下：</p>
 <ol>
 <li>登入 YouTube 首頁。</li>
@@ -267,7 +269,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

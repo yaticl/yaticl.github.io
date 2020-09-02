@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -52,7 +53,7 @@
 <meta property="article:section" content="Linear algebra"/>
 <meta property="article:tag" content="Linear algebra"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Toeplitz Matrix</title>
 
@@ -83,7 +84,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -132,6 +133,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -147,7 +149,7 @@
 
 
   <div>
-    <h2>簡介</h2>
+    <h2 id="_1">簡介</h2>
 <p>Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。<br>
 對任一<span class="math">\(n \times n\)</span>的矩陣<span class="math">\(\mathbf{A}\)</span>，可以表示成：</p>
 <div class="math">$$\mathbf{A}=\begin{bmatrix}  
@@ -159,7 +161,7 @@ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0
 \end{bmatrix},$$</div>
 <p>其通式可以寫成：</p>
 <div class="math">$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$</div>
-<h2>範例</h2>
+<h2 id="_2">範例</h2>
 <p>Scipy 中有實作創造 Toeplitz matrix：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">toeplitz</span>
 <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># c 為指定矩陣的第一行</span>
@@ -185,7 +187,7 @@ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0
 
 
 <p>可執行範例在我的<a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary">Jupyter Notebook</a></p>
-<h2>Convolution</h2>
+<h2 id="convolution">Convolution</h2>
 <p>convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。<span class="math">\(h\)</span>與<span class="math">\(x\)</span>的 convolution 可以表示成：</p>
 <div class="math">$$y=h\ast x=\begin{bmatrix}  
 h_1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\  
@@ -204,7 +206,7 @@ x_3 \\
 \vdots \\  
 x_n  
 \end{bmatrix}$$</div>
-<h2>參考</h2>
+<h2 id="_3">參考</h2>
 <p><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html">Scipy</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Toeplitz_matrix">維基百科</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -336,7 +338,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

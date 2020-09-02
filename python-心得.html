@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -53,7 +54,7 @@
 <meta property="article:tag" content="Python"/>
 <meta property="article:tag" content="MATLAB"/>
 <meta property="article:tag" content="Anaconda"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Python 心得</title>
 
@@ -84,7 +85,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -133,6 +134,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -148,19 +150,19 @@
 
 
   <div>
-    <h1>Python</h1>
+    <h1 id="python">Python</h1>
 <p><a href="https://zh.wikipedia.org/zh-tw/Python">Python</a>是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。</p>
-<h2>為什麼我要選擇 Python？</h2>
+<h2 id="python_1">為什麼我要選擇 Python？</h2>
 <p>我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 Python。</p>
-<h2>Anaconda Distribution</h2>
-<h3>簡介</h3>
+<h2 id="anaconda-distribution">Anaconda Distribution</h2>
+<h3 id="_1">簡介</h3>
 <p><a href="https://www.anaconda.com/distribution/">Anaconda Distribution</a>是一個面相資料科學的免費 Python 發行版，收集了超過 1000 種的開源套件，並有自己的套件與環境管理工具，適合 Python 的新手使用，安裝方式很像 MATLAB，主程式 +Toolbox。</p>
 <p>Anaconda 對 Windows、macOS 與 Linux 都有提供支援，同時支援 Python 2 和 Python 3，安裝包預裝超過 150 個套件，並可以選擇性安裝開源的 IDE <a href="https://github.com/spyder-ide/spyder-docs">Spyder</a>或是<a href="https://code.visualstudio.com/">Visual Studio Code</a>，但是也可以搭配任何支援 Python 的開發環境或是編輯器使用，可以選自己喜歡的用法，像我目前偏好搭配 Visual Studio Code 使用，因為它輕量且與<a href="https://git-scm.com/">Git</a>整合度高。</p>
-<h3>Conda</h3>
+<h3 id="conda">Conda</h3>
 <p><a href="https://conda.io">conda</a>是 Anaconda 自帶的套件管理工具，conda 的用法，官方有提供簡單上手的表格如下</p>
 <p><img alt="conda_1" src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&amp;height=1024&amp;cropmode=none"></p>
 <p><img alt="conda_2" src="https://scuseg.bn.files.1drv.com/y4mwoS4LZkGNLbw296g_0dLumzjGWs1cm3sCbg1mLU7bL1t36xB9MNyoBCN5VvleLo32IjI9F1dmQtMMH2E6DmpfWJnDo9wIJkO0qaebMHH4T16af6WlMEl3VQT2Rjo1JdO3ERaN5HgjIOXXdHMBACu5afCPnAn3TsYShI1rpTcX9Bzx-WdKLt0DYi0P6AovfOZPAYkV3BeHT2L5Keo3BfPIA?width=970&amp;height=1024&amp;cropmode=none"></p>
-<h2>常用套件</h2>
+<h2 id="_2">常用套件</h2>
 <table>
 <thead>
 <tr>
@@ -283,7 +285,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

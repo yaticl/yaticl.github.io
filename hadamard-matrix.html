@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -53,7 +54,7 @@
 <meta property="article:tag" content="Linear algebra"/>
 <meta property="article:tag" content="Digital signal processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Hadamard Matrix</title>
 
@@ -84,7 +85,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -133,6 +134,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -148,15 +150,15 @@
 
 
   <div>
-    <h2>簡介</h2>
+    <h2 id="_1">簡介</h2>
 <p>Hadamard matrix 是一種只包含<span class="math">\((-1,+1)\)</span>的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。<br>
 當要畫出該矩陣時，定義<span class="math">\(+1\)</span>代表黑色，而<span class="math">\(-1\)</span>代表白色。</p>
-<h2>特性</h2>
+<h2 id="_2">特性</h2>
 <p><span class="math">\({n \times n}\)</span>的 Hadamard matrix <span class="math">\(H_n\)</span>會有<span class="math">\(n \frac{n(n-1)}{2}\)</span>個<span class="math">\((-1)\)</span>方塊以及<span class="math">\(\frac{n(n+1)}{2}\)</span>個<span class="math">\((+1)\)</span>的方塊。<br>
 令<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則其定義為：</p>
 <div class="math">$$H_n{H_n}^T=nI_n,$$</div>
 <p>其中<span class="math">\(I_n\)</span>為<span class="math">\(n \times n\)</span>的單位矩陣。</p>
-<h2>Sylvester's construction<a href="#Sylvester's-construction">¶</a></h2>
+<h2 id="sylvesters-construction">Sylvester's construction<a href="#Sylvester's-construction">¶</a></h2>
 <p>假設<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則可以藉由分區矩陣：</p>
 <div class="math">$$\begin{bmatrix}  
 H &amp; H \\  
@@ -168,7 +170,7 @@ H_{2^{k-1}} &amp; H_{2^{k-1}} \\
 H_{2^{k-1}} &amp; -H_{2^{k-1}}  
 \end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$</div>
 <p>其中<span class="math">\(\otimes\)</span>為 Kronecker product。</p>
-<h2>範例<a href="# 範例 ">¶</a></h2>
+<h2 id="_3">範例<a href="# 範例 ">¶</a></h2>
 <p>在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為<span class="math">\(2\)</span>的次方整數，回傳<span class="math">\(n\)</span>階的 Hadamard matrix，以下為文件中的範例：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">hadamard</span>
@@ -197,7 +199,7 @@ H_{2^{k-1}} &amp; -H_{2^{k-1}}
 
 <p><img alt="hadamard" src="https://v1fwjw.bn.files.1drv.com/y4mVd32PWKQoA040t--2Tf5ZCpl9AqN-PfkBF1xp3lflMYXWGF1gQS6ppC1B4UPOoTQNqmjTL0nBdhXw5OSSFu10vlh0iToLTDNMST_Pq2cZ_w3jz1lrYmiPThKaeco-X6X8NiEx9ZcT3l0wvYmIvpLSvcVM9KTMvGgxqbdjB8LvepuF4Y79n_x0-Allhc6EMStzigYbdv3kvnvQNmHAOYxOw?width=266&amp;height=252&amp;cropmode=none"></p>
 <p>可執行範例可以參考我的<a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary">Jupyter notebook</a></p>
-<h2>參考</h2>
+<h2 id="_4">參考</h2>
 <p><a href="http://mathworld.wolfram.com/HadamardMatrix.html">Hadamard Matrix</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Hadamard_matrix">維基百科</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -330,7 +332,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

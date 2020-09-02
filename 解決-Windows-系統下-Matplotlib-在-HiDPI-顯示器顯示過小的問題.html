@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -53,7 +54,7 @@
 <meta property="article:tag" content="Python"/>
 <meta property="article:tag" content="Tips"/>
 <meta property="article:tag" content="Windows"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</title>
 
@@ -84,7 +85,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -133,6 +134,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -148,10 +150,10 @@
 
 
   <div>
-    <h2>前言</h2>
+    <h2 id="_1">前言</h2>
 <p>由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。</p>
 <p><strong>更新</strong>：新增如何在 Qt5 中啟用 DPI 縮放的功能。</p>
-<h2>方法一：啟用 Qt5 中的 DPI 縮放功能</h2>
+<h2 id="qt5dpi">方法一：啟用 Qt5 中的 DPI 縮放功能</h2>
 <p><strong>如何啟用 Qt5 DPI scaling 的範例 code：</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 需要先 import matplotlib 的 backend Qt5</span>
 <span class="kn">import</span> <span class="nn">PyQt5</span> <span class="k">as</span> <span class="nn">qt</span>
@@ -161,7 +163,7 @@
 </code></pre></div>
 
 
-<h2>方法二：替換 Matplotlib 的 backend</h2>
+<h2 id="matplotlibbackend">方法二：替換 Matplotlib 的 backend</h2>
 <p><strong>此為如何將 backend 從預設的 Qt5 替換為 Tk 的範例 code：</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -171,7 +173,7 @@
 
 
 <p>Tk 為 Python 內建的原生 UI，可以隨著 Windows 的設定來縮放，不過可能是因為用 bilinear 來縮放，某些影像 rendering 可能會有 aliasing，手動調整視窗大小可以改善此瑕疵。</p>
-<h2>參考資料</h2>
+<h2 id="_2">參考資料</h2>
 <ol>
 <li><a href="https://coad.ca/2017/05/15/one-way-to-deal-with-high-dpi-4k-screens-in-python/">One way to deal with High DPI (4k) Screens in Python</a></li>
 <li>關於 Matplotlib backend 的詳細資料與還有哪些 backend 能替換，可以閱讀官網上的<a href="https://matplotlib.org/faq/usage_faq.html#what-is-a-backend">說明</a>。</li>
@@ -244,7 +246,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

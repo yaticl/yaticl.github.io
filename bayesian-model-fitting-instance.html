@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -53,7 +54,7 @@
 <meta property="article:tag" content="Statistical Optics"/>
 <meta property="article:tag" content="Bayesian"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 貝氏模型擬合範例 (Bayesian Model Fitting Instance)</title>
 
@@ -84,7 +85,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -133,6 +134,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -149,12 +151,12 @@
 
   <div>
     <p>一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。</p>
-<h2>Bayes rule</h2>
+<h2 id="bayes-rule">Bayes rule</h2>
 <p>定義一個 likelihood <span class="math">\(P(D | M)\)</span>，其中<span class="math">\(D\)</span>為來自於 model <span class="math">\(M\)</span>的實驗數據。</p>
 <p>基於預期知識<span class="math">\(C\)</span>，定義一個 model <span class="math">\(M\)</span>的 prior <span class="math">\(P(M | C)\)</span>，其中 model <span class="math">\(M\)</span>包含一些我們想要找的參數。</p>
 <p>則由 Bayes' theorem 可以得知 posterior：</p>
 <div class="math">$$P(M \| D) \propto P(M | C)P(D | M).$$</div>
-<h2>Linear models</h2>
+<h2 id="linear-models">Linear models</h2>
 <p>假設有一個感測器，其量測到的信號被一個高斯雜訊影響，則可以將信號產生模型寫成 : <span class="math">\(y=a + noise\)</span>，其中<span class="math">\(y\)</span>為量測到的 data，<span class="math">\(a\)</span>是模型的參數。</p>
 <p>首先我們先產生人造的 data：</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -210,7 +212,7 @@
 
 
 <p>只藉由少量的 data，可以發現機率最高的參數已經接近我們的真實信號產生模型參數，其中 likelihood 是只利用所量測到的 data 估計模型參數，而 posterior 是加入 prior 修正後的結果或是妥協，如果 data 愈多，則會傾向於相信 data。</p>
-<h2>Grid search for two variables</h2>
+<h2 id="grid-search-for-two-variables">Grid search for two variables</h2>
 <p>若我們不知道雜訊的標準差，則也需要將雜訊的標準差加入為需要尋找的模型參數。</p>
 <p>舉例來說，一個信號<span class="math">\(x\)</span>會在感測器上有<span class="math">\(a\)</span>的增益，但是量測到的信號會被雜訊所影響，則模型可以寫成：<span class="math">\(y=a \times x + noise\)</span></p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span>   <span class="o">=</span> <span class="mi">2</span> <span class="c1"># true a</span>
@@ -284,7 +286,7 @@
 
 <p>最後我們就能得到最佳的參數組合。</p>
 <p>可執行範例放在我的 Azure Notebook <a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"><img alt="" src="https://notebooks.azure.com/launch.png"></a></p>
-<h2>Reference</h2>
+<h2 id="reference">Reference</h2>
 <p><a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html">ONBI - Bayesian model fitting practical</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -416,7 +418,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

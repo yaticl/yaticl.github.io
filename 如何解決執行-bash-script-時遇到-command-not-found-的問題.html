@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -54,7 +55,7 @@
 <meta property="article:tag" content="Shell scripts"/>
 <meta property="article:tag" content="Linux"/>
 <meta property="article:tag" content="Windows Subsystem for Linux"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 如何解決執行 bash script 時遇到 &#34; &#39;\r&#39;: command not found&#34; 的問題</title>
 
@@ -85,7 +86,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -134,6 +135,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -149,14 +151,14 @@
 
 
   <div>
-    <h2>前言</h2>
+    <h2 id="_1">前言</h2>
 <p>在使用<a href="https://docs.microsoft.com/zh-tw/windows/wsl/about">WSL</a>執行 bash script 有時會遇到像這樣的錯誤：</p>
 <div class="highlight"><pre><span></span><code>-bash: <span class="s1">&#39;\r&#39;</span>: <span class="nb">command</span> not found
 </code></pre></div>
 
 
 <p>經過搜尋之後在<a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile">stackoverflow</a>找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。</p>
-<h2>解決方法</h2>
+<h2 id="_2">解決方法</h2>
 <p>由 stackoverflow 提供的解答，方法為在 WSL 之中安裝<code>dos2unix</code>，以 Debian/Ubuntu 為範例，安裝方法為：</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install dos2unix
 </code></pre></div>
@@ -227,7 +229,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

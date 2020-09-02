@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -52,7 +53,7 @@
 <meta property="article:section" content="Digital Image Processing"/>
 <meta property="article:tag" content="Digital image processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 局部歸一化 (Local Normalization)</title>
 
@@ -83,7 +84,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -132,6 +133,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -147,9 +149,9 @@
 
 
   <div>
-    <h2>簡介</h2>
+    <h2 id="_1">簡介</h2>
 <p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
-<h2>實作</h2>
+<h2 id="_2">實作</h2>
 <p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
 <div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
 <p>其中</p>
@@ -160,7 +162,7 @@
 </ul>
 <p>local mean 與 variance 的估算通過 Gaussian filter，<span class="math">\(\sigma_1\)</span>與<span class="math">\(\sigma_2\)</span>是 Gaussian window size，用來控制 local mean 與 local variance，通常<span class="math">\(\sigma_2\)</span>應該大於<span class="math">\(\sigma_1\)</span>。</p>
 <p><img alt="diagram" src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&amp;height=137&amp;cropmode=none"></p>
-<h2>範例</h2>
+<h2 id="_3">範例</h2>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -204,7 +206,7 @@
 <p><img alt="imshow(img, 'gray')" src="https://cwt2mw.bn.files.1drv.com/y4mcJ6O5yWOwMTtvmA36mrgjZyCgb1_PPxRTwok3866UejR40eM7SChwYglxnJhj0OSPrKwUmO6f3mgq65E7FzwxqrEukMER8G2UDQFhd5ZauZ-wvYZ-Addf2HT2PUUoSthYbLvtfM5zqP791K2ZBntnJi3DcqtkVK3xtqh7omrSwhzAWtcrCQwwgpmfKrSDrjci1fFm1rMOEwYoiJWUROyWw?width=262&amp;height=264&amp;cropmode=none"></p>
 <p><img alt="imshow(normalized, 'gray')" src="https://pn8dpg.bn.files.1drv.com/y4muM2yxYQdJ-xl7Ozapjd7q4AB85C-t-jsb9roF_N-BCqIo9SMBEnO_GiVFg0ivmbHCZuT83f8wE97-YngO7UM7Y1tgBVJp0C-7wkvv7yKjj2NUCHwuHwZVqR9_zZzlbM2IByXHClPZi7NwpOWXvdrKVebkdTy7DaG9ist5YuKdLCFUu6tWPs0QZCJuFeKA8LHwKr58Omc6nvMib62_DAeOw?width=262&amp;height=264&amp;cropmode=none"></p>
 <p>可執行範例放在我的 Azure Notebook<a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"><img alt="" src="https://notebooks.azure.com/launch.png"></a></p>
-<h2>參考</h2>
+<h2 id="_4">參考</h2>
 <p><a href="http://bigwww.epfl.ch/sage/soft/localnormalization/">Local Normalization</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -335,7 +337,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

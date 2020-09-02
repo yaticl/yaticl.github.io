@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -52,7 +53,7 @@
 <meta property="article:section" content="Digital Image Processing"/>
 <meta property="article:tag" content="Digital image processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 直方圖等化 (Histogram Equalization)</title>
 
@@ -83,7 +84,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -132,6 +133,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -150,7 +152,7 @@
     <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
 <p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
 <p>希望影像的強度值分布變得比較均勻。</p>
-<h2>數學理論</h2>
+<h2 id="_1">數學理論</h2>
 <p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
 <div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
 <p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
@@ -162,7 +164,7 @@
 <div class="math">$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$</div>
 <p>假設<span class="math">\(p_y(k)=C=\frac{1}{i_{min}-i_{max}}\)</span>，則</p>
 <div class="math">$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$</div>
-<h2>局部直方圖等化 (Local Histogram Equalization)</h2>
+<h2 id="local-histogram-equalization">局部直方圖等化 (Local Histogram Equalization)</h2>
 <p>一般的直方圖等化是對整張影像做，通常新的直方圖只會是大概線性的 CDF，因此後來有一種局部版本的直方圖等化，使 CDF 更加的線性。在 scikit-image 有實作此方法，範例如下：</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
@@ -242,7 +244,7 @@
 
 
 <p><img alt="" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;height=350&amp;cropmode=none"></p>
-<h2>參考</h2>
+<h2 id="_2">參考</h2>
 <p><a href="https://en.wikipedia.org/wiki/Histogram_equalization">Histogram equalization</a></p>
 <p><a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py">Local Histogram Equalization</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -374,7 +376,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

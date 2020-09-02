@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -43,7 +44,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://blog.ya-ti.ml"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog</title>
 
@@ -74,7 +75,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -123,6 +124,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -182,7 +184,7 @@
   </header>
   <div>
         <img src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&height=214&cropmode=none">
-      <h2>簡介</h2>
+      <h2 id="_1">簡介</h2>
 <p>Maximum-Length Sequence (MLS) 是一種二值序列，長度<span class="math">\(P=2^N-1\)</span>，其中<span class="math">\(N\)</span>代表整數。MLS 可以利用以下的關係式遞迴產生：</p>
 <div class="math">$$n(k+3)=n(k) \oplus n(k+2),$$</div>
 <p>其中<span class="math">\(\oplus\)</span>代表 XOR 運算。若將將產生出來的<span class="math">\(0,1\)</span>邏輯值由下式轉換成<span class="math">\(1,-1\)</span>，則為 MLS 訊號：</p>
@@ -190,7 +192,7 @@
 <p><br>
 </p>
 <div class="math">$$1 \rightarrow -1.$$</div>
-<h2>性質</h2>
+<h2 id="_2">性質</h2>
 <p>在 MLS 當中，<span class="math">\(0\)</span>與<span class="math">\(1 …</span></p>
         <br>
         <a class="btn"
@@ -211,7 +213,7 @@
     </p>
   </header>
   <div>
-      <h2>簡介</h2>
+      <h2 id="_1">簡介</h2>
 <p>Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。<br>
 對任一<span class="math">\(n \times n\)</span>的矩陣<span class="math">\(\mathbf{A}\)</span>，可以表示成：</p>
 <div class="math">$$\mathbf{A}=\begin{bmatrix}  
@@ -241,10 +243,10 @@ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0
   </header>
   <div>
         <img src="https://v1fwjw.bn.files.1drv.com/y4mVd32PWKQoA040t--2Tf5ZCpl9AqN-PfkBF1xp3lflMYXWGF1gQS6ppC1B4UPOoTQNqmjTL0nBdhXw5OSSFu10vlh0iToLTDNMST_Pq2cZ_w3jz1lrYmiPThKaeco-X6X8NiEx9ZcT3l0wvYmIvpLSvcVM9KTMvGgxqbdjB8LvepuF4Y79n_x0-Allhc6EMStzigYbdv3kvnvQNmHAOYxOw?width=266&height=252&cropmode=none">
-      <h2>簡介</h2>
+      <h2 id="_1">簡介</h2>
 <p>Hadamard matrix 是一種只包含<span class="math">\((-1,+1)\)</span>的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。<br>
 當要畫出該矩陣時，定義<span class="math">\(+1\)</span>代表黑色，而<span class="math">\(-1\)</span>代表白色。</p>
-<h2>特性</h2>
+<h2 id="_2">特性</h2>
 <p><span class="math">\({n \times n}\)</span>的 Hadamard matrix <span class="math">\(H_n\)</span>會有<span class="math">\(n \frac{n(n-1)}{2}\)</span>個<span class="math">\((-1)\)</span>方塊以及<span class="math">\(\frac{n(n+1)}{2}\)</span>個<span class="math">\((+1)\)</span>的方塊。<br>
 令<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則其定義為 …</p>
         <br>
@@ -282,7 +284,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>

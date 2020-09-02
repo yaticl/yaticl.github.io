@@ -28,10 +28,11 @@
   <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
 
 
+    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000//icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -52,7 +53,7 @@
 <meta property="article:section" content="Digital Image Processing"/>
 <meta property="article:tag" content="Digital Image Processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="http://localhost:8000//images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 二維離散小波轉換 (2D Discrete Wavelet Transform)</title>
 
@@ -83,7 +84,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="http://localhost:8000//images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -132,6 +133,7 @@
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -147,9 +149,9 @@
 
 
   <div>
-    <h2>簡介</h2>
+    <h2 id="_1">簡介</h2>
 <p>小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。</p>
-<h2>實作</h2>
+<h2 id="_2">實作</h2>
 <p>一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2<br>
 <img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;height=405&amp;cropmode=none"></p>
 <p><span class="math">\(cA_{i}\)</span>:approximation coefficients at level <span class="math">\(i\)</span></p>
@@ -157,7 +159,7 @@
 <p><span class="math">\(cV_{i}\)</span>:vertical coefficients at level <span class="math">\(i\)</span></p>
 <p><span class="math">\(cD_{i}\)</span>:diagonal coefficients at level <span class="math">\(i\)</span></p>
 <p>初始<span class="math">\(cA\_0\)</span>為原始影像。</p>
-<h2>範例</h2>
+<h2 id="_3">範例</h2>
 <p>PyWavelets 是一個 Python 的小波函式庫，可以實現多維小波轉換，其中影像的一階離散小波轉換的範例如下：</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">pywt</span> <span class="k">as</span> <span class="nn">pt</span>
@@ -204,7 +206,7 @@
 <p><img alt="" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;height=264&amp;cropmode=none"></p>
 <p><img alt="" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;height=462&amp;cropmode=none"></p>
 <p>可執行範例放在我的 Azure Notebook <a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"><img alt="" src="https://notebooks.azure.com/launch.png"></a></p>
-<h2>參考</h2>
+<h2 id="_4">參考</h2>
 <p><a href="https://www.mathworks.com/help/wavelet/ref/dwt2.html">Mathwork</a></p>
 <p><a href="https://pywavelets.readthedocs.io/en/latest/#main-features">PyWavelets</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -336,7 +338,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "http://localhost:8000//images/profile.jpg",
   "description": ""
 }
 </script>
