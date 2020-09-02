@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - 架站相關</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/jia-zhan-xiang-guan.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-02T15:50:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-02T15:50:00+08:00</published><updated>2020-09-02T15:50:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-02:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;由於最近我在免費主機上架的 WordPress 網站，可靠性愈來愈差了，自動更新版本常常失敗，新的外掛也裝不上去，網站連線速度也不快，不過畢竟是免費的主機，可靠性本來就無法保證，因此興起了將網站搬家的念頭。
+因為我的網站都是靜態的內容為主，所以想要將網站架在&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;上。
+由於我對 Python 比較熟悉，所以決定使用&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;來生成靜態網站。
+網站遷移成功之後就來記錄一下搬家的心得。&lt;/p&gt;
+&lt;h2 id="pelican"&gt;使用 Pelican&lt;/h2&gt;
+&lt;p&gt;Pelican 是一個用 Python 寫的靜態網站產生器，以 reStructuredText 或是 Markdown 格式來寫內容，支援自訂主題與擴充功能。
+Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs.getpelican.com/en/stable/install.html"&gt;安裝&lt;/a&gt;，因為我對 Markdown 比較熟悉，所以安裝 Markdown 版本。
+新增 Pelican …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;由於最近我在免費主機上架的 WordPress 網站，可靠性愈來愈差了，自動更新版本常常失敗，新的外掛也裝不上去，網站連線速度也不快，不過畢竟是免費的主機，可靠性本來就無法保證，因此興起了將網站搬家的念頭。
+因為我的網站都是靜態的內容為主，所以想要將網站架在&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;上。
+由於我對 Python 比較熟悉，所以決定使用&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;來生成靜態網站。
+網站遷移成功之後就來記錄一下搬家的心得。&lt;/p&gt;
+&lt;h2 id="pelican"&gt;使用 Pelican&lt;/h2&gt;
+&lt;p&gt;Pelican 是一個用 Python 寫的靜態網站產生器，以 reStructuredText 或是 Markdown 格式來寫內容，支援自訂主題與擴充功能。
+Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs.getpelican.com/en/stable/install.html"&gt;安裝&lt;/a&gt;，因為我對 Markdown 比較熟悉，所以安裝 Markdown 版本。
+新增 Pelican 專案可以參考官方&lt;a href="https://docs.getpelican.com/en/stable/install.html#kickstart-your-site"&gt;文件&lt;/a&gt;，網站基本結構如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;yourproject/&lt;/span&gt;
+&lt;span class="err"&gt;├── content&lt;/span&gt;
+&lt;span class="err"&gt;│   └── pages&lt;/span&gt;
+&lt;span class="err"&gt;│   └── (articles)&lt;/span&gt;
+&lt;span class="err"&gt;├── output&lt;/span&gt;
+&lt;span class="err"&gt;├── pelicanconf.py       # Main settings file&lt;/span&gt;
+&lt;span class="err"&gt;└── publishconf.py       # Settings to use when ready to publish&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pelican 的內容分為兩種，其中 pages 為跟時間順序無關的靜態內容，而 articles 是跟有時間順序的內容。
+&lt;code&gt;pelicanconf.py&lt;/code&gt;是生成網站用的設定檔案，&lt;code&gt;publishconf.py&lt;/code&gt;是發行網站用的設定檔案。&lt;/p&gt;
+&lt;p&gt;內容的檔案都需要在開頭加入 metadata，用來正確的生成網站結構，其中 Markdown 的格式為：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="kd"&gt;super&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;publishing&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kd"&gt;super&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
+&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Alexis&lt;/span&gt; &lt;span class="n"&gt;Metaireau&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Conan&lt;/span&gt; &lt;span class="n"&gt;Doyle&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;feeds&lt;/span&gt;
+
+&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt; &lt;span class="kd"&gt;super&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在發行網站前，可以先用以下命令先在&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;測試網站功能，詳細說明可以參考&lt;a href="https://docs.getpelican.com/en/stable/publish.html"&gt;文件&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican --autoreload --listen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="wordpress"&gt;匯入 WordPress 網站內容&lt;/h2&gt;
+&lt;p&gt;Pelican 有提供&lt;a href="https://docs.getpelican.com/en/stable/importer.html#import"&gt;匯入工具&lt;/a&gt;&lt;code&gt;pelican-import&lt;/code&gt;，可以將其他網站的內容轉換成 Markdown 或是 reStructuredText，期支援的格式包含&lt;strong&gt;WordPress XML&lt;/strong&gt;檔案。
+在使用&lt;code&gt;pelican-import&lt;/code&gt;之前需要先安裝一些相依性，包含&lt;strong&gt;BeautifulSoup4&lt;/strong&gt;、&lt;strong&gt;lxml&lt;/strong&gt;與&lt;strong&gt;Pandoc&lt;/strong&gt;。
+若要將&lt;strong&gt;WordPress XML&lt;/strong&gt;轉換為 Markdown 格式，使用方法為：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-import -m markdown --wpfile -o ~/output ~/posts.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;由於無法完美的轉換內容，所以匯入之後還是需要手動修復依些內容。&lt;/p&gt;</content><category term="架站相關"></category><category term="WordPress"></category><category term="Pelican"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
+&lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
+&lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
+&lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
+&lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 電子郵件驗證 " src="https://zerossl.com/assets/images/help_verify_domains_email_verification.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證 …&lt;/h3&gt;</summary><content type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
+&lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
+&lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
+&lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
+&lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 電子郵件驗證 " src="https://zerossl.com/assets/images/help_verify_domains_email_verification.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證&lt;/h3&gt;
+&lt;p&gt;第二種驗證方法是在網域供應商的後台新增一筆 DNS (CNAME) 紀錄。依照網頁上的指示新增一筆 CNAME 紀錄，由於 DNS 可能不會馬上生效，建議把 TTL 調成最短，設定完成後，點一下提供的連結看驗證是否生效了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="DNS 驗證 " src="https://zerossl.com/assets/images/help_verify_domains_dns_cname.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="3-http"&gt;3. HTTP 檔案上傳驗證&lt;/h3&gt;
+&lt;p&gt;第三個方法是 HTTP 檔上載驗證，下載提供的 txt 檔案，然後上傳到網站中的指定路徑，上傳成功後打開網址，檢查有沒有內容。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 檔案上傳驗證 " src="https://zerossl.com/assets/images/help_verify_domains_http_file_upload.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="ssl"&gt;上傳 SSL 憑證&lt;/h2&gt;
+&lt;p&gt;驗證成功後會生成 SSL 認證給你下載，之後到主機上的 cPanel 貼上剛剛取得的金鑰，&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 上傳 SSL" src="https://lculsg.bn.files.1drv.com/y4mPgENB51CiroUYLRNuCZxDS0FVuc0_KOwNx40ahEo7zoDFgV4f1tY_YyrzZhLDnhopc21CJJsc-2yEJXQ5cG1cCAnK32feTFynQByUV_mrvHaFjKkTCRkybJCAU_8thSNMlBQd9Lx_c2JfIumTKBmvi8LE6qgfRnVX0e_-KszoNjkUtSdfT4qdouq0JXuwGa4mGYl3KV2MVRVW3RwMC1Qug?width=773&amp;amp;height=1024&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;如此一來申請的網域就取得 SSL 憑證了。&lt;/p&gt;
+&lt;p&gt;最後一個重點是，此方法取得的 SSL 憑證效力只有 90 天，過期要重新認證，因此建議註冊帳號，讓認證快過期時發提醒給你。&lt;/p&gt;</content><category term="架站相關"></category><category term="SSL"></category></entry></feed>
