@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-02T15:50:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-02T15:50:00+08:00</published><updated>2020-09-02T15:50:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-02:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:15:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-02T15:50:00+08:00</published><updated>2020-09-02T15:50:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-02:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;由於最近我在免費主機上架的 WordPress 網站，可靠性愈來愈差了，自動更新版本常常失敗，新的外掛也裝不上去，網站連線速度也不快，不過畢竟是免費的主機，可靠性本來就無法保證，因此興起了將網站搬家的念頭。
 因為我的網站都是靜態的內容為主，所以想要將網站架在&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;上。
 由於我對 Python 比較熟悉，所以決定使用&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;來生成靜態網站。
@@ -150,7 +150,7 @@ Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺�
 因此我目前的工作流程都沒有因為是 ARM 處理器有太大的影響。
 我在辦公室是使用 Surface Dock 接上一個 4K 與一個 1200P 的螢幕，對於都是用內建 GPU 輸出顯示的 Surface 來說壓力較大，&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 辦公桌 " src="https://o96oeq.bn.files.1drv.com/y4mg8fUiXbWzluZ9UTW11zuEmWe8YxZFJFVvpN8NLfQtkrU-tkkcb6EBolODm2_2LyIP1Srg4nR2UOvlO_2vVuO3a7i991Mx6RZZ14-k_K0v_fPSMrB7Jh7XRkcgOe14iNWwIIk5JB_yUBzc7vm4lDP1Rwc8X4IYsT8v2uYzpniSCAR-qv13XMcqMwabuxLwTcRSE5VhavQyfCEtBGavp-f1g?width=1024&amp;amp;height=768&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;由於這一世代除了 Go 2 以外的 Surface，內建 GPU 性能比起以前孱弱的 Intel (U)HD 620 強不少，所以與圖形行性能相關體驗 Pro X 反而比起 Book 2 好，動畫再也不會掉幀數了。
+&lt;p&gt;由於這一世代除了 Go 2 以外的 Surface，內建 GPU 性能比起以前孱弱的 Intel (U)HD 620 強不少，所以與圖形性能相關體驗 Pro X 反而比起 Book 2 好，動畫再也不會掉幀數了。
 Pro X 的新設計還帶來了其他體驗的提升，因為 Pro X 的螢幕只比 Book 2 小 0.5 吋但是便攜性更高，出門負擔更低，並且比 Pro ( 第五代 ) 多支援 LTE 連網，所以只要有訊號的地方都能做事，可以更自由的選擇工作地點。&lt;/p&gt;
 &lt;h3 id="_9"&gt;日常體驗&lt;/h3&gt;
 &lt;p&gt;我日常對平板電腦的需求主要是上網、看影片與聽音樂，最常用的是 Edge、myTube! (Youtube)、bilibili (UWP) 與 Spotify ( 用 Edge 安裝成 PWA)，這些都是 ARM 原生，所以日常用的軟體體驗一如既往。
@@ -159,19 +159,19 @@ Pro X 支援全時連網，Instant On，按下電源鍵或是打開 Type Cover �
 可惜沒有想像中的完美，還是預設待機 11 小時候休眠，雖然這時間可以調整，但是有第二個閥值，待機時耗電超過 5% 還是會休眠，這是&lt;a href="https://docs.microsoft.com/zh-tw/windows-hardware/customize/power-settings/adaptive-hibernate"&gt;by design&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id="_10"&gt;電池續航力&lt;/h3&gt;
 &lt;p&gt;Pro X 官方宣稱典型使用方式最長可以使用 13 小時，由於機身較薄電池電量只有 38.2 Whr，實際續航力沒有想像中的優異。
-我最近一週當中會有一整天白天都外出使用，我的使用方式為全程都掛著 Teams，同時使用 Edge、VS Code、用 WSL 跑 Python 且會同時用藍芽耳機聽音樂，休息的時候會看一下影片，根據電池報告，這幾天的預估續航力都是約 7 個多小時，跟實際感覺差不多，下午的時候都是藍芽耳機先沒電 ( 耳機續航力標稱 5 小時 )。
+我最近一週當中會有一整天白天都外出使用，我的使用方式為全程都掛著 Teams，同時使用 Edge、VS Code、用 WSL 跑 Python 且會同時用藍芽耳機聽音樂，休息的時候會看一下影片，根據電池報告，這幾天的預估續航力都是約 7 個多小時，跟實際感覺差不多，下午的時候都是藍芽耳機先沒電 ( 耳機續航力標稱 6 小時 )。
 類似的使用方式電池報告預估的時間跟 Book 2 差不多，但是 Book 2 的電池有 75 Whr，明顯比用 Intel 處理器的 Pro 好。
 Pro X 支援快充，用隨附的 65W 充電器的確很快就充到 80% 以上，且支援 PD 充電，我用支援 45W 輸出的行動電源，充的也滿快。&lt;/p&gt;
 &lt;h2 id="x86"&gt;關於 X86 程式&lt;/h2&gt;
 &lt;p&gt;根據微軟的&lt;a href="https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-x86-emulation"&gt;說明&lt;/a&gt;，X86 程式應該是在執行的時候做 JIT binary translation，然後快取一段時間。由於是 JIT，當打開 X86 程式的時候，冷啟動會比原生的久，觀察工作管理員也可以發現，啟動的時候會占用較多的 CPU 和 RAM。
 像是 AIDA64 或是 Steam 這種比較小型的程式，用起來感覺很流暢，與原生的差異不是很大，但是像打開 Visual Studio 2019 (VS 2019) 這種大型的程式就不是這麼回事了。
-VS 2019 需要翻譯的時間需要比較長，也會占用很多 CPU 與 RAM，導致剛打開的時候用起來會很卡，但是翻譯完成後就會變流暢了。
-看起來 JIT 翻譯的方式不適合大型的程式，難怪 Apple 會引入安裝的時候翻譯，希望微軟之後也能跟上。
-關於相容性，我嘗試在 VS 2019 編譯一個 UWP 範例，目標平台選擇 ARM，居然可以成功編譯，且在 Debug 模式下執行程式，勉強也算能自產自銷吧 🤣。當然我認為這項功能只是用來平滑過渡到 ARM 上，不應該這種裝置的主要使用方式。&lt;/p&gt;
+VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，導致剛打開的時候用起來會很卡，但是編譯完成後就會變流暢了。
+看起來 JIT 編譯的方式不適合大型的程式，難怪 Apple 會引入安裝的時候編譯，希望微軟之後也能跟上。
+關於相容性，我嘗試在 VS 2019 編譯一個 UWP 範例，目標平台選擇 ARM，居然可以成功建置，且在 Debug 模式下執行程式，勉強也算能自產自銷吧 🤣。當然我認為這項功能只是用來平滑過渡到 ARM 上，不應該這種裝置的主要使用方式。&lt;/p&gt;
 &lt;h2 id="_11"&gt;總結&lt;/h2&gt;
 &lt;p&gt;Pro X 目前的體驗感受，算是比我預期的好，本來我只打算當個能用 Office 和 UWP 的 Edge book，後來發現可以做很多事，就直接拿來作為主力機了。
 到目前為止我認為 Pro X 是一台好機器，但是不適合所有人，而我剛好是目標人群。我覺得很多開發者其實對 Windows on ARM 是很有興趣，但是缺乏工具鏈，微軟你家的 .Net framework 都沒有原生支援，一堆 WinForms 和 WPF 程式是要怎麼搞原生。
-不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在 .Net 5 下支援 ARM64，微軟也推出支援 ARM 的 OpenJDK，甚至 Clang 也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;
+不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -363,7 +363,33 @@ VS 2019 需要翻譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;li&gt;
 &lt;p&gt;重新整理 YouTube，應該就能切換為舊版介面。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Tips"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2019-04-11T15:58:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><content type="html">&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.nctu.me/2018/07/python-%E5%BF%83%E5%BE%97/#Anaconda-Distribution"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Tips"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2020-09-07T15:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows PowerShell 有相容性問題，又覺得&lt;code&gt;CMD&lt;/code&gt;太 old school 了。
+初始化後，&lt;code&gt;%USERPROFILE%\Documents\&lt;/code&gt;下會多&lt;code&gt;PowerShell\&lt;/code&gt;和&lt;code&gt;WindowsPowerShell\&lt;/code&gt;兩個資料夾儲存設定檔案，前者個是屬於 PowerShell Core，後者是屬於 Windows PowerShell，由於後者的設定檔案會導致啟動的時候報錯，可以刪除。
+如果不喜歡每次打開 shell 都會自動啟用 base 環境，可以執行 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda config --set auto_activate_base False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來取消自動啟用。&lt;/p&gt;
+&lt;h2 id="anaconda-navigator"&gt;Anaconda Navigator&lt;/h2&gt;
 &lt;p&gt;Miniconda 裡面不包含 Anaconda Navigator，如果想用 Anaconda Navigator，這個圖形化管理介面來管理環境， 可以在&lt;code&gt;base&lt;/code&gt;環境中將它安裝回來，在文字介面的 Shell 輸入：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda install anaconda-navigator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

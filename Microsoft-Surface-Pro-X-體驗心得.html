@@ -244,7 +244,7 @@ Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺�
 因此我目前的工作流程都沒有因為是 ARM 處理器有太大的影響。
 我在辦公室是使用 Surface Dock 接上一個 4K 與一個 1200P 的螢幕，對於都是用內建 GPU 輸出顯示的 Surface 來說壓力較大，</p>
 <p><img alt=" 辦公桌 " src="https://o96oeq.bn.files.1drv.com/y4mg8fUiXbWzluZ9UTW11zuEmWe8YxZFJFVvpN8NLfQtkrU-tkkcb6EBolODm2_2LyIP1Srg4nR2UOvlO_2vVuO3a7i991Mx6RZZ14-k_K0v_fPSMrB7Jh7XRkcgOe14iNWwIIk5JB_yUBzc7vm4lDP1Rwc8X4IYsT8v2uYzpniSCAR-qv13XMcqMwabuxLwTcRSE5VhavQyfCEtBGavp-f1g?width=1024&amp;height=768&amp;cropmode=none"></p>
-<p>由於這一世代除了 Go 2 以外的 Surface，內建 GPU 性能比起以前孱弱的 Intel (U)HD 620 強不少，所以與圖形行性能相關體驗 Pro X 反而比起 Book 2 好，動畫再也不會掉幀數了。
+<p>由於這一世代除了 Go 2 以外的 Surface，內建 GPU 性能比起以前孱弱的 Intel (U)HD 620 強不少，所以與圖形性能相關體驗 Pro X 反而比起 Book 2 好，動畫再也不會掉幀數了。
 Pro X 的新設計還帶來了其他體驗的提升，因為 Pro X 的螢幕只比 Book 2 小 0.5 吋但是便攜性更高，出門負擔更低，並且比 Pro ( 第五代 ) 多支援 LTE 連網，所以只要有訊號的地方都能做事，可以更自由的選擇工作地點。</p>
 <h3 id="_9">日常體驗</h3>
 <p>我日常對平板電腦的需求主要是上網、看影片與聽音樂，最常用的是 Edge、myTube! (Youtube)、bilibili (UWP) 與 Spotify ( 用 Edge 安裝成 PWA)，這些都是 ARM 原生，所以日常用的軟體體驗一如既往。
@@ -253,19 +253,19 @@ Pro X 支援全時連網，Instant On，按下電源鍵或是打開 Type Cover �
 可惜沒有想像中的完美，還是預設待機 11 小時候休眠，雖然這時間可以調整，但是有第二個閥值，待機時耗電超過 5% 還是會休眠，這是<a href="https://docs.microsoft.com/zh-tw/windows-hardware/customize/power-settings/adaptive-hibernate">by design</a>。</p>
 <h3 id="_10">電池續航力</h3>
 <p>Pro X 官方宣稱典型使用方式最長可以使用 13 小時，由於機身較薄電池電量只有 38.2 Whr，實際續航力沒有想像中的優異。
-我最近一週當中會有一整天白天都外出使用，我的使用方式為全程都掛著 Teams，同時使用 Edge、VS Code、用 WSL 跑 Python 且會同時用藍芽耳機聽音樂，休息的時候會看一下影片，根據電池報告，這幾天的預估續航力都是約 7 個多小時，跟實際感覺差不多，下午的時候都是藍芽耳機先沒電 ( 耳機續航力標稱 5 小時 )。
+我最近一週當中會有一整天白天都外出使用，我的使用方式為全程都掛著 Teams，同時使用 Edge、VS Code、用 WSL 跑 Python 且會同時用藍芽耳機聽音樂，休息的時候會看一下影片，根據電池報告，這幾天的預估續航力都是約 7 個多小時，跟實際感覺差不多，下午的時候都是藍芽耳機先沒電 ( 耳機續航力標稱 6 小時 )。
 類似的使用方式電池報告預估的時間跟 Book 2 差不多，但是 Book 2 的電池有 75 Whr，明顯比用 Intel 處理器的 Pro 好。
 Pro X 支援快充，用隨附的 65W 充電器的確很快就充到 80% 以上，且支援 PD 充電，我用支援 45W 輸出的行動電源，充的也滿快。</p>
 <h2 id="x86">關於 X86 程式</h2>
 <p>根據微軟的<a href="https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-x86-emulation">說明</a>，X86 程式應該是在執行的時候做 JIT binary translation，然後快取一段時間。由於是 JIT，當打開 X86 程式的時候，冷啟動會比原生的久，觀察工作管理員也可以發現，啟動的時候會占用較多的 CPU 和 RAM。
 像是 AIDA64 或是 Steam 這種比較小型的程式，用起來感覺很流暢，與原生的差異不是很大，但是像打開 Visual Studio 2019 (VS 2019) 這種大型的程式就不是這麼回事了。
-VS 2019 需要翻譯的時間需要比較長，也會占用很多 CPU 與 RAM，導致剛打開的時候用起來會很卡，但是翻譯完成後就會變流暢了。
-看起來 JIT 翻譯的方式不適合大型的程式，難怪 Apple 會引入安裝的時候翻譯，希望微軟之後也能跟上。
-關於相容性，我嘗試在 VS 2019 編譯一個 UWP 範例，目標平台選擇 ARM，居然可以成功編譯，且在 Debug 模式下執行程式，勉強也算能自產自銷吧 🤣。當然我認為這項功能只是用來平滑過渡到 ARM 上，不應該這種裝置的主要使用方式。</p>
+VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，導致剛打開的時候用起來會很卡，但是編譯完成後就會變流暢了。
+看起來 JIT 編譯的方式不適合大型的程式，難怪 Apple 會引入安裝的時候編譯，希望微軟之後也能跟上。
+關於相容性，我嘗試在 VS 2019 編譯一個 UWP 範例，目標平台選擇 ARM，居然可以成功建置，且在 Debug 模式下執行程式，勉強也算能自產自銷吧 🤣。當然我認為這項功能只是用來平滑過渡到 ARM 上，不應該這種裝置的主要使用方式。</p>
 <h2 id="_11">總結</h2>
 <p>Pro X 目前的體驗感受，算是比我預期的好，本來我只打算當個能用 Office 和 UWP 的 Edge book，後來發現可以做很多事，就直接拿來作為主力機了。
 到目前為止我認為 Pro X 是一台好機器，但是不適合所有人，而我剛好是目標人群。我覺得很多開發者其實對 Windows on ARM 是很有興趣，但是缺乏工具鏈，微軟你家的 .Net framework 都沒有原生支援，一堆 WinForms 和 WPF 程式是要怎麼搞原生。
-不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在 .Net 5 下支援 ARM64，微軟也推出支援 ARM 的 OpenJDK，甚至 Clang 也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。</p>
+不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在<a href="https://github.com/dotnet/runtime/issues/36699">.Net 5 下支援 ARM64</a>，微軟也推出<a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/">支援 ARM 的 OpenJDK</a>，甚至<a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm">Clang</a>也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

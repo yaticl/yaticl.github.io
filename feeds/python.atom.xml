@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Python</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/python.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2019-04-23T20:05:00+08:00</updated><entry><title>如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</title><link href="https://blog.ya-ti.ml/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2019-04-23T20:05:00+08:00</published><updated>2019-04-23T20:05:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Python</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/python.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:15:00+08:00</updated><entry><title>如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</title><link href="https://blog.ya-ti.ml/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2019-04-23T20:05:00+08:00</published><updated>2019-04-23T20:05:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
 &lt;p&gt;由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;：新增如何在 Qt5 中啟用 DPI 縮放的功能。&lt;/p&gt;
 &lt;h2 id="qt5dpi"&gt;方法一：啟用 Qt5 中的 DPI 縮放功能&lt;/h2&gt;
@@ -32,7 +32,33 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://coad.ca/2017/05/15/one-way-to-deal-with-high-dpi-4k-screens-in-python/"&gt;One way to deal with High DPI (4k) Screens in Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;關於 Matplotlib backend 的詳細資料與還有哪些 backend 能替換，可以閱讀官網上的&lt;a href="https://matplotlib.org/faq/usage_faq.html#what-is-a-backend"&gt;說明&lt;/a&gt;。&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Python"></category><category term="Python"></category><category term="Tips"></category><category term="Windows"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2019-04-11T15:58:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><content type="html">&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.nctu.me/2018/07/python-%E5%BF%83%E5%BE%97/#Anaconda-Distribution"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Python"></category><category term="Python"></category><category term="Tips"></category><category term="Windows"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2020-09-07T15:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows PowerShell 有相容性問題，又覺得&lt;code&gt;CMD&lt;/code&gt;太 old school 了。
+初始化後，&lt;code&gt;%USERPROFILE%\Documents\&lt;/code&gt;下會多&lt;code&gt;PowerShell\&lt;/code&gt;和&lt;code&gt;WindowsPowerShell\&lt;/code&gt;兩個資料夾儲存設定檔案，前者個是屬於 PowerShell Core，後者是屬於 Windows PowerShell，由於後者的設定檔案會導致啟動的時候報錯，可以刪除。
+如果不喜歡每次打開 shell 都會自動啟用 base 環境，可以執行 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda config --set auto_activate_base False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來取消自動啟用。&lt;/p&gt;
+&lt;h2 id="anaconda-navigator"&gt;Anaconda Navigator&lt;/h2&gt;
 &lt;p&gt;Miniconda 裡面不包含 Anaconda Navigator，如果想用 Anaconda Navigator，這個圖形化管理介面來管理環境， 可以在&lt;code&gt;base&lt;/code&gt;環境中將它安裝回來，在文字介面的 Shell 輸入：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda install anaconda-navigator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
