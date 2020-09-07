@@ -169,13 +169,21 @@
     </p>
   </header>
   <div>
-      <p>對剛入們 Python 的人，安裝整個<a href="https://blog.ya-ti.nctu.me/2018/07/python-%E5%BF%83%E5%BE%97/#Anaconda-Distribution">Anaconda Distribution</a>是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>，它只會安裝最基本 conda 管理工具。</p>
-<p>Miniconda 裡面不包含 Anaconda Navigator，如果想用 Anaconda Navigator，這個圖形化管理介面來管理環境， 可以在<code>base</code>環境中將它安裝回來，在文字介面的 Shell 輸入：</p>
-<div class="highlight"><pre><span></span><code>conda install anaconda-navigator
+      <h2 id="_1">簡介</h2>
+<p>對剛入們 Python 的人，安裝整個<a href="https://blog.ya-ti.ml/python-心得.html">Anaconda Distribution</a>是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>，它只會安裝最基本 conda 管理工具。</p>
+<h2 id="_2">初始化</h2>
+<p>安裝完成後可以執行 (conda &gt; 4.6.12):</p>
+<div class="highlight"><pre><span></span><code>conda init
 </code></pre></div>
 
 
-<p>如此就能簡單的安裝完成了。</p>
+<p>來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github.com/PowerShell/PowerShell/">(PowerShell Core)</a>，原因是因為<code>conda activate</code>和 Windows …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/miniconda.html#miniconda">
+          繼續閱讀
+        </a>
   </div>
   <hr />
 </article>

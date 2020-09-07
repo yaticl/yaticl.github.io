@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-01T17:30:00+08:00</updated><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:15:00+08:00</updated><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;我是一位 Microsoft Surface 系列產品的長期使用者，每當微軟推出新型態的裝置時，如果有機會都想體驗一下。
 微軟在 2019 的秋季發表會中推出了 Surface Pro X，是微軟首次親自推出的全時連網電腦 (Always-Connected PC)，根據微軟的&lt;a href="https://www.youtube.com/watch?v=ucxShAm5660"&gt;工程說明&lt;/a&gt;，該裝置為 2-in-1 型態的重新思考，並且再次嘗試搭載了 ARM 指令集的處理器。
 雖然 Windows on ARM 的軟體支援度一直被媒體詬病，但是這件事從發表的時候就是已知，很多媒體也只是再講一次早就知道的事情，而且因為使用方式不同，某些方面無法提供我想要知道的資訊。由於很想知道台裝置的能耐，因此趁著近期的優惠想買來體驗一番。
@@ -307,7 +307,33 @@ VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;li&gt;
 &lt;p&gt;重新整理 YouTube，應該就能切換為舊版介面。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Tips"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2019-04-11T15:58:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><content type="html">&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.nctu.me/2018/07/python-%E5%BF%83%E5%BE%97/#Anaconda-Distribution"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Tips"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2020-09-07T15:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
+&lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
+&lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
+Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://github.com/PowerShell/PowerShell/"&gt;(PowerShell Core)&lt;/a&gt;，原因是因為&lt;code&gt;conda activate&lt;/code&gt;和 Windows PowerShell 有相容性問題，又覺得&lt;code&gt;CMD&lt;/code&gt;太 old school 了。
+初始化後，&lt;code&gt;%USERPROFILE%\Documents\&lt;/code&gt;下會多&lt;code&gt;PowerShell\&lt;/code&gt;和&lt;code&gt;WindowsPowerShell\&lt;/code&gt;兩個資料夾儲存設定檔案，前者個是屬於 PowerShell Core，後者是屬於 Windows PowerShell，由於後者的設定檔案會導致啟動的時候報錯，可以刪除。
+如果不喜歡每次打開 shell 都會自動啟用 base 環境，可以執行 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda config --set auto_activate_base False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;來取消自動啟用。&lt;/p&gt;
+&lt;h2 id="anaconda-navigator"&gt;Anaconda Navigator&lt;/h2&gt;
 &lt;p&gt;Miniconda 裡面不包含 Anaconda Navigator，如果想用 Anaconda Navigator，這個圖形化管理介面來管理環境， 可以在&lt;code&gt;base&lt;/code&gt;環境中將它安裝回來，在文字介面的 Shell 輸入：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda install anaconda-navigator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

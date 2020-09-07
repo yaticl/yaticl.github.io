@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/tags.html</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/categories.html</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/authors.html</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/archives.html</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/search.html</loc>
-<lastmod>2020-09-06T11:34:44-00:00</lastmod>
+<lastmod>2020-09-07T15:29:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -96,7 +96,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/miniconda.html</loc>
-<lastmod>2019-04-11T15:58:00+08:00</lastmod>
+<lastmod>2020-09-07T15:15:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -250,7 +250,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/category/python.html</loc>
-<lastmod>2019-04-23T20:05:00+08:06</lastmod>
+<lastmod>2020-09-07T15:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -355,7 +355,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/tag/python.html</loc>
-<lastmod>2019-04-23T20:05:00+08:06</lastmod>
+<lastmod>2020-09-07T15:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -376,7 +376,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/tag/anaconda.html</loc>
-<lastmod>2019-04-11T15:58:00+08:06</lastmod>
+<lastmod>2020-09-07T15:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -467,7 +467,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/author/ya-ti.html</loc>
-<lastmod>2020-09-01T17:30:00+08:06</lastmod>
+<lastmod>2020-09-07T15:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
