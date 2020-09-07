@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:15:00+08:00</updated><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:39:00+08:00</updated><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;我是一位 Microsoft Surface 系列產品的長期使用者，每當微軟推出新型態的裝置時，如果有機會都想體驗一下。
 微軟在 2019 的秋季發表會中推出了 Surface Pro X，是微軟首次親自推出的全時連網電腦 (Always-Connected PC)，根據微軟的&lt;a href="https://www.youtube.com/watch?v=ucxShAm5660"&gt;工程說明&lt;/a&gt;，該裝置為 2-in-1 型態的重新思考，並且再次嘗試搭載了 ARM 指令集的處理器。
 雖然 Windows on ARM 的軟體支援度一直被媒體詬病，但是這件事從發表的時候就是已知，很多媒體也只是再講一次早就知道的事情，而且因為使用方式不同，某些方面無法提供我想要知道的資訊。由於很想知道台裝置的能耐，因此趁著近期的優惠想買來體驗一番。
@@ -1050,7 +1050,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;amp;height=350&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="figure" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;amp;height=350&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Histogram_equalization"&gt;Histogram equalization&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;
@@ -1115,7 +1115,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>Python 心得</title><link href="https://blog.ya-ti.ml/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2018-07-04T17:22:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-04:/python-心得.html</id><summary type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
+&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>Python 心得</title><link href="https://blog.ya-ti.ml/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-04:/python-心得.html</id><summary type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。&lt;/p&gt;
 &lt;h2 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h2&gt;
 &lt;p&gt;我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …&lt;/p&gt;</summary><content type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
@@ -1141,7 +1141,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://imageio.github.io/"&gt;imageio&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a library for reading and writing image&lt;/td&gt;
+&lt;td align="center"&gt;A library for reading and writing image&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://ipython.org/"&gt;IPython&lt;/a&gt;&lt;/td&gt;
@@ -1153,35 +1153,35 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="https://matplotlib.org/"&gt;Matplotlib&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a rich architecture for interactive computing&lt;/td&gt;
+&lt;td align="center"&gt;A rich architecture for interactive computing&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://www.numpy.org/"&gt;NumPy&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;array processing for numbers, strings, records, and objects&lt;/td&gt;
+&lt;td align="center"&gt;Array processing for numbers, strings, records, and objects&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://opencv.org/"&gt;OpenCV&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;computer vision and machine learning library&lt;/td&gt;
+&lt;td align="center"&gt;Computer vision and machine learning library&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://scikit-image.org/"&gt;scikit-image&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a collection of algorithms for image processing&lt;/td&gt;
+&lt;td align="center"&gt;A collection of algorithms for image processing&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://scikit-learn.org/stable/"&gt;scikit-learn&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a set of python modules for machine learning and data mining&lt;/td&gt;
+&lt;td align="center"&gt;A set of python modules for machine learning and data mining&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;scientific library for mathematics, science, and engineering&lt;/td&gt;
+&lt;td align="center"&gt;Scientific library for mathematics, science, and engineering&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;&lt;a href="https://github.com/Microsoft/CNTK"&gt;CNTK&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a unified deep learning toolkit from Microsoft and native support &lt;a href="https://onnx.ai/"&gt;ONNX&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;&lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;An open source machine learning framework that accelerates the path from research prototyping to production deployment.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;&lt;a href="http://tensorflow.org/"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a machine learning library from Google&lt;/td&gt;
+&lt;td align="center"&gt;&lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;An end-to-end open source machine learning platform&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</content><category term="Python"></category><category term="Python"></category><category term="MATLAB"></category><category term="Anaconda"></category></entry><entry><title>北京天壇</title><link href="https://blog.ya-ti.ml/%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%A3%87.html" rel="alternate"></link><published>2018-04-15T21:52:00+08:00</published><updated>2018-04-15T21:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-04-15:/北京天壇.html</id><summary type="html">&lt;p&gt;天壇，坐地鐵到天壇東門站就可以到，現在是個收門票的公園景點，也有很多各國的觀光客。&lt;/p&gt;</summary><content type="html">&lt;p&gt;天壇，坐地鐵到天壇東門站就可以到，現在是個收門票的公園景點，也有很多各國的觀光客。收費分兩種，分成門票和聯票，只買門票是進不去某些地方，像是最重要的主殿，只能在外圍逛，第一次來只好買聯票了。&lt;/p&gt;
@@ -1367,7 +1367,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="" src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&amp;amp;height=214&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="figure" src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&amp;amp;height=214&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
@@ -1754,7 +1754,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 
 
 &lt;p&gt;如果輸入的質數為 59，則結果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://bwpixw.bn.files.1drv.com/y4mOQqdLDyCIgNADbCX0bblruHMLw4kQ1B329F4sYXK3_tj26RsA-juHeH9WgJm-_9jM4sP9yR2dHw-wFSq2bSWrlpjAfgdXRFydpXysw2ajC3LCmdyeqJIGcnvlZ7de0O7U0DmZC201UBDfX7xNPdq-8Ew0hfyVup7Bl0kPlsr6-n7yJLBJEhmvsgOWL73pKX-ERb58OwdjEE1ceQ-iKFRoA?width=236&amp;amp;height=236&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="figure" src="https://bwpixw.bn.files.1drv.com/y4mOQqdLDyCIgNADbCX0bblruHMLw4kQ1B329F4sYXK3_tj26RsA-juHeH9WgJm-_9jM4sP9yR2dHw-wFSq2bSWrlpjAfgdXRFydpXysw2ajC3LCmdyeqJIGcnvlZ7de0O7U0DmZC201UBDfX7xNPdq-8Ew0hfyVup7Bl0kPlsr6-n7yJLBJEhmvsgOWL73pKX-ERb58OwdjEE1ceQ-iKFRoA?width=236&amp;amp;height=236&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;而其對應的解碼矩陣的 MATLAB 範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[ t_hat ] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;decodeMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; t &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="c"&gt;%Generate decode MURAs mask&lt;/span&gt;
