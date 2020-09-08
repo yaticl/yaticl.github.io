@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Python</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/python.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:15:00+08:00</updated><entry><title>如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</title><link href="https://blog.ya-ti.ml/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2019-04-23T20:05:00+08:00</published><updated>2019-04-23T20:05:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Python</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/python.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:39:00+08:00</updated><entry><title>如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</title><link href="https://blog.ya-ti.ml/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2019-04-23T20:05:00+08:00</published><updated>2019-04-23T20:05:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
 &lt;p&gt;由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;：新增如何在 Qt5 中啟用 DPI 縮放的功能。&lt;/p&gt;
 &lt;h2 id="qt5dpi"&gt;方法一：啟用 Qt5 中的 DPI 縮放功能&lt;/h2&gt;
@@ -64,7 +64,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;如此就能簡單的安裝完成了。&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category><category term="Anaconda"></category></entry><entry><title>Python 心得</title><link href="https://blog.ya-ti.ml/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2018-07-04T17:22:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-04:/python-心得.html</id><summary type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
+&lt;p&gt;如此就能簡單的安裝完成了。&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category><category term="Anaconda"></category></entry><entry><title>Python 心得</title><link href="https://blog.ya-ti.ml/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-04:/python-心得.html</id><summary type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。&lt;/p&gt;
 &lt;h2 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h2&gt;
 &lt;p&gt;我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …&lt;/p&gt;</summary><content type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
@@ -90,7 +90,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://imageio.github.io/"&gt;imageio&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a library for reading and writing image&lt;/td&gt;
+&lt;td align="center"&gt;A library for reading and writing image&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://ipython.org/"&gt;IPython&lt;/a&gt;&lt;/td&gt;
@@ -102,35 +102,35 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="https://matplotlib.org/"&gt;Matplotlib&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a rich architecture for interactive computing&lt;/td&gt;
+&lt;td align="center"&gt;A rich architecture for interactive computing&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://www.numpy.org/"&gt;NumPy&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;array processing for numbers, strings, records, and objects&lt;/td&gt;
+&lt;td align="center"&gt;Array processing for numbers, strings, records, and objects&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://opencv.org/"&gt;OpenCV&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;computer vision and machine learning library&lt;/td&gt;
+&lt;td align="center"&gt;Computer vision and machine learning library&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://scikit-image.org/"&gt;scikit-image&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a collection of algorithms for image processing&lt;/td&gt;
+&lt;td align="center"&gt;A collection of algorithms for image processing&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="http://scikit-learn.org/stable/"&gt;scikit-learn&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a set of python modules for machine learning and data mining&lt;/td&gt;
+&lt;td align="center"&gt;A set of python modules for machine learning and data mining&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align="center"&gt;&lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;scientific library for mathematics, science, and engineering&lt;/td&gt;
+&lt;td align="center"&gt;Scientific library for mathematics, science, and engineering&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;&lt;a href="https://github.com/Microsoft/CNTK"&gt;CNTK&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a unified deep learning toolkit from Microsoft and native support &lt;a href="https://onnx.ai/"&gt;ONNX&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;&lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;An open source machine learning framework that accelerates the path from research prototyping to production deployment.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;&lt;a href="http://tensorflow.org/"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt;
-&lt;td align="center"&gt;a machine learning library from Google&lt;/td&gt;
+&lt;td align="center"&gt;&lt;a href="https://www.tensorflow.org/"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt;
+&lt;td align="center"&gt;An end-to-end open source machine learning platform&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</content><category term="Python"></category><category term="Python"></category><category term="MATLAB"></category><category term="Anaconda"></category></entry></feed>
