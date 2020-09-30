@@ -563,7 +563,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 
 
 &lt;p&gt;最後我們就能得到最佳的參數組合。&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Statistical%20Optics/Bayesian%20Model%20Fitting%20Instance.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html"&gt;ONBI - Bayesian model fitting practical&lt;/a&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -688,9 +688,9 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;amp;height=462&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Original" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1st level wavelet decomposition" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;amp;height=462&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/2D%20Discrete%20Wavelet%20Transform.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.mathworks.com/help/wavelet/ref/dwt2.html"&gt;Mathwork&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;
@@ -820,7 +820,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 
 &lt;p&gt;&lt;img alt="imshow(img, 'gray')" src="https://cwt2mw.bn.files.1drv.com/y4mcJ6O5yWOwMTtvmA36mrgjZyCgb1_PPxRTwok3866UejR40eM7SChwYglxnJhj0OSPrKwUmO6f3mgq65E7FzwxqrEukMER8G2UDQFhd5ZauZ-wvYZ-Addf2HT2PUUoSthYbLvtfM5zqP791K2ZBntnJi3DcqtkVK3xtqh7omrSwhzAWtcrCQwwgpmfKrSDrjci1fFm1rMOEwYoiJWUROyWw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="imshow(normalized, 'gray')" src="https://pn8dpg.bn.files.1drv.com/y4muM2yxYQdJ-xl7Ozapjd7q4AB85C-t-jsb9roF_N-BCqIo9SMBEnO_GiVFg0ivmbHCZuT83f8wE97-YngO7UM7Y1tgBVJp0C-7wkvv7yKjj2NUCHwuHwZVqR9_zZzlbM2IByXHClPZi7NwpOWXvdrKVebkdTy7DaG9ist5YuKdLCFUu6tWPs0QZCJuFeKA8LHwKr58Omc6nvMib62_DAeOw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Local%20Normalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -968,7 +968,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="imshow" src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Edge%20Detection.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py"&gt;Edge operators&lt;/a&gt;&lt;br&gt;
 &lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;
@@ -1135,6 +1135,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="figure" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;amp;height=350&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Histogram%20Equalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Histogram_equalization"&gt;Histogram equalization&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;
@@ -1452,7 +1453,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="figure" src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&amp;amp;height=214&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Signal%20Processing/Maximum-Length%20Sequences.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
@@ -1563,7 +1564,7 @@ a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter Notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Toeplitz%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="convolution"&gt;Convolution&lt;/h2&gt;
 &lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。&lt;span class="math"&gt;\(h\)&lt;/span&gt;與&lt;span class="math"&gt;\(x\)&lt;/span&gt;的 convolution 可以表示成：&lt;/p&gt;
 &lt;div class="math"&gt;$$y=h\ast x=\begin{bmatrix}  
@@ -1647,7 +1648,7 @@ x_n
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://blog.ya-ti.ml/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://blog.ya-ti.ml/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
 當要畫出該矩陣時，定義&lt;span class="math"&gt;\(+1\)&lt;/span&gt;代表黑色，而&lt;span class="math"&gt;\(-1\)&lt;/span&gt;代表白色。&lt;/p&gt;
 &lt;h2 id="_2"&gt;特性&lt;/h2&gt;
@@ -1700,7 +1701,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 
 
 &lt;p&gt;&lt;img alt="hadamard" src="https://v1fwjw.bn.files.1drv.com/y4mVd32PWKQoA040t--2Tf5ZCpl9AqN-PfkBF1xp3lflMYXWGF1gQS6ppC1B4UPOoTQNqmjTL0nBdhXw5OSSFu10vlh0iToLTDNMST_Pq2cZ_w3jz1lrYmiPThKaeco-X6X8NiEx9ZcT3l0wvYmIvpLSvcVM9KTMvGgxqbdjB8LvepuF4Y79n_x0-Allhc6EMStzigYbdv3kvnvQNmHAOYxOw?width=266&amp;amp;height=252&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例可以參考我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Hadamard%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://mathworld.wolfram.com/HadamardMatrix.html"&gt;Hadamard Matrix&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
@@ -1765,11 +1766,11 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
@@ -1779,7 +1780,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
@@ -1920,4 +1921,4 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational Imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
+&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>

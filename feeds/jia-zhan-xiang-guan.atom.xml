@@ -86,7 +86,7 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
@@ -96,7 +96,7 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;

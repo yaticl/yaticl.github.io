@@ -49,7 +49,7 @@
 
 
 &lt;p&gt;&lt;img alt="figure" src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&amp;amp;height=214&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Signal%20Processing/Maximum-Length%20Sequences.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;

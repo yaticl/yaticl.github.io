@@ -139,7 +139,7 @@
 
 
 &lt;p&gt;最後我們就能得到最佳的參數組合。&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Statistical%20Optics/Bayesian%20Model%20Fitting%20Instance.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html"&gt;ONBI - Bayesian model fitting practical&lt;/a&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
