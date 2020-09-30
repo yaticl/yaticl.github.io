@@ -31,8 +31,8 @@
     <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -44,7 +44,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://blog.ya-ti.ml"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="https://blog.ya-ti.ml/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Posts by Ya-Ti:</title>
 
@@ -75,7 +75,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="https://blog.ya-ti.ml/images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -103,13 +103,13 @@
 
       <ul class="social">
           <li>
-            <a  class="sc-You can add links in your config file" href="#" target="_blank">
-              <i class="fab fa-You can add links in your config file"></i>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
             </a>
           </li>
           <li>
-            <a  class="sc-Another social link" href="#" target="_blank">
-              <i class="fab fa-Another social link"></i>
+            <a  class="sc-rss" href="https://blog.ya-ti.ml/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
             </a>
           </li>
       </ul>
@@ -132,95 +132,12 @@
 
 <article>
   <header>
-    <h2><a href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html#解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></h2>
-    <p>
-      Posted on Tue 23 April 2019 in <a href="https://blog.ya-ti.ml/category/python.html">Python</a>
-
-          &#8226; Tagged with
-              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.ml/tag/tips.html">Tips</a>,              <a href="https://blog.ya-ti.ml/tag/windows.html">Windows</a>
-    </p>
-  </header>
-  <div>
-      <h2 id="_1">前言</h2>
-<p>由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。</p>
-<p><strong>更新</strong>：新增如何在 Qt5 中啟用 DPI 縮放的功能。</p>
-<h2 id="qt5dpi">方法一：啟用 Qt5 中的 DPI 縮放功能</h2>
-<p><strong>如何啟用 Qt5 DPI scaling 的範例 code：</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 需要先 import matplotlib 的 backend Qt5</span>
-<span class="kn">import</span> <span class="nn">PyQt5</span> <span class="k">as</span> <span class="nn">qt …</span></code></pre></div>
-        <br>
-        <a class="btn"
-           href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html#解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.ya-ti.ml/如何將-YouTube-切換回舊版介面.html#如何將-YouTube-切換回舊版介面">如何將 YouTube 切換回舊版介面</a></h2>
+    <h2><a href="https://blog.ya-ti.ml/bayesian-model-fitting-instance.html#bayesian-model-fitting-instance">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></h2>
     <p>
       Posted on Tue 23 April 2019 in <a href="https://blog.ya-ti.ml/category/tips.html">Tips</a>
 
           &#8226; Tagged with
               <a href="https://blog.ya-ti.ml/tag/youtube.html">YouTube</a>
-    </p>
-  </header>
-  <div>
-        <img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/07/debugger-edge-youtube2.png?itok=WcVPG2om">
-      <h2 id="_1">背景</h2>
-<p>由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇<a href="https://www.zdnet.com/article/former-mozilla-exec-google-has-sabotaged-firefox-for-years/">報導</a>讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。</p>
-<h2 id="_2">方法</h2>
-<p><a href="https://www.windowscentral.com/how-to-fix-slow-edge-youtube">Windows Central</a>與<a href="https://www.reddit.com/r/youtube/comments/82whs4/old_layout_option_gonegoogle_dead_to_me/?sort=confidence&amp;limit=500">Reddit</a>提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下：</p>
-<ol>
-<li>登入 YouTube 首頁。</li>
-<li>打開瀏覽器的開發者工具，各家瀏覽器開啟的方式略有不同，不知道怎麼開的自行搜尋。</li>
-<li>找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同，不知道在哪自行搜尋。以 …</li></ol>
-        <br>
-        <a class="btn"
-           href="https://blog.ya-ti.ml/如何將-YouTube-切換回舊版介面.html#如何將-YouTube-切換回舊版介面">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.ya-ti.ml/miniconda.html#miniconda">Miniconda</a></h2>
-    <p>
-      Posted on Thu 11 April 2019 in <a href="https://blog.ya-ti.ml/category/python.html">Python</a>
-
-          &#8226; Tagged with
-              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.ml/tag/anaconda.html">Anaconda</a>
-    </p>
-  </header>
-  <div>
-      <h2 id="_1">簡介</h2>
-<p>對剛入們 Python 的人，安裝整個<a href="https://blog.ya-ti.ml/python-心得.html">Anaconda Distribution</a>是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>，它只會安裝最基本 conda 管理工具。</p>
-<h2 id="_2">初始化</h2>
-<p>安裝完成後可以執行 (conda &gt; 4.6.12):</p>
-<div class="highlight"><pre><span></span><code>conda init
-</code></pre></div>
-
-
-<p>來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
-Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github.com/PowerShell/PowerShell/">(PowerShell Core)</a>，原因是因為<code>conda activate</code>和 Windows …</p>
-        <br>
-        <a class="btn"
-           href="https://blog.ya-ti.ml/miniconda.html#miniconda">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.ya-ti.ml/bayesian-model-fitting-instance.html#bayesian-model-fitting-instance">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></h2>
-    <p>
-      Posted on Thu 13 December 2018 in <a href="https://blog.ya-ti.ml/category/statistical-optics.html">Statistical Optics</a>
-
-          &#8226; Tagged with
-              <a href="https://blog.ya-ti.ml/tag/statistical-optics.html">Statistical Optics</a>,              <a href="https://blog.ya-ti.ml/tag/bayesian.html">Bayesian</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
     </p>
   </header>
   <div>
@@ -241,12 +158,12 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github
 </article>
 <article>
   <header>
-    <h2><a href="https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></h2>
+    <h2><a href="https://blog.ya-ti.ml/miniconda.html#miniconda">Miniconda</a></h2>
     <p>
-      Posted on Thu 30 August 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+      Posted on Thu 11 April 2019 in <a href="https://blog.ya-ti.ml/category/python.html">Python</a>
 
           &#8226; Tagged with
-              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital Image Processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.ml/tag/anaconda.html">Anaconda</a>
     </p>
   </header>
   <div>
@@ -265,14 +182,168 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github
           繼續閱讀
         </a>
   </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/bayesian-model-fitting-instance.html#bayesian-model-fitting-instance">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></h2>
+    <p>
+      Posted on Thu 13 December 2018 in <a href="https://blog.ya-ti.ml/category/statistical-optics.html">Statistical Optics</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/statistical-optics.html">Statistical Optics</a>,              <a href="https://blog.ya-ti.ml/tag/bayesian.html">Bayesian</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&height=137&cropmode=none">
+      <h2 id="_1">簡介</h2>
+<p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
+<h2 id="_2">實作</h2>
+<p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
+<div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
+<p>其中</p>
+<ul>
+<li><span class="math">\(m_f(x,y)\)</span>是<span class="math">\(f(x,y)\)</span>的 local mean 估算值</li>
+<li><span class="math">\(\sigma_f(x,y)\)</span>是 local variance 的估算值</li>
+<li><span class="math">\(g(x …</span></li></ul>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/local-normalization.html#local-normalization">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></h2>
+    <p>
+      Posted on Thu 30 August 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital Image Processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&height=264&cropmode=none">
+      <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2 id="image-gradient">影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end …</div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/edge-detection.html#edge-detection">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2 id="_1">數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/histogram-equalization.html#histogram-equalization">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/python-心得.html#python-心得">Python 心得</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.ml/category/python.html">Python</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.ml/tag/matlab.html">MATLAB</a>,              <a href="https://blog.ya-ti.ml/tag/anaconda.html">Anaconda</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&height=1024&cropmode=none">
+      <h1 id="python">Python</h1>
+<p><a href="https://zh.wikipedia.org/zh-tw/Python">Python</a>是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。</p>
+<h2 id="python_1">為什麼我要選擇 Python？</h2>
+<p>我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/python-心得.html#python-心得">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/北京天壇.html#北京天壇">北京天壇</a></h2>
+    <p>
+      Posted on Sun 15 April 2018 in <a href="https://blog.ya-ti.ml/category/lu-you.html">旅遊</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/zhong-guo.html">中國</a>,              <a href="https://blog.ya-ti.ml/tag/bei-jing.html">北京</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://ux3s9q.bn.files.1drv.com/y4mM0ixAKeIUjY_sglGIM8j-BbtIvHWQEfHnpCfbYIWjoWxJ5aTfUZU04Z-bPY2ft6hSg_tyeVfqfliAZlBJpkBL3-deaHnlmif82vFaU4BdzCFp4juSWlQPzSSBNXkWIv_NUw-QSwqP27PGayuXYN5S6IVZbvt49cxYRUETU_zII-4hQtY_V4vcEPwgIBY7ItlHfSqFnkyVJuNB4MDkUlD5g?width=1024&height=768&cropmode=none">
+      <p>天壇，坐地鐵到天壇東門站就可以到，現在是個收門票的公園景點，也有很多各國的觀光客。</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/北京天壇.html#北京天壇">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/上海豫園.html#上海豫園">上海豫園</a></h2>
+    <p>
+      Posted on Sun 15 April 2018 in <a href="https://blog.ya-ti.ml/category/lu-you.html">旅遊</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/zhong-guo.html">中國</a>,              <a href="https://blog.ya-ti.ml/tag/shang-hai.html">上海</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://9ff1ma.bn.files.1drv.com/y4mvC9pOQFZ_gVn67E4PCnlFIumNhcZMAWnb1xKgpTRxcsurAOQTVmL4RkQE5JNnTmruDxs3rUbEZg5A4_CYxwG-I2CRb8iCDDCapujZLfWMlqky706oWmYIfScCHRhafsWhXDWy3OhNyQ1GG5UIqm3ZuHw0st1gI3BWltqu9vZqL6h7weYL8FtWFIz5VGzc8MrKR1JPf0ux2tpG8bg--HfqQ?width=1024&height=768&cropmode=none">
+      <p>上海的著名景點。</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/上海豫園.html#上海豫園">
+          繼續閱讀
+        </a>
+  </div>
 </article>
 
   <div class="pagination">
     <a class="btn float-left" href="https://blog.ya-ti.ml/author/ya-ti3.html">
-      <i class="fa fa-angle-left"></i> Older Posts
+      <i class="fa fa-angle-left"></i> 較舊文章
     </a>
     <a class="btn float-right" href="https://blog.ya-ti.ml/author/ya-ti.html">
-      Newer Posts <i class="fa fa-angle-right"></i>
+      較新文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
 
@@ -294,7 +365,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "https://blog.ya-ti.ml/images/profile.jpg",
   "description": ""
 }
 </script>

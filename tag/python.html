@@ -31,8 +31,8 @@
     <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml//icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -44,7 +44,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://blog.ya-ti.ml"/>
-<meta property="og:image" content="https://blog.ya-ti.ml//images/profile.jpg">
+<meta property="og:image" content="https://blog.ya-ti.ml/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Tag Python</title>
 
@@ -75,7 +75,7 @@
   <aside>
     <div>
       <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml//images/profile.jpg" alt="" title="">
+        <img src="https://blog.ya-ti.ml/images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
@@ -103,13 +103,13 @@
 
       <ul class="social">
           <li>
-            <a  class="sc-You can add links in your config file" href="#" target="_blank">
-              <i class="fab fa-You can add links in your config file"></i>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
             </a>
           </li>
           <li>
-            <a  class="sc-Another social link" href="#" target="_blank">
-              <i class="fab fa-Another social link"></i>
+            <a  class="sc-rss" href="https://blog.ya-ti.ml/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
             </a>
           </li>
       </ul>
@@ -134,7 +134,7 @@
   <header>
     <h2><a href="https://blog.ya-ti.ml/如何將網站從WordPress遷移至Pelican.html#如何將網站從WordPress遷移至Pelican">如何將網站從 WordPress 遷移至 Pelican</a></h2>
     <p>
-      Posted on Wed 02 September 2020 in <a href="https://blog.ya-ti.ml/category/jia-zhan-xiang-guan.html">架站相關</a>
+      Posted on Thu 10 September 2020 in <a href="https://blog.ya-ti.ml/category/jia-zhan-xiang-guan.html">架站相關</a>
 
           &#8226; Tagged with
               <a href="https://blog.ya-ti.ml/tag/wordpress.html">WordPress</a>,              <a href="https://blog.ya-ti.ml/tag/pelican.html">Pelican</a>,              <a href="https://blog.ya-ti.ml/tag/markdown.html">Markdown</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
@@ -265,11 +265,99 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github
           繼續閱讀
         </a>
   </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/local-normalization.html#local-normalization">局部歸一化 (Local Normalization)</a></h2>
+    <p>
+      Posted on Wed 29 August 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&height=137&cropmode=none">
+      <h2 id="_1">簡介</h2>
+<p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
+<h2 id="_2">實作</h2>
+<p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
+<div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
+<p>其中</p>
+<ul>
+<li><span class="math">\(m_f(x,y)\)</span>是<span class="math">\(f(x,y)\)</span>的 local mean 估算值</li>
+<li><span class="math">\(\sigma_f(x,y)\)</span>是 local variance 的估算值</li>
+<li><span class="math">\(g(x …</span></li></ul>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/local-normalization.html#local-normalization">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/edge-detection.html#edge-detection">邊界偵測 (Edge Detection)</a></h2>
+    <p>
+      Posted on Fri 06 July 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&height=264&cropmode=none">
+      <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2 id="image-gradient">影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end …</div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/edge-detection.html#edge-detection">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://blog.ya-ti.ml/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2 id="_1">數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/histogram-equalization.html#histogram-equalization">
+          繼續閱讀
+        </a>
+  </div>
 </article>
 
   <div class="pagination">
     <a class="btn float-left" href="https://blog.ya-ti.ml/tag/python2.html">
-      <i class="fa fa-angle-left"></i> Older Posts
+      <i class="fa fa-angle-left"></i> 較舊文章
     </a>
   </div>
 
@@ -291,7 +379,7 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
   "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml//images/profile.jpg",
+  "image": "https://blog.ya-ti.ml/images/profile.jpg",
   "description": ""
 }
 </script>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-07T15:39:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-02T15:50:00+08:00</published><updated>2020-09-02T15:50:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-02:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-10T16:15:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-10T16:15:00+08:00</published><updated>2020-09-10T16:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-10:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;由於最近我在免費主機上架的 WordPress 網站，可靠性愈來愈差了，自動更新版本常常失敗，新的外掛也裝不上去，網站連線速度也不快，不過畢竟是免費的主機，可靠性本來就無法保證，因此興起了將網站搬家的念頭。
 因為我的網站都是靜態的內容為主，所以想要將網站架在&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;上。
 由於我對 Python 比較熟悉，所以決定使用&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;來生成靜態網站。
@@ -16,13 +16,13 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;p&gt;Pelican 是一個用 Python 寫的靜態網站產生器，以 reStructuredText 或是 Markdown 格式來寫內容，支援自訂主題與擴充功能。
 Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs.getpelican.com/en/stable/install.html"&gt;安裝&lt;/a&gt;，因為我對 Markdown 比較熟悉，所以安裝 Markdown 版本。
 新增 Pelican 專案可以參考官方&lt;a href="https://docs.getpelican.com/en/stable/install.html#kickstart-your-site"&gt;文件&lt;/a&gt;，網站基本結構如下：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;yourproject/&lt;/span&gt;
-&lt;span class="err"&gt;├── content&lt;/span&gt;
-&lt;span class="err"&gt;│   └── pages&lt;/span&gt;
-&lt;span class="err"&gt;│   └── (articles)&lt;/span&gt;
-&lt;span class="err"&gt;├── output&lt;/span&gt;
-&lt;span class="err"&gt;├── pelicanconf.py       # Main settings file&lt;/span&gt;
-&lt;span class="err"&gt;└── publishconf.py       # Settings to use when ready to publish&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yourproject/
+├── content
+│   └── pages
+│   └── (articles)
+├── output
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -47,7 +47,23 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id="wordpress"&gt;匯入 WordPress 網站內容&lt;/h2&gt;
+&lt;h3 id="_2"&gt;主題&lt;/h3&gt;
+&lt;p&gt;Pelican 支援自訂主題，除了可以自行創作之外，社群也分享了很多&lt;a href="https://github.com/getpelican/pelican-themes"&gt;主題&lt;/a&gt;可以直接採用，各種主題的效果也可以在&lt;a href="http://www.pelicanthemes.com/"&gt;這裡&lt;/a&gt;預覽。
+要使用主題，只需要在&lt;code&gt;pelicanconf.py&lt;/code&gt;當中加入主題的路徑：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;path/to/pelican-theme&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我現在用的主題是&lt;a href="https://github.com/alexandrevicenzi/Flex"&gt;Flex&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="_3"&gt;擴充功能&lt;/h3&gt;
+&lt;p&gt;Pelican 支援擴充功能 (Plugins) 來增強網站的功能，社群分享的擴充功能一樣可以在&lt;a href="https://github.com/getpelican/pelican-plugins"&gt;GitHub&lt;/a&gt;上找到。
+要使用擴充功能，要在&lt;code&gt;pelicanconf.py&lt;/code&gt;當中加入擴充的路徑與名稱：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path/to/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sitemap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gravatar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="wordpress"&gt;匯入 WordPress 網站內容&lt;/h3&gt;
 &lt;p&gt;Pelican 有提供&lt;a href="https://docs.getpelican.com/en/stable/importer.html#import"&gt;匯入工具&lt;/a&gt;&lt;code&gt;pelican-import&lt;/code&gt;，可以將其他網站的內容轉換成 Markdown 或是 reStructuredText，期支援的格式包含&lt;strong&gt;WordPress XML&lt;/strong&gt;檔案。
 在使用&lt;code&gt;pelican-import&lt;/code&gt;之前需要先安裝一些相依性，包含&lt;strong&gt;BeautifulSoup4&lt;/strong&gt;、&lt;strong&gt;lxml&lt;/strong&gt;與&lt;strong&gt;Pandoc&lt;/strong&gt;。
 若要將&lt;strong&gt;WordPress XML&lt;/strong&gt;轉換為 Markdown 格式，使用方法為：&lt;/p&gt;
@@ -55,7 +71,18 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;由於無法完美的轉換內容，所以匯入之後還是需要手動修復依些內容。&lt;/p&gt;</content><category term="架站相關"></category><category term="WordPress"></category><category term="Pelican"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;由於無法完美的轉換內容，所以匯入之後還是需要手動修復依些內容。&lt;/p&gt;
+&lt;h3 id="github-pages"&gt;佈署網站到 GitHub Pages&lt;/h3&gt;
+&lt;p&gt;當網站準備好之後，就可以佈署到 GitHub Pages 上了，關於使用方式參考官方&lt;a href="https://docs.github.com/en/github/working-with-github-pages"&gt;文件&lt;/a&gt;。
+當設定好後，其佈署流程為：&lt;/p&gt;
+&lt;p&gt;1. 使用發行用的設定檔案&lt;code&gt;publishconf.py&lt;/code&gt;產生網站檔案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican content -o /path/to/output -s publishconf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2. 將生成的網站檔案用 Git 的 push 命令將檔案上傳到用來發行 GitHub Pages 的 GitHub repository，假設網站檔案放在倉庫的 gh-pages branch，則其命令為&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="架站相關"></category><category term="WordPress"></category><category term="Pelican"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;我是一位 Microsoft Surface 系列產品的長期使用者，每當微軟推出新型態的裝置時，如果有機會都想體驗一下。
 微軟在 2019 的秋季發表會中推出了 Surface Pro X，是微軟首次親自推出的全時連網電腦 (Always-Connected PC)，根據微軟的&lt;a href="https://www.youtube.com/watch?v=ucxShAm5660"&gt;工程說明&lt;/a&gt;，該裝置為 2-in-1 型態的重新思考，並且再次嘗試搭載了 ARM 指令集的處理器。
 雖然 Windows on ARM 的軟體支援度一直被媒體詬病，但是這件事從發表的時候就是已知，很多媒體也只是再講一次早就知道的事情，而且因為使用方式不同，某些方面無法提供我想要知道的資訊。由於很想知道台裝置的能耐，因此趁著近期的優惠想買來體驗一番。
@@ -140,7 +167,8 @@ Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺�
 &lt;p&gt;在相同的測試環境下，以 3DMark 中唯一支援 ARM 的 Night Raid 做 GPU 的壓力測試，測試結果以 99.9% 的成績通過。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="stress_GPU" src="https://vjlrza.bn.files.1drv.com/y4ml6ojJJelBu3KuGzuCV1dUNL5qH6VAsKGKk6WqBQ1c2IO-BZuctATJh0x9Dk9g9lHYjUbtO305mywn5Er3VMCaMtunN_URQgyyPt2aMpLDcE9kQ_rwpR4CoV48xlS3ui4nlITYa3tjOg5OeG-R7Lfp1n092pydjVvF_ZNKq3m6lrkK-8sjFoN614QGGvYcSjirXLc0uxrDJNTyAC8iDcqDQ?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;在跑壓力測試的時候，用手直接摸機身背後，只感覺溫而已，甚至比手機還不熱，相較於 Pro ( 第五代 )、Book 2 還有 Go 等被動散熱的 Surface，相同的測試要以燙來形容。
-由此可見，Pro X 可以較長時間完全發揮效能，而且機身的發熱量居然也不高。&lt;/p&gt;
+由此可見，Pro X 可以較長時間完全發揮效能，而且機身的發熱量居然也不高。
+事實上，快速充電的時候比壓力測試還熱。&lt;/p&gt;
 &lt;h2 id="_7"&gt;使用體驗&lt;/h2&gt;
 &lt;h3 id="_8"&gt;生產力體驗&lt;/h3&gt;
 &lt;p&gt;說到 Windows 平板電腦，主要賣點就是生產力。我的工作流程，主要需求的軟體是 Microsoft Edge、Microsoft Office 全套、Drawboard(PDF 閱讀與標記 )、Python、Visual Studio Code (VS Code) 還有遠端桌面。
@@ -535,7 +563,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 
 
 &lt;p&gt;最後我們就能得到最佳的參數組合。&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Statistical%20Optics/Bayesian%20Model%20Fitting%20Instance.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html"&gt;ONBI - Bayesian model fitting practical&lt;/a&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -660,9 +688,9 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;amp;height=462&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Original" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1st level wavelet decomposition" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;amp;height=462&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/2D%20Discrete%20Wavelet%20Transform.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.mathworks.com/help/wavelet/ref/dwt2.html"&gt;Mathwork&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;
@@ -792,7 +820,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 
 &lt;p&gt;&lt;img alt="imshow(img, 'gray')" src="https://cwt2mw.bn.files.1drv.com/y4mcJ6O5yWOwMTtvmA36mrgjZyCgb1_PPxRTwok3866UejR40eM7SChwYglxnJhj0OSPrKwUmO6f3mgq65E7FzwxqrEukMER8G2UDQFhd5ZauZ-wvYZ-Addf2HT2PUUoSthYbLvtfM5zqP791K2ZBntnJi3DcqtkVK3xtqh7omrSwhzAWtcrCQwwgpmfKrSDrjci1fFm1rMOEwYoiJWUROyWw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="imshow(normalized, 'gray')" src="https://pn8dpg.bn.files.1drv.com/y4muM2yxYQdJ-xl7Ozapjd7q4AB85C-t-jsb9roF_N-BCqIo9SMBEnO_GiVFg0ivmbHCZuT83f8wE97-YngO7UM7Y1tgBVJp0C-7wkvv7yKjj2NUCHwuHwZVqR9_zZzlbM2IByXHClPZi7NwpOWXvdrKVebkdTy7DaG9ist5YuKdLCFUu6tWPs0QZCJuFeKA8LHwKr58Omc6nvMib62_DAeOw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Local%20Normalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -940,7 +968,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="imshow" src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例放在我的 Azure Notebook &lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;&lt;img alt="" src="https://notebooks.azure.com/launch.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Edge%20Detection.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py"&gt;Edge operators&lt;/a&gt;&lt;br&gt;
 &lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;
@@ -1107,6 +1135,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="figure" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;amp;height=350&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Histogram%20Equalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Histogram_equalization"&gt;Histogram equalization&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;
@@ -1424,7 +1453,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="figure" src="https://kwyfww.bn.files.1drv.com/y4mshVubcllJyUiYX2hxmS7qPGvzTb5WZKd2H8H3NkA7PMIifM7-QfFWn_0IZYzD4UmKUylfxQP1u4UO-uq4jq7hnXpS4SxLWGydEdTxiKp2JJEcvkOlMipnSx5ipx1dDgM04J1IDePzjzZlE2nAiPMACx5A_fuXOynDCxM508qinWjeGXKPNoUJXhXoxZewzV_BDib5cfkKY4TYySSHK9Qdg?width=333&amp;amp;height=214&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Signal%20Processing/Maximum-Length%20Sequences.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
@@ -1535,7 +1564,7 @@ a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;可執行範例在我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter Notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Toeplitz%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="convolution"&gt;Convolution&lt;/h2&gt;
 &lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。&lt;span class="math"&gt;\(h\)&lt;/span&gt;與&lt;span class="math"&gt;\(x\)&lt;/span&gt;的 convolution 可以表示成：&lt;/p&gt;
 &lt;div class="math"&gt;$$y=h\ast x=\begin{bmatrix}  
@@ -1619,7 +1648,7 @@ x_n
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://blog.ya-ti.ml/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://blog.ya-ti.ml/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
 當要畫出該矩陣時，定義&lt;span class="math"&gt;\(+1\)&lt;/span&gt;代表黑色，而&lt;span class="math"&gt;\(-1\)&lt;/span&gt;代表白色。&lt;/p&gt;
 &lt;h2 id="_2"&gt;特性&lt;/h2&gt;
@@ -1672,7 +1701,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 
 
 &lt;p&gt;&lt;img alt="hadamard" src="https://v1fwjw.bn.files.1drv.com/y4mVd32PWKQoA040t--2Tf5ZCpl9AqN-PfkBF1xp3lflMYXWGF1gQS6ppC1B4UPOoTQNqmjTL0nBdhXw5OSSFu10vlh0iToLTDNMST_Pq2cZ_w3jz1lrYmiPThKaeco-X6X8NiEx9ZcT3l0wvYmIvpLSvcVM9KTMvGgxqbdjB8LvepuF4Y79n_x0-Allhc6EMStzigYbdv3kvnvQNmHAOYxOw?width=266&amp;amp;height=252&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;可執行範例可以參考我的&lt;a href="https://notebooks.azure.com/ya-ti/libraries/mylibrary"&gt;Jupyter notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Hadamard%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://mathworld.wolfram.com/HadamardMatrix.html"&gt;Hadamard Matrix&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
@@ -1737,11 +1766,11 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
@@ -1751,7 +1780,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SSL For Free" src="https://naxr3w.bn.files.1drv.com/y4mqnULB-kXIdDIHgpavX1-x40FQ2zBfltmNRmDrVySsghbOCy1zoe0ds-8MDpFF6Htd0z0wWaBF7fQssZMWxWO1fvYUpa4QXY1btQv4MTwkUD5K-r9Bnpcv_jRV62GtrUi0332v8OL7HPbffr5WLvkjCiQ84omlZIY_j08yCGWblYFWQeuAP1zyAi9_vVLxTrEaq2_rBMMTDMnJpsGgiRnjg?width=660&amp;amp;height=364&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;ZeroSSL 提供&lt;a href="https://zerossl.com/help/verify-domains/"&gt;三種方法&lt;/a&gt;來認證你是網域持有人：&lt;/p&gt;
 &lt;h3 id="1"&gt;1. 電子郵件驗證&lt;/h3&gt;
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
@@ -1892,4 +1921,4 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational Imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
+&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
