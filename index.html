@@ -132,6 +132,37 @@
 
 <article>
   <header>
+    <h2><a href="https://blog.ya-ti.ml/如何更改Microsoft-Word引用來源的語言.html#如何更改Microsoft-Word引用來源的語言">如何更改 Microsoft Word 引用來源的語言</a></h2>
+    <p>
+      Posted on Wed 28 October 2020 in <a href="https://blog.ya-ti.ml/category/microsoft-office.html">Microsoft Office</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/microsoft-office.html">Microsoft Office</a>,              <a href="https://blog.ya-ti.ml/tag/microsoft-word.html">Microsoft Word</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&height=464&cropmode=none">
+      <h2 id="_1">緣起</h2>
+<p>在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用<a href="https://academic.microsoft.com/home">Microsoft Academic</a>來儲存需要引用的文章，因為它可以將引用的文章輸出成可以被 Word 載入的 XML 檔案。由於 paper 基本都是用英文來寫，但是我們系統和城市的語言通常都是設定成中文，導致在 Word 中想要自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。</p>
+<h2 id="_2">解決辦法</h2>
+<p>這個問題已經有人問過了，根據微軟 MVP 的<a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_other-mso_2010/word-2010-change-referencescitation-language/f67a4daf-2af2-40ba-a03c-d28596560e3e">回答</a>，有兩種方法可行。</p>
+<h3 id="_3">方法一</h3>
+<p>Word 本身就有設定讓使用者編輯引用來源的語言，只要將語言由預設改成英文就可以了，如圖所示：</p>
+<p><img alt=" 語言設定 " src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&amp;height=464&amp;cropmode=none"></p>
+<p>此方法最簡單直覺，但是需要一個一個編輯來源設定，操作起來比較麻煩。</p>
+<h3 id="_4">方法二</h3>
+<p>另一個方法是修改引用來源的 XML 檔案，在每一個引用來源的<code>&lt;Source&gt;</code>標籤內加入一個語言的標籤</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;LCID …</span></code></pre></div>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/如何更改Microsoft-Word引用來源的語言.html#如何更改Microsoft-Word引用來源的語言">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://blog.ya-ti.ml/如何將網站從WordPress遷移至Pelican.html#如何將網站從WordPress遷移至Pelican">如何將網站從 WordPress 遷移至 Pelican</a></h2>
     <p>
       Posted on Thu 10 September 2020 in <a href="https://blog.ya-ti.ml/category/jia-zhan-xiang-guan.html">架站相關</a>
@@ -318,35 +349,6 @@ Pelican 就是個 Python module，可以簡單的用 Pip<a href="https://docs.ge
         <br>
         <a class="btn"
            href="https://blog.ya-ti.ml/如何將-YouTube-切換回舊版介面.html#如何將-YouTube-切換回舊版介面">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.ya-ti.ml/miniconda.html#miniconda">Miniconda</a></h2>
-    <p>
-      Posted on Thu 11 April 2019 in <a href="https://blog.ya-ti.ml/category/python.html">Python</a>
-
-          &#8226; Tagged with
-              <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>,              <a href="https://blog.ya-ti.ml/tag/anaconda.html">Anaconda</a>
-    </p>
-  </header>
-  <div>
-      <h2 id="_1">簡介</h2>
-<p>對剛入們 Python 的人，安裝整個<a href="https://blog.ya-ti.ml/python-心得.html">Anaconda Distribution</a>是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>，它只會安裝最基本 conda 管理工具。</p>
-<h2 id="_2">初始化</h2>
-<p>安裝完成後可以執行 (conda &gt; 4.6.12):</p>
-<div class="highlight"><pre><span></span><code>conda init
-</code></pre></div>
-
-
-<p>來初始化 Anaconda 環境，執行後可以讓支援的 shell 都可以使用 conda。
-Windows 環境下，我喜歡搭配 Microsoft PowerShell <a href="https://github.com/PowerShell/PowerShell/">(PowerShell Core)</a>，原因是因為<code>conda activate</code>和 Windows …</p>
-        <br>
-        <a class="btn"
-           href="https://blog.ya-ti.ml/miniconda.html#miniconda">
           繼續閱讀
         </a>
   </div>
