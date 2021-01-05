@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.ya-ti.ml/</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/tags.html</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/categories.html</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/authors.html</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/archives.html</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://blog.ya-ti.ml/search.html</loc>
-<lastmod>2020-12-30T19:52:33-00:00</lastmod>
+<lastmod>2021-01-05T16:52:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

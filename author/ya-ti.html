@@ -143,16 +143,13 @@
   <div>
         <img src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&height=464&cropmode=none">
       <h2 id="_1">緣起</h2>
-<p>在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用<a href="https://academic.microsoft.com/home">Microsoft Academic</a>來儲存需要引用的文章，因為它可以將引用的文章輸出成可以被 Word 載入的 XML 檔案。由於 paper 基本都是用英文來寫，但是我們系統和程式的語言通常都是設定成中文，導致在 Word 中想要自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。</p>
+<p>在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用<a href="https://academic.microsoft.com/home">Microsoft Academic</a>來儲存需要引用的文章，因為它可以將引用的文章輸出成可以直接被 Word 載入的 XML 檔案，或是存成 BibTex 檔案搭配<a href="https://www.zotero.org/">Zotero</a>先做參考文獻管理，整理後才在 Word 裡面引用。由於 paper 基本都是用英文來寫，但是我們系統和程式的語言通常都是設定成中文，導致在 Word 中想要直接用 XML 檔案自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。</p>
 <h2 id="_2">解決辦法</h2>
 <p>這個問題已經有人問過了，根據微軟 MVP 的<a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_other-mso_2010/word-2010-change-referencescitation-language/f67a4daf-2af2-40ba-a03c-d28596560e3e">回答</a>，有兩種方法可行。</p>
 <h3 id="_3">方法一</h3>
 <p>Word 本身就有設定讓使用者編輯引用來源的語言，只要將語言由預設改成英文就可以了，如圖所示：</p>
 <p><img alt=" 語言設定 " src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&amp;height=464&amp;cropmode=none"></p>
-<p>此方法最簡單直覺，但是需要一個一個編輯來源設定，操作起來比較麻煩。</p>
-<h3 id="_4">方法二</h3>
-<p>另一個方法是修改引用來源的 XML 檔案，在每一個引用來源的<code>&lt;Source&gt;</code>標籤內加入一個語言的標籤</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;LCID …</span></code></pre></div>
+<p>此方法最簡單直覺 …</p>
         <br>
         <a class="btn"
            href="https://blog.ya-ti.ml/如何更改Microsoft-Word引用來源的語言.html#如何更改Microsoft-Word引用來源的語言">
