@@ -82,7 +82,7 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 
 &lt;p&gt;2. 將生成的網站檔案用 Git 的 push 命令將檔案上傳到用來發行 GitHub Pages 的 GitHub repository，假設網站檔案放在倉庫的 gh-pages branch，則其命令為&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin gh-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="架站相關"></category><category term="WordPress"></category><category term="Pelican"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="架站相關"></category><category term="WordPress"></category><category term="Pelican"></category><category term="Markdown"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
@@ -92,7 +92,7 @@ Pelican 就是個 Python module，可以簡單的用 Pip&lt;a href="https://docs
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 電子郵件驗證 " src="https://zerossl.com/assets/images/help_verify_domains_email_verification.png"&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證 …&lt;/h3&gt;</summary><content type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證 …&lt;/h3&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;

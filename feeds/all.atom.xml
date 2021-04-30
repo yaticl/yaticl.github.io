@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-10-28T17:52:00+08:00</updated><entry><title>如何更改 Microsoft Word 引用來源的語言</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9Microsoft-Word%E5%BC%95%E7%94%A8%E4%BE%86%E6%BA%90%E7%9A%84%E8%AA%9E%E8%A8%80.html" rel="alternate"></link><published>2020-10-28T17:52:00+08:00</published><updated>2020-10-28T17:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-10-28:/如何更改Microsoft-Word引用來源的語言.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2021-04-30T17:04:00+08:00</updated><entry><title>如何在 Microsoft Word 中給方程式編號</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%9C%A8Microsoft-Word%E4%B8%AD%E7%B5%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E7%B7%A8%E8%99%9F.html" rel="alternate"></link><published>2021-04-30T17:04:00+08:00</published><updated>2021-04-30T17:04:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2021-04-30:/如何在Microsoft-Word中給方程式編號.html</id><summary type="html">&lt;p&gt;關於如何在 Microsoft Word 為方程式編號，網路上可以找到很多不同的方法，其實自 Office 2016 之後，其實 Word 是有&lt;a href="https://docs.microsoft.com/zh-tw/archive/blogs/murrays/equation-numbering-in-office-2016"&gt;官方的方程式編號方法&lt;/a&gt;，但是在中文圈好像很少人知道，我就自己做個紀錄。&lt;/p&gt;
+&lt;h2 id="_1"&gt;基本用法&lt;/h2&gt;
+&lt;p&gt;只要在方程式的最後加上 &lt;code&gt;#&lt;/code&gt;，並在方程式最後的地方按下 &lt;code&gt;Enter&lt;/code&gt;，就會將 &lt;code&gt;#&lt;/code&gt; 後的東西自動靠右。以官方給的範例來示範，在 Word 的輸入區按下 &lt;code&gt;Alt+=&lt;/code&gt; 插入方程式區段，輸入 &lt;code&gt;E=mc^2#(30)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 基本用法 1" src="https://bn1302files.storage.live.com/y4myWz54-rb90H8AVwzAV9ZjhpIFwdXYy-RwiCxPio8nUVeXz58p9sLQwMAzZ5CqqRoUG2D4RQx-6io7Uqn421Y7bYsUzypfSkdkS0vuAQ3UFZ8DmJevW_IoHotQ2vrg1CuwImgZjUjR5D1JJ40OunFXiljvQi4LtsD74DNYaRy7Iww6-uexmwa3UWWEMZhnoK9?width=256&amp;amp;height=77&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;就會彩現成&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 基本用法 2" src="https://bn1302files.storage.live.com/y4mYiafhxjflZRKo4Fa40ajp1W7x_3RX2mLnL7CqfWc3LwfwqYa4z8EtKU7WbCY3Hk2ys6ZJLqj6cCwt2cDP8pFIOkrzEF5gLqPaeX-ocPcSbSMYKxQB1qQeasZbf5s9Up5HXhXIkRnVypWAImWCAC6RmKGAAJk4KxaEqatebnJ6hDuy0zB7TMnbmtlKGemBSiy?width=1024&amp;amp;height=45&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;h2 id="_2"&gt;進階用法&lt;/h2&gt;
+&lt;p&gt;當文章中的公式很多的時候，要手動輸入數字時會很麻煩，最好能夠自動編號。
+這時候要利用&lt;strong&gt;插入標號&lt;/strong&gt;的功能，將括號裡面的數字，改由&lt;strong&gt;插入標號&lt;/strong&gt;功能填入，就能讓 Word 自動根據章節為方程式編號。
+&lt;strong&gt;插入標號&lt;/strong&gt;功能的位置在：&lt;code&gt;參考資料 …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;關於如何在 Microsoft Word 為方程式編號，網路上可以找到很多不同的方法，其實自 Office 2016 之後，其實 Word 是有&lt;a href="https://docs.microsoft.com/zh-tw/archive/blogs/murrays/equation-numbering-in-office-2016"&gt;官方的方程式編號方法&lt;/a&gt;，但是在中文圈好像很少人知道，我就自己做個紀錄。&lt;/p&gt;
+&lt;h2 id="_1"&gt;基本用法&lt;/h2&gt;
+&lt;p&gt;只要在方程式的最後加上 &lt;code&gt;#&lt;/code&gt;，並在方程式最後的地方按下 &lt;code&gt;Enter&lt;/code&gt;，就會將 &lt;code&gt;#&lt;/code&gt; 後的東西自動靠右。以官方給的範例來示範，在 Word 的輸入區按下 &lt;code&gt;Alt+=&lt;/code&gt; 插入方程式區段，輸入 &lt;code&gt;E=mc^2#(30)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 基本用法 1" src="https://bn1302files.storage.live.com/y4myWz54-rb90H8AVwzAV9ZjhpIFwdXYy-RwiCxPio8nUVeXz58p9sLQwMAzZ5CqqRoUG2D4RQx-6io7Uqn421Y7bYsUzypfSkdkS0vuAQ3UFZ8DmJevW_IoHotQ2vrg1CuwImgZjUjR5D1JJ40OunFXiljvQi4LtsD74DNYaRy7Iww6-uexmwa3UWWEMZhnoK9?width=256&amp;amp;height=77&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;就會彩現成&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 基本用法 2" src="https://bn1302files.storage.live.com/y4mYiafhxjflZRKo4Fa40ajp1W7x_3RX2mLnL7CqfWc3LwfwqYa4z8EtKU7WbCY3Hk2ys6ZJLqj6cCwt2cDP8pFIOkrzEF5gLqPaeX-ocPcSbSMYKxQB1qQeasZbf5s9Up5HXhXIkRnVypWAImWCAC6RmKGAAJk4KxaEqatebnJ6hDuy0zB7TMnbmtlKGemBSiy?width=1024&amp;amp;height=45&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;h2 id="_2"&gt;進階用法&lt;/h2&gt;
+&lt;p&gt;當文章中的公式很多的時候，要手動輸入數字時會很麻煩，最好能夠自動編號。
+這時候要利用&lt;strong&gt;插入標號&lt;/strong&gt;的功能，將括號裡面的數字，改由&lt;strong&gt;插入標號&lt;/strong&gt;功能填入，就能讓 Word 自動根據章節為方程式編號。
+&lt;strong&gt;插入標號&lt;/strong&gt;功能的位置在：&lt;code&gt;參考資料 -&amp;gt; 插入標號&lt;/code&gt;，如此一來就算後來在中間插入新的方程式，只要更新一下功能變數，就能自動正確的編號了。
+下圖為用進階用法的範例：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 進階用法 " src="https://bn1302files.storage.live.com/y4m-37Bb_W28Hje8DVaYq2WFyKSq6RmN7Bf38reE48_ch44yBuLvAIXRenFHuV0ZaCXiFWsiSgRVmdgXcUH5ZST6r4TG-DhbkBkOKME_NGq4HdwQAS6_PwG4zpqxo44gIsySb9HqZEr1O6kIS6RZtww0Qo46VTOAhAf0jjEi5Mpcmuy0a-I-wFm1wSvjxWNm00O?width=660&amp;amp;height=439&amp;amp;cropmode=none"&gt;&lt;/p&gt;</content><category term="Microsoft Office"></category><category term="Microsoft Office"></category><category term="Microsoft Word"></category></entry><entry><title>如何在 WSL 中共享 Windows 10 的 SSH keys</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" rel="alternate"></link><published>2021-04-30T15:42:00+08:00</published><updated>2021-04-30T15:42:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2021-04-30:/如何在-WSL中共享Windows-10的SSH-keys.html</id><summary type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。&lt;/p&gt;
+&lt;h2 id="_1"&gt;方法&lt;/h2&gt;
+&lt;p&gt;方法來自微軟的&lt;a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/"&gt;開發部落格&lt;/a&gt;，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先在 Windows 下產生 SSH key，具體參考&lt;a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account"&gt;GitHub 文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 Windows 下的 &lt;code&gt;.ssh&lt;/code&gt; 資料夾複製到 WSL 中的家目錄下，可以使用檔案總管或是命令行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp -r /mnt/c/Users/&amp;lt;username&amp;gt;/.ssh ~/.ssh&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修復檔案權限，因為安全考量，SSH key …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。&lt;/p&gt;
+&lt;h2 id="_1"&gt;方法&lt;/h2&gt;
+&lt;p&gt;方法來自微軟的&lt;a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/"&gt;開發部落格&lt;/a&gt;，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先在 Windows 下產生 SSH key，具體參考&lt;a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account"&gt;GitHub 文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 Windows 下的 &lt;code&gt;.ssh&lt;/code&gt; 資料夾複製到 WSL 中的家目錄下，可以使用檔案總管或是命令行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp -r /mnt/c/Users/&amp;lt;username&amp;gt;/.ssh ~/.ssh&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 RSA key 為例，在家目錄中輸入&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod 600 ~/.ssh/id_rsa&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如此一來並能在 Windows 與 WSL 中共用 SSH key 了。&lt;/p&gt;</content><category term="Tips"></category><category term="Windows Subsystem for Linux"></category></entry><entry><title>如何更改 Microsoft Word 引用來源的語言</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9Microsoft-Word%E5%BC%95%E7%94%A8%E4%BE%86%E6%BA%90%E7%9A%84%E8%AA%9E%E8%A8%80.html" rel="alternate"></link><published>2020-10-28T17:52:00+08:00</published><updated>2020-10-28T17:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-10-28:/如何更改Microsoft-Word引用來源的語言.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用&lt;a href="https://academic.microsoft.com/home"&gt;Microsoft Academic&lt;/a&gt;來儲存需要引用的文章，因為它可以將引用的文章輸出成可以直接被 Word 載入的 XML 檔案，或是存成 BibTex 檔案搭配&lt;a href="https://www.zotero.org/"&gt;Zotero&lt;/a&gt;先做參考文獻管理，整理後才在 Word 裡面引用。由於 paper 基本都是用英文來寫，但是我們系統和程式的語言通常都是設定成中文，導致在 Word 中想要直接用 XML 檔案自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。&lt;/p&gt;
 &lt;h2 id="_2"&gt;解決辦法&lt;/h2&gt;
 &lt;p&gt;這個問題已經有人問過了，根據微軟 MVP 的&lt;a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_other-mso_2010/word-2010-change-referencescitation-language/f67a4daf-2af2-40ba-a03c-d28596560e3e"&gt;回答&lt;/a&gt;，有兩種方法可行。&lt;/p&gt;
@@ -395,14 +439,16 @@ VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://coad.ca/2017/05/15/one-way-to-deal-with-high-dpi-4k-screens-in-python/"&gt;One way to deal with High DPI (4k) Screens in Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;關於 Matplotlib backend 的詳細資料與還有哪些 backend 能替換，可以閱讀官網上的&lt;a href="https://matplotlib.org/faq/usage_faq.html#what-is-a-backend"&gt;說明&lt;/a&gt;。&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Python"></category><category term="Python"></category><category term="Tips"></category><category term="Windows"></category></entry><entry><title>如何將 YouTube 切換回舊版介面</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" rel="alternate"></link><published>2019-04-23T01:11:00+08:00</published><updated>2019-04-23T01:11:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/如何將-YouTube-切換回舊版介面.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="Python"></category><category term="Python"></category><category term="Tips"></category><category term="Windows"></category></entry><entry><title>如何將 YouTube 切換回舊版介面</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87-YouTube-%E5%88%87%E6%8F%9B%E5%9B%9E%E8%88%8A%E7%89%88%E4%BB%8B%E9%9D%A2.html" rel="alternate"></link><published>2019-04-23T01:11:00+08:00</published><updated>2019-04-23T01:11:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-23:/如何將-YouTube-切換回舊版介面.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;更新：此文章現在已不適用&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇&lt;a href="https://www.zdnet.com/article/former-mozilla-exec-google-has-sabotaged-firefox-for-years/"&gt;報導&lt;/a&gt;讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。&lt;/p&gt;
 &lt;h2 id="_2"&gt;方法&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.windowscentral.com/how-to-fix-slow-edge-youtube"&gt;Windows Central&lt;/a&gt;與&lt;a href="https://www.reddit.com/r/youtube/comments/82whs4/old_layout_option_gonegoogle_dead_to_me/?sort=confidence&amp;amp;limit=500"&gt;Reddit&lt;/a&gt;提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;登入 YouTube 首頁。&lt;/li&gt;
 &lt;li&gt;打開瀏覽器的開發者工具，各家瀏覽器開啟的方式略有不同，不知道怎麼開的自行搜尋。&lt;/li&gt;
-&lt;li&gt;找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同，不知道在哪自行搜尋。以 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+&lt;li&gt;找到紀錄 Cookies 的分頁，也是各個瀏覽器略有不同 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;更新：此文章現在已不適用&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;由於 Google 不知道是否為了使自家服務只在自家的 Chrome 瀏覽器具有相對優勢，例如最近此篇&lt;a href="https://www.zdnet.com/article/former-mozilla-exec-google-has-sabotaged-firefox-for-years/"&gt;報導&lt;/a&gt;讓我想寫這篇文章。其中一例是在新版的 YouTube 介面使用過時的 API，導致除了 Chromium based 的瀏覽器性能表現低落，然後 Google 又把還原成舊版的按鍵移除，只好找別的方法切換為舊版介面。&lt;/p&gt;
 &lt;h2 id="_2"&gt;方法&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.windowscentral.com/how-to-fix-slow-edge-youtube"&gt;Windows Central&lt;/a&gt;與&lt;a href="https://www.reddit.com/r/youtube/comments/82whs4/old_layout_option_gonegoogle_dead_to_me/?sort=confidence&amp;amp;limit=500"&gt;Reddit&lt;/a&gt;提供了幾種方法可以將 YouTube 切換為舊版介面，其中我測試使用方法一，覺得簡單方便，而且不需要安裝任何而外的東西，只要不刪除 Cookies 就可以保持設定，完全按照上面的流程會變成英文版，我做了小修改讓他變成中文版，方法如下：&lt;/p&gt;
@@ -420,7 +466,7 @@ VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;li&gt;
 &lt;p&gt;重新整理 YouTube，應該就能切換為舊版介面。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Tips"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2020-09-07T15:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="Archive"></category><category term="YouTube"></category></entry><entry><title>Miniconda</title><link href="https://blog.ya-ti.ml/miniconda.html" rel="alternate"></link><published>2019-04-11T15:58:00+08:00</published><updated>2020-09-07T15:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2019-04-11:/miniconda.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;對剛入們 Python 的人，安裝整個&lt;a href="https://blog.ya-ti.ml/python-心得.html"&gt;Anaconda Distribution&lt;/a&gt;是最容易的方式。但是一般而言，會建議 Python 專案開發是一個專案建立一個虛擬環境。既然每一個專案都要建立一個環境，base environment 理應不需要安裝這麼多套件，所以當你只想要使用 conda 來管理環境可以只選擇安裝&lt;a href="https://docs.conda.io/en/latest/miniconda.html"&gt;Miniconda&lt;/a&gt;，它只會安裝最基本 conda 管理工具。&lt;/p&gt;
 &lt;h2 id="_2"&gt;初始化&lt;/h2&gt;
 &lt;p&gt;安裝完成後可以執行 (conda &amp;gt; 4.6.12):&lt;/p&gt;
@@ -1795,7 +1841,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;
@@ -1805,7 +1851,7 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}
 &lt;p&gt;要透過電子郵件驗證您的網域，先選擇其中一個可用的驗證電子郵件地址，並確保您有權存取關聯的電子郵件收件匣。這個方法最方便，但是只適合持有整個網域的持有人，不適合我這種用免費子網域的人。&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 電子郵件驗證 " src="https://zerossl.com/assets/images/help_verify_domains_email_verification.png"&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證 …&lt;/h3&gt;</summary><content type="html">&lt;p&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/p&gt;
+&lt;h3 id="2-dns-cname"&gt;2. DNS (CNAME) 驗證 …&lt;/h3&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
 &lt;p&gt;我的網站是使用 &lt;a href="https://www.sslforfree.com/"&gt;SSL For Free&lt;/a&gt; 這個網站，幫我們取得 &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 提供的免費 SSL。這裡簡單介紹如何取的 SSL 憑證：&lt;/p&gt;

@@ -132,6 +132,36 @@
 
 <article>
   <header>
+    <h2><a href="https://blog.ya-ti.ml/如何在-WSL中共享Windows-10的SSH-keys.html#如何在-WSL中共享Windows-10的SSH-keys">如何在 WSL 中共享 Windows 10 的 SSH keys</a></h2>
+    <p>
+      Posted on Fri 30 April 2021 in <a href="https://blog.ya-ti.ml/category/tips.html">Tips</a>
+
+          &#8226; Tagged with
+              <a href="https://blog.ya-ti.ml/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
+    </p>
+  </header>
+  <div>
+      <p>由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。</p>
+<h2 id="_1">方法</h2>
+<p>方法來自微軟的<a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/">開發部落格</a>，</p>
+<ol>
+<li>先在 Windows 下產生 SSH key，具體參考<a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">GitHub 文件</a></li>
+<li>
+<p>將 Windows 下的 <code>.ssh</code> 資料夾複製到 WSL 中的家目錄下，可以使用檔案總管或是命令行</p>
+<p><code>cp -r /mnt/c/Users/&lt;username&gt;/.ssh ~/.ssh</code></p>
+</li>
+<li>
+<p>修復檔案權限，因為安全考量，SSH key …</p></li></ol>
+        <br>
+        <a class="btn"
+           href="https://blog.ya-ti.ml/如何在-WSL中共享Windows-10的SSH-keys.html#如何在-WSL中共享Windows-10的SSH-keys">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://blog.ya-ti.ml/如何解決執行-bash-script-時遇到-command-not-found-的問題.html#如何解決執行-bash-script-時遇到-command-not-found-的問題">如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</a></h2>
     <p>
       Posted on Wed 24 April 2019 in <a href="https://blog.ya-ti.ml/category/tips.html">Tips</a>
