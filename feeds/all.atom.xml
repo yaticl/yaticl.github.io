@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-09-10T16:15:00+08:00</updated><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-10T16:15:00+08:00</published><updated>2020-09-10T16:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-10:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/all.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2020-10-28T17:52:00+08:00</updated><entry><title>如何更改 Microsoft Word 引用來源的語言</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9Microsoft-Word%E5%BC%95%E7%94%A8%E4%BE%86%E6%BA%90%E7%9A%84%E8%AA%9E%E8%A8%80.html" rel="alternate"></link><published>2020-10-28T17:52:00+08:00</published><updated>2020-10-28T17:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-10-28:/如何更改Microsoft-Word引用來源的語言.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用&lt;a href="https://academic.microsoft.com/home"&gt;Microsoft Academic&lt;/a&gt;來儲存需要引用的文章，因為它可以將引用的文章輸出成可以直接被 Word 載入的 XML 檔案，或是存成 BibTex 檔案搭配&lt;a href="https://www.zotero.org/"&gt;Zotero&lt;/a&gt;先做參考文獻管理，整理後才在 Word 裡面引用。由於 paper 基本都是用英文來寫，但是我們系統和程式的語言通常都是設定成中文，導致在 Word 中想要直接用 XML 檔案自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。&lt;/p&gt;
+&lt;h2 id="_2"&gt;解決辦法&lt;/h2&gt;
+&lt;p&gt;這個問題已經有人問過了，根據微軟 MVP 的&lt;a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_other-mso_2010/word-2010-change-referencescitation-language/f67a4daf-2af2-40ba-a03c-d28596560e3e"&gt;回答&lt;/a&gt;，有兩種方法可行。&lt;/p&gt;
+&lt;h3 id="_3"&gt;方法一&lt;/h3&gt;
+&lt;p&gt;Word 本身就有設定讓使用者編輯引用來源的語言，只要將語言由預設改成英文就可以了，如圖所示：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 語言設定 " src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&amp;amp;height=464&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;此方法最簡單直覺 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;在用 Microsoft Word 寫 paper 的時候，會需要加入引用文章，我通常是利用&lt;a href="https://academic.microsoft.com/home"&gt;Microsoft Academic&lt;/a&gt;來儲存需要引用的文章，因為它可以將引用的文章輸出成可以直接被 Word 載入的 XML 檔案，或是存成 BibTex 檔案搭配&lt;a href="https://www.zotero.org/"&gt;Zotero&lt;/a&gt;先做參考文獻管理，整理後才在 Word 裡面引用。由於 paper 基本都是用英文來寫，但是我們系統和程式的語言通常都是設定成中文，導致在 Word 中想要直接用 XML 檔案自動插入參考的時候會變成中英文夾雜，反而吃了 Word 的在地化設計這個優點的虧。&lt;/p&gt;
+&lt;h2 id="_2"&gt;解決辦法&lt;/h2&gt;
+&lt;p&gt;這個問題已經有人問過了，根據微軟 MVP 的&lt;a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_word-mso_other-mso_2010/word-2010-change-referencescitation-language/f67a4daf-2af2-40ba-a03c-d28596560e3e"&gt;回答&lt;/a&gt;，有兩種方法可行。&lt;/p&gt;
+&lt;h3 id="_3"&gt;方法一&lt;/h3&gt;
+&lt;p&gt;Word 本身就有設定讓使用者編輯引用來源的語言，只要將語言由預設改成英文就可以了，如圖所示：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 語言設定 " src="https://bn1302files.storage.live.com/y4makpR0gkEeG1QcotX7cz6ab28OwjMQ9b-yYOMxFCaJzm-dxEWUBKhHuTVSlvQ9wKtl-yE0JupTngiP0f023QaHH0nGODsW2-4cQyVbQX-3lQEn3TaEFInteH1fA9U49I5MCKXf4HfJ5vgpoNNzKmSP6g3-NBwvM2gFMtBKE9wVPbIMKJfhkwDUSBt490eFi2w?width=1024&amp;amp;height=464&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;此方法最簡單直覺，但是需要一個一個編輯來源設定，操作起來比較麻煩。&lt;/p&gt;
+&lt;h3 id="_4"&gt;方法二&lt;/h3&gt;
+&lt;p&gt;另一個方法是修改引用來源的 XML 檔案，在每一個引用來源的&lt;code&gt;&amp;lt;Source&amp;gt;&lt;/code&gt;標籤內加入一個語言的標籤&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;LCID&amp;gt;&lt;/span&gt;1033&lt;span class="nt"&gt;&amp;lt;/LCID&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;1033 是英文 ( 美國 ) 的代碼，可以視需求更改。每一個引來源加入語言標籤後應該由符合如下的格式：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;Source&amp;gt;&lt;/span&gt;
+    ...# 省略其他標籤
+    &lt;span class="nt"&gt;&amp;lt;LCID&amp;gt;&lt;/span&gt;1033&lt;span class="nt"&gt;&amp;lt;/LCID&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/Source&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這種修改方法搭配文字編輯器的尋找功能可以比方法一的修改速度快很多。&lt;/p&gt;</content><category term="Microsoft Office"></category><category term="Microsoft Office"></category><category term="Microsoft Word"></category></entry><entry><title>如何將網站從 WordPress 遷移至 Pelican</title><link href="https://blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E5%B0%87%E7%B6%B2%E7%AB%99%E5%BE%9EWordPress%E9%81%B7%E7%A7%BB%E8%87%B3Pelican.html" rel="alternate"></link><published>2020-09-10T16:15:00+08:00</published><updated>2020-09-10T16:15:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2020-09-10:/如何將網站從WordPress遷移至Pelican.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
 &lt;p&gt;由於最近我在免費主機上架的 WordPress 網站，可靠性愈來愈差了，自動更新版本常常失敗，新的外掛也裝不上去，網站連線速度也不快，不過畢竟是免費的主機，可靠性本來就無法保證，因此興起了將網站搬家的念頭。
 因為我的網站都是靜態的內容為主，所以想要將網站架在&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;上。
 由於我對 Python 比較熟悉，所以決定使用&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;來生成靜態網站。
