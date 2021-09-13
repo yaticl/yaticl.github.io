@@ -158,7 +158,7 @@
 令<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則其定義為：</p>
 <div class="math">$$H_n{H_n}^T=nI_n,$$</div>
 <p>其中<span class="math">\(I_n\)</span>為<span class="math">\(n \times n\)</span>的單位矩陣。</p>
-<h2 id="sylvesters-construction">Sylvester's construction<a href="#Sylvester's-construction">¶</a></h2>
+<h2 id="sylvesters-construction">Sylvester's construction</h2>
 <p>假設<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則可以藉由分區矩陣：</p>
 <div class="math">$$\begin{bmatrix}  
 H &amp; H \\  
@@ -170,7 +170,7 @@ H_{2^{k-1}} &amp; H_{2^{k-1}} \\
 H_{2^{k-1}} &amp; -H_{2^{k-1}}  
 \end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$</div>
 <p>其中<span class="math">\(\otimes\)</span>為 Kronecker product。</p>
-<h2 id="_3">範例<a href="# 範例 ">¶</a></h2>
+<h2 id="_3">範例</h2>
 <p>在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為<span class="math">\(2\)</span>的次方整數，回傳<span class="math">\(n\)</span>階的 Hadamard matrix，以下為文件中的範例：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">hadamard</span>

@@ -64,12 +64,12 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;如此就能簡單的安裝完成了。&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category><category term="Anaconda"></category></entry><entry><title>Python 心得</title><link href="https://yaticl.github.io/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/python-心得.html</id><summary type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
+&lt;p&gt;如此就能簡單的安裝完成了。&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category><category term="Anaconda"></category></entry><entry><title>Python 心得</title><link href="https://yaticl.github.io/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/python-心得.html</id><summary type="html">&lt;h2 id="python"&gt;Python&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。&lt;/p&gt;
-&lt;h2 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h2&gt;
-&lt;p&gt;我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …&lt;/p&gt;</summary><content type="html">&lt;h1 id="python"&gt;Python&lt;/h1&gt;
+&lt;h3 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h3&gt;
+&lt;p&gt;我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="python"&gt;Python&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。&lt;/p&gt;
-&lt;h2 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h2&gt;
+&lt;h3 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h3&gt;
 &lt;p&gt;我在大學時期比較常用的是 MATLAB 來做科學計算，MATLAB 確實方便好用，但畢竟是付費軟體，通常個人也買不起，出了校門可能就沒辦法用，因此嘗試轉用 Python。因為 Python 是開源的高階語言，藉由開源社群的力量，有著大量的函式庫，能做的事其實比 MATLAB 還多，而且用起來更自由，不用像 MATLAB 綁定傻大粗又不穩的開發環境。個人覺得以科學計算而言，Python 的上手難度沒有比 MATLAB 難上多少，但是可以獲得自由，所以入坑 Python。&lt;/p&gt;
 &lt;h2 id="anaconda-distribution"&gt;Anaconda Distribution&lt;/h2&gt;
 &lt;h3 id="_1"&gt;簡介&lt;/h3&gt;
@@ -79,7 +79,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;p&gt;&lt;a href="https://conda.io"&gt;conda&lt;/a&gt;是 Anaconda 自帶的套件管理工具，conda 的用法，官方有提供簡單上手的表格如下&lt;/p&gt;
 &lt;p&gt;&lt;img alt="conda_1" src="https://d8cbkg.bn.files.1drv.com/y4mK4wSwoOHdi3H0WVObnXFrj-AJlzrBrM4n_XaTB7TRrI3G1hT2xNZxbWq5nU-SLvrFBbSyCrpgQOZOhajjUdN3I47F3YacT5bcoTtQXX7K4v_s7HgVT2ki7HR-Ds2NshOFi0WRzsJ0rsrxmx8K-aIgftP6WhJJzwkUcLazrq4kKe0cNMewg-gAw5EKap_S-bCFuGwl4tOhsHIj6AzzurOGw?width=944&amp;amp;height=1024&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="conda_2" src="https://scuseg.bn.files.1drv.com/y4mwoS4LZkGNLbw296g_0dLumzjGWs1cm3sCbg1mLU7bL1t36xB9MNyoBCN5VvleLo32IjI9F1dmQtMMH2E6DmpfWJnDo9wIJkO0qaebMHH4T16af6WlMEl3VQT2Rjo1JdO3ERaN5HgjIOXXdHMBACu5afCPnAn3TsYShI1rpTcX9Bzx-WdKLt0DYi0P6AovfOZPAYkV3BeHT2L5Keo3BfPIA?width=970&amp;amp;height=1024&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;h2 id="_2"&gt;常用套件&lt;/h2&gt;
+&lt;h3 id="_2"&gt;常用套件&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
