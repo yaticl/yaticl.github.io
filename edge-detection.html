@@ -10,29 +10,29 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
 
 
     <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.ya-ti.ml/theme/pygments/github.min.css">
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
 
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/jquery.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch_set.min.js"></script>
-    <script src="https://blog.ya-ti.ml/tipuesearch_content.js"></script>
-    <link rel="stylesheet" href="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.css" />
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
 
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
-
-
-    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
 
 
 
@@ -45,15 +45,15 @@
 <meta property="og:title" content="邊界偵測 (Edge Detection)"/>
 <meta property="og:description" content="通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。 影像梯度 (Image gradient) 由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。 Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點\((x,y)\)的梯度可以表示為 $$\triangledown f = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} g_x \\ g_y \end …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://blog.ya-ti.ml/edge-detection.html"/>
+<meta property="og:url" content="https://yaticl.github.io/edge-detection.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-07-06 21:52:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://blog.ya-ti.ml/author/ya-ti.html">
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
 <meta property="article:section" content="Digital Image Processing"/>
 <meta property="article:tag" content="Digital image processing"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml/images/profile.jpg">
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 邊界偵測 (Edge Detection)</title>
 
@@ -83,12 +83,12 @@
 <body class="light-theme">
   <aside>
     <div>
-      <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml/images/profile.jpg" alt="" title="">
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
-        <a href="https://blog.ya-ti.ml"></a>
+        <a href="https://yaticl.github.io"></a>
       </h1>
 
 
@@ -102,7 +102,7 @@
 
               <li>
                 <a target="_self"
-                   href="https://blog.ya-ti.ml/pages/about.html#about">
+                   href="https://yaticl.github.io/pages/about.html#about">
                   關於我
                 </a>
               </li>
@@ -117,7 +117,7 @@
             </a>
           </li>
           <li>
-            <a  class="sc-rss" href="https://blog.ya-ti.ml/feeds/all.atom.xml" target="_blank">
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
               <i class="fas fa-rss"></i>
             </a>
           </li>
@@ -128,12 +128,12 @@
   <main>
 
     <nav>
-      <a href="https://blog.ya-ti.ml">Home</a>
+      <a href="https://yaticl.github.io">Home</a>
 
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
-      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -142,7 +142,7 @@
       
     <h1 id="edge-detection">邊界偵測 (Edge Detection)</h1>
     <p>
-      Posted on Fri 06 July 2018 in <a href="https://blog.ya-ti.ml/category/digital-image-processing.html">Digital Image Processing</a>
+      Posted on Fri 06 July 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
 
     </p>
   </header>
@@ -293,17 +293,17 @@ g_y \end{bmatrix},$$</div>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://blog.ya-ti.ml/tag/digital-image-processing.html">Digital image processing</a>
-      <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+      <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>
+      <a href="https://yaticl.github.io/tag/python.html">Python</a>
     </p>
   </div>
 
 
   <div class="neighbors">
-    <a class="btn float-left" href="https://blog.ya-ti.ml/histogram-equalization.html" title="直方圖等化 (Histogram Equalization)">
+    <a class="btn float-left" href="https://yaticl.github.io/histogram-equalization.html" title="直方圖等化 (Histogram Equalization)">
       <i class="fa fa-angle-left"></i> 上一篇文章
     </a>
-    <a class="btn float-right" href="https://blog.ya-ti.ml/local-normalization.html" title="局部歸一化 (Local Normalization)">
+    <a class="btn float-right" href="https://yaticl.github.io/local-normalization.html" title="局部歸一化 (Local Normalization)">
       下一篇文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
@@ -311,11 +311,11 @@ g_y \end{bmatrix},$$</div>
   <div class="related-posts">
     <h4>你可能也感興趣</h4>
     <ul class="related-posts">
-      <li><a href="https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></li>
-      <li><a href="https://blog.ya-ti.ml/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
-      <li><a href="https://blog.ya-ti.ml/histogram-equalization.html">直方圖等化 (Histogram Equalization)</a></li>
-      <li><a href="https://blog.ya-ti.ml/如何將網站從WordPress遷移至Pelican.html">如何將網站從 WordPress 遷移至 Pelican</a></li>
-      <li><a href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="https://yaticl.github.io/2d-discrete-wavelet-transform.html">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></li>
+      <li><a href="https://yaticl.github.io/local-normalization.html">局部歸一化 (Local Normalization)</a></li>
+      <li><a href="https://yaticl.github.io/histogram-equalization.html">直方圖等化 (Histogram Equalization)</a></li>
+      <li><a href="https://yaticl.github.io/如何將網站從WordPress遷移至Pelican.html">如何將網站從 WordPress 遷移至 Pelican</a></li>
+      <li><a href="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
     </ul>
   </div>
 
@@ -324,19 +324,19 @@ g_y \end{bmatrix},$$</div>
   <section>
     <p id="post-share-links">
       分享到:
-      <a href="https://sharetodiaspora.github.io/?title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//blog.ya-ti.ml/edge-detection.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      <a href="https://sharetodiaspora.github.io/?title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//yaticl.github.io/edge-detection.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//blog.ya-ti.ml/edge-detection.html&hashtags=digital-image-processing,python" target="_blank" title="分享到 Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&url=https%3A//yaticl.github.io/edge-detection.html&hashtags=digital-image-processing,python" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.ml/edge-detection.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/edge-detection.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.ml/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&summary=%E9%80%9A%E5%B8%B8%E5%9C%A8%E4%B8%80%E5%BC%B5%E5%BD%B1%E5%83%8F%E7%95%B6%E4%B8%AD%EF%BC%8C%E6%88%91%E5%80%91%E6%9C%83%E6%84%9F%E8%88%88%E8%B6%A3%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%83%E6%98%AF%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E6%AF%94%E8%BC%83%E5%A4%A7%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%8C%E5%9B%A0%E7%82%BA%E9%80%99%E4%BA%9B%E5%9C%B0%E6%96%B9%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%95%B6%E4%BD%9C%E7%94%A8%E4%BE%86%E6%8F%8F%E8%BF%B0%E8%A9%B2%E5%BD%B1%E5%83%8F%E7%9A%84%E7%89%B9%E5%BE%B5%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%B8%80%E7%A8%AE%E7%94%B1%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E5%BD%A2%E6%88%90%E7%9A%84%E7%89%B9%E5%BE%B5%E5%B0%B1%E6%98%AF%E5%BD%B1%E5%83%8F%E7%9A%84%E9%82%8A%E7%95%8C%20%28edge%29%20%E4%BD%8D%E7%BD%AE%E3%80%82%0A%E5%BD%B1%E5%83%8F%E6%A2%AF%E5%BA%A6%20%28Image%20gradient%29%0A%E7%94%B1%E6%96%BC%E6%88%91%E5%80%91%E5%B0%8D%E5%BD%B1%E5%83%8F%E6%9C%89%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%89%E8%88%88%E8%B6%A3%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E4%B8%80%E7%A8%AE%E6%95%B8%E5%AD%B8%E6%8F%8F%E8%BF%B0%E9%80%99%E7%A8%AE%E8%AE%8A%E5%8C%96%EF%BC%8C%E5%8D%B3%E7%82%BA%20image%20gradient%E3%80%82%0AImage%20gradient%20%E6%98%AF%E4%B8%80%202D%20%E5%90%91%E9%87%8F%20%28vector%29%EF%BC%8C%E5%B0%8D%E6%87%89%E6%B0%B4%E5%B9%B3%E5%92%8C%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%EF%BC%8C%E6%96%B9%E5%90%91%E5%AE%9A%E7%BE%A9%E7%82%BA%E4%BA%AE%E5%BA%A6%E6%9C%80%E6%9C%89%E5%8F%AF%E8%83%BD%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%96%B9%E5%90%91%EF%BC%8C%E7%B0%A1%E5%96%AE%E4%BE%86%E8%AA%AA%E5%B0%B1%E6%98%AF%E6%9A%97%20-%3E%20%E4%BA%AE%EF%BC%8C%E9%95%B7%E5%BA%A6%E5%B0%8D%E6%87%89%E8%AE%8A%E5%8C%96%E7%8E%87%E3%80%82%E5%9C%A8%E5%BD%B1%E5%83%8F%E4%B8%AD%E4%B8%80%E9%BB%9E%5C%28%28x%2Cy%29%5C%29%E7%9A%84%E6%A2%AF%E5%BA%A6%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E7%82%BA%0A%24%24%5Ctriangledown%20f%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D%20%5C%5C%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D%20%20%0A%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0Ag_x%20%5C%5C%20%20%0Ag_y%20%5Cend%20%E2%80%A6&source=https%3A//blog.ya-ti.ml/edge-detection.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&summary=%E9%80%9A%E5%B8%B8%E5%9C%A8%E4%B8%80%E5%BC%B5%E5%BD%B1%E5%83%8F%E7%95%B6%E4%B8%AD%EF%BC%8C%E6%88%91%E5%80%91%E6%9C%83%E6%84%9F%E8%88%88%E8%B6%A3%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%83%E6%98%AF%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E6%AF%94%E8%BC%83%E5%A4%A7%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%8C%E5%9B%A0%E7%82%BA%E9%80%99%E4%BA%9B%E5%9C%B0%E6%96%B9%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%95%B6%E4%BD%9C%E7%94%A8%E4%BE%86%E6%8F%8F%E8%BF%B0%E8%A9%B2%E5%BD%B1%E5%83%8F%E7%9A%84%E7%89%B9%E5%BE%B5%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%B8%80%E7%A8%AE%E7%94%B1%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E5%BD%A2%E6%88%90%E7%9A%84%E7%89%B9%E5%BE%B5%E5%B0%B1%E6%98%AF%E5%BD%B1%E5%83%8F%E7%9A%84%E9%82%8A%E7%95%8C%20%28edge%29%20%E4%BD%8D%E7%BD%AE%E3%80%82%0A%E5%BD%B1%E5%83%8F%E6%A2%AF%E5%BA%A6%20%28Image%20gradient%29%0A%E7%94%B1%E6%96%BC%E6%88%91%E5%80%91%E5%B0%8D%E5%BD%B1%E5%83%8F%E6%9C%89%E4%BA%AE%E5%BA%A6%E8%AE%8A%E5%8C%96%E7%9A%84%E5%9C%B0%E6%96%B9%E6%9C%89%E8%88%88%E8%B6%A3%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E4%B8%80%E7%A8%AE%E6%95%B8%E5%AD%B8%E6%8F%8F%E8%BF%B0%E9%80%99%E7%A8%AE%E8%AE%8A%E5%8C%96%EF%BC%8C%E5%8D%B3%E7%82%BA%20image%20gradient%E3%80%82%0AImage%20gradient%20%E6%98%AF%E4%B8%80%202D%20%E5%90%91%E9%87%8F%20%28vector%29%EF%BC%8C%E5%B0%8D%E6%87%89%E6%B0%B4%E5%B9%B3%E5%92%8C%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%EF%BC%8C%E6%96%B9%E5%90%91%E5%AE%9A%E7%BE%A9%E7%82%BA%E4%BA%AE%E5%BA%A6%E6%9C%80%E6%9C%89%E5%8F%AF%E8%83%BD%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%96%B9%E5%90%91%EF%BC%8C%E7%B0%A1%E5%96%AE%E4%BE%86%E8%AA%AA%E5%B0%B1%E6%98%AF%E6%9A%97%20-%3E%20%E4%BA%AE%EF%BC%8C%E9%95%B7%E5%BA%A6%E5%B0%8D%E6%87%89%E8%AE%8A%E5%8C%96%E7%8E%87%E3%80%82%E5%9C%A8%E5%BD%B1%E5%83%8F%E4%B8%AD%E4%B8%80%E9%BB%9E%5C%28%28x%2Cy%29%5C%29%E7%9A%84%E6%A2%AF%E5%BA%A6%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E7%82%BA%0A%24%24%5Ctriangledown%20f%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D%20%5C%5C%20%20%0A%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D%20%20%0A%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20%20%0Ag_x%20%5C%5C%20%20%0Ag_y%20%5Cend%20%E2%80%A6&source=https%3A//yaticl.github.io/edge-detection.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&u=https%3A//blog.ya-ti.ml/edge-detection.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&u=https%3A//yaticl.github.io/edge-detection.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&amp;body=https%3A//blog.ya-ti.ml/edge-detection.html" target="_blank" title="從 Email 分享">Email</a>
+      <a href="mailto:?subject=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29&amp;body=https%3A//yaticl.github.io/edge-detection.html" target="_blank" title="從 Email 分享">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.ml/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29" target="_blank" title="從 Reddit 分享">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/edge-detection.html&title=%E9%82%8A%E7%95%8C%E5%81%B5%E6%B8%AC%20%28Edge%20Detection%29" target="_blank" title="從 Reddit 分享">Reddit</a>
     </p>
   </section>
 </article>
@@ -356,8 +356,8 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
-  "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml/images/profile.jpg",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
   "description": ""
 }
 </script>
