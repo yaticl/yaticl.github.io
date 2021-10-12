@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
+
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
+
+
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+
+
+
+    <meta name="author" content="Ya-Ti" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Ya-Ti's Blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://yaticl.github.io"/>
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; Category Digital Image Processing</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://yaticl.github.io"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://yaticl.github.io/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://yaticl.github.io">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="https://yaticl.github.io/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">二維離散小波轉換 (2D Discrete Wavelet Transform)</a></h2>
+    <p>
+      Posted on Thu 30 August 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital Image Processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&height=405&cropmode=none">
+      <h2 id="_1">簡介</h2>
+<p>小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。</p>
+<h2 id="_2">實作</h2>
+<p>一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2<br>
+<img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;height=405&amp;cropmode=none"></p>
+<p><span class="math">\(cA_{i}\)</span>:approximation coefficients at level <span class="math">\(i\)</span></p>
+<p><span class="math">\(cH_{i}\)</span>:horizontal coefficients at level <span class="math">\(i\)</span></p>
+<p><span class="math">\(cV_{i …</span></p>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/2d-discrete-wavelet-transform.html#2d-discrete-wavelet-transform">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://yaticl.github.io/local-normalization.html#local-normalization">局部歸一化 (Local Normalization)</a></h2>
+    <p>
+      Posted on Wed 29 August 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&height=137&cropmode=none">
+      <h2 id="_1">簡介</h2>
+<p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
+<h2 id="_2">實作</h2>
+<p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
+<div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
+<p>其中</p>
+<ul>
+<li><span class="math">\(m_f(x,y)\)</span>是<span class="math">\(f(x,y)\)</span>的 local mean 估算值</li>
+<li><span class="math">\(\sigma_f(x,y)\)</span>是 local variance 的估算值</li>
+<li><span class="math">\(g(x …</span></li></ul>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/local-normalization.html#local-normalization">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://yaticl.github.io/edge-detection.html#edge-detection">邊界偵測 (Edge Detection)</a></h2>
+    <p>
+      Posted on Fri 06 July 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&height=264&cropmode=none">
+      <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
+<h2 id="image-gradient">影像梯度 (Image gradient)</h2>
+<p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end …</div>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/edge-detection.html#edge-detection">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2 id="_1">數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">
+          繼續閱讀
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

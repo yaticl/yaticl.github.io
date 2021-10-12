@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - 硬體</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/ying-ti.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2020-09-01T17:30:00+08:00</updated><entry><title>Microsoft Surface Pro X 體驗心得</title><link href="https://yaticl.github.io/Microsoft-Surface-Pro-X-%E9%AB%94%E9%A9%97%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2020-09-01T17:30:00+08:00</published><updated>2020-09-01T17:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2020-09-01:/Microsoft-Surface-Pro-X-體驗心得.html</id><summary type="html">&lt;p&gt;Microsoft Pro X的使用體驗心得。&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
+&lt;p&gt;我是一位 Microsoft Surface 系列產品的長期使用者，每當微軟推出新型態的裝置時，如果有機會都想體驗一下。
+微軟在 2019 的秋季發表會中推出了 Surface Pro X，是微軟首次親自推出的全時連網電腦 (Always-Connected PC)，根據微軟的&lt;a href="https://www.youtube.com/watch?v=ucxShAm5660"&gt;工程說明&lt;/a&gt;，該裝置為 2-in-1 型態的重新思考，並且再次嘗試搭載了 ARM 指令集的處理器。
+雖然 Windows on ARM 的軟體支援度一直被媒體詬病，但是這件事從發表的時候就是已知，很多媒體也只是再講一次早就知道的事情，而且因為使用方式不同，某些方面無法提供我想要知道的資訊。由於很想知道台裝置的能耐，因此趁著近期的優惠想買來體驗一番。
+這次入手的 Pro X 是 8 GB RAM、128 GB SSD 版本，從入手到現在已經體驗約一個多月，紀錄一下到目前為止的主觀體驗心得。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SurfaceProX" src="https://pdt4fa.bn.files.1drv.com/y4mL1uQWV4waoinjGjGvy8NeI68SQ8uEtRgepNoLQT0XF1fDHbuwuTir9kyMnDRRN7O5MC-iMqaymZ-TZlcB7_rKwo41jkXLe8OiYtYlNB9WjRDtHhFnun18MOBE6z42gB8Ievq5BsGZP6mVaQWG1AQwMte47tNEP_GwJAQJGUjHXijcd7R13G7gNmBOYU2P72qGy2OFmraKeW9nOOH0TPVlA?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;只對某些內容感興趣，可以使用下面的快速連結：&lt;/p&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;緣起&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_2"&gt;硬體&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_3"&gt;設計&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_4"&gt;配件&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#type-cover"&gt;Type Cover&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#surface-slim-pen"&gt;Surface Slim Pen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_5"&gt;性能&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_6"&gt;壓力測試&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_7"&gt;使用體驗&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_8"&gt;生產力體驗&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_9"&gt;日常體驗&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_10"&gt;電池續航力&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#x86"&gt;關於 X86 程式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_11"&gt;總結&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="_2"&gt;硬體&lt;/h2&gt;
+&lt;h3 id="_3"&gt;設計&lt;/h3&gt;
+&lt;p&gt;來跟手上持有的裝置來做個比較，從 Surface Pro 3 開始到現在，包含最近入手的 Pro X，已經持有過 5 台 Surface 裝置了，由於 Pro 3 已經轉給老爸了，現在手上有 4 台現役的裝置：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 現役的 Surface" src="https://yjlvza.bn.files.1drv.com/y4mAY-of1eECnFqsignG0ytdBmAt9EydvRJzils9MHxlhLElgflC9H0XVfkAL6E1-jaHg9_VabZdrs7iw7joQ_iqImvzKTa69ZhmZI4U9Uh6S5jZQUa_u8I98OFuL3zW2HSU9dU9e6oLzuPSqgoc-vrAPgNpYX-SV11tFfmDQqD2kvf-sO-IJUNw8Ml4EhzD-guAmW1KtcfUZBb5gJE5SJ2ow?width=1024&amp;amp;height=386&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;左一的 Pro X 是唯一黑色的 Surface，左二是之前的主力機 Book 2，右一是第一代的 Go，右二是我念碩班的夥伴 Pro ( 第五代 )，中間的手機是 Lumia 950，是除了這張照片以外負責拍照的相機。&lt;/p&gt;
+&lt;p&gt;由螢幕大小來個疊疊樂比較一下厚度：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 厚度比較 " src="https://lfaghw.bn.files.1drv.com/y4m25hNhdk5LbMz2h5Y_cvLZDplVG_d_zJWxsqtCykfWX3vUGdfSEVPXeg2Y-kfV-rSxAwXtDEYEXhxqig9MIaMcjmCiH98ZhiWotxd0Tc5QJQ8p7-uLF2-mpkn-fpx_AwZQUZ0rpflvyekK-QaYJJSXZxowjUlraSUJQOlvMKSZ7hZcOIy9hwl35g-jfGNVGG6M5IOgQX_-6VDAxAn7nGICw?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;可以看出來 Pro X 的厚度是最薄的 7.3 mm，機身也是最為圓潤，所以我覺得握持手感最好的一台 Surface。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由於本來 Pro X 是用來取代老 Pro ( 第五代 )，所以來比較一下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SP5 面積比較 " src="https://l8xhwq.bn.files.1drv.com/y4mX16Ng-lUr9DWb8lvuSokfeEgf-7yOHYss_k7bktFRu4cksskjegxh5o10CepbKsE7xAu2ZlAlORv2b4S2ncbYqpa0dZdrEvUqNUx1g2zmaVDIjHTF0O_NyUyPRvMKTK610TSBK5T-8cCZx0Cp4HJq-jerILMCZWcqTs0_Df0c8kbpw1ywFDrfcxcDWMjK5fkQCZQvLzjkM2dUl7-uqDwlg?width=1024&amp;amp;height=732&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;Pro X 的機身材質由鎂合金 + 烤漆變成了跟 Laptop 一樣的鋁合金 + 陽極氧化鋁上色，導致重量上沒有比 Pro ( 第五代 ) 輕多少，但優點是基本不會掉漆了。
+Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺吋基本一樣。目前 Pro X 黑色一種顏色，好看是好看但是很沾指紋，希望以後也能像 Laptop 一樣推出多種顏色。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SP5 厚度比較 " src="https://aso1qq.bn.files.1drv.com/y4mpsmEjBDnkJopMN8GPW9O90FdhV6mW3LsoXnVcMTzEM_UJqY64j9C4QgAmKsNYLKZ_7O75_HuNyo5vqGF4CWE2NQTXVErw9qnFsgoa8X0wPbiKCGzL6ck9ssgRmcrJkDn4LaPgERFM6JslcAQWAUMTTxqkzy3gwZsagthGJhvoOvDGX2xTaL07weQLrWTAbaIU_EulO9MAnTygVnlFsbXaA?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;Type Cover 的厚度基本一樣，只有要放筆的那一塊地方比以前厚，如果是用不能放筆的鍵盤就基本一樣了。由於 Pro X 機身較薄，因此整體的厚度更薄了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SP5 螢幕比較 " src="https://o96heq.bn.files.1drv.com/y4meCAXAOl1JQIiUhjtHz50WN6J2VEuf7jAbp5I9frbxmRB_0MjDlSu9PupsGFqPcxen5i0IYDi9qjUnYxJWczsB8au55xHxbYeOebMGXfBkfgpYbHEArESHY1z6gd7WHbvMVheP4xsEGf4MuSoCSrouDU87VxECD8mrzBi5lgaBSkzC79pkBptqiARHnhP-BJTVjdaI0-V6DmAW3oCDUfzEg?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;Pro X 相較 Pro ( 第五代 )，採用窄邊框的設計，塞入了更大的螢幕，大了 0.7 吋，設計上更加貼近現在的主流審美。
+螢幕同樣都是 267 PPI，螢幕觀感基本一樣好。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;再來跟 Book 2 比較一下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Book2 面積比較 " src="https://9nt9da.bn.files.1drv.com/y4mjaZAk45VVyywuKyLVCS-N9286xAek07kVnesCkNQOlQFnmtzMJLTXr1ajUutXQaNcJMXINjoT2r0GIYzwYqEfyeWEEMQCsx5P7ZR50y3QUUWjDqKzNkRNQ4ofiHeYFD4YigGRfWO7qqQThArPCjx2SC12qe8SmJzEXqjSFugelx_Fza1sxWsL9W2ptGanemlzLcBwC9G2faIBzrg1M_iAg?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Book2 厚度比較 " src="https://njdcta.bn.files.1drv.com/y4m43SnNlov-iU_PkrnelGOIu80iyvGfa-85OJvE6OtOVSVp3e2Mm5C0BT0dpnsLd7VYbFQNKSxRvxOftW-wm9__40kO_tGuKsGvehWoXC5chi5J7gkL8XkBSnPDYQ5qEnLVujxd9aKHppEIrx_5eWfwN2bW9ZyTkBvJzyTBGrcayxxVomZBVar51WtAghvBsJEvcB_WQ4D5BjX8i7OqWNJfQ?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;比較之後可以發現面積沒有差很多，但是厚度差距非常明顯，重量差了約 600 公克，也就是一罐水的重量，攜帶性有一定的差距。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Book2 螢幕比較 " src="https://cgr61g.bn.files.1drv.com/y4m2BGNx44JWRJ_2TIkdgnYDcEVvgu4kkk9X3KjSnWJSqyjoiXTpDvC4_kUoZkSYxvCV8fC2IhvrM3iW-pi4aXpe3zgQPfbPxrTE6iDZn4CFnHbbey6-O1M8AOLVYzJCGw34NkfaRY_wLnXN_Mj8KdPMkzTrlxEVVn2cGz89MJPNPFglcyWVfngGcWmHqgj5qUf2K1PXi4-LbRbGm09kZO1AQ?width=1024&amp;amp;height=576&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;Pro X 因為窄邊框的設計，螢幕只比 Book 2 小 0.5 吋而已，且螢幕也都是 267 PPI，螢幕細膩度看不出區別。&lt;/p&gt;
+&lt;h3 id="_4"&gt;配件&lt;/h3&gt;
+&lt;p&gt;Pro X 相較於老 Pro 系列，除了機身的設計改變之外，配件也有改進。&lt;/p&gt;
+&lt;h4 id="type-cover"&gt;Type Cover&lt;/h4&gt;
+&lt;p&gt;我買的是包含 Surface Slim Pen 充電功能的 Type Cover，材質為微軟愛用的 Alcantara，筆是以磁力吸附在充電座上，一樣有一條磁鐵可以吸附在螢幕上，當不用筆的時候可以完全隱藏存在。
+鍵盤和觸控板的部分基本上與老 Pro 系列的體驗相同，我覺得觸控板應該可以做更大一點。
+另外鍵盤與機身的連接方式也從 6 pin 的金屬觸點，變成了類似 Surface Connect 的接口，所以鍵盤也不能跟舊款通用了。
+鍵盤腕托底部增加了磁鐵，蓋上後可以吸住螢幕了，可以盡量避免放包包裡面時意外喚醒。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Type_Cover" src="https://9ck6qq.bn.files.1drv.com/y4m4bjmGeiU1x8ELIc3Nj_NxwXOsQyWWNxcFei1esTuvPD_6l_DlV-onaWPLYnBkuO97AEX8zjaFB1Wu5BKWVTk-5_k9AVDXGYJJIevh6MNjCj5k5BdDzT23f9XW0F0aA6yYlTFjxGvNoUy0Snx2BAW0R5pNDQVWg3QjgbsTSk2B99lEjrMHnKCST8hzE3Tbv0Isajb1G7IyLLv7pnsF7rXbQ?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;h4 id="surface-slim-pen"&gt;Surface Slim Pen&lt;/h4&gt;
+&lt;p&gt;Slim Pen 因為要無線充電的關係，外觀改成了親膚的塑膠材質，雖然筆身較細，但是我覺得握感沒有比較差。
+筆尖改成類似鉛筆的設計，目前似乎沒有可以更換的筆尖。尾端一樣有橡皮擦功能，而且一樣也是個按鍵。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Slim_Pen" src="https://wa4sbw.bn.files.1drv.com/y4m4axRiywo2VYMcQuaaffF28YHhp1I-C8JsyDGccYMpWh8CNq0Z3GrfOVgmV2fZLDzXd4e4c7W_UmQSHuF9Ehlxc4aBlcCRWUeW6TeKQIXP9v1v8N2bP8cOFytdCkaYBC8xzZvBObk4_zeugeEI-OHE6K7QRKFdN8DvzXl_X8sT1VJZXsD4xxpHfEaENdQZfDfPVH4d_XTKhm0UtbkbH7fgw?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;h3 id="_5"&gt;性能&lt;/h3&gt;
+&lt;p&gt;Surface Pro X 搭載跟高通合作開發的 Microsoft SQ1 SoC，根據維基百科上的&lt;a href="https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems-on-chip#SQ1"&gt;資訊&lt;/a&gt;，應該是客製版的高通 Snapdragon 8cx，CPU 為 Kryo 495，4 大核 (3 GHz) + 4 小核 (1.80 GHz) 的設計，GPU 是 Adreno 685 (2100 GFLOPs)，整合 X24 LTE modem，支援 Gigabit LTE，使用 TSMC N7 製成，7 W TDP，號稱與 Pro 6 相比能源效率可高達三倍，規格上以高通的 ARM 晶片來說應該算是當代性能最好的等級。
+大部分的時候，性能與 Book 2 比較感覺不出區別，多工的時候明顯比用 Intel 雙核處理器的 Pro 好。&lt;/p&gt;
+&lt;h4 id="_6"&gt;壓力測試&lt;/h4&gt;
+&lt;p&gt;根據官網的介紹，Pro X 搭載了碳複合無風扇冷卻系統，從 IFIXIT 的拆解圖可以大致了解其散熱模組主要由一塊均熱板與一根熱管所組成：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SPX 散熱 " src="https://d3nevzfk7ii3be.cloudfront.net/igi/LIfRi6uiCpGMh3MM.large"&gt;&lt;/p&gt;
+&lt;p&gt;在冷氣房的環境之下，接上電源，電池未在充電狀態，電源模式調整為最佳效能，先使用 AIDA64 單烤 FPU 15 分鐘。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="stress_FPU" src="https://i8xdwq.bn.files.1drv.com/y4mVE6nrj3Qvx5PDDzpKAamNSbOtxhwdqZHys_y1gKgJdr2e_HbEkhiW_mxswbbNVnnLTWSWDXKWnk8IgzFvtLRlAp-qDe8Uf_4nORQ9_KOcXnaus6_CYWnZBX0ZpHrSjYxv77dALI8Du__bnRFDVwStCMuOUzdHL3-qQG11vXfur_G1iG3ECWQOntikWkDmfrxlZhwXQ20etffypdGgvK2Qg?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;由於 AIDA64 很多感測器的數值無法正確讀出，我以工作管理員提供的數值為主，參考一篇&lt;a href="https://zhuanlan.zhihu.com/p/102206313"&gt;文章&lt;/a&gt;，前四個是小核心，後四個是大核心。
+工作管理員的時脈數值，根據我的觀察，其顯示數值應該為：&lt;/p&gt;
+&lt;div class="math"&gt;$$(\text{ 核心時脈 } \times \text{ 核心負載 }) \div \text{ 啟用核心數量。}$$&lt;/div&gt;
+&lt;p&gt;在全核心都滿載的情況下，時脈可以一直維持在&lt;span class="math"&gt;\(2.38 \text{ GHz} \approxeq (3+1.8) \div 2\)&lt;/span&gt;，推測是雖然號稱 3 GHz，但其實跟 Snapdragon 855+ 的最高時脈一樣是 2.96 GHz，這樣算出來的數值就完全符合了。&lt;/p&gt;
+&lt;p&gt;在相同的測試環境下，以 3DMark 中唯一支援 ARM 的 Night Raid 做 GPU 的壓力測試，測試結果以 99.9% 的成績通過。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="stress_GPU" src="https://vjlrza.bn.files.1drv.com/y4ml6ojJJelBu3KuGzuCV1dUNL5qH6VAsKGKk6WqBQ1c2IO-BZuctATJh0x9Dk9g9lHYjUbtO305mywn5Er3VMCaMtunN_URQgyyPt2aMpLDcE9kQ_rwpR4CoV48xlS3ui4nlITYa3tjOg5OeG-R7Lfp1n092pydjVvF_ZNKq3m6lrkK-8sjFoN614QGGvYcSjirXLc0uxrDJNTyAC8iDcqDQ?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;在跑壓力測試的時候，用手直接摸機身背後，只感覺溫而已，甚至比手機還不熱，相較於 Pro ( 第五代 )、Book 2 還有 Go 等被動散熱的 Surface，相同的測試要以燙來形容。
+由此可見，Pro X 可以較長時間完全發揮效能，而且機身的發熱量居然也不高。
+事實上，快速充電的時候比壓力測試還熱。&lt;/p&gt;
+&lt;h2 id="_7"&gt;使用體驗&lt;/h2&gt;
+&lt;h3 id="_8"&gt;生產力體驗&lt;/h3&gt;
+&lt;p&gt;說到 Windows 平板電腦，主要賣點就是生產力。我的工作流程，主要需求的軟體是 Microsoft Edge、Microsoft Office 全套、Drawboard(PDF 閱讀與標記 )、Python、Visual Studio Code (VS Code) 還有遠端桌面。
+這些軟體除了 Python 在 Windows on ARM 上沒原生支援外，其他都有原生支援。不過 Windows Subsystem for Linux (WSL) 這個好東西是原生，ARM 在 Linux 下的生態相較於 Windows 可就豐富了許多，有很多開源軟體可以用，例如前面提到的 Python，所以原生軟體不夠多，系統也可以來 2-in-1 一下。
+最近剛好想要將我的部落格從 WordPress 改成用 Pelican (Python) 生成網頁然後 host 在 GitHub Pages ( 寫文章時候的這個網站 )，以 WSL 為後端，VS Code 和 Edge 為前端，我可以在 Pro X 上完成所有工作。
+需要長時間或是高強度計算的工作，因為效率問題，也不會在之前的主力機 Book 2 上處理，本來就都是遠端到桌上型電腦來處理，Pro X 當然也能正常勝任。
+因此我目前的工作流程都沒有因為是 ARM 處理器有太大的影響。
+我在辦公室是使用 Surface Dock 接上一個 4K 與一個 1200P 的螢幕，對於都是用內建 GPU 輸出顯示的 Surface 來說壓力較大，&lt;/p&gt;
+&lt;p&gt;&lt;img alt=" 辦公桌 " src="https://o96oeq.bn.files.1drv.com/y4mg8fUiXbWzluZ9UTW11zuEmWe8YxZFJFVvpN8NLfQtkrU-tkkcb6EBolODm2_2LyIP1Srg4nR2UOvlO_2vVuO3a7i991Mx6RZZ14-k_K0v_fPSMrB7Jh7XRkcgOe14iNWwIIk5JB_yUBzc7vm4lDP1Rwc8X4IYsT8v2uYzpniSCAR-qv13XMcqMwabuxLwTcRSE5VhavQyfCEtBGavp-f1g?width=1024&amp;amp;height=768&amp;amp;cropmode=none"&gt;&lt;/p&gt;
+&lt;p&gt;由於這一世代除了 Go 2 以外的 Surface，內建 GPU 性能比起以前孱弱的 Intel (U)HD 620 強不少，所以與圖形性能相關體驗 Pro X 反而比起 Book 2 好，動畫再也不會掉幀數了。
+Pro X 的新設計還帶來了其他體驗的提升，因為 Pro X 的螢幕只比 Book 2 小 0.5 吋但是便攜性更高，出門負擔更低，並且比 Pro ( 第五代 ) 多支援 LTE 連網，所以只要有訊號的地方都能做事，可以更自由的選擇工作地點。&lt;/p&gt;
+&lt;h3 id="_9"&gt;日常體驗&lt;/h3&gt;
+&lt;p&gt;我日常對平板電腦的需求主要是上網、看影片與聽音樂，最常用的是 Edge、myTube! (Youtube)、bilibili (UWP) 與 Spotify ( 用 Edge 安裝成 PWA)，這些都是 ARM 原生，所以日常用的軟體體驗一如既往。
+值得一提的是，Pro X 搭載 2W 的立體聲揚聲器，加上 Dolby Audio Premium 音效，聲音體驗比用過的 Surface 都好。
+Pro X 支援全時連網，Instant On，按下電源鍵或是打開 Type Cover 就馬上喚醒，提供 iPad 般現代化行動裝置體驗。
+可惜沒有想像中的完美，還是預設待機 11 小時候休眠，雖然這時間可以調整，但是有第二個閥值，待機時耗電超過 5% 還是會休眠，這是&lt;a href="https://docs.microsoft.com/zh-tw/windows-hardware/customize/power-settings/adaptive-hibernate"&gt;by design&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="_10"&gt;電池續航力&lt;/h3&gt;
+&lt;p&gt;Pro X 官方宣稱典型使用方式最長可以使用 13 小時，由於機身較薄電池電量只有 38.2 Whr，實際續航力沒有想像中的優異。
+我最近一週當中會有一整天白天都外出使用，我的使用方式為全程都掛著 Teams，同時使用 Edge、VS Code、用 WSL 跑 Python 且會同時用藍芽耳機聽音樂，休息的時候會看一下影片，根據電池報告，這幾天的預估續航力都是約 7 個多小時，跟實際感覺差不多，下午的時候都是藍芽耳機先沒電 ( 耳機續航力標稱 6 小時 )。
+類似的使用方式電池報告預估的時間跟 Book 2 差不多，但是 Book 2 的電池有 75 Whr，明顯比用 Intel 處理器的 Pro 好。
+Pro X 支援快充，用隨附的 65W 充電器的確很快就充到 80% 以上，且支援 PD 充電，我用支援 45W 輸出的行動電源，充的也滿快。&lt;/p&gt;
+&lt;h2 id="x86"&gt;關於 X86 程式&lt;/h2&gt;
+&lt;p&gt;根據微軟的&lt;a href="https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-x86-emulation"&gt;說明&lt;/a&gt;，X86 程式應該是在執行的時候做 JIT binary translation，然後快取一段時間。由於是 JIT，當打開 X86 程式的時候，冷啟動會比原生的久，觀察工作管理員也可以發現，啟動的時候會占用較多的 CPU 和 RAM。
+像是 AIDA64 或是 Steam 這種比較小型的程式，用起來感覺很流暢，與原生的差異不是很大，但是像打開 Visual Studio 2019 (VS 2019) 這種大型的程式就不是這麼回事了。
+VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，導致剛打開的時候用起來會很卡，但是編譯完成後就會變流暢了。
+看起來 JIT 編譯的方式不適合大型的程式，難怪 Apple 會引入安裝的時候編譯，希望微軟之後也能跟上。
+關於相容性，我嘗試在 VS 2019 編譯一個 UWP 範例，目標平台選擇 ARM，居然可以成功建置，且在 Debug 模式下執行程式，勉強也算能自產自銷吧 🤣。當然我認為這項功能只是用來平滑過渡到 ARM 上，不應該這種裝置的主要使用方式。&lt;/p&gt;
+&lt;h2 id="_11"&gt;總結&lt;/h2&gt;
+&lt;p&gt;Pro X 目前的體驗感受，算是比我預期的好，本來我只打算當個能用 Office 和 UWP 的 Edge book，後來發現可以做很多事，就直接拿來作為主力機了。
+到目前為止我認為 Pro X 是一台好機器，但是不適合所有人，而我剛好是目標人群。我覺得很多開發者其實對 Windows on ARM 是很有興趣，但是缺乏工具鏈，微軟你家的 .Net framework 都沒有原生支援，一堆 WinForms 和 WPF 程式是要怎麼搞原生。
+不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="硬體"></category><category term="Microsoft Surface"></category><category term="Windows on ARM"></category></entry></feed>
