@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Linear Algebra</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/linear-algebra.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2018-03-09T21:18:00+08:00</updated><entry><title>Toeplitz Matrix</title><link href="https://blog.ya-ti.ml/toeplitz-matrix.html" rel="alternate"></link><published>2018-03-09T21:18:00+08:00</published><updated>2018-03-09T21:18:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-09:/toeplitz-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Linear Algebra</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/linear-algebra.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2018-03-09T21:18:00+08:00</updated><entry><title>Toeplitz Matrix</title><link href="https://yaticl.github.io/toeplitz-matrix.html" rel="alternate"></link><published>2018-03-09T21:18:00+08:00</published><updated>2018-03-09T21:18:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-09:/toeplitz-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。&lt;br&gt;
 對任一&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的矩陣&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;，可以表示成：&lt;/p&gt;
 &lt;div class="math"&gt;$$\mathbf{A}=\begin{bmatrix}  
@@ -129,7 +129,7 @@ x_n
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://blog.ya-ti.ml/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://yaticl.github.io/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
 當要畫出該矩陣時，定義&lt;span class="math"&gt;\(+1\)&lt;/span&gt;代表黑色，而&lt;span class="math"&gt;\(-1\)&lt;/span&gt;代表白色。&lt;/p&gt;
 &lt;h2 id="_2"&gt;特性&lt;/h2&gt;
@@ -142,7 +142,7 @@ x_n
 令&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則其定義為：&lt;/p&gt;
 &lt;div class="math"&gt;$$H_n{H_n}^T=nI_n,$$&lt;/div&gt;
 &lt;p&gt;其中&lt;span class="math"&gt;\(I_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的單位矩陣。&lt;/p&gt;
-&lt;h2 id="sylvesters-construction"&gt;Sylvester's construction&lt;a href="#Sylvester's-construction"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="sylvesters-construction"&gt;Sylvester's construction&lt;/h2&gt;
 &lt;p&gt;假設&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則可以藉由分區矩陣：&lt;/p&gt;
 &lt;div class="math"&gt;$$\begin{bmatrix}  
 H &amp;amp; H \\  
@@ -154,7 +154,7 @@ H_{2^{k-1}} &amp;amp; H_{2^{k-1}} \\
 H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}  
 \end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$&lt;/div&gt;
 &lt;p&gt;其中&lt;span class="math"&gt;\(\otimes\)&lt;/span&gt;為 Kronecker product。&lt;/p&gt;
-&lt;h2 id="_3"&gt;範例&lt;a href="# 範例 "&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;p&gt;在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為&lt;span class="math"&gt;\(2\)&lt;/span&gt;的次方整數，回傳&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，以下為文件中的範例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;hadamard&lt;/span&gt;

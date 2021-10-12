@@ -4,546 +4,546 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://blog.ya-ti.ml/</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tags.html</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/tags.html</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/categories.html</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/categories.html</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/authors.html</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/authors.html</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/archives.html</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/archives.html</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/search.html</loc>
-<lastmod>2021-04-30T17:25:55-00:00</lastmod>
+<loc>https://yaticl.github.io/search.html</loc>
+<lastmod>2021-09-14T01:38:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/pages/about.html</loc>
+<loc>https://yaticl.github.io/pages/about.html</loc>
 <lastmod>2018-01-20T15:34:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何在Microsoft-Word中給方程式編號.html</loc>
+<loc>https://yaticl.github.io/如何在Microsoft-Word中給方程式編號.html</loc>
 <lastmod>2021-04-30T17:04:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何在-WSL中共享Windows-10的SSH-keys.html</loc>
+<loc>https://yaticl.github.io/如何在-WSL中共享Windows-10的SSH-keys.html</loc>
 <lastmod>2021-04-30T15:42:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何更改Microsoft-Word引用來源的語言.html</loc>
+<loc>https://yaticl.github.io/如何更改Microsoft-Word引用來源的語言.html</loc>
 <lastmod>2020-10-28T17:52:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何將網站從WordPress遷移至Pelican.html</loc>
+<loc>https://yaticl.github.io/如何將網站從WordPress遷移至Pelican.html</loc>
 <lastmod>2020-09-10T16:15:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/Microsoft-Surface-Pro-X-體驗心得.html</loc>
+<loc>https://yaticl.github.io/Microsoft-Surface-Pro-X-體驗心得.html</loc>
 <lastmod>2020-09-01T17:30:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html</loc>
+<loc>https://yaticl.github.io/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html</loc>
 <lastmod>2020-03-11T11:59:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html</loc>
+<loc>https://yaticl.github.io/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html</loc>
 <lastmod>2019-12-30T14:55:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何解決執行-bash-script-時遇到-command-not-found-的問題.html</loc>
+<loc>https://yaticl.github.io/如何解決執行-bash-script-時遇到-command-not-found-的問題.html</loc>
 <lastmod>2019-04-24T20:24:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</loc>
+<loc>https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html</loc>
 <lastmod>2019-04-23T20:05:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何將-YouTube-切換回舊版介面.html</loc>
+<loc>https://yaticl.github.io/如何將-YouTube-切換回舊版介面.html</loc>
 <lastmod>2019-04-23T01:11:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/miniconda.html</loc>
+<loc>https://yaticl.github.io/miniconda.html</loc>
 <lastmod>2020-09-07T15:15:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/bayesian-model-fitting-instance.html</loc>
+<loc>https://yaticl.github.io/bayesian-model-fitting-instance.html</loc>
 <lastmod>2018-12-13T01:37:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html</loc>
+<loc>https://yaticl.github.io/2d-discrete-wavelet-transform.html</loc>
 <lastmod>2018-08-30T17:43:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/local-normalization.html</loc>
+<loc>https://yaticl.github.io/local-normalization.html</loc>
 <lastmod>2018-08-29T19:47:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/edge-detection.html</loc>
+<loc>https://yaticl.github.io/edge-detection.html</loc>
 <lastmod>2018-07-06T21:52:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/histogram-equalization.html</loc>
+<loc>https://yaticl.github.io/histogram-equalization.html</loc>
 <lastmod>2018-07-04T22:26:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/python-心得.html</loc>
+<loc>https://yaticl.github.io/python-心得.html</loc>
 <lastmod>2020-09-07T15:39:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/北京天壇.html</loc>
+<loc>https://yaticl.github.io/北京天壇.html</loc>
 <lastmod>2018-04-15T21:52:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/上海豫園.html</loc>
+<loc>https://yaticl.github.io/上海豫園.html</loc>
 <lastmod>2018-04-15T21:19:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/上海交通大學.html</loc>
+<loc>https://yaticl.github.io/上海交通大學.html</loc>
 <lastmod>2018-04-15T20:26:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/上海南翔.html</loc>
+<loc>https://yaticl.github.io/上海南翔.html</loc>
 <lastmod>2018-04-13T20:54:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/maximum-length-sequence.html</loc>
+<loc>https://yaticl.github.io/maximum-length-sequence.html</loc>
 <lastmod>2018-03-16T21:23:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/toeplitz-matrix.html</loc>
+<loc>https://yaticl.github.io/toeplitz-matrix.html</loc>
 <lastmod>2018-03-09T21:18:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/hadamard-matrix.html</loc>
+<loc>https://yaticl.github.io/hadamard-matrix.html</loc>
 <lastmod>2018-03-06T22:35:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/如何取得免費-SSL-憑證.html</loc>
+<loc>https://yaticl.github.io/如何取得免費-SSL-憑證.html</loc>
 <lastmod>2018-02-25T17:56:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/modified-uniformly-redundant-array-mura-mask.html</loc>
+<loc>https://yaticl.github.io/modified-uniformly-redundant-array-mura-mask.html</loc>
 <lastmod>2018-02-21T21:03:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/archive.html</loc>
+<loc>https://yaticl.github.io/category/archive.html</loc>
 <lastmod>2019-04-23T01:11:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/computational-imaging.html</loc>
+<loc>https://yaticl.github.io/category/computational-imaging.html</loc>
 <lastmod>2018-02-21T21:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/digital-image-processing.html</loc>
+<loc>https://yaticl.github.io/category/digital-image-processing.html</loc>
 <lastmod>2018-08-30T17:43:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/digital-signal-processing.html</loc>
+<loc>https://yaticl.github.io/category/digital-signal-processing.html</loc>
 <lastmod>2018-03-16T21:23:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/jia-zhan-xiang-guan.html</loc>
+<loc>https://yaticl.github.io/category/jia-zhan-xiang-guan.html</loc>
 <lastmod>2020-09-10T16:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/linear-algebra.html</loc>
+<loc>https://yaticl.github.io/category/linear-algebra.html</loc>
 <lastmod>2018-03-09T21:18:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/lu-you.html</loc>
+<loc>https://yaticl.github.io/category/lu-you.html</loc>
 <lastmod>2018-04-15T21:52:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/microsoft-office.html</loc>
+<loc>https://yaticl.github.io/category/microsoft-office.html</loc>
 <lastmod>2021-04-30T17:04:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/python.html</loc>
+<loc>https://yaticl.github.io/category/python.html</loc>
 <lastmod>2020-09-07T15:39:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/statistical-optics.html</loc>
+<loc>https://yaticl.github.io/category/statistical-optics.html</loc>
 <lastmod>2018-12-13T01:37:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/tips.html</loc>
+<loc>https://yaticl.github.io/category/tips.html</loc>
 <lastmod>2021-04-30T15:42:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/category/ying-ti.html</loc>
+<loc>https://yaticl.github.io/category/ying-ti.html</loc>
 <lastmod>2020-09-01T17:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/microsoft-office.html</loc>
+<loc>https://yaticl.github.io/tag/microsoft-office.html</loc>
 <lastmod>2021-04-30T17:04:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/microsoft-word.html</loc>
+<loc>https://yaticl.github.io/tag/microsoft-word.html</loc>
 <lastmod>2021-04-30T17:04:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/windows-subsystem-for-linux.html</loc>
+<loc>https://yaticl.github.io/tag/windows-subsystem-for-linux.html</loc>
 <lastmod>2021-04-30T15:42:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/wordpress.html</loc>
+<loc>https://yaticl.github.io/tag/wordpress.html</loc>
 <lastmod>2020-09-10T16:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/pelican.html</loc>
+<loc>https://yaticl.github.io/tag/pelican.html</loc>
 <lastmod>2020-09-10T16:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/markdown.html</loc>
+<loc>https://yaticl.github.io/tag/markdown.html</loc>
 <lastmod>2020-09-10T16:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/python.html</loc>
+<loc>https://yaticl.github.io/tag/python.html</loc>
 <lastmod>2020-09-10T16:15:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/microsoft-surface.html</loc>
+<loc>https://yaticl.github.io/tag/microsoft-surface.html</loc>
 <lastmod>2020-09-01T17:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/windows-on-arm.html</loc>
+<loc>https://yaticl.github.io/tag/windows-on-arm.html</loc>
 <lastmod>2020-09-01T17:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/tips.html</loc>
+<loc>https://yaticl.github.io/tag/tips.html</loc>
 <lastmod>2020-03-11T11:59:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/windows-10.html</loc>
+<loc>https://yaticl.github.io/tag/windows-10.html</loc>
 <lastmod>2020-03-11T11:59:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/google-drive.html</loc>
+<loc>https://yaticl.github.io/tag/google-drive.html</loc>
 <lastmod>2020-03-11T11:59:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/visual-studio-code.html</loc>
+<loc>https://yaticl.github.io/tag/visual-studio-code.html</loc>
 <lastmod>2019-12-30T14:55:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/cascadia-code.html</loc>
+<loc>https://yaticl.github.io/tag/cascadia-code.html</loc>
 <lastmod>2019-12-30T14:55:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/bash.html</loc>
+<loc>https://yaticl.github.io/tag/bash.html</loc>
 <lastmod>2019-04-24T20:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/shell-scripts.html</loc>
+<loc>https://yaticl.github.io/tag/shell-scripts.html</loc>
 <lastmod>2019-04-24T20:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/linux.html</loc>
+<loc>https://yaticl.github.io/tag/linux.html</loc>
 <lastmod>2019-04-24T20:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/windows.html</loc>
+<loc>https://yaticl.github.io/tag/windows.html</loc>
 <lastmod>2019-04-23T20:05:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/youtube.html</loc>
+<loc>https://yaticl.github.io/tag/youtube.html</loc>
 <lastmod>2019-04-23T01:11:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/anaconda.html</loc>
+<loc>https://yaticl.github.io/tag/anaconda.html</loc>
 <lastmod>2020-09-07T15:39:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/statistical-optics.html</loc>
+<loc>https://yaticl.github.io/tag/statistical-optics.html</loc>
 <lastmod>2018-12-13T01:37:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/bayesian.html</loc>
+<loc>https://yaticl.github.io/tag/bayesian.html</loc>
 <lastmod>2018-12-13T01:37:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/digital-image-processing.html</loc>
+<loc>https://yaticl.github.io/tag/digital-image-processing.html</loc>
 <lastmod>2018-08-30T17:43:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/matlab.html</loc>
+<loc>https://yaticl.github.io/tag/matlab.html</loc>
 <lastmod>2020-09-07T15:39:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/zhong-guo.html</loc>
+<loc>https://yaticl.github.io/tag/zhong-guo.html</loc>
 <lastmod>2018-04-15T21:52:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/bei-jing.html</loc>
+<loc>https://yaticl.github.io/tag/bei-jing.html</loc>
 <lastmod>2018-04-15T21:52:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/shang-hai.html</loc>
+<loc>https://yaticl.github.io/tag/shang-hai.html</loc>
 <lastmod>2018-04-15T21:19:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/digital-signal-processing.html</loc>
+<loc>https://yaticl.github.io/tag/digital-signal-processing.html</loc>
 <lastmod>2018-03-16T21:23:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/linear-algebra.html</loc>
+<loc>https://yaticl.github.io/tag/linear-algebra.html</loc>
 <lastmod>2018-03-09T21:18:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/ssl.html</loc>
+<loc>https://yaticl.github.io/tag/ssl.html</loc>
 <lastmod>2018-02-25T17:56:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/computational-imaging.html</loc>
+<loc>https://yaticl.github.io/tag/computational-imaging.html</loc>
 <lastmod>2018-02-21T21:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/tag/coded-aperture.html</loc>
+<loc>https://yaticl.github.io/tag/coded-aperture.html</loc>
 <lastmod>2018-02-21T21:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.ya-ti.ml/author/ya-ti.html</loc>
+<loc>https://yaticl.github.io/author/ya-ti.html</loc>
 <lastmod>2021-04-30T17:04:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
