@@ -132,6 +132,34 @@
 
 <article>
   <header>
+    <h2><a href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
+    <p>
+      Posted on Wed 04 July 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
+    </p>
+  </header>
+  <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
+      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
+<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
+<p>希望影像的強度值分布變得比較均勻。</p>
+<h2 id="_1">數學理論</h2>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義 …</p>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yaticl.github.io/python-心得.html#python-心得">Python 心得</a></h2>
     <p>
       Posted on Wed 04 July 2018 in <a href="https://yaticl.github.io/category/python.html">Python</a>
@@ -292,32 +320,6 @@ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0
         <br>
         <a class="btn"
            href="https://yaticl.github.io/toeplitz-matrix.html#toeplitz-matrix">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yaticl.github.io/hadamard-matrix.html#hadamard-matrix">Hadamard Matrix</a></h2>
-    <p>
-      Posted on Tue 06 March 2018 in <a href="https://yaticl.github.io/category/linear-algebra.html">Linear Algebra</a>
-
-          &#8226; Tagged with
-              <a href="https://yaticl.github.io/tag/linear-algebra.html">Linear algebra</a>,              <a href="https://yaticl.github.io/tag/digital-signal-processing.html">Digital signal processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
-    </p>
-  </header>
-  <div>
-        <img src="https://v1fwjw.bn.files.1drv.com/y4mVd32PWKQoA040t--2Tf5ZCpl9AqN-PfkBF1xp3lflMYXWGF1gQS6ppC1B4UPOoTQNqmjTL0nBdhXw5OSSFu10vlh0iToLTDNMST_Pq2cZ_w3jz1lrYmiPThKaeco-X6X8NiEx9ZcT3l0wvYmIvpLSvcVM9KTMvGgxqbdjB8LvepuF4Y79n_x0-Allhc6EMStzigYbdv3kvnvQNmHAOYxOw?width=266&height=252&cropmode=none">
-      <h2 id="_1">簡介</h2>
-<p>Hadamard matrix 是一種只包含<span class="math">\((-1,+1)\)</span>的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。<br>
-當要畫出該矩陣時，定義<span class="math">\(+1\)</span>代表黑色，而<span class="math">\(-1\)</span>代表白色。</p>
-<h2 id="_2">特性</h2>
-<p><span class="math">\({n \times n}\)</span>的 Hadamard matrix <span class="math">\(H_n\)</span>會有<span class="math">\(n \frac{n(n-1)}{2}\)</span>個<span class="math">\((-1)\)</span>方塊以及<span class="math">\(\frac{n(n+1)}{2}\)</span>個<span class="math">\((+1)\)</span>的方塊。<br>
-令<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則其定義為 …</p>
-        <br>
-        <a class="btn"
-           href="https://yaticl.github.io/hadamard-matrix.html#hadamard-matrix">
           繼續閱讀
         </a>
   </div>

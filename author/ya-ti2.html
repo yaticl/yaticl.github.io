@@ -132,6 +132,40 @@
 
 <article>
   <header>
+    <h2><a href="https://yaticl.github.io/如何解決執行-bash-script-時遇到-command-not-found-的問題.html#如何解決執行-bash-script-時遇到-command-not-found-的問題">如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</a></h2>
+    <p>
+      Posted on Wed 24 April 2019 in <a href="https://yaticl.github.io/category/tips.html">Tips</a>
+
+          &#8226; Tagged with
+              <a href="https://yaticl.github.io/tag/bash.html">Bash</a>,              <a href="https://yaticl.github.io/tag/shell-scripts.html">Shell scripts</a>,              <a href="https://yaticl.github.io/tag/linux.html">Linux</a>,              <a href="https://yaticl.github.io/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
+    </p>
+  </header>
+  <div>
+      <h2 id="_1">前言</h2>
+<p>在使用<a href="https://docs.microsoft.com/zh-tw/windows/wsl/about">WSL</a>執行 bash script 有時會遇到像這樣的錯誤：</p>
+<div class="highlight"><pre><span></span><code>-bash: <span class="s1">&#39;\r&#39;</span>: <span class="nb">command</span> not found
+</code></pre></div>
+
+
+<p>經過搜尋之後在<a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile">stackoverflow</a>找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。</p>
+<h2 id="_2">解決方法</h2>
+<p>由 stackoverflow 提供的解答，方法為在 WSL 之中安裝<code>dos2unix</code>，以 Debian/Ubuntu 為範例，安裝方法為：</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install dos2unix
+</code></pre></div>
+
+
+<p>使用方法為：</p>
+<div class="highlight"><pre><span></span><code>dos2unix …</code></pre></div>
+        <br>
+        <a class="btn"
+           href="https://yaticl.github.io/如何解決執行-bash-script-時遇到-command-not-found-的問題.html#如何解決執行-bash-script-時遇到-command-not-found-的問題">
+          繼續閱讀
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html#解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></h2>
     <p>
       Posted on Tue 23 April 2019 in <a href="https://yaticl.github.io/category/python.html">Python</a>
@@ -323,34 +357,6 @@ g_y \end …</div>
         <br>
         <a class="btn"
            href="https://yaticl.github.io/edge-detection.html#edge-detection">
-          繼續閱讀
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">直方圖等化 (Histogram Equalization)</a></h2>
-    <p>
-      Posted on Wed 04 July 2018 in <a href="https://yaticl.github.io/category/digital-image-processing.html">Digital Image Processing</a>
-
-          &#8226; Tagged with
-              <a href="https://yaticl.github.io/tag/digital-image-processing.html">Digital image processing</a>,              <a href="https://yaticl.github.io/tag/python.html">Python</a>
-    </p>
-  </header>
-  <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png">
-      <p>影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。</p>
-<p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
-<p>希望影像的強度值分布變得比較均勻。</p>
-<h2 id="_1">數學理論</h2>
-<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
-<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
-<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
-<p>定義 …</p>
-        <br>
-        <a class="btn"
-           href="https://yaticl.github.io/histogram-equalization.html#histogram-equalization">
           繼續閱讀
         </a>
   </div>
