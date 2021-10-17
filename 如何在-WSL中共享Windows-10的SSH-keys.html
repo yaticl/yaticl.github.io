@@ -158,8 +158,8 @@
 <p><code>cp -r /mnt/c/Users/&lt;username&gt;/.ssh ~/.ssh</code></p>
 </li>
 <li>
-<p>修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 RSA key 為例，在家目錄中輸入</p>
-<p><code>chmod 600 ~/.ssh/id_rsa</code></p>
+<p>修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 ED25519 key 為例，在家目錄中輸入</p>
+<p><code>chmod 600 ~/.ssh/id_ed25519</code></p>
 </li>
 </ol>
 <p>如此一來並能在 Windows 與 WSL 中共用 SSH key 了。</p>

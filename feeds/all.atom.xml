@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/all.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2021-10-12T15:35:00+08:00</updated><entry><title>如何將 OneNote 筆記從搬到另一個帳戶</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%B0%87OneNote%E7%AD%86%E8%A8%98%E5%BE%9E%E6%90%AC%E5%88%B0%E5%8F%A6%E4%B8%80%E5%80%8B%E5%B8%B3%E6%88%B6.html" rel="alternate"></link><published>2021-10-12T15:35:00+08:00</published><updated>2021-10-12T15:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2021-10-12:/如何將OneNote筆記從搬到另一個帳戶.html</id><content type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/all.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2021-10-12T15:35:00+08:00</updated><entry><title>如何將 OneNote 筆記搬到另一個帳戶</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%B0%87OneNote%E7%AD%86%E8%A8%98%E6%90%AC%E5%88%B0%E5%8F%A6%E4%B8%80%E5%80%8B%E5%B8%B3%E6%88%B6.html" rel="alternate"></link><published>2021-10-12T15:35:00+08:00</published><updated>2021-10-12T15:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2021-10-12:/如何將OneNote筆記搬到另一個帳戶.html</id><content type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
 &lt;p&gt;現在很多學校或是組織會提供 Microsoft 365 訂閱服務給人員使用，Microsoft OneNote 包含於該服務之內，是一種基於雲端的筆記本。OneNote 通常是儲存在組織的 OneDrive 上，而當基於某些原因需要將筆記本從一個帳戶搬到另一個帳戶的時侯，如從組織帳戶搬到個人帳戶，目前似乎沒有比較直觀的方法，需要一系列的操作，因此在這裡記錄下流程。&lt;/p&gt;
 &lt;h2 id="_2"&gt;流程&lt;/h2&gt;
 &lt;p&gt;搬遷需要使用 OneNote 桌面版本，流程分成以下幾個步驟，&lt;/p&gt;
@@ -52,8 +52,8 @@
 &lt;p&gt;&lt;code&gt;cp -r /mnt/c/Users/&amp;lt;username&amp;gt;/.ssh ~/.ssh&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 RSA key 為例，在家目錄中輸入&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;chmod 600 ~/.ssh/id_rsa&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 ED25519 key 為例，在家目錄中輸入&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod 600 ~/.ssh/id_ed25519&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;如此一來並能在 Windows 與 WSL 中共用 SSH key 了。&lt;/p&gt;</content><category term="Tips"></category><category term="Windows Subsystem for Linux"></category></entry><entry><title>如何更改 Microsoft Word 引用來源的語言</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9Microsoft-Word%E5%BC%95%E7%94%A8%E4%BE%86%E6%BA%90%E7%9A%84%E8%AA%9E%E8%A8%80.html" rel="alternate"></link><published>2020-10-28T17:52:00+08:00</published><updated>2020-10-28T17:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2020-10-28:/如何更改Microsoft-Word引用來源的語言.html</id><summary type="html">&lt;h2 id="_1"&gt;緣起&lt;/h2&gt;
