@@ -10,50 +10,50 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
 
 
     <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.ya-ti.ml/theme/pygments/github.min.css">
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
 
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/jquery.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch_set.min.js"></script>
-    <script src="https://blog.ya-ti.ml/tipuesearch_content.js"></script>
-    <link rel="stylesheet" href="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.css" />
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
 
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
-
-
-    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
 
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="簡介 Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。 對任一\(n \times n\)的矩陣\(\mathbf{A}\)，可以表示成： $$\mathbf{A}=\begin{bmatrix} a_0 &amp; a_{-1} &amp; a_{-2} &amp; \cdots &amp; a_{-(n-1)} \\ a_1 &amp; a_0 &amp; a_{-1} &amp; \ddots &amp; \vdots \\ a_2 &amp; a_1 &amp; \ddots &amp; \ddots &amp; \vdots \\ \vdots &amp; \ddots &amp; \ddots &amp; a_0 &amp; a_{-1} \\ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0 \end{bmatrix …" />
+<meta name="description" content="簡介 Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。 對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成： $$\mathbf{A}=\begin{bmatrix} a_0 &amp; a_{-1} &amp; a_ …" />
 <meta name="keywords" content="Linear algebra, Python">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="Toeplitz Matrix"/>
-<meta property="og:description" content="簡介 Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。 對任一\(n \times n\)的矩陣\(\mathbf{A}\)，可以表示成： $$\mathbf{A}=\begin{bmatrix} a_0 &amp; a_{-1} &amp; a_{-2} &amp; \cdots &amp; a_{-(n-1)} \\ a_1 &amp; a_0 &amp; a_{-1} &amp; \ddots &amp; \vdots \\ a_2 &amp; a_1 &amp; \ddots &amp; \ddots &amp; \vdots \\ \vdots &amp; \ddots &amp; \ddots &amp; a_0 &amp; a_{-1} \\ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0 \end{bmatrix …"/>
+<meta property="og:description" content="簡介 Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。 對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成： $$\mathbf{A}=\begin{bmatrix} a_0 &amp; a_{-1} &amp; a_ …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://blog.ya-ti.ml/toeplitz-matrix.html"/>
+<meta property="og:url" content="https://yaticl.github.io/toeplitz-matrix.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-03-09 21:18:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://blog.ya-ti.ml/author/ya-ti.html">
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
 <meta property="article:section" content="Linear Algebra"/>
 <meta property="article:tag" content="Linear algebra"/>
 <meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://blog.ya-ti.ml/images/profile.jpg">
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; Toeplitz Matrix</title>
 
@@ -83,12 +83,12 @@
 <body class="light-theme">
   <aside>
     <div>
-      <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml/images/profile.jpg" alt="" title="">
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
-        <a href="https://blog.ya-ti.ml"></a>
+        <a href="https://yaticl.github.io"></a>
       </h1>
 
 
@@ -102,7 +102,7 @@
 
               <li>
                 <a target="_self"
-                   href="https://blog.ya-ti.ml/pages/about.html#about">
+                   href="https://yaticl.github.io/pages/about.html#about">
                   關於我
                 </a>
               </li>
@@ -117,7 +117,7 @@
             </a>
           </li>
           <li>
-            <a  class="sc-rss" href="https://blog.ya-ti.ml/feeds/all.atom.xml" target="_blank">
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
               <i class="fas fa-rss"></i>
             </a>
           </li>
@@ -128,12 +128,12 @@
   <main>
 
     <nav>
-      <a href="https://blog.ya-ti.ml">Home</a>
+      <a href="https://yaticl.github.io">Home</a>
 
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
-      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -142,7 +142,7 @@
       
     <h1 id="toeplitz-matrix">Toeplitz Matrix</h1>
     <p>
-      Posted on Fri 09 March 2018 in <a href="https://blog.ya-ti.ml/category/linear-algebra.html">Linear Algebra</a>
+      Posted on Fri 09 March 2018 in <a href="https://yaticl.github.io/category/linear-algebra.html">Linear Algebra</a>
 
     </p>
   </header>
@@ -151,16 +151,16 @@
   <div>
     <h2 id="_1">簡介</h2>
 <p>Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。<br>
-對任一<span class="math">\(n \times n\)</span>的矩陣<span class="math">\(\mathbf{A}\)</span>，可以表示成：</p>
-<div class="math">$$\mathbf{A}=\begin{bmatrix}  
-a_0 &amp; a_{-1} &amp; a_{-2} &amp; \cdots &amp; a_{-(n-1)} \\  
-a_1 &amp; a_0 &amp; a_{-1} &amp; \ddots &amp; \vdots \\  
-a_2 &amp; a_1 &amp; \ddots &amp; \ddots &amp; \vdots \\  
-\vdots &amp; \ddots &amp; \ddots &amp; a_0 &amp; a_{-1} \\  
-a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0  
-\end{bmatrix},$$</div>
+對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成：</p>
+<p>$$\mathbf{A}=\begin{bmatrix}<br>
+a_0 &amp; a_{-1} &amp; a_{-2} &amp; \cdots &amp; a_{-(n-1)} \<br>
+a_1 &amp; a_0 &amp; a_{-1} &amp; \ddots &amp; \vdots \<br>
+a_2 &amp; a_1 &amp; \ddots &amp; \ddots &amp; \vdots \<br>
+\vdots &amp; \ddots &amp; \ddots &amp; a_0 &amp; a_{-1} \<br>
+a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0<br>
+\end{bmatrix},$$</p>
 <p>其通式可以寫成：</p>
-<div class="math">$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$</div>
+<p>$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$</p>
 <h2 id="_2">範例</h2>
 <p>Scipy 中有實作創造 Toeplitz matrix：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">toeplitz</span>
@@ -168,123 +168,57 @@ a_{n-1} &amp; \cdots &amp; a_2 &amp; a_1 &amp; a_0
 <span class="n">toeplitz</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># r 為指定矩陣的第一列</span>
 <span class="n">toeplitz</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 </code></pre></div>
-
 
 <div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 </code></pre></div>
 
-
 <p><a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Toeplitz%20Matrix.ipynb"><strong>Jupyter notebook 版本</strong></a></p>
 <h2 id="convolution">Convolution</h2>
-<p>convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。<span class="math">\(h\)</span>與<span class="math">\(x\)</span>的 convolution 可以表示成：</p>
-<div class="math">$$y=h\ast x=\begin{bmatrix}  
-h_1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\  
-h_2 &amp; h_1 &amp; \ddots &amp; \vdots &amp; \vdots \\
-h_3 &amp; h_2 &amp; \ddots &amp; \vdots &amp; \vdots \\  
-\vdots &amp; h_3 &amp; \ddots &amp; h_1 &amp; \vdots \\  
-h_m &amp; \vdots &amp; \ddots &amp; h_2 &amp; h_1 \\  
-0 &amp; h_m &amp; \ddots &amp; h_3 &amp; h_2 \\  
-0 &amp; 0 &amp; h_m &amp; \vdots &amp; h_3 \\  
-\vdots &amp; \vdots &amp; \vdots &amp; h_m &amp; \vdots \\  
-0 &amp; 0 &amp; \cdots &amp; 0 &amp; h_m  
-\end{bmatrix} \begin{bmatrix}  
-x_1 \\  
-x_2 \\  
-x_3 \\  
-\vdots \\  
-x_n  
-\end{bmatrix}$$</div>
+<p>convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。$h$ 與 $x$ 的 convolution 可以表示成：</p>
+<p>$$y=h\ast x=\begin{bmatrix}<br>
+h_1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \<br>
+h_2 &amp; h_1 &amp; \ddots &amp; \vdots &amp; \vdots \
+h_3 &amp; h_2 &amp; \ddots &amp; \vdots &amp; \vdots \<br>
+\vdots &amp; h_3 &amp; \ddots &amp; h_1 &amp; \vdots \<br>
+h_m &amp; \vdots &amp; \ddots &amp; h_2 &amp; h_1 \<br>
+0 &amp; h_m &amp; \ddots &amp; h_3 &amp; h_2 \<br>
+0 &amp; 0 &amp; h_m &amp; \vdots &amp; h_3 \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; h_m &amp; \vdots \<br>
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; h_m<br>
+\end{bmatrix} \begin{bmatrix}<br>
+x_1 \<br>
+x_2 \<br>
+x_3 \<br>
+\vdots \<br>
+x_n<br>
+\end{bmatrix}$$</p>
 <h2 id="_3">參考</h2>
 <p><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html">Scipy</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Toeplitz_matrix">維基百科</a></p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://blog.ya-ti.ml/tag/linear-algebra.html">Linear algebra</a>
-      <a href="https://blog.ya-ti.ml/tag/python.html">Python</a>
+      <a href="https://yaticl.github.io/tag/linear-algebra.html">Linear algebra</a>
+      <a href="https://yaticl.github.io/tag/python.html">Python</a>
     </p>
   </div>
 
 
   <div class="neighbors">
-    <a class="btn float-left" href="https://blog.ya-ti.ml/hadamard-matrix.html" title="Hadamard Matrix">
+    <a class="btn float-left" href="https://yaticl.github.io/hadamard-matrix.html" title="Hadamard Matrix">
       <i class="fa fa-angle-left"></i> 上一篇文章
     </a>
-    <a class="btn float-right" href="https://blog.ya-ti.ml/maximum-length-sequence.html" title="Maximum-Length Sequence">
+    <a class="btn float-right" href="https://yaticl.github.io/maximum-length-sequence.html" title="Maximum-Length Sequence">
       下一篇文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
@@ -292,11 +226,11 @@ x_n
   <div class="related-posts">
     <h4>你可能也感興趣</h4>
     <ul class="related-posts">
-      <li><a href="https://blog.ya-ti.ml/hadamard-matrix.html">Hadamard Matrix</a></li>
-      <li><a href="https://blog.ya-ti.ml/如何將網站從WordPress遷移至Pelican.html">如何將網站從 WordPress 遷移至 Pelican</a></li>
-      <li><a href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
-      <li><a href="https://blog.ya-ti.ml/miniconda.html">Miniconda</a></li>
-      <li><a href="https://blog.ya-ti.ml/bayesian-model-fitting-instance.html">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></li>
+      <li><a href="https://yaticl.github.io/hadamard-matrix.html">Hadamard Matrix</a></li>
+      <li><a href="https://yaticl.github.io/如何將網站從WordPress遷移至Pelican.html">如何將網站從 WordPress 遷移至 Pelican</a></li>
+      <li><a href="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="https://yaticl.github.io/miniconda.html">Miniconda</a></li>
+      <li><a href="https://yaticl.github.io/bayesian-model-fitting-instance.html">貝氏模型擬合範例 (Bayesian Model Fitting Instance)</a></li>
     </ul>
   </div>
 
@@ -305,19 +239,19 @@ x_n
   <section>
     <p id="post-share-links">
       分享到:
-      <a href="https://sharetodiaspora.github.io/?title=Toeplitz%20Matrix&url=https%3A//blog.ya-ti.ml/toeplitz-matrix.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      <a href="https://sharetodiaspora.github.io/?title=Toeplitz%20Matrix&url=https%3A//yaticl.github.io/toeplitz-matrix.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=Toeplitz%20Matrix&url=https%3A//blog.ya-ti.ml/toeplitz-matrix.html&hashtags=linear-algebra,python" target="_blank" title="分享到 Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=Toeplitz%20Matrix&url=https%3A//yaticl.github.io/toeplitz-matrix.html&hashtags=linear-algebra,python" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.ml/toeplitz-matrix.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/toeplitz-matrix.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.ml/toeplitz-matrix.html&title=Toeplitz%20Matrix&summary=%E7%B0%A1%E4%BB%8B%0AToeplitz%20matrix%20%E5%8F%88%E8%A2%AB%E7%A8%B1%E7%82%BA%E5%B8%B8%E5%B0%8D%E8%A7%92%E7%9F%A9%E9%99%A3%EF%BC%8C%E6%98%AF%E4%B8%80%E5%80%8B%E5%B0%8D%E8%A7%92%E7%B7%9A%E9%83%BD%E6%98%AF%E5%B8%B8%E6%95%B8%E7%9A%84%E7%9F%A9%E9%99%A3%E3%80%82%0A%E5%B0%8D%E4%BB%BB%E4%B8%80%5C%28n%20%5Ctimes%20n%5C%29%E7%9A%84%E7%9F%A9%E9%99%A3%5C%28%5Cmathbf%7BA%7D%5C%29%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E6%88%90%EF%BC%9A%0A%24%24%5Cmathbf%7BA%7D%3D%5Cbegin%7Bbmatrix%7D%20%20%0Aa_0%20%26%20a_%7B-1%7D%20%26%20a_%7B-2%7D%20%26%20%5Ccdots%20%26%20a_%7B-%28n-1%29%7D%20%5C%5C%20%20%0Aa_1%20%26%20a_0%20%26%20a_%7B-1%7D%20%26%20%5Cddots%20%26%20%5Cvdots%20%5C%5C%20%20%0Aa_2%20%26%20a_1%20%26%20%5Cddots%20%26%20%5Cddots%20%26%20%5Cvdots%20%5C%5C%20%20%0A%5Cvdots%20%26%20%5Cddots%20%26%20%5Cddots%20%26%20a_0%20%26%20a_%7B-1%7D%20%5C%5C%20%20%0Aa_%7Bn-1%7D%20%26%20%5Ccdots%20%26%20a_2%20%26%20a_1%20%26%20a_0%20%20%0A%5Cend%7Bbmatrix%20%E2%80%A6&source=https%3A//blog.ya-ti.ml/toeplitz-matrix.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/toeplitz-matrix.html&title=Toeplitz%20Matrix&summary=%E7%B0%A1%E4%BB%8B%0AToeplitz%20matrix%20%E5%8F%88%E8%A2%AB%E7%A8%B1%E7%82%BA%E5%B8%B8%E5%B0%8D%E8%A7%92%E7%9F%A9%E9%99%A3%EF%BC%8C%E6%98%AF%E4%B8%80%E5%80%8B%E5%B0%8D%E8%A7%92%E7%B7%9A%E9%83%BD%E6%98%AF%E5%B8%B8%E6%95%B8%E7%9A%84%E7%9F%A9%E9%99%A3%E3%80%82%0A%E5%B0%8D%E4%BB%BB%E4%B8%80%20%24n%20%5Ctimes%20n%24%20%E7%9A%84%E7%9F%A9%E9%99%A3%20%24%5Cmathbf%7BA%7D%24%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E6%88%90%EF%BC%9A%0A%24%24%5Cmathbf%7BA%7D%3D%5Cbegin%7Bbmatrix%7D%0Aa_0%20%26%20a_%7B-1%7D%20%26%20a_%20%E2%80%A6&source=https%3A//yaticl.github.io/toeplitz-matrix.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=Toeplitz%20Matrix&u=https%3A//blog.ya-ti.ml/toeplitz-matrix.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=Toeplitz%20Matrix&u=https%3A//yaticl.github.io/toeplitz-matrix.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=Toeplitz%20Matrix&amp;body=https%3A//blog.ya-ti.ml/toeplitz-matrix.html" target="_blank" title="從 Email 分享">Email</a>
+      <a href="mailto:?subject=Toeplitz%20Matrix&amp;body=https%3A//yaticl.github.io/toeplitz-matrix.html" target="_blank" title="從 Email 分享">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.ml/toeplitz-matrix.html&title=Toeplitz%20Matrix" target="_blank" title="從 Reddit 分享">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/toeplitz-matrix.html&title=Toeplitz%20Matrix" target="_blank" title="從 Reddit 分享">Reddit</a>
     </p>
   </section>
 </article>
@@ -337,8 +271,8 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
-  "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml/images/profile.jpg",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
   "description": ""
 }
 </script>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
+
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
+
+
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是 …" />
+<meta name="keywords" content="Windows Subsystem for Linux">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="如何在 WSL 中共享 Windows 10 的 SSH keys"/>
+<meta property="og:description" content="由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://yaticl.github.io/如何在-WSL中共享Windows-10的SSH-keys.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-04-30 15:42:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
+<meta property="article:section" content="Tips"/>
+<meta property="article:tag" content="Windows Subsystem for Linux"/>
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 如何在 WSL 中共享 Windows 10 的 SSH keys</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://yaticl.github.io"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://yaticl.github.io/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://yaticl.github.io">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="如何在-WSL中共享Windows-10的SSH-keys">如何在 WSL 中共享 Windows 10 的 SSH keys</h1>
+    <p>
+      Posted on Fri 30 April 2021 in <a href="https://yaticl.github.io/category/tips.html">Tips</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。</p>
+<h2 id="_1">方法</h2>
+<p>方法來自微軟的<a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/">開發部落格</a>，</p>
+<ol>
+<li>先在 Windows 下產生 SSH key，具體參考<a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account">GitHub 文件</a></li>
+<li>
+<p>將 Windows 下的 <code>.ssh</code> 資料夾複製到 WSL 中的家目錄下，可以使用檔案總管或是命令行</p>
+<p><code>cp -r /mnt/c/Users/&lt;username&gt;/.ssh ~/.ssh</code></p>
+</li>
+<li>
+<p>修復檔案權限，因為安全考量，SSH key 必須要設定成只有擁有者可以讀寫，否則在 WSL 下無法正常使用，以 ED25519 key 為例，在家目錄中輸入</p>
+<p><code>chmod 600 ~/.ssh/id_ed25519</code></p>
+</li>
+</ol>
+<p>如此一來並能在 Windows 與 WSL 中共用 SSH key 了。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://yaticl.github.io/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://yaticl.github.io/如何更改Microsoft-Word引用來源的語言.html" title="如何更改 Microsoft Word 引用來源的語言">
+      <i class="fa fa-angle-left"></i> 上一篇文章
+    </a>
+    <a class="btn float-right" href="https://yaticl.github.io/如何在Microsoft-Word中給方程式編號.html" title="如何在 Microsoft Word 中給方程式編號">
+      下一篇文章 <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>你可能也感興趣</h4>
+    <ul class="related-posts">
+      <li><a href="https://yaticl.github.io/如何解決執行-bash-script-時遇到-command-not-found-的問題.html">如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      分享到:
+      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html&hashtags=windows-subsystem-for-linux" target="_blank" title="分享到 Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html&title=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys&summary=%E7%94%B1%E6%96%BC%20WSL%20%E8%B7%9F%20Windows%20%E6%98%AF%E5%85%A9%E5%80%8B%E7%8D%A8%E7%AB%8B%E7%9A%84%20OS%EF%BC%8C%E4%BD%86%E6%98%AF%E5%85%A9%E5%80%8B%20OS%20%E9%83%BD%E6%9C%83%E9%9C%80%E8%A6%81%E7%94%A8%20SSH%20key%EF%BC%8C%E9%9B%96%E7%84%B6%E5%8F%AF%E4%BB%A5%E5%90%84%E8%87%AA%E7%94%A2%E7%94%9F%E7%8D%A8%E7%AB%8B%E7%9A%84%20key%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%80%E5%8F%B0%E6%A9%9F%E5%99%A8%E8%A6%81%E7%AE%A1%E7%90%86%E5%A4%9A%E5%80%8B%20key%20%E9%82%84%E6%98%AF%20%E2%80%A6&source=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys&u=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys&amp;body=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" target="_blank" title="從 Email 分享">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html&title=%E5%A6%82%E4%BD%95%E5%9C%A8%20WSL%20%E4%B8%AD%E5%85%B1%E4%BA%AB%20Windows%2010%20%E7%9A%84%20SSH%20keys" target="_blank" title="從 Reddit 分享">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

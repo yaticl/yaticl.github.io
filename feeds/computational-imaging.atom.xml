@@ -1,125 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Computational Imaging</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/computational-imaging.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2018-02-21T21:03:00+08:00</updated><entry><title>Modified Uniformly Redundant Array (MURA) Mask</title><link href="https://blog.ya-ti.ml/modified-uniformly-redundant-array-mura-mask.html" rel="alternate"></link><published>2018-02-21T21:03:00+08:00</published><updated>2018-02-21T21:03:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-02-21:/modified-uniformly-redundant-array-mura-mask.html</id><summary type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度&lt;span class="math"&gt;\(L\)&lt;/span&gt;，但是&lt;span class="math"&gt;\(L\)&lt;/span&gt;必須為一質數，則一維的 MURA 加密序列&lt;span class="math"&gt;\(A\)&lt;/span&gt;可以表示為：&lt;/p&gt;
-&lt;div class="math"&gt;$$A_i=\begin{cases} 0 &amp;amp; \text{ if } i=0 \\ 1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp;amp; \text{ otherwise } \end …&lt;/div&gt;</summary><content type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度&lt;span class="math"&gt;\(L\)&lt;/span&gt;，但是&lt;span class="math"&gt;\(L\)&lt;/span&gt;必須為一質數，則一維的 MURA 加密序列&lt;span class="math"&gt;\(A\)&lt;/span&gt;可以表示為：&lt;/p&gt;
-&lt;div class="math"&gt;$$A_i=\begin{cases} 0 &amp;amp; \text{ if } i=0 \\ 1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/div&gt;
-&lt;p&gt;根據&lt;span class="math"&gt;\(A\)&lt;/span&gt;，則可以得到解碼序列&lt;span class="math"&gt;\(G\)&lt;/span&gt;：&lt;/p&gt;
-&lt;div class="math"&gt;$$G_i=\begin{cases} +1 &amp;amp; \text{ if } i=0 \\ +1 &amp;amp; \text{ if } A_i=1,i \neq 0 \\ -1 &amp;amp; \text{ if } A_i=0,i \neq 0 \\ \end{cases}.$$&lt;/div&gt;
-&lt;p&gt;長寬為&lt;span class="math"&gt;\(p \times p\)&lt;/span&gt;的二維 MURA 編碼遮罩可以表示成&lt;span class="math"&gt;\(\mathbf{A}= \{ A_{ij} \}\)&lt;/span&gt;，其中：&lt;/p&gt;
-&lt;div class="math"&gt;$$A_{i_j}=\begin{cases} 0 &amp;amp; \text{ if } i=0 \\ 1 &amp;amp; \text{ if } j=0,i\neq 0 \\ 1 &amp;amp; \text{ if } C_i C_j=1 \\ 0 &amp;amp; \text{ otherwise } \end{cases} \text{ 當中 } C_i=\begin{cases} +1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } p \\ -1 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/div&gt;
-&lt;p&gt;則二維的解碼遮罩&lt;span class="math"&gt;\(\mathbf{G}\)&lt;/span&gt;一樣可以由&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;求得：&lt;/p&gt;
-&lt;div class="math"&gt;$$G_{ij}=\begin{cases} +1 &amp;amp; \text{ if } i=0,j=0 \\ +1 &amp;amp; \text{ if } A_{ij}=1 \\ -1 &amp;amp; \text{ if } A_{ij}=0 \end{cases}.$$&lt;/div&gt;
-&lt;p&gt;上述的 quadratic residue 為二次剩餘，當存在某個&lt;span class="math"&gt;\(x\)&lt;/span&gt;，且&lt;span class="math"&gt;\(x^2 \equiv q(\text{mod }n)\)&lt;/span&gt;，則&lt;span class="math"&gt;\(q\)&lt;/span&gt;是&lt;span class="math"&gt;\(n\)&lt;/span&gt;的二次剩餘。由於長寬必須要為質數，因此可以用 Euler's criterion 來判斷一個整數是否為某質數的二次剩餘：&lt;/p&gt;
-&lt;div class="math"&gt;$$a^{\frac{p-1}{2}}\equiv \begin{cases} +1 (\text{mod } p) &amp;amp; \text{ if there is an integer x such that } a \equiv x^2(\text{mod }p) \\ -1 (\text{mod } p)&amp;amp; \text{ if there is no such integer} \end{cases}.$$&lt;/div&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Computational Imaging</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/computational-imaging.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2018-02-21T21:03:00+08:00</updated><entry><title>Modified Uniformly Redundant Array (MURA) Mask</title><link href="https://yaticl.github.io/modified-uniformly-redundant-array-mura-mask.html" rel="alternate"></link><published>2018-02-21T21:03:00+08:00</published><updated>2018-02-21T21:03:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-02-21:/modified-uniformly-redundant-array-mura-mask.html</id><summary type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度 $L$，但是 $L$ 必須為一質數，則一維的 MURA 加密序列 $A$ 可以表示為：&lt;/p&gt;
+&lt;p&gt;$$A_i=\begin{cases} 0 &amp;amp; \text{ if } i=0 \ 1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \ 0 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/p&gt;
+&lt;p&gt;根據 $A$，則可以得到解碼序列 $G$：&lt;/p&gt;
+&lt;p&gt;$$G_i=\begin{cases} +1 &amp;amp; \text{ if } i=0 \ +1 &amp;amp; \text{ if } A_i=1,i \neq 0 \ -1 &amp;amp; \text{ if } A_i=0,i \neq 0 \ \end{cases}.$$&lt;/p&gt;
+&lt;p&gt;長寬為 $p \times p$ 的二維 MURA 編碼遮罩可以表示成 $\mathbf{A}= { A_{ij} }$，其中：&lt;/p&gt;
+&lt;p&gt;$$A_{i_j}=\begin{cases} 0 &amp;amp; \text{ if } i=0 \ 1 &amp;amp; \text{ if } j=0,i\neq 0 \ 1 &amp;amp; \text{ if } C_i C_j=1 \ 0 &amp;amp; \text{ otherwise } \end{cases} \text{ 當中 } C_i=\begin{cases} +1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } p \ -1 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/p&gt;
+&lt;p&gt;則二維的解碼遮罩 $\mathbf{G}$ 一樣可以由 $\mathbf{A}$ 求得：&lt;/p&gt;
+&lt;p&gt;$$G_{ij}=\begin{cases} +1 &amp;amp; \text{ if } i=0,j=0 \ +1 &amp;amp; \text{ if } A_{ij}=1 \ -1 &amp;amp; \text{ if } A_{ij}=0 \end{cases}.$$&lt;/p&gt;
+&lt;p&gt;上述的 quadratic residue 為二次剩餘，當存在某個 $x$，且 $x^2 \equiv q(\text{mod }n)$，則 $q$ 是 $n$ 的二次剩餘。由於長寬必須要為質數，因此可以用 Euler's criterion 來判斷一個整數是否為某質數的二次剩餘：&lt;/p&gt;
+&lt;p&gt;$$a^{\frac{p-1}{2}}\equiv \begin{cases} +1 (\text{mod } p) &amp;amp; \text{ if there is an integer x such that } a \equiv x^2(\text{mod }p) \ -1 (\text{mod } p)&amp;amp; \text{ if there is no such integer} \end{cases}.$$&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;以下為二維 MURA 編碼遮罩的 MATLAB 範例：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[ t ] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;generateMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; p &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[ t ] = generateMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; p &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c"&gt;% Generate MURA mask&lt;/span&gt;
 &lt;span class="c"&gt;% Input: MURAs length p&lt;/span&gt;
 &lt;span class="c"&gt;% Output: MURA mask t&lt;/span&gt;
 
-&lt;span class="n"&gt;if&lt;/span&gt; &lt;span class="s"&gt;isprime(p)&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;isprime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]=&lt;/span&gt;&lt;span class="nb"&gt;ndgrid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;unique&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="n"&gt;i_qrm&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ismember&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;j_qrm&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ismember&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;ij_AndNor&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;xor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i_qrm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;j_qrm&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;i_qrm&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;ismember&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;j_qrm&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;ismember&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;residuelist&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;ij_AndNor&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;xor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i_qrm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;j_qrm&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ij_AndNor&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,:)=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="n"&gt;else&lt;/span&gt;
-&lt;span class="s"&gt;fprintf(&amp;#39;p is NOT a prime number.\n&amp;#39;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;span class="nb"&gt;fprintf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;p is NOT a prime number.\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;=[];&lt;/span&gt;
-&lt;span class="n"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 
-&lt;span class="s"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;如果輸入的質數為 59，則結果如下：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="figure" src="https://bwpixw.bn.files.1drv.com/y4mOQqdLDyCIgNADbCX0bblruHMLw4kQ1B329F4sYXK3_tj26RsA-juHeH9WgJm-_9jM4sP9yR2dHw-wFSq2bSWrlpjAfgdXRFydpXysw2ajC3LCmdyeqJIGcnvlZ7de0O7U0DmZC201UBDfX7xNPdq-8Ew0hfyVup7Bl0kPlsr6-n7yJLBJEhmvsgOWL73pKX-ERb58OwdjEE1ceQ-iKFRoA?width=236&amp;amp;height=236&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;而其對應的解碼矩陣的 MATLAB 範例如下：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[ t_hat ] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;decodeMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; t &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[ t_hat ] = decodeMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; t &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c"&gt;%Generate decode MURAs mask&lt;/span&gt;
 &lt;span class="c"&gt;% Input: encoded mask A&lt;/span&gt;
 &lt;span class="c"&gt;% output: decoding mask G&lt;/span&gt;
 
-&lt;span class="n"&gt;t_hat&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;t_hat&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;t_hat&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;t_hat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;t_hat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;t_hat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t_hat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;t_hat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="n"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;hr&gt;
-&lt;h3 id="reference"&gt;Reference&lt;/h3&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Optical Imaging and Spectroscopy. By David J. Brady&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Modified_Uniformly_Redundant_Array"&gt;維基百科&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>

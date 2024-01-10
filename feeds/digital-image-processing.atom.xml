@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Digital Image Processing</title><link href="https://blog.ya-ti.ml/" rel="alternate"></link><link href="https://blog.ya-ti.ml/feeds/digital-image-processing.atom.xml" rel="self"></link><id>https://blog.ya-ti.ml/</id><updated>2018-08-30T17:43:00+08:00</updated><entry><title>二維離散小波轉換 (2D Discrete Wavelet Transform)</title><link href="https://blog.ya-ti.ml/2d-discrete-wavelet-transform.html" rel="alternate"></link><published>2018-08-30T17:43:00+08:00</published><updated>2018-08-30T17:43:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-08-30:/2d-discrete-wavelet-transform.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Digital Image Processing</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/digital-image-processing.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2018-08-30T17:43:00+08:00</updated><entry><title>二維離散小波轉換 (2D Discrete Wavelet Transform)</title><link href="https://yaticl.github.io/2d-discrete-wavelet-transform.html" rel="alternate"></link><published>2018-08-30T17:43:00+08:00</published><updated>2018-08-30T17:43:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-30:/2d-discrete-wavelet-transform.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
 &lt;p&gt;一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2&lt;br&gt;
 &lt;img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;amp;height=405&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cA_{i}\)&lt;/span&gt;:approximation coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cH_{i}\)&lt;/span&gt;:horizontal coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cV_{i …&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。&lt;/p&gt;
-&lt;h2 id="_2"&gt;實作&lt;/h2&gt;
-&lt;p&gt;一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2&lt;br&gt;
-&lt;img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;amp;height=405&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cA_{i}\)&lt;/span&gt;:approximation coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cH_{i}\)&lt;/span&gt;:horizontal coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cV_{i}\)&lt;/span&gt;:vertical coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(cD_{i}\)&lt;/span&gt;:diagonal coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;初始&lt;span class="math"&gt;\(cA\_0\)&lt;/span&gt;為原始影像。&lt;/p&gt;
+&lt;p&gt;$cA_{i}$:approximation coefficients at level $i$&lt;/p&gt;
+&lt;p&gt;$cH_{i}$:horizontal coefficients at level $i$&lt;/p&gt;
+&lt;p&gt;$cV_{i}$:vertical coefficients at level $i$&lt;/p&gt;
+&lt;p&gt;$cD_{i}$:diagonal coefficients at level $i$&lt;/p&gt;
+&lt;p&gt;初始 $cA_0$ 為原始影像。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;p&gt;PyWavelets 是一個 Python 的小波函式庫，可以實現多維小波轉換，其中影像的一階離散小波轉換的範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -59,95 +53,26 @@
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;img alt="Original" src="https://4whrgw.bn.files.1drv.com/y4m77CZUdzqDQAykL3xhhUNL03HStUCww7YMzcP3wY7Hn_WLG6We9RasvmVXr9sdSj0HkRTrj44YnDMy62p47DAi_X2Tb0Y3afxeDv_-82Pg_sYQt-bTcUS8U-vxN9nfHusOz3NT9mqJ1vdPq5hqZY-Vn3uc8RGf88CcGZFNOvgLnH-sElD2UjmNTTg0GLqhDdrYWHbPCNF7ApYegGNdSorrQ?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="1st level wavelet decomposition" src="https://6kpwsa.bn.files.1drv.com/y4m71qXsFZqOeoe_EKUNDvpRi1yDrGhJI6UqUgNOFbPK1jWV9T9bkEDAnVwN0B5wdHDqvUB7rsv0jiXp1CoyE020IBbNKaDY0rhB0eLufMWNnIugW5Jm5azfWUfC9xioAj149Z5ON1wRZeWxatD7vibSUmqwZ9N0VUJbFKQ0UHjaD9mUyoCXvdQgUNvx7nfomSNrTm0rreSNN7g38E2Va2xqg?width=429&amp;amp;height=462&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/2D%20Discrete%20Wavelet%20Transform.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.mathworks.com/help/wavelet/ref/dwt2.html"&gt;Mathwork&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital Image Processing"></category><category term="Python"></category></entry><entry><title>局部歸一化 (Local Normalization)</title><link href="https://blog.ya-ti.ml/local-normalization.html" rel="alternate"></link><published>2018-08-29T19:47:00+08:00</published><updated>2018-08-29T19:47:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-08-29:/local-normalization.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital Image Processing"></category><category term="Python"></category></entry><entry><title>局部歸一化 (Local Normalization)</title><link href="https://yaticl.github.io/local-normalization.html" rel="alternate"></link><published>2018-08-29T19:47:00+08:00</published><updated>2018-08-29T19:47:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-29:/local-normalization.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
-&lt;p&gt;對原始影像&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local normalization 可以寫成：&lt;/p&gt;
-&lt;div class="math"&gt;$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$&lt;/div&gt;
-&lt;p&gt;其中&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(m_f(x,y)\)&lt;/span&gt;是&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local mean 估算值&lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\sigma_f(x,y)\)&lt;/span&gt;是 local variance 的估算值&lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(g(x …&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;對 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
-&lt;p&gt;對原始影像&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local normalization 可以寫成：&lt;/p&gt;
-&lt;div class="math"&gt;$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$&lt;/div&gt;
+&lt;p&gt;對原始影像 $f(x,y)$ 的 local normalization 可以寫成：&lt;/p&gt;
+&lt;p&gt;$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$&lt;/p&gt;
 &lt;p&gt;其中&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(m_f(x,y)\)&lt;/span&gt;是&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local mean 估算值&lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\sigma_f(x,y)\)&lt;/span&gt;是 local variance 的估算值&lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(g(x,y)\)&lt;/span&gt;是輸出影像。&lt;/li&gt;
+&lt;li&gt;$m_f(x,y)$ 是 $f(x,y)$ 的 local mean 估算值&lt;/li&gt;
+&lt;li&gt;$\sigma_f(x,y)$ 是 local variance 的估算值&lt;/li&gt;
+&lt;li&gt;$g(x,y)$ 是輸出影像。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;local mean 與 variance 的估算通過 Gaussian filter，&lt;span class="math"&gt;\(\sigma_1\)&lt;/span&gt;與&lt;span class="math"&gt;\(\sigma_2\)&lt;/span&gt;是 Gaussian window size，用來控制 local mean 與 local variance，通常&lt;span class="math"&gt;\(\sigma_2\)&lt;/span&gt;應該大於&lt;span class="math"&gt;\(\sigma_1\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;local mean 與 variance 的估算通過 Gaussian filter，$\sigma_1$ 與 $\sigma_2$ 是 Gaussian window size，用來控制 local mean 與 local variance，通常 $\sigma_2$ 應該大於 $\sigma_1$。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="diagram" src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&amp;amp;height=137&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -189,117 +114,45 @@
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;img alt="imshow(img, 'gray')" src="https://cwt2mw.bn.files.1drv.com/y4mcJ6O5yWOwMTtvmA36mrgjZyCgb1_PPxRTwok3866UejR40eM7SChwYglxnJhj0OSPrKwUmO6f3mgq65E7FzwxqrEukMER8G2UDQFhd5ZauZ-wvYZ-Addf2HT2PUUoSthYbLvtfM5zqP791K2ZBntnJi3DcqtkVK3xtqh7omrSwhzAWtcrCQwwgpmfKrSDrjci1fFm1rMOEwYoiJWUROyWw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="imshow(normalized, 'gray')" src="https://pn8dpg.bn.files.1drv.com/y4muM2yxYQdJ-xl7Ozapjd7q4AB85C-t-jsb9roF_N-BCqIo9SMBEnO_GiVFg0ivmbHCZuT83f8wE97-YngO7UM7Y1tgBVJp0C-7wkvv7yKjj2NUCHwuHwZVqR9_zZzlbM2IByXHClPZi7NwpOWXvdrKVebkdTy7DaG9ist5YuKdLCFUu6tWPs0QZCJuFeKA8LHwKr58Omc6nvMib62_DAeOw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Local%20Normalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>邊界偵測 (Edge Detection)</title><link href="https://blog.ya-ti.ml/edge-detection.html" rel="alternate"></link><published>2018-07-06T21:52:00+08:00</published><updated>2018-07-06T21:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-06:/edge-detection.html</id><summary type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>邊界偵測 (Edge Detection)</title><link href="https://yaticl.github.io/edge-detection.html" rel="alternate"></link><published>2018-07-06T21:52:00+08:00</published><updated>2018-07-06T21:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-06:/edge-detection.html</id><summary type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。&lt;/p&gt;
 &lt;h2 id="image-gradient"&gt;影像梯度 (Image gradient)&lt;/h2&gt;
 &lt;p&gt;由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。&lt;/p&gt;
-&lt;p&gt;Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&amp;gt; 亮，長度對應變化率。在影像中一點&lt;span class="math"&gt;\((x,y)\)&lt;/span&gt;的梯度可以表示為&lt;/p&gt;
-&lt;div class="math"&gt;$$\triangledown f = \begin{bmatrix}  
-\frac{\partial f}{\partial x} \\  
-\frac{\partial f}{\partial y}  
-\end{bmatrix} = \begin{bmatrix}  
-g_x \\  
-g_y \end …&lt;/div&gt;</summary><content type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。&lt;/p&gt;
-&lt;h2 id="image-gradient"&gt;影像梯度 (Image gradient)&lt;/h2&gt;
-&lt;p&gt;由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。&lt;/p&gt;
-&lt;p&gt;Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&amp;gt; 亮，長度對應變化率。在影像中一點&lt;span class="math"&gt;\((x,y)\)&lt;/span&gt;的梯度可以表示為&lt;/p&gt;
-&lt;div class="math"&gt;$$\triangledown f = \begin{bmatrix}  
-\frac{\partial f}{\partial x} \\  
-\frac{\partial f}{\partial y}  
-\end{bmatrix} = \begin{bmatrix}  
-g_x \\  
-g_y \end{bmatrix},$$&lt;/div&gt;
+&lt;p&gt;Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&amp;gt; 亮，長度對應變化率。在影像中一點 $(x,y)$ 的梯度可以表示為&lt;/p&gt;
+&lt;p&gt;$$\triangledown f = \begin{bmatrix}&lt;br&gt;
+\frac{\partial f}{\partial x} \&lt;br&gt;
+\frac{\partial f}{\partial y}&lt;br&gt;
+\end{bmatrix} = \begin{bmatrix}&lt;br&gt;
+g_x \&lt;br&gt;
+g_y \end{bmatrix},$$&lt;/p&gt;
 &lt;p&gt;其方向為&lt;/p&gt;
-&lt;div class="math"&gt;$$\theta = \tan^{-1} \begin{bmatrix}  
-\frac{g_y}{g_x}  
-\end{bmatrix},$$&lt;/div&gt;
+&lt;p&gt;$$\theta = \tan^{-1} \begin{bmatrix}&lt;br&gt;
+\frac{g_y}{g_x}&lt;br&gt;
+\end{bmatrix},$$&lt;/p&gt;
 &lt;p&gt;其長度為&lt;/p&gt;
-&lt;div class="math"&gt;$$g = \sqrt{g_{x}^2+g_{y}^2}.$$&lt;/div&gt;
+&lt;p&gt;$$g = \sqrt{g_{x}^2+g_{y}^2}.$$&lt;/p&gt;
 &lt;h2 id="sobel-operator"&gt;Sobel operator&lt;/h2&gt;
-&lt;p&gt;Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用&lt;span class="math"&gt;\(3 \times 3\)&lt;/span&gt;的 kernel 對影像做 convolution ( 摺積 )。&lt;/p&gt;
-&lt;p&gt;假設&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;為來源影像，&lt;span class="math"&gt;\(\mathbf{G_x}\)&lt;/span&gt;與&lt;span class="math"&gt;\(\mathbf{G_y}\)&lt;/span&gt;分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為&lt;/p&gt;
-&lt;div class="math"&gt;$$\mathbf{G_x}=\begin{bmatrix}  
-1 &amp;amp; 0 &amp;amp; -1\\ 
-2 &amp;amp;0 &amp;amp; -2\\
+&lt;p&gt;Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用 $3 \times 3$ 的 kernel 對影像做 convolution ( 摺積 )。&lt;/p&gt;
+&lt;p&gt;假設 $\mathbf{A}$ 為來源影像，$\mathbf{G_x}$ 與 $\mathbf{G_y}$ 分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為&lt;/p&gt;
+&lt;p&gt;$$\mathbf{G_x}=\begin{bmatrix}&lt;br&gt;
+1 &amp;amp; 0 &amp;amp; -1\ 
+2 &amp;amp;0 &amp;amp; -2\
 1 &amp;amp; 0 &amp;amp; -1 
-\end{bmatrix} \ast \mathbf{A} \text{ and }  
-\mathbf{G_y}=\begin{bmatrix}  
-1 &amp;amp; 2 &amp;amp; 1\\ 
-0 &amp;amp; 0 &amp;amp; 0\\
--1 &amp;amp; -2 &amp;amp; -1  
-\end{bmatrix} \ast \mathbf{A}.$$&lt;/div&gt;
+\end{bmatrix} \ast \mathbf{A} \text{ and }&lt;br&gt;
+\mathbf{G_y}=\begin{bmatrix}&lt;br&gt;
+1 &amp;amp; 2 &amp;amp; 1\ 
+0 &amp;amp; 0 &amp;amp; 0\
+-1 &amp;amp; -2 &amp;amp; -1&lt;br&gt;
+\end{bmatrix} \ast \mathbf{A}.$$&lt;/p&gt;
 &lt;p&gt;所以梯度的強度圖可以寫成&lt;/p&gt;
-&lt;div class="math"&gt;$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$&lt;/div&gt;
+&lt;p&gt;$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$&lt;/p&gt;
 &lt;p&gt;同理梯度的方向圖可以寫成&lt;/p&gt;
-&lt;div class="math"&gt;$$\Theta = \tan^{-1} \begin{bmatrix}  
-\frac{\mathbf{G_y}}{\mathbf{G_x}}  
-\end{bmatrix}.$$&lt;/div&gt;
+&lt;p&gt;$$\Theta = \tan^{-1} \begin{bmatrix}&lt;br&gt;
+\frac{\mathbf{G_y}}{\mathbf{G_x}}&lt;br&gt;
+\end{bmatrix}.$$&lt;/p&gt;
 &lt;h2 id="canny-edge-detector"&gt;Canny edge detector&lt;/h2&gt;
 &lt;p&gt;Canny edge detector 是一種用來偵測影像中邊界的演算法，基本版的流程分為五個步驟：&lt;/p&gt;
 &lt;ol&gt;
@@ -338,95 +191,25 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;img alt="imshow" src="https://p2lhcg.bn.files.1drv.com/y4m0M6nM23Afk-c43bJV8NwGRkg4hOoEAWlG-TblMBaBfQrdRNCpg60reU_HxjGIPMsFNstX4Fd6D6kRXMzeb_TEEqpRgKrVKpi1HNxdQF_XHvPXGZ_WfydRmC5qjOhm2bQVz0NgdFPiiys-EPrFKRwLKs5eV9O-8odmtrlN8SQjUmuQhiwkpJX65xn9yW2uHuMRC-l3BpKtlPytIvliqqKdQ?width=491&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Edge%20Detection.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py"&gt;Edge operators&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>直方圖等化 (Histogram Equalization)</title><link href="https://blog.ya-ti.ml/histogram-equalization.html" rel="alternate"></link><published>2018-07-04T22:26:00+08:00</published><updated>2018-07-04T22:26:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:blog.ya-ti.ml,2018-07-04:/histogram-equalization.html</id><summary type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。&lt;/p&gt;
+&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>直方圖等化 (Histogram Equalization)</title><link href="https://yaticl.github.io/histogram-equalization.html" rel="alternate"></link><published>2018-07-04T22:26:00+08:00</published><updated>2018-07-04T22:26:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/histogram-equalization.html</id><summary type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"&gt;&lt;/p&gt;
 &lt;p&gt;希望影像的強度值分布變得比較均勻。&lt;/p&gt;
 &lt;h2 id="_1"&gt;數學理論&lt;/h2&gt;
-&lt;p&gt;假設一張灰階影像&lt;span class="math"&gt;\({x}\)&lt;/span&gt;，且令&lt;span class="math"&gt;\(n_i\)&lt;/span&gt;為強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的數量，則在影像中一個像素出現強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的機率為&lt;/p&gt;
-&lt;div class="math"&gt;$$p_x(i)=\frac{n_i}{n}, 0 \leq i &amp;lt; L,$$&lt;/div&gt;
-&lt;p&gt;其中&lt;span class="math"&gt;\(L\)&lt;/span&gt;為強度值的總量 ( 對於一般的 8 bit 影像為 256)，&lt;span class="math"&gt;\(n\)&lt;/span&gt;像素的總量，通常會將&lt;span class="math"&gt;\(i\)&lt;/span&gt;的範圍 normalize 到&lt;span class="math"&gt;\([0,1].\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;定義 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"&gt;&lt;/p&gt;
-&lt;p&gt;希望影像的強度值分布變得比較均勻。&lt;/p&gt;
-&lt;h2 id="_1"&gt;數學理論&lt;/h2&gt;
-&lt;p&gt;假設一張灰階影像&lt;span class="math"&gt;\({x}\)&lt;/span&gt;，且令&lt;span class="math"&gt;\(n_i\)&lt;/span&gt;為強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的數量，則在影像中一個像素出現強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的機率為&lt;/p&gt;
-&lt;div class="math"&gt;$$p_x(i)=\frac{n_i}{n}, 0 \leq i &amp;lt; L,$$&lt;/div&gt;
-&lt;p&gt;其中&lt;span class="math"&gt;\(L\)&lt;/span&gt;為強度值的總量 ( 對於一般的 8 bit 影像為 256)，&lt;span class="math"&gt;\(n\)&lt;/span&gt;像素的總量，通常會將&lt;span class="math"&gt;\(i\)&lt;/span&gt;的範圍 normalize 到&lt;span class="math"&gt;\([0,1].\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;定義&lt;span class="math"&gt;\(p_x\)&lt;/span&gt;對應的累積分布 (CDF) 為&lt;/p&gt;
-&lt;div class="math"&gt;$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$&lt;/div&gt;
-&lt;p&gt;我們希望創造一個轉換函數&lt;span class="math"&gt;\(k=T(i)\)&lt;/span&gt;，使新的影像&lt;span class="math"&gt;\({p_y(k)}\)&lt;/span&gt;有均勻的值方圖分布，相當於線性化影像的 CDF，例如&lt;/p&gt;
-&lt;div class="math"&gt;$$cdf_y(k)=kC, \text{for some constant }C.$$&lt;/div&gt;
+&lt;p&gt;假設一張灰階影像 ${x}$，且令 $n_i$ 為強度值 $i$ 的數量，則在影像中一個像素出現強度值 $i$ 的機率為&lt;/p&gt;
+&lt;p&gt;$$p_x(i)=\frac{n_i}{n}, 0 \leq i &amp;lt; L,$$&lt;/p&gt;
+&lt;p&gt;其中 $L$ 為強度值的總量 ( 對於一般的 8 bit 影像為 256)，$n$ 像素的總量，通常會將 $i$ 的範圍 normalize 到 $[0,1].$&lt;/p&gt;
+&lt;p&gt;定義 $p_x$ 對應的累積分布 (CDF) 為&lt;/p&gt;
+&lt;p&gt;$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$&lt;/p&gt;
+&lt;p&gt;我們希望創造一個轉換函數 $k=T(i)$，使新的影像 ${p_y(k)}$ 有均勻的值方圖分布，相當於線性化影像的 CDF，例如&lt;/p&gt;
+&lt;p&gt;$$cdf_y(k)=kC, \text{for some constant }C.$$&lt;/p&gt;
 &lt;p&gt;由 CDF 的性質，則我們可以寫出以下的轉換關係&lt;/p&gt;
-&lt;div class="math"&gt;$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$&lt;/div&gt;
-&lt;p&gt;假設&lt;span class="math"&gt;\(p_y(k)=C=\frac{1}{i_{min}-i_{max}}\)&lt;/span&gt;，則&lt;/p&gt;
-&lt;div class="math"&gt;$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$&lt;/div&gt;
+&lt;p&gt;$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$&lt;/p&gt;
+&lt;p&gt;假設 $p_y(k)=C=\frac{1}{i_{min}-i_{max}}$，則&lt;/p&gt;
+&lt;p&gt;$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$&lt;/p&gt;
 &lt;h2 id="local-histogram-equalization"&gt;局部直方圖等化 (Local Histogram Equalization)&lt;/h2&gt;
 &lt;p&gt;一般的直方圖等化是對整張影像做，通常新的直方圖只會是大概線性的 CDF，因此後來有一種局部版本的直方圖等化，使 CDF 更加的線性。在 scikit-image 有實作此方法，範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -445,7 +228,7 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;span class="n"&gt;matplotlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;font.size&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_img_and_hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;256&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Plot an image along with its histogram and cumulative histogram.&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Plot an image along with its histogram and cumulative histogram.&lt;/span&gt;
 
 &lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;ax_img&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ax_hist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;axes&lt;/span&gt;
@@ -505,71 +288,8 @@ g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;img alt="figure" src="https://pmkkqg.bn.files.1drv.com/y4mT9WfAlh1HKsg8TFF4nv3AOyaU2uO6iYAfbvg3YLXBVq-PMu4NbMI70AIM78It9niSGW9vp134qQ8pMh22C8_Q5tTBKuqCZyr7gnUECDPUKXW-tM3PkpbeURTW1FoPMMr7tixn3s2ALl3C1-rGp_sli2na5elthMyYupFeU7ydNbY3ryGSevWMuId5Uc39b-Pvk6j3GwmRo6D-CZKs_p5sQ?width=566&amp;amp;height=350&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Histogram%20Equalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Histogram_equalization"&gt;Histogram equalization&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry></feed>
+&lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry></feed>

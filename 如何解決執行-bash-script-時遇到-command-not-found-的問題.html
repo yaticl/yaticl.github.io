@@ -10,52 +10,52 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
 
 
     <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.ya-ti.ml/theme/pygments/github.min.css">
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
 
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/jquery.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.js"></script>
-    <script src="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch_set.min.js"></script>
-    <script src="https://blog.ya-ti.ml/tipuesearch_content.js"></script>
-    <link rel="stylesheet" href="https://blog.ya-ti.ml/theme/tipuesearch/tipuesearch.min.css" />
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
 
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.ya-ti.ml/theme/font-awesome/css/solid.css">
-
-
-    <link href="https://blog.ya-ti.ml/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
 
 
-    <link rel="shortcut icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://blog.ya-ti.ml/icons/favicon.ico" type="image/x-icon">
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
 
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="前言 在使用WSL執行 bash script 有時會遇到像這樣的錯誤： -bash: &#39;\r&#39;: command not found 經過搜尋之後在stackoverflow找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。 解決方法 由 stackoverflow 提供的解答，方法為在 WSL 之中安裝dos2unix，以 Debian/Ubuntu 為範例，安裝方法為： sudo apt-get install dos2unix 使用方法為： dos2unix …" />
+<meta name="description" content="前言 在使用WSL執行 bash script 有時會遇到像這樣的錯誤： -bash: &#39;\r&#39;: command not found 經過搜尋之後在stackoverflow找到解答，該錯誤訊息是因為 Windows 的 newline 符 …" />
 <meta name="keywords" content="Bash, Shell scripts, Linux, Windows Subsystem for Linux">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="如何解決執行 bash script 時遇到 &#34; &#39;\r&#39;: command not found&#34; 的問題"/>
-<meta property="og:description" content="前言 在使用WSL執行 bash script 有時會遇到像這樣的錯誤： -bash: &#39;\r&#39;: command not found 經過搜尋之後在stackoverflow找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。 解決方法 由 stackoverflow 提供的解答，方法為在 WSL 之中安裝dos2unix，以 Debian/Ubuntu 為範例，安裝方法為： sudo apt-get install dos2unix 使用方法為： dos2unix …"/>
+<meta property="og:description" content="前言 在使用WSL執行 bash script 有時會遇到像這樣的錯誤： -bash: &#39;\r&#39;: command not found 經過搜尋之後在stackoverflow找到解答，該錯誤訊息是因為 Windows 的 newline 符 …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://blog.ya-ti.ml/如何解決執行-bash-script-時遇到-command-not-found-的問題.html"/>
+<meta property="og:url" content="https://yaticl.github.io/如何解決執行-bash-script-時遇到-command-not-found-的問題.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2019-04-24 20:24:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://blog.ya-ti.ml/author/ya-ti.html">
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
 <meta property="article:section" content="Tips"/>
 <meta property="article:tag" content="Bash"/>
 <meta property="article:tag" content="Shell scripts"/>
 <meta property="article:tag" content="Linux"/>
 <meta property="article:tag" content="Windows Subsystem for Linux"/>
-<meta property="og:image" content="https://blog.ya-ti.ml/images/profile.jpg">
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 如何解決執行 bash script 時遇到 &#34; &#39;\r&#39;: command not found&#34; 的問題</title>
 
@@ -85,12 +85,12 @@
 <body class="light-theme">
   <aside>
     <div>
-      <a href="https://blog.ya-ti.ml">
-        <img src="https://blog.ya-ti.ml/images/profile.jpg" alt="" title="">
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
       </a>
 
       <h1>
-        <a href="https://blog.ya-ti.ml"></a>
+        <a href="https://yaticl.github.io"></a>
       </h1>
 
 
@@ -104,7 +104,7 @@
 
               <li>
                 <a target="_self"
-                   href="https://blog.ya-ti.ml/pages/about.html#about">
+                   href="https://yaticl.github.io/pages/about.html#about">
                   關於我
                 </a>
               </li>
@@ -119,7 +119,7 @@
             </a>
           </li>
           <li>
-            <a  class="sc-rss" href="https://blog.ya-ti.ml/feeds/all.atom.xml" target="_blank">
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
               <i class="fas fa-rss"></i>
             </a>
           </li>
@@ -130,12 +130,12 @@
   <main>
 
     <nav>
-      <a href="https://blog.ya-ti.ml">Home</a>
+      <a href="https://yaticl.github.io">Home</a>
 
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
-      <a href="https://blog.ya-ti.ml/feeds/all.atom.xml">Atom</a>
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -144,7 +144,7 @@
       
     <h1 id="如何解決執行-bash-script-時遇到-command-not-found-的問題">如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</h1>
     <p>
-      Posted on Wed 24 April 2019 in <a href="https://blog.ya-ti.ml/category/tips.html">Tips</a>
+      Posted on Wed 24 April 2019 in <a href="https://yaticl.github.io/category/tips.html">Tips</a>
 
     </p>
   </header>
@@ -153,62 +153,65 @@
   <div>
     <h2 id="_1">前言</h2>
 <p>在使用<a href="https://docs.microsoft.com/zh-tw/windows/wsl/about">WSL</a>執行 bash script 有時會遇到像這樣的錯誤：</p>
-<div class="highlight"><pre><span></span><code>-bash: <span class="s1">&#39;\r&#39;</span>: <span class="nb">command</span> not found
+<div class="highlight"><pre><span></span><code>-bash:<span class="w"> </span><span class="s1">&#39;\r&#39;</span>:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
 </code></pre></div>
-
 
 <p>經過搜尋之後在<a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile">stackoverflow</a>找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。</p>
 <h2 id="_2">解決方法</h2>
 <p>由 stackoverflow 提供的解答，方法為在 WSL 之中安裝<code>dos2unix</code>，以 Debian/Ubuntu 為範例，安裝方法為：</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install dos2unix
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>dos2unix
 </code></pre></div>
-
 
 <p>使用方法為：</p>
-<div class="highlight"><pre><span></span><code>dos2unix <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>file ...<span class="o">]</span> <span class="o">[</span>-n infile outfile ...<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>dos2unix<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>file<span class="w"> </span>...<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>infile<span class="w"> </span>outfile<span class="w"> </span>...<span class="o">]</span>
 </code></pre></div>
-
 
 <p>就能夠把 script 轉換成 bash 可以正確讀取的格式。</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://blog.ya-ti.ml/tag/bash.html">Bash</a>
-      <a href="https://blog.ya-ti.ml/tag/shell-scripts.html">Shell scripts</a>
-      <a href="https://blog.ya-ti.ml/tag/linux.html">Linux</a>
-      <a href="https://blog.ya-ti.ml/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
+      <a href="https://yaticl.github.io/tag/bash.html">Bash</a>
+      <a href="https://yaticl.github.io/tag/shell-scripts.html">Shell scripts</a>
+      <a href="https://yaticl.github.io/tag/linux.html">Linux</a>
+      <a href="https://yaticl.github.io/tag/windows-subsystem-for-linux.html">Windows Subsystem for Linux</a>
     </p>
   </div>
 
 
   <div class="neighbors">
-    <a class="btn float-left" href="https://blog.ya-ti.ml/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html" title="如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題">
+    <a class="btn float-left" href="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html" title="如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題">
       <i class="fa fa-angle-left"></i> 上一篇文章
     </a>
-    <a class="btn float-right" href="https://blog.ya-ti.ml/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html" title="如何在 Visual Studio Code 中使用 Cascadia Code 字體">
+    <a class="btn float-right" href="https://yaticl.github.io/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html" title="如何在 Visual Studio Code 中使用 Cascadia Code 字體">
       下一篇文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
 
+  <div class="related-posts">
+    <h4>你可能也感興趣</h4>
+    <ul class="related-posts">
+      <li><a href="https://yaticl.github.io/如何在-WSL中共享Windows-10的SSH-keys.html">如何在 WSL 中共享 Windows 10 的 SSH keys</a></li>
+    </ul>
+  </div>
 
 
 
   <section>
     <p id="post-share-links">
       分享到:
-      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&url=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      <a href="https://sharetodiaspora.github.io/?title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&url=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&hashtags=bash,shell-scripts,linux,windows-subsystem-for-linux" target="_blank" title="分享到 Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&hashtags=bash,shell-scripts,linux,windows-subsystem-for-linux" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&summary=%E5%89%8D%E8%A8%80%0A%E5%9C%A8%E4%BD%BF%E7%94%A8WSL%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%9C%89%E6%99%82%E6%9C%83%E9%81%87%E5%88%B0%E5%83%8F%E9%80%99%E6%A8%A3%E7%9A%84%E9%8C%AF%E8%AA%A4%EF%BC%9A%0A-bash%3A%20%27%5Cr%27%3A%20command%20not%20found%0A%0A%E7%B6%93%E9%81%8E%E6%90%9C%E5%B0%8B%E4%B9%8B%E5%BE%8C%E5%9C%A8stackoverflow%E6%89%BE%E5%88%B0%E8%A7%A3%E7%AD%94%EF%BC%8C%E8%A9%B2%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF%E6%98%AF%E5%9B%A0%E7%82%BA%20Windows%20%E7%9A%84%20newline%20%E7%AC%A6%E8%99%9F%E8%88%87%20Linux%20%E4%B8%8D%E5%90%8C%E6%89%80%E5%B0%8E%E8%87%B4%EF%BC%8C%E7%94%B1%E6%96%BC%E6%88%91%E6%98%AF%E5%9C%A8%20Windows%20%E7%9A%84%E7%92%B0%E5%A2%83%E4%B8%8B%E7%B7%A8%E5%AF%AB%20bash%20script%EF%BC%8C%E7%84%B6%E5%BE%8C%E5%9C%A8%20WSL%20%E5%9F%B7%E8%A1%8C%EF%BC%8C%E6%89%80%E4%BB%A5%E6%9C%83%E9%81%87%E5%88%B0%E6%AD%A4%E9%8C%AF%E8%AA%A4%E3%80%82%0A%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95%0A%E7%94%B1%20stackoverflow%20%E6%8F%90%E4%BE%9B%E7%9A%84%E8%A7%A3%E7%AD%94%EF%BC%8C%E6%96%B9%E6%B3%95%E7%82%BA%E5%9C%A8%20WSL%20%E4%B9%8B%E4%B8%AD%E5%AE%89%E8%A3%9Ddos2unix%EF%BC%8C%E4%BB%A5%20Debian/Ubuntu%20%E7%82%BA%E7%AF%84%E4%BE%8B%EF%BC%8C%E5%AE%89%E8%A3%9D%E6%96%B9%E6%B3%95%E7%82%BA%EF%BC%9A%0Asudo%20apt-get%20install%20dos2unix%0A%0A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%82%BA%EF%BC%9A%0Ados2unix%20%E2%80%A6&source=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&summary=%E5%89%8D%E8%A8%80%0A%E5%9C%A8%E4%BD%BF%E7%94%A8WSL%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%9C%89%E6%99%82%E6%9C%83%E9%81%87%E5%88%B0%E5%83%8F%E9%80%99%E6%A8%A3%E7%9A%84%E9%8C%AF%E8%AA%A4%EF%BC%9A%0A-bash%3A%20%27%5Cr%27%3A%20command%20not%20found%0A%0A%E7%B6%93%E9%81%8E%E6%90%9C%E5%B0%8B%E4%B9%8B%E5%BE%8C%E5%9C%A8stackoverflow%E6%89%BE%E5%88%B0%E8%A7%A3%E7%AD%94%EF%BC%8C%E8%A9%B2%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF%E6%98%AF%E5%9B%A0%E7%82%BA%20Windows%20%E7%9A%84%20newline%20%E7%AC%A6%20%E2%80%A6&source=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&u=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&u=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&amp;body=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="從 Email 分享">Email</a>
+      <a href="mailto:?subject=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C&amp;body=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="從 Email 分享">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//blog.ya-ti.ml/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C" target="_blank" title="從 Reddit 分享">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C%20bash%20script%20%E6%99%82%E9%81%87%E5%88%B0%20%22%20%27%5Cr%27%3A%20command%20not%20found%22%20%E7%9A%84%E5%95%8F%E9%A1%8C" target="_blank" title="從 Reddit 分享">Reddit</a>
     </p>
   </section>
 </article>
@@ -228,8 +231,8 @@ Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a 
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Ya-Ti's Blog ",
-  "url" : "https://blog.ya-ti.ml",
-  "image": "https://blog.ya-ti.ml/images/profile.jpg",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
   "description": ""
 }
 </script>
