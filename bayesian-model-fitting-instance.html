@@ -37,13 +37,13 @@
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。 Bayes rule 定義一個 likelihood \(P(D | M)\)，其中\(D\)為來自於 model \(M\)的實驗數據。 基於預期知識\(C\)，定義一個 model \(M\)的 prior \(P(M | C)\)，其中 model \(M\)包含一些我們想要找的參數。 則由 Bayes&#39; theorem 可以得知 posterior： $$P(M \| D) \propto P(M | C)P(D …" />
+<meta name="description" content="一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。 Bayes rule 定義一個 likelihood $P(D | M)$，其中 $D$ 為來自於 model $M$ 的實驗數據。 基於預期知識 …" />
 <meta name="keywords" content="Statistical Optics, Bayesian, Python">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="貝氏模型擬合範例 (Bayesian Model Fitting Instance)"/>
-<meta property="og:description" content="一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。 Bayes rule 定義一個 likelihood \(P(D | M)\)，其中\(D\)為來自於 model \(M\)的實驗數據。 基於預期知識\(C\)，定義一個 model \(M\)的 prior \(P(M | C)\)，其中 model \(M\)包含一些我們想要找的參數。 則由 Bayes&#39; theorem 可以得知 posterior： $$P(M \| D) \propto P(M | C)P(D …"/>
+<meta property="og:description" content="一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。 Bayes rule 定義一個 likelihood $P(D | M)$，其中 $D$ 為來自於 model $M$ 的實驗數據。 基於預期知識 …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://yaticl.github.io/bayesian-model-fitting-instance.html"/>
 <meta property="og:type" content="article"/>
@@ -152,12 +152,12 @@
   <div>
     <p>一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。</p>
 <h2 id="bayes-rule">Bayes rule</h2>
-<p>定義一個 likelihood <span class="math">\(P(D | M)\)</span>，其中<span class="math">\(D\)</span>為來自於 model <span class="math">\(M\)</span>的實驗數據。</p>
-<p>基於預期知識<span class="math">\(C\)</span>，定義一個 model <span class="math">\(M\)</span>的 prior <span class="math">\(P(M | C)\)</span>，其中 model <span class="math">\(M\)</span>包含一些我們想要找的參數。</p>
+<p>定義一個 likelihood $P(D | M)$，其中 $D$ 為來自於 model $M$ 的實驗數據。</p>
+<p>基於預期知識 $C$，定義一個 model $M$ 的 prior $P(M | C)$，其中 model $M$ 包含一些我們想要找的參數。</p>
 <p>則由 Bayes' theorem 可以得知 posterior：</p>
-<div class="math">$$P(M \| D) \propto P(M | C)P(D | M).$$</div>
+<p>$$P(M | D) \propto P(M | C)P(D | M).$$</p>
 <h2 id="linear-models">Linear models</h2>
-<p>假設有一個感測器，其量測到的信號被一個高斯雜訊影響，則可以將信號產生模型寫成 : <span class="math">\(y=a + noise\)</span>，其中<span class="math">\(y\)</span>為量測到的 data，<span class="math">\(a\)</span>是模型的參數。</p>
+<p>假設有一個感測器，其量測到的信號被一個高斯雜訊影響，則可以將信號產生模型寫成 : $y=a + noise$，其中 $y$ 為量測到的 data，$a$ 是模型的參數。</p>
 <p>首先我們先產生人造的 data：</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -169,24 +169,21 @@
 <span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Generate n data</span>
 </code></pre></div>
 
-
-<p>根據 generative model，隱含了 likelihood 可以被表示成<span class="math">\(p(y|a) = \prod_{i=1}^{n} (2 \pi \sigma^2)^{-1/2} e^{-\frac{(y_i-a)^2}{2\sigma^2}}\)</span>：</p>
+<p>根據 generative model，隱含了 likelihood 可以被表示成 $p(y|a) = \prod_{i=1}^{n} (2 \pi \sigma^2)^{-1/2} e^{-\frac{(y_i-a)^2}{2\sigma^2}}$：</p>
 <div class="highlight"><pre><span></span><code><span class="n">va</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">N</span>   <span class="o">=</span> <span class="n">va</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">lik</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">sp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">])</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">va</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lik</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">sp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">])</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">va</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">lik</span> <span class="o">=</span> <span class="n">lik</span> <span class="o">/</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">lik</span><span class="p">)</span> <span class="c1"># normalize</span>
 </code></pre></div>
 
-
-<p>在還沒量測之前，我們猜測量測到的信號會是中心為<span class="math">\(0\)</span>且標準差為<span class="math">\(5\)</span>的 Gaussian distribution：</p>
+<p>在還沒量測之前，我們猜測量測到的信號會是中心為 $0$ 且標準差為 $5$ 的 Gaussian distribution：</p>
 <div class="highlight"><pre><span></span><code><span class="n">a0</span>  <span class="o">=</span> <span class="mi">0</span>
 <span class="n">s0</span>  <span class="o">=</span> <span class="mi">5</span>
-<span class="n">pr</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">va</span><span class="o">-</span><span class="n">a0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">s0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pr</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">va</span><span class="o">-</span><span class="n">a0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">s0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">pr</span>  <span class="o">=</span> <span class="n">pr</span> <span class="o">/</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>
 </code></pre></div>
 
-
-<p>根據 Bayes' theorem，可以推得模型的 posterior： <span class="math">\(p(a|y) = p(a) \times p(y|a)\)</span></p>
+<p>根據 Bayes' theorem，可以推得模型的 posterior： $p(a|y) = p(a) \times p(y|a)$</p>
 <p>我們將上述的 distribution 都畫出：</p>
 <div class="highlight"><pre><span></span><code><span class="n">po</span> <span class="o">=</span> <span class="n">lik</span> <span class="o">*</span> <span class="n">pr</span>
 <span class="n">po</span> <span class="o">=</span> <span class="n">po</span> <span class="o">/</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">po</span><span class="p">)</span>
@@ -203,18 +200,16 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of variable a with maximum posterior is </span><span class="si">{:.4f}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MAP</span><span class="p">))</span>
 </code></pre></div>
 
-
 <p><img alt="scatter(y)" src="https://jg7ggg.bn.files.1drv.com/y4mOTCh4-zjos-6wrwg-Qkw3Fk1SK0POua2Mjw4PGffnbni0Zdfmeu3JVv172oFN9PQVWieXLBWt1B7JlYw96k5sgK8gmqjCp7A2d1un8kC8S70b074Ek5E0t-6LTtM4bsbqsYnpxUv60hjhm-jFWDcGGMN_ABrZmpGq3CrAinA9QSlxe0hWEmzUEm5gPqEigRdB059qgkcPSEVObs8VIgPWg?width=388&amp;height=252&amp;cropmode=none"></p>
-<div class="highlight"><pre><span></span><code><span class="n">The</span> <span class="n">value</span> <span class="k">of</span> <span class="k">variable</span> <span class="n">a</span> <span class="k">with</span> <span class="n">maximum</span> <span class="n">likelihood</span> <span class="k">is</span> <span class="mi">4</span><span class="p">.</span><span class="mi">4595</span>
+<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">likelihood</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mf">4.4595</span>
 
-<span class="n">The</span> <span class="n">value</span> <span class="k">of</span> <span class="k">variable</span> <span class="n">a</span> <span class="k">with</span> <span class="n">maximum</span> <span class="n">posterior</span> <span class="k">is</span> <span class="mi">4</span><span class="p">.</span><span class="mi">3393</span>
+<span class="n">The</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">posterior</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mf">4.3393</span>
 </code></pre></div>
-
 
 <p>只藉由少量的 data，可以發現機率最高的參數已經接近我們的真實信號產生模型參數，其中 likelihood 是只利用所量測到的 data 估計模型參數，而 posterior 是加入 prior 修正後的結果或是妥協，如果 data 愈多，則會傾向於相信 data。</p>
 <h2 id="grid-search-for-two-variables">Grid search for two variables</h2>
 <p>若我們不知道雜訊的標準差，則也需要將雜訊的標準差加入為需要尋找的模型參數。</p>
-<p>舉例來說，一個信號<span class="math">\(x\)</span>會在感測器上有<span class="math">\(a\)</span>的增益，但是量測到的信號會被雜訊所影響，則模型可以寫成：<span class="math">\(y=a \times x + noise\)</span></p>
+<p>舉例來說，一個信號 $x$ 會在感測器上有 $a$ 的增益，但是量測到的信號會被雜訊所影響，則模型可以寫成：$y=a \times x + noise$</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span>   <span class="o">=</span> <span class="mi">2</span> <span class="c1"># true a</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># true sigma</span>
 <span class="n">x</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -229,9 +224,8 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p><img alt="scatter(x,y)" src="https://jpohvq.bn.files.1drv.com/y4mmo5ZJ58Y0pS2HbUe-s0xVMGYkGLvwBAZ43NkxxVdL7VHJ4Unp9BNOdCVxd5hBKx4Fx4jFP3EvKYSZ9COJs6xL021ZLIhyOKPScfyZnycAMTN0KzYHX7hMNZJVpWcukMZXOt-vMX4OZikBOPG6ZESYjqu-nUjpDU8GHytYFACoF61u7eGfhRuRHwIM2lbAAdHl70bXR--VRX4glDulr__Yg?width=388&amp;height=278&amp;cropmode=none"></p>
-<p>Grid search 就是取樣大量的參數來尋找最佳的參數組合，因此我們對<span class="math">\(a\)</span>與<span class="math">\(\sigma^2\)</span>取樣，希望計算 posterior 最高的參數組合：</p>
+<p>Grid search 就是取樣大量的參數來尋找最佳的參數組合，因此我們對 $a$ 與 $\sigma^2$ 取樣，希望計算 posterior 最高的參數組合：</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">normpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
     <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sigma</span><span class="p">)))</span><span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -251,7 +245,6 @@
 <span class="n">posterior</span> <span class="o">=</span> <span class="n">posterior</span> <span class="o">/</span> <span class="n">sp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">posterior</span><span class="p">[:])</span>
 </code></pre></div>
 
-
 <p>接著畫出 posterior distribution:</p>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">posterior</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">va</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">va</span><span class="p">[</span><span class="n">va</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">vs</span><span class="p">[</span><span class="n">vs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">vs</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
@@ -261,7 +254,6 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-
 
 <p><img alt="imshow(posterior)" src="https://wlcvya.bn.files.1drv.com/y4mDSI_TA12jRQVxblosCKhmzcHMeJVhcuH6nCaux7iHIo4E6V6_otKHKDyFul2UHK_K01_7OkePCy3Uu53kwkghVo5PdOrrwIt2FqF6pROB6xa7y20PZ7cKzyqlkMcwMN-G0RIVAEJ7jFJF_10qZhZzzmOjf7T7mPU9cFo4GwDpBOGEaTaCNwZfTuSxTH0TSfUE9TgZ0hn5FgWKdvQ_1gEFA?width=385&amp;height=278&amp;cropmode=none"></p>
 <p>然後藉由對中一個參數做積分，我們可以畫出 marginal probability，也就是兩個參數的機率分布：</p>
@@ -278,78 +270,14 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of variables with maxium posterior are </span><span class="si">{:.4f}</span><span class="s1"> and </span><span class="si">{:.4f}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">va</span><span class="p">[</span><span class="n">maxidx</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">vs</span><span class="p">[</span><span class="n">maxidx</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
 </code></pre></div>
 
-
 <p><img alt="plot_marginals" src="https://xczwag.bn.files.1drv.com/y4mf0YvbtFX4xCVp_d4wa2aSyA8itn0XmHJ4WvjeF3R5YXrtSki7ZxiOcAooLtiljipMEXwk0zizMNYtmLFs7frHrc_34_IeyHdL3Nt0VYu_UIv5JMlatKIGRwyCW-TlD2Q6MAB5odDz7ds027PZe7kBN6PhIhZHG8KoHMQtRSTt-k4i6l24IOVNXAqq8WyxX6HNG7i93QGFtn4VTk0DdTD6Q?width=605&amp;height=319&amp;cropmode=none"></p>
-<div class="highlight"><pre><span></span><code><span class="err">The value of variables with maxium posterior are 1.8687 and 17.6832</span>
+<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">maxium</span><span class="w"> </span><span class="n">posterior</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="mf">1.8687</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="mf">17.6832</span>
 </code></pre></div>
-
 
 <p>最後我們就能得到最佳的參數組合。</p>
 <p><a href="https://github.com/yaticl/MyNotebooks/blob/master/Statistical%20Optics/Bayesian%20Model%20Fitting%20Instance.ipynb"><strong>Jupyter notebook 版本</strong></a></p>
 <h2 id="reference">Reference</h2>
 <p><a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html">ONBI - Bayesian model fitting practical</a></p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
   </div>
   <div class="tag-cloud">
     <p>
@@ -391,7 +319,7 @@
       ❄
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&summary=%E4%B8%80%E5%80%8B%20Bayesian%20model%20fitting%20%E7%9A%84%E7%AF%84%E4%BE%8B%EF%BC%8C%E5%B9%AB%E5%8A%A9%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20Bayesian%20model%20%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E3%80%82%0ABayes%20rule%0A%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20likelihood%20%5C%28P%28D%20%7C%20M%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%5C%28D%5C%29%E7%82%BA%E4%BE%86%E8%87%AA%E6%96%BC%20model%20%5C%28M%5C%29%E7%9A%84%E5%AF%A6%E9%A9%97%E6%95%B8%E6%93%9A%E3%80%82%0A%E5%9F%BA%E6%96%BC%E9%A0%90%E6%9C%9F%E7%9F%A5%E8%AD%98%5C%28C%5C%29%EF%BC%8C%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20model%20%5C%28M%5C%29%E7%9A%84%20prior%20%5C%28P%28M%20%7C%20C%29%5C%29%EF%BC%8C%E5%85%B6%E4%B8%AD%20model%20%5C%28M%5C%29%E5%8C%85%E5%90%AB%E4%B8%80%E4%BA%9B%E6%88%91%E5%80%91%E6%83%B3%E8%A6%81%E6%89%BE%E7%9A%84%E5%8F%83%E6%95%B8%E3%80%82%0A%E5%89%87%E7%94%B1%20Bayes%27%20theorem%20%E5%8F%AF%E4%BB%A5%E5%BE%97%E7%9F%A5%20posterior%EF%BC%9A%0A%24%24P%28M%20%5C%7C%20D%29%20%5Cpropto%20P%28M%20%7C%20C%29P%28D%20%E2%80%A6&source=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html&title=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&summary=%E4%B8%80%E5%80%8B%20Bayesian%20model%20fitting%20%E7%9A%84%E7%AF%84%E4%BE%8B%EF%BC%8C%E5%B9%AB%E5%8A%A9%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20Bayesian%20model%20%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E3%80%82%0ABayes%20rule%0A%E5%AE%9A%E7%BE%A9%E4%B8%80%E5%80%8B%20likelihood%20%24P%28D%20%7C%20M%29%24%EF%BC%8C%E5%85%B6%E4%B8%AD%20%24D%24%20%E7%82%BA%E4%BE%86%E8%87%AA%E6%96%BC%20model%20%24M%24%20%E7%9A%84%E5%AF%A6%E9%A9%97%E6%95%B8%E6%93%9A%E3%80%82%0A%E5%9F%BA%E6%96%BC%E9%A0%90%E6%9C%9F%E7%9F%A5%E8%AD%98%20%E2%80%A6&source=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
       <a href="https://news.ycombinator.com/submitlink?t=%E8%B2%9D%E6%B0%8F%E6%A8%A1%E5%9E%8B%E6%93%AC%E5%90%88%E7%AF%84%E4%BE%8B%20%28Bayesian%20Model%20Fitting%20Instance%29&u=https%3A//yaticl.github.io/bayesian-model-fitting-instance.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄

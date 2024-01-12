@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
+
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
+
+
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="背景 由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。 因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得 …" />
+<meta name="keywords" content="Machine Learning, AI, ONNX, DirectML">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理"/>
+<meta property="og:description" content="背景 由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。 因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2024-01-12 17:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
+<meta property="article:section" content="Machine Learning"/>
+<meta property="article:tag" content="Machine Learning"/>
+<meta property="article:tag" content="AI"/>
+<meta property="article:tag" content="ONNX"/>
+<meta property="article:tag" content="DirectML"/>
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://yaticl.github.io"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://yaticl.github.io/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://yaticl.github.io">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</h1>
+    <p>
+      Posted on Fri 12 January 2024 in <a href="https://yaticl.github.io/category/machine-learning.html">Machine Learning</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2 id="_1">背景</h2>
+<p>由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。
+因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得很重要。為了實現加速推理各種的 AI 模型，ONNX Runtime 是微軟與 Meta 等公司主推的 AI 加速方案。
+所以我這裡就來測試如何使用 ONNX Runtime 實現對 ResNet50 分類器的加速推理。</p>
+<h2 id="onnx-runtime">ONNX Runtime</h2>
+<p><a href="https://onnxruntime.ai/">ONNX Runtime</a> 是一種跨平台的 AI 加速框架，支援主流的作業系統與程式語言，以及主流的深度學習框架所訓練出來的模型，如 PyTorch 與 TensorFlow。
+ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU, CUDA, DirectML 等等，其餘的 EP 與細節可以參考官方的<a href="https://onnxruntime.ai/docs/execution-providers/">文件</a>。
+這裡以 <a href="https://onnxruntime.ai/docs/execution-providers/DirectML-ExecutionProvider.html">DirectML EP</a> 來實作，因為 DirectML 理論上可以支援所有相容 DirectX 12 的 GPU，應該在 Windows 上有最好的泛用性。</p>
+<h2 id="_2">實作</h2>
+<p>這裡以官方的 ResNet50 C# <a href="https://onnxruntime.ai/docs/tutorials/csharp/resnet50_csharp.html">範例</a>為基礎來實作。
+由於範例的文件比較舊，我做了一些修改以適用最新版本的 ONNX 與執行環境。</p>
+<h3 id="_3">環境準備</h3>
+<ol>
+<li>安裝 <a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8">Visual Studio 2022 (VS)</a> 或更新的版本。</li>
+<li>在 VS 中創建一個 C# Console App，.NET 版本選擇 6.0 或更高。</li>
+<li>在方案的相依性安裝支援 DirectML 的 <a href="https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.DirectML/1.16.3?_src=template">ONNX Runtime</a>。</li>
+<li>安裝前處理用的<a href="https://www.nuget.org/packages/SixLabors.ImageSharp/3.1.2?_src=template">相依性</a>。</li>
+<li>下載 ONNX 模型<a href="https://github.com/onnx/models/blob/main/validated/vision/classification/resnet/model/resnet50-v2-7.onnx">檔案</a>。</li>
+<li>下載一張待推理的<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/dog.jpeg">影像</a>，或其他影像。</li>
+</ol>
+<h3 id="_4">程式碼</h3>
+<ol>
+<li>先準備分類<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/LabelMap.cs">標籤</a>。</li>
+<li>主程式 <code>Program.cs</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.ML.OnnxRuntime.Tensors</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">SixLabors.ImageSharp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">SixLabors.ImageSharp.PixelFormats</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">SixLabors.ImageSharp.Processing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">static</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Mime</span><span class="p">.</span><span class="n">MediaTypeNames</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Microsoft.ML.OnnxRuntime.ResNet50v2Sample</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Read paths</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">modelFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Path\\to\\model\\resnet50-v2-7.onnx&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">imageFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Path\\to\\image\\dog.jpeg&quot;</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Read image</span>
+<span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">Image</span><span class="o">&lt;</span><span class="n">Rgb24</span><span class="o">&gt;</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SixLabors</span><span class="p">.</span><span class="n">ImageSharp</span><span class="p">.</span><span class="n">Image</span><span class="p">.</span><span class="n">Load</span><span class="o">&lt;</span><span class="n">Rgb24</span><span class="o">&gt;</span><span class="p">(</span><span class="n">imageFilePath</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Resize image</span>
+<span class="w">            </span><span class="n">image</span><span class="p">.</span><span class="n">Mutate</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">x</span><span class="p">.</span><span class="n">Resize</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ResizeOptions</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">224</span><span class="p">,</span><span class="w"> </span><span class="m">224</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResizeMode</span><span class="p">.</span><span class="n">Crop</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Preprocess image</span>
+<span class="w">            </span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DenseTensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">224</span><span class="p">,</span><span class="w"> </span><span class="m">224</span><span class="w"> </span><span class="p">});</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="m">0.485f</span><span class="p">,</span><span class="w"> </span><span class="m">0.456f</span><span class="p">,</span><span class="w"> </span><span class="m">0.406f</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">stddev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="m">0.229f</span><span class="p">,</span><span class="w"> </span><span class="m">0.224f</span><span class="p">,</span><span class="w"> </span><span class="m">0.225f</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="n">image</span><span class="p">.</span><span class="n">ProcessPixelRows</span><span class="p">(</span><span class="n">accessor</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">accessor</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Span</span><span class="o">&lt;</span><span class="n">Rgb24</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pixelSpan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accessor</span><span class="p">.</span><span class="n">GetRowSpan</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">accessor</span><span class="p">.</span><span class="n">Width</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">input</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">pixelSpan</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">R</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">255f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p">[</span><span class="m">0</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">stddev</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+<span class="w">                        </span><span class="n">input</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">pixelSpan</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">G</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">255f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p">[</span><span class="m">1</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">stddev</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+<span class="w">                        </span><span class="n">input</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">pixelSpan</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">B</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">255f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">stddev</span><span class="p">[</span><span class="m">2</span><span class="p">];</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Setup inputs</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">NamedOnnxValue</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">NamedOnnxValue</span><span class="p">.</span><span class="n">CreateFromTensor</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
+<span class="w">            </span><span class="p">};</span>
+
+<span class="w">            </span><span class="c1">// Enable the DirectML EP</span>
+<span class="w">            </span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">sessionOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SessionOptions</span><span class="p">();</span>
+<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">GraphOptimizationLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphOptimizationLevel</span><span class="p">.</span><span class="n">ORT_ENABLE_ALL</span><span class="p">;</span>
+<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">AppendExecutionProvider_DML</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Run inference</span>
+<span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">modelFilePath</span><span class="p">,</span><span class="w"> </span><span class="n">sessionOptions</span><span class="p">);</span>
+<span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">IDisposableReadOnlyCollection</span><span class="o">&lt;</span><span class="n">DisposableNamedOnnxValue</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="n">inputs</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Postprocess to get softmax vector</span>
+<span class="w">            </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">results</span><span class="p">.</span><span class="n">First</span><span class="p">().</span><span class="n">AsEnumerable</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">Math</span><span class="p">.</span><span class="n">Exp</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">            </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">softmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">Math</span><span class="p">.</span><span class="n">Exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Extract top 10 predicted classes</span>
+<span class="w">            </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">Prediction</span><span class="o">&gt;</span><span class="w"> </span><span class="n">top10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">softmax</span><span class="p">.</span><span class="n">Select</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Prediction</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LabelMap</span><span class="p">.</span><span class="n">Labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">Confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                               </span><span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Confidence</span><span class="p">)</span>
+<span class="w">                               </span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Print results to console</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Top 10 predictions for ResNet50 v2...&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;--------------------------------------------------------------&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">top10</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Label: {t.Label}, Confidence: {t.Confidence}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Prediction</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Label</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Confidence</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>輸出結果</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nv">Top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">predictions</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">ResNet50</span><span class="w"> </span><span class="nv">v2</span>...
+<span class="o">--------------------------------------------------------------</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">70073485</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Kuvasz</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">17292742</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Otterhound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">019890321</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Clumber</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">018660849</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Saluki</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">011093369</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Sussex</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0072962483</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Labrador</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">007059277</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Pyrenean</span><span class="w"> </span><span class="nv">Mountain</span><span class="w"> </span><span class="nv">Dog</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">006370869</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Tibetan</span><span class="w"> </span><span class="nv">Terrier</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">006168284</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">English</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">004178419</span>
+</code></pre></div>
+
+<h2 id="_5">心得</h2>
+<p>經過測試，此範例在 NVIDIA RTX 4070、Intel Iris Xe Graphics (Intel Core i5-11300H)，甚至是高通的 Adreno 8CX Gen 3 (Microsoft SQ 3)，雖然在 SQ3 上會回報未知的 ARM CPU，但都可以順利執行加速推理。
+在這個簡單的分類器範例，DirectML 的相容性看起來不錯，希望微軟持續維護 DirectML EP。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://yaticl.github.io/tag/machine-learning.html">Machine Learning</a>
+      <a href="https://yaticl.github.io/tag/ai.html">AI</a>
+      <a href="https://yaticl.github.io/tag/onnx.html">ONNX</a>
+      <a href="https://yaticl.github.io/tag/directml.html">DirectML</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://yaticl.github.io/如何將OneNote筆記搬到另一個帳戶.html" title="如何將 OneNote 筆記搬到另一個帳戶">
+      <i class="fa fa-angle-left"></i> 上一篇文章
+    </a>
+  </div>
+
+
+
+
+  <section>
+    <p id="post-share-links">
+      分享到:
+      <a href="https://sharetodiaspora.github.io/?title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&hashtags=machine-learning,ai,onnx,directml" target="_blank" title="分享到 Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&summary=%E8%83%8C%E6%99%AF%0A%E7%94%B1%E6%96%BC%E6%9C%80%E8%BF%91%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E7%9A%84%E8%88%88%E8%B5%B7%EF%BC%8C%E5%A6%82%20ChatGPT%20%E8%88%87%20DALL%C2%B7E%EF%BC%8C%E5%BE%AE%E8%BB%9F%E6%94%9C%E6%89%8B%E5%BB%A0%E5%95%86%E5%80%91%E9%96%8B%E5%A7%8B%E6%8E%A8%E5%BB%A3%20AI%20PC%E3%80%82%0A%E5%9B%A0%E6%AD%A4%EF%BC%8C%E5%AE%A2%E6%88%B6%E7%AB%AF%20%28%20%E9%82%8A%E7%B7%A3%20%29%20%E8%A3%9D%E7%BD%AE%E7%9A%84%20AI%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E9%80%9F%E5%BA%A6%E8%AE%8A%E5%BE%97%20%E2%80%A6&source=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&amp;body=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="從 Email 分享">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86" target="_blank" title="從 Reddit 分享">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

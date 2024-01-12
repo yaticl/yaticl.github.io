@@ -79,8 +79,8 @@ Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺�
 &lt;p&gt;&lt;img alt="stress_FPU" src="https://i8xdwq.bn.files.1drv.com/y4mVE6nrj3Qvx5PDDzpKAamNSbOtxhwdqZHys_y1gKgJdr2e_HbEkhiW_mxswbbNVnnLTWSWDXKWnk8IgzFvtLRlAp-qDe8Uf_4nORQ9_KOcXnaus6_CYWnZBX0ZpHrSjYxv77dALI8Du__bnRFDVwStCMuOUzdHL3-qQG11vXfur_G1iG3ECWQOntikWkDmfrxlZhwXQ20etffypdGgvK2Qg?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;由於 AIDA64 很多感測器的數值無法正確讀出，我以工作管理員提供的數值為主，參考一篇&lt;a href="https://zhuanlan.zhihu.com/p/102206313"&gt;文章&lt;/a&gt;，前四個是小核心，後四個是大核心。
 工作管理員的時脈數值，根據我的觀察，其顯示數值應該為：&lt;/p&gt;
-&lt;div class="math"&gt;$$(\text{ 核心時脈 } \times \text{ 核心負載 }) \div \text{ 啟用核心數量。}$$&lt;/div&gt;
-&lt;p&gt;在全核心都滿載的情況下，時脈可以一直維持在&lt;span class="math"&gt;\(2.38 \text{ GHz} \approxeq (3+1.8) \div 2\)&lt;/span&gt;，推測是雖然號稱 3 GHz，但其實跟 Snapdragon 855+ 的最高時脈一樣是 2.96 GHz，這樣算出來的數值就完全符合了。&lt;/p&gt;
+&lt;p&gt;$$(\text{ 核心時脈 } \times \text{ 核心負載 }) \div \text{ 啟用核心數量。}$$&lt;/p&gt;
+&lt;p&gt;在全核心都滿載的情況下，時脈可以一直維持在 $2.38 \text{ GHz} \approxeq (3+1.8) \div 2$，推測是雖然號稱 3 GHz，但其實跟 Snapdragon 855+ 的最高時脈一樣是 2.96 GHz，這樣算出來的數值就完全符合了。&lt;/p&gt;
 &lt;p&gt;在相同的測試環境下，以 3DMark 中唯一支援 ARM 的 Night Raid 做 GPU 的壓力測試，測試結果以 99.9% 的成績通過。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="stress_GPU" src="https://vjlrza.bn.files.1drv.com/y4ml6ojJJelBu3KuGzuCV1dUNL5qH6VAsKGKk6WqBQ1c2IO-BZuctATJh0x9Dk9g9lHYjUbtO305mywn5Er3VMCaMtunN_URQgyyPt2aMpLDcE9kQ_rwpR4CoV48xlS3ui4nlITYa3tjOg5OeG-R7Lfp1n092pydjVvF_ZNKq3m6lrkK-8sjFoN614QGGvYcSjirXLc0uxrDJNTyAC8iDcqDQ?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;在跑壓力測試的時候，用手直接摸機身背後，只感覺溫而已，甚至比手機還不熱，相較於 Pro ( 第五代 )、Book 2 還有 Go 等被動散熱的 Surface，相同的測試要以燙來形容。
@@ -116,66 +116,4 @@ VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;h2 id="_11"&gt;總結&lt;/h2&gt;
 &lt;p&gt;Pro X 目前的體驗感受，算是比我預期的好，本來我只打算當個能用 Office 和 UWP 的 Edge book，後來發現可以做很多事，就直接拿來作為主力機了。
 到目前為止我認為 Pro X 是一台好機器，但是不適合所有人，而我剛好是目標人群。我覺得很多開發者其實對 Windows on ARM 是很有興趣，但是缺乏工具鏈，微軟你家的 .Net framework 都沒有原生支援，一堆 WinForms 和 WPF 程式是要怎麼搞原生。
-不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="硬體"></category><category term="Microsoft Surface"></category><category term="Windows on ARM"></category></entry></feed>
+不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;</content><category term="硬體"></category><category term="Microsoft Surface"></category><category term="Windows on ARM"></category></entry></feed>
