@@ -174,7 +174,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <h3 id="_4">程式碼</h3>
 <ol>
 <li>先準備分類<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/LabelMap.cs">標籤</a>。</li>
-<li>主程式 <code>Program.cs</code></li>
+<li>主程式 <code>Program.cs</code>：</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
@@ -269,9 +269,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="p">}</span>
 </code></pre></div>
 
-<ol>
-<li>輸出結果</li>
-</ol>
+<p>輸出結果：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">Top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">predictions</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">ResNet50</span><span class="w"> </span><span class="nv">v2</span>...
 <span class="o">--------------------------------------------------------------</span>
 <span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">70073485</span>
