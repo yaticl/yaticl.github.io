@@ -24,7 +24,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 &lt;h3 id="_4"&gt;程式碼&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;先準備分類&lt;a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/LabelMap.cs"&gt;標籤&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;主程式 &lt;code&gt;Program.cs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;主程式 &lt;code&gt;Program.cs&lt;/code&gt;：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;System&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;System.Collections.Generic&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -119,9 +119,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-&lt;li&gt;輸出結果&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;輸出結果：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Top&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;predictions&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ResNet50&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v2&lt;/span&gt;...
 &lt;span class="o"&gt;--------------------------------------------------------------&lt;/span&gt;
 &lt;span class="nv"&gt;Label&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Golden&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Retriever&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;Confidence&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;.&lt;span class="mi"&gt;70073485&lt;/span&gt;
