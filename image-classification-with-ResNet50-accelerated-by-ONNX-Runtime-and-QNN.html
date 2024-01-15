@@ -301,6 +301,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <p>看起來錯誤像是裝置不支援。</p>
 <h2 id="_5">心得</h2>
 <p>經過測試，ONNX Runtime 與 QNN EP 的組合，似乎在 Microsoft SQ 3 上無法順利地執行，不知道原因是否是由於無法將 SQ3 辨認為 8cx Gen 3。
+奇妙的是，我的開發機器 (Surface Pro 9 5g) 內建 Windows Studio Effects，其負載應該就是在 NPU 上，也許這功能不是透過 ONNX 來調用 NPU？
 在這個簡單的分類器範例，QNN EP 的相容性似乎不太好，希望微軟與高通可以持續改善 QNN EP 在 ONNX 的開發體驗。</p>
   </div>
   <div class="tag-cloud">
