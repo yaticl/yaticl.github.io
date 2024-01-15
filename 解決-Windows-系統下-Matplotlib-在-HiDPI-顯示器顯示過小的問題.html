@@ -37,13 +37,13 @@
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="前言 由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。 更新：新增如何在 Qt5 中啟用 DPI 縮放的功能。 方法一：啟用 Qt5 中的 DPI 縮放功能 如何啟用 Qt5 DPI scaling 的範例 code： # 需要先 import matplotlib 的 backend Qt5 import PyQt5 as qt …" />
+<meta name="description" content="前言 由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力 …" />
 <meta name="keywords" content="Python, Tips, Windows">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題"/>
-<meta property="og:description" content="前言 由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力。經過搜尋，發現是因為 Matplotlib 預設使用 Qt5 來 rendering，而 Qt5 在 Windows 下預設不會自動縮放，這裡介紹兩種方法來解決這個問題。 更新：新增如何在 Qt5 中啟用 DPI 縮放的功能。 方法一：啟用 Qt5 中的 DPI 縮放功能 如何啟用 Qt5 DPI scaling 的範例 code： # 需要先 import matplotlib 的 backend Qt5 import PyQt5 as qt …"/>
+<meta property="og:description" content="前言 由於在使用 Matplotlib 時，發現在使用高解析度的螢幕有內容顯示過小的問題，不會隨著 Windows 的設定來縮放，導致看起來很吃力 …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html"/>
 <meta property="og:type" content="article"/>
@@ -162,7 +162,6 @@
 <span class="n">qt</span><span class="o">.</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">qt</span><span class="o">.</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">AA_EnableHighDpiScaling</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h2 id="matplotlibbackend">方法二：替換 Matplotlib 的 backend</h2>
 <p><strong>此為如何將 backend 從預設的 Qt5 替換為 Tk 的範例 code：</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -170,7 +169,6 @@
 <span class="k">if</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_backend</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Qt5Agg&#39;</span><span class="p">:</span>  <span class="c1"># 判斷 backend 是否為 Qt5</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="s1">&#39;TkAgg&#39;</span><span class="p">)</span>    <span class="c1"># 將 backend 替換為 Tk</span>
 </code></pre></div>
-
 
 <p>Tk 為 Python 內建的原生 UI，可以隨著 Windows 的設定來縮放，不過可能是因為用 bilinear 來縮放，某些影像 rendering 可能會有 aliasing，手動調整視窗大小可以改善此瑕疵。</p>
 <h2 id="_2">參考資料</h2>
@@ -219,7 +217,7 @@
       ❄
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%20Windows%20%E7%B3%BB%E7%B5%B1%E4%B8%8B%20Matplotlib%20%E5%9C%A8%20HiDPI%20%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C&summary=%E5%89%8D%E8%A8%80%0A%E7%94%B1%E6%96%BC%E5%9C%A8%E4%BD%BF%E7%94%A8%20Matplotlib%20%E6%99%82%EF%BC%8C%E7%99%BC%E7%8F%BE%E5%9C%A8%E4%BD%BF%E7%94%A8%E9%AB%98%E8%A7%A3%E6%9E%90%E5%BA%A6%E7%9A%84%E8%9E%A2%E5%B9%95%E6%9C%89%E5%85%A7%E5%AE%B9%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C%EF%BC%8C%E4%B8%8D%E6%9C%83%E9%9A%A8%E8%91%97%20Windows%20%E7%9A%84%E8%A8%AD%E5%AE%9A%E4%BE%86%E7%B8%AE%E6%94%BE%EF%BC%8C%E5%B0%8E%E8%87%B4%E7%9C%8B%E8%B5%B7%E4%BE%86%E5%BE%88%E5%90%83%E5%8A%9B%E3%80%82%E7%B6%93%E9%81%8E%E6%90%9C%E5%B0%8B%EF%BC%8C%E7%99%BC%E7%8F%BE%E6%98%AF%E5%9B%A0%E7%82%BA%20Matplotlib%20%E9%A0%90%E8%A8%AD%E4%BD%BF%E7%94%A8%20Qt5%20%E4%BE%86%20rendering%EF%BC%8C%E8%80%8C%20Qt5%20%E5%9C%A8%20Windows%20%E4%B8%8B%E9%A0%90%E8%A8%AD%E4%B8%8D%E6%9C%83%E8%87%AA%E5%8B%95%E7%B8%AE%E6%94%BE%EF%BC%8C%E9%80%99%E8%A3%A1%E4%BB%8B%E7%B4%B9%E5%85%A9%E7%A8%AE%E6%96%B9%E6%B3%95%E4%BE%86%E8%A7%A3%E6%B1%BA%E9%80%99%E5%80%8B%E5%95%8F%E9%A1%8C%E3%80%82%0A%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%96%B0%E5%A2%9E%E5%A6%82%E4%BD%95%E5%9C%A8%20Qt5%20%E4%B8%AD%E5%95%9F%E7%94%A8%20DPI%20%E7%B8%AE%E6%94%BE%E7%9A%84%E5%8A%9F%E8%83%BD%E3%80%82%0A%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%95%9F%E7%94%A8%20Qt5%20%E4%B8%AD%E7%9A%84%20DPI%20%E7%B8%AE%E6%94%BE%E5%8A%9F%E8%83%BD%0A%E5%A6%82%E4%BD%95%E5%95%9F%E7%94%A8%20Qt5%20DPI%20scaling%20%E7%9A%84%E7%AF%84%E4%BE%8B%20code%EF%BC%9A%0A%23%20%E9%9C%80%E8%A6%81%E5%85%88%20import%20matplotlib%20%E7%9A%84%20backend%20Qt5%0Aimport%20PyQt5%20as%20qt%20%E2%80%A6&source=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html&title=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%20Windows%20%E7%B3%BB%E7%B5%B1%E4%B8%8B%20Matplotlib%20%E5%9C%A8%20HiDPI%20%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C&summary=%E5%89%8D%E8%A8%80%0A%E7%94%B1%E6%96%BC%E5%9C%A8%E4%BD%BF%E7%94%A8%20Matplotlib%20%E6%99%82%EF%BC%8C%E7%99%BC%E7%8F%BE%E5%9C%A8%E4%BD%BF%E7%94%A8%E9%AB%98%E8%A7%A3%E6%9E%90%E5%BA%A6%E7%9A%84%E8%9E%A2%E5%B9%95%E6%9C%89%E5%85%A7%E5%AE%B9%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C%EF%BC%8C%E4%B8%8D%E6%9C%83%E9%9A%A8%E8%91%97%20Windows%20%E7%9A%84%E8%A8%AD%E5%AE%9A%E4%BE%86%E7%B8%AE%E6%94%BE%EF%BC%8C%E5%B0%8E%E8%87%B4%E7%9C%8B%E8%B5%B7%E4%BE%86%E5%BE%88%E5%90%83%E5%8A%9B%20%E2%80%A6&source=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
       <a href="https://news.ycombinator.com/submitlink?t=%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%20Windows%20%E7%B3%BB%E7%B5%B1%E4%B8%8B%20Matplotlib%20%E5%9C%A8%20HiDPI%20%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C&u=https%3A//yaticl.github.io/%E8%A7%A3%E6%B1%BA-Windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B-Matplotlib-%E5%9C%A8-HiDPI-%E9%A1%AF%E7%A4%BA%E5%99%A8%E9%A1%AF%E7%A4%BA%E9%81%8E%E5%B0%8F%E7%9A%84%E5%95%8F%E9%A1%8C.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄

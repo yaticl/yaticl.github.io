@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
+
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
+
+
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="背景 在先前的實測中，已經利用 ONNX Runtime 與 DirectML 來加速 ResNet50 影像分類器的推理，所以接下來就測試比較複雜也比較實用的生成式 …" />
+<meta name="keywords" content="Machine Learning, AI, ONNX, DirectML">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理"/>
+<meta property="og:description" content="背景 在先前的實測中，已經利用 ONNX Runtime 與 DirectML 來加速 ResNet50 影像分類器的推理，所以接下來就測試比較複雜也比較實用的生成式 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2024-01-14 15:30:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
+<meta property="article:section" content="Machine Learning"/>
+<meta property="article:tag" content="Machine Learning"/>
+<meta property="article:tag" content="AI"/>
+<meta property="article:tag" content="ONNX"/>
+<meta property="article:tag" content="DirectML"/>
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://yaticl.github.io"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://yaticl.github.io/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://yaticl.github.io">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="stable-diffusion-accelerated-by-ONNX-Runtime-and-directML">使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</h1>
+    <p>
+      Posted on Sun 14 January 2024 in <a href="https://yaticl.github.io/category/machine-learning.html">Machine Learning</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2 id="_1">背景</h2>
+<p>在先前的<a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html#image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML">實測</a>中，已經利用 ONNX Runtime 與 DirectML 來加速 ResNet50 影像分類器的推理，所以接下來就測試比較複雜也比較實用的生成式模型。
+這裡嘗試使用 ONNX Runtime 與 DirectML 來實現對 Stable Diffusion 的加速推理。</p>
+<h2 id="stable-diffusion">Stable Diffusion</h2>
+<p><a href="https://github.com/CompVis/stable-diffusion">Stable Diffusion</a> 是一個最近比較熱門的生成式 AI 模型，目標是利用一段文字的提示詞 (prompt)，來產生一張符合提示詞的影像。
+實現方法是藉由 <a href="https://openai.com/research/clip">CLIP</a> 模型的文字編碼器來引導擴散模型的輸出，擴散模型會將一個隨機雜訊影像 ( 空白畫布 ) 去噪來產生一張人類可解讀的影像。
+擴散過程會由一個 <code>unet</code> 網路來實現，文字編碼起產生的特徵會在擴散過程中加入，來控制輸出的結果。
+擴散模型的輸出最後會在通過一個 <code>vae</code> 的解碼器來產生最後的影像。</p>
+<h2 id="_2">實作</h2>
+<p>這裡以 ONNX 官方的 C# <a href="https://github.com/cassiebreviu/StableDiffusion">範例</a>為基礎來實作。
+由於範例的文件比較舊，我做了一些修改以適用最新版本的 ONNX 與執行環境。</p>
+<h3 id="_3">環境準備</h3>
+<ol>
+<li>安裝 <a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8">Visual Studio 2022 (VS)</a> 或更新的版本。</li>
+<li>從 GitHub 複製倉庫：
+    <code>git clone https://github.com/cassiebreviu/StableDiffusion.git</code></li>
+<li>從 Hugging Face 下載 <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4/tree/onnx">Stable Diffusion 模型檔案</a>：
+    <code>git lfs install
+    git clone https://huggingface.co/CompVis/stable-diffusion-v1-4 -b onnx</code></li>
+<li>複製包含 <code>model.onnx</code> 模型檔案的 <code>unet</code>, <code>vae_decoder</code>, <code>text_encoder</code>, <code>safety_checker</code> 資料夾到 C# 方案的資料夾 <code>\StableDiffusion\StableDiffusion</code> 內。</li>
+<li>切換到 <code>direct-ML-EP</code> 分支，更新方案中的相依性 <code>Microsoft.ML</code>, <code>Microsoft.ML.OnnxRuntime.DirectML</code>, <code>Microsoft.ML.OnnxRuntime.Extensions</code>, <code>Microsoft.ML.OnnxRuntime.Managed</code> 到最新版本。</li>
+<li>若開發環境是 X86-64 處理器，則目標平台設為 <code>X64</code>，若目標平台為 ARM 處理器，則必須新增 <code>ARM64</code> 的設定檔，且由於 <code>Microsoft.ML</code> 似乎預設不支援 ARM 處理器，但可在專案檔案中加入屬性來通過編譯：
+    <code>xml
+    &lt;EnableMLUnsupportedPlatformTargetCheck&gt;false&lt;/EnableMLUnsupportedPlatformTargetCheck&gt;</code></li>
+</ol>
+<h3 id="_4">程式碼</h3>
+<p>由於範例比較舊，直接編譯會有問題，需要對程式碼做一些修改，要修改的部分是使用 <code>Microsoft.ML.OnnxRuntime.Extensions</code> 實現將文字轉化成特徵 (Tokenization) 的程式碼，在最新版改變了 API 使用方式。
+在 <code>TextProcessing.cs</code> 中的第 32 行將</p>
+<div class="highlight"><pre><span></span><code><span class="n">sessionOptions</span><span class="p">.</span><span class="n">RegisterCustomOpLibraryV2</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">OrtExtensionsPath</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">ibraryHandle</span><span class="p">);</span>
+</code></pre></div>
+
+<p>替換成</p>
+<div class="highlight"><pre><span></span><code><span class="n">sessionOptions</span><span class="p">.</span><span class="n">RegisterOrtExtensions</span><span class="p">();</span>
+</code></pre></div>
+
+<p>建議再將 <code>ortextensions.dll</code> 從方案裝移除。</p>
+<p>在主程式 <code>Program.cs</code> 修改擴散模型提示詞與設定：</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">StableDiffusion.ML.OnnxRuntime</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">StableDiffusion</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//test how long this takes to execute</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">watch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Stopwatch</span><span class="p">.</span><span class="n">StartNew</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">//Default args</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">prompt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a fireplace in an old cabin in the woods&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">prompt</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StableDiffusionConfig</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Number of denoising steps</span>
+<span class="w">                </span><span class="n">NumInferenceSteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// Scale for classifier-free guidance</span>
+<span class="w">                </span><span class="n">GuidanceScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7.5</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// Set your preferred Execution Provider. Currently (GPU, DirectML, CPU) are supported in this project.</span>
+<span class="w">                </span><span class="c1">// ONNX Runtime supports many more than this. Learn more here: https://onnxruntime.ai/docs/execution-providers/</span>
+<span class="w">                </span><span class="c1">// The config is defaulted to CUDA. You can override it here if needed.</span>
+<span class="w">                </span><span class="c1">// To use DirectML EP intall the Microsoft.ML.OnnxRuntime.DirectML and uninstall Microsoft.ML.OnnxRuntime.GPU</span>
+<span class="w">                </span><span class="n">ExecutionProviderTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StableDiffusionConfig</span><span class="p">.</span><span class="n">ExecutionProvider</span><span class="p">.</span><span class="n">DirectML</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// Set GPU Device ID.</span>
+<span class="w">                </span><span class="n">DeviceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// Update paths to your models</span>
+<span class="w">                </span><span class="n">TextEncoderOnnxPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Path\to\text_encoder\model.onnx&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">UnetOnnxPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Path\to\unet\model.onnx&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">VaeDecoderOnnxPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Path\to\vae_decoder\model.onnx&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">SafetyModelPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;Path\to\safety_checker\model.onnx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">};</span>
+
+<span class="w">            </span><span class="c1">// Inference Stable Diff</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UNet</span><span class="p">.</span><span class="n">Inference</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// If image failed or was unsafe it will return null.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">image</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Unable to create image, please try again.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Stop the timer</span>
+<span class="w">            </span><span class="n">watch</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">elapsedMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">watch</span><span class="p">.</span><span class="n">ElapsedMilliseconds</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Time taken: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">elapsedMs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;ms&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>輸出結果範例 (RTX 4070)：</p>
+<div class="highlight"><pre><span></span><code>a fireplace in an old cabin in the woods
+49406 320 23050 530 550 896 14178 530 518 6267 49407
+Seed generated: 68791426
+scaled model input 2.1315572 at step 0. Max 4.6911726 Min-3.6267598
+20.710197
+latents result after step 0 min -35.111282 max 46.04094
+scaled model input 2.1276011 at step 1. Max 4.7298803 Min-3.6070542
+14.298233
+latents result after step 1 min -24.175587 max 33.47158
+scaled model input 2.1174793 at step 2. Max 4.9569325 Min-3.5802538
+10.329241
+latents result after step 2 min -17.471031 max 25.68005
+scaled model input 2.117433 at step 3. Max 5.264258 Min-3.5814576
+7.299632
+latents result after step 3 min -13.020624 max 19.017113
+scaled model input 1.9937395 at step 4. Max 5.1941204 Min-3.5563068
+5.682288
+latents result after step 4 min -10.168077 max 15.260122
+scaled model input 1.9952072 at step 5. Max 5.3582473 Min-3.5702908
+4.252401
+latents result after step 5 min -8.037247 max 12.389794
+scaled model input 1.8565629 at step 6. Max 5.4092813 Min-3.508995
+3.4030435
+latents result after step 6 min -6.6028404 max 10.449694
+scaled model input 1.7910485 at step 7. Max 5.499756 Min-3.475127
+2.6942093
+latents result after step 7 min -5.608853 max 9.02561
+scaled model input 1.6612248 at step 8. Max 5.5651083 Min-3.4583673
+2.1611075
+latents result after step 8 min -4.8157053 max 7.9344597
+scaled model input 1.5207505 at step 9. Max 5.5834026 Min-3.3887653
+1.8328636
+latents result after step 9 min -4.338108 max 7.0801086
+scaled model input 1.4373326 at step 10. Max 5.552225 Min-3.4019465
+1.4414997
+latents result after step 10 min -4.011564 max 6.3761377
+scaled model input 1.2330464 at step 11. Max 5.4540935 Min-3.4314573
+1.2209218
+latents result after step 11 min -3.704286 max 5.804214
+scaled model input 1.1176652 at step 12. Max 5.313336 Min-3.3910048
+1.020186
+latents result after step 12 min -3.4659088 max 5.3420415
+scaled model input 0.9829046 at step 13. Max 5.1468234 Min-3.3392518
+0.815398
+latents result after step 13 min -3.1990318 max 4.928313
+scaled model input 0.8150513 at step 14. Max 4.9262176 Min-3.1976717
+0.81261224
+latents result after step 14 min -3.2003698 max 4.921097
+Image saved to: C:\Users\ya-ti\Projects\StableDiffusion\StableDiffusion\bin\x64\Debug\net6.0\sd_image_20240115145501437.png
+Time taken: 22118ms
+</code></pre></div>
+
+<p><img alt="sd_image" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647074&amp;authkey=%21AJ9iKhG9_UuLgT8&amp;width=512&amp;height=512"></p>
+<h2 id="_5">心得</h2>
+<p>經過實測，此範例在 NVIDIA RTX 4070、Intel Iris Xe Graphics (Intel Core i5-11300H)，都可以順利執行加速推理。
+然而，這次在高通的 Adreno 8CX Gen 3 (Microsoft SQ 3)，會回報 runtime error，而且每一次跑回報的錯誤都有些差異，主要有兩類的錯誤：</p>
+<ul>
+<li>Fatal error</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Fatal error. System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+</code></pre></div>
+
+<ul>
+<li>ONNX Runtime error</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="mf">1200890</span><span class="w"> </span><span class="err">[</span><span class="n">E</span><span class="p">:</span><span class="kr">on</span><span class="n">nxruntime</span><span class="p">:,</span><span class="w"> </span><span class="n">sequential_executor</span><span class="mf">.</span><span class="n">cc</span><span class="p">:</span><span class="mf">514</span><span class="w"> </span><span class="kr">on</span><span class="n">nxruntime</span><span class="p">::</span><span class="n">ExecuteKernel</span><span class="err">]</span><span class="w"> </span><span class="n">Non</span><span class="o">-</span><span class="n">zero</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="kr">return</span><span class="n">ed</span><span class="w"> </span><span class="n">while</span><span class="w"> </span><span class="kr">run</span><span class="n">ning</span><span class="w"> </span><span class="n">Conv</span><span class="w"> </span><span class="n">node</span><span class="mf">.</span><span class="w"> </span><span class="n">Name</span><span class="p">:</span><span class="err">&#39;</span><span class="n">Conv_3482</span><span class="err">&#39;</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="n">Message</span><span class="p">:</span>
+</code></pre></div>
+
+<p>我猜也許是高通的驅動還不夠完善。</p>
+<p>在這個 Stable Diffusion 的範例，DirectML 的相容性在 X86 處理器平台不錯，但是目前在 ARM 處理器上的相容性還不及 X86 處理器。
+希望微軟與高通持續改善 Windows on ARM ，盡早追上 X86 處理器的開發體驗。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://yaticl.github.io/tag/machine-learning.html">Machine Learning</a>
+      <a href="https://yaticl.github.io/tag/ai.html">AI</a>
+      <a href="https://yaticl.github.io/tag/onnx.html">ONNX</a>
+      <a href="https://yaticl.github.io/tag/directml.html">DirectML</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" title="使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理">
+      <i class="fa fa-angle-left"></i> 上一篇文章
+    </a>
+    <a class="btn float-right" href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" title="使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理">
+      下一篇文章 <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>你可能也感興趣</h4>
+    <ul class="related-posts">
+      <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html">使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理</a></li>
+      <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      分享到:
+      <a href="https://sharetodiaspora.github.io/?title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html&hashtags=machine-learning,ai,onnx,directml" target="_blank" title="分享到 Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&summary=%E8%83%8C%E6%99%AF%0A%E5%9C%A8%E5%85%88%E5%89%8D%E7%9A%84%E5%AF%A6%E6%B8%AC%E4%B8%AD%EF%BC%8C%E5%B7%B2%E7%B6%93%E5%88%A9%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E4%BE%86%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E5%99%A8%E7%9A%84%E6%8E%A8%E7%90%86%EF%BC%8C%E6%89%80%E4%BB%A5%E6%8E%A5%E4%B8%8B%E4%BE%86%E5%B0%B1%E6%B8%AC%E8%A9%A6%E6%AF%94%E8%BC%83%E8%A4%87%E9%9B%9C%E4%B9%9F%E6%AF%94%E8%BC%83%E5%AF%A6%E7%94%A8%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F%20%E2%80%A6&source=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&u=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&amp;body=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="從 Email 分享">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20Stable%20Diffusing%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86" target="_blank" title="從 Reddit 分享">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Tips</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/tips.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2021-04-30T15:42:00+08:00</updated><entry><title>如何在 WSL 中共享 Windows 10 的 SSH keys</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" rel="alternate"></link><published>2021-04-30T15:42:00+08:00</published><updated>2021-04-30T15:42:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2021-04-30:/如何在-WSL中共享Windows-10的SSH-keys.html</id><summary type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。&lt;/p&gt;
-&lt;h2 id="_1"&gt;方法&lt;/h2&gt;
-&lt;p&gt;方法來自微軟的&lt;a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/"&gt;開發部落格&lt;/a&gt;，&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;先在 Windows 下產生 SSH key，具體參考&lt;a href="https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account"&gt;GitHub 文件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;將 Windows 下的 &lt;code&gt;.ssh&lt;/code&gt; 資料夾複製到 WSL 中的家目錄下，可以使用檔案總管或是命令行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cp -r /mnt/c/Users/&amp;lt;username&amp;gt;/.ssh ~/.ssh&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;修復檔案權限，因為安全考量，SSH key …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Tips</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/tips.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2021-04-30T15:42:00+08:00</updated><entry><title>如何在 WSL 中共享 Windows 10 的 SSH keys</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-WSL%E4%B8%AD%E5%85%B1%E4%BA%ABWindows-10%E7%9A%84SSH-keys.html" rel="alternate"></link><published>2021-04-30T15:42:00+08:00</published><updated>2021-04-30T15:42:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2021-04-30:/如何在-WSL中共享Windows-10的SSH-keys.html</id><summary type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;由於 WSL 跟 Windows 是兩個獨立的 OS，但是兩個 OS 都會需要用 SSH key，雖然可以各自產生獨立的 key，但是一台機器要管理多個 key 還是挺麻煩，但其實一個 key 可以一起共用。&lt;/p&gt;
 &lt;h2 id="_1"&gt;方法&lt;/h2&gt;
 &lt;p&gt;方法來自微軟的&lt;a href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/"&gt;開發部落格&lt;/a&gt;，&lt;/p&gt;
 &lt;ol&gt;
@@ -24,17 +14,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;如此一來並能在 Windows 與 WSL 中共用 SSH key 了。&lt;/p&gt;</content><category term="Tips"></category><category term="Windows Subsystem for Linux"></category></entry><entry><title>如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2020-03-11T11:59:00+08:00</published><updated>2020-03-11T11:59:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2020-03-11:/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html</id><summary type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
-&lt;p&gt;某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。&lt;/p&gt;
-&lt;h2 id="_2"&gt;解決方法&lt;/h2&gt;
-&lt;p&gt;此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自&lt;a href="https://superuser.com/questions/1319157/some-windows-10-uwp-icons-not-displaying-on-search-or-in-settings"&gt;該篇文章&lt;/a&gt;的第三篇，方法如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;執行登入檔編輯程式&lt;/li&gt;
-&lt;li&gt;到 &lt;strong&gt;HKEY_CLASSES_ROOT\.png&lt;/strong&gt; 位置&lt;/li&gt;
-&lt;li&gt;尋找 &lt;strong&gt;shellex&lt;/strong&gt; 下是否存在機碼&lt;/li&gt;
-&lt;li&gt;刪除機碼&lt;/li&gt;
-&lt;li&gt;在 &lt;strong&gt;shellex&lt;/strong&gt; 點右鍵選擇 &lt;strong&gt;使用權限&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;在 &lt;strong&gt;群組與使用者名稱&lt;/strong&gt; 中選擇 &lt;strong&gt;Administrators&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;將 &lt;strong&gt;完全控制&lt;/strong&gt; 與 &lt;strong&gt;讀取&lt;/strong&gt; 的 &lt;strong&gt;拒絕&lt;/strong&gt; 框都打勾 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
+&lt;p&gt;某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
 &lt;p&gt;某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。&lt;/p&gt;
 &lt;h2 id="_2"&gt;解決方法&lt;/h2&gt;
 &lt;p&gt;此問題似乎已經存在多年，Google 依然沒有修復，目前要根治只能直接移除，不過有暫時性的處理。暫時性的處裡來自&lt;a href="https://superuser.com/questions/1319157/some-windows-10-uwp-icons-not-displaying-on-search-or-in-settings"&gt;該篇文章&lt;/a&gt;的第三篇，方法如下：&lt;/p&gt;
@@ -51,12 +31,7 @@
 &lt;li&gt;修改 &lt;strong&gt;縮放與版面配置&lt;/strong&gt; 中的縮放設定，從&lt;strong&gt;100%&lt;/strong&gt;( 或是當前推薦數值 ) 調整至&lt;strong&gt;125%&lt;/strong&gt;( 或是更高或更低的&lt;strong&gt;X25%&lt;/strong&gt;數值 )，此步驟應是希望系統重新 cache icon&lt;/li&gt;
 &lt;li&gt;打開搜尋列，看 icon 顯示是否正常，若沒有則重複上個步驟&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;親測 icon 恢復之後可以先把權限改回來，可以在系統重新 cache 之前保持正常，以避免潛在問題。&lt;/p&gt;</content><category term="Tips"></category><category term="Tips"></category><category term="Windows 10"></category><category term="Google Drive"></category></entry><entry><title>如何在 Visual Studio Code 中使用 Cascadia Code 字體</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" rel="alternate"></link><published>2019-12-30T14:55:00+08:00</published><updated>2019-12-30T14:55:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2019-12-30:/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/microsoft/cascadia-code"&gt;Cascadia Code&lt;/a&gt; 是微軟在 Build 2019 隨著&lt;a href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt;一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的&lt;a href="https://devblogs.microsoft.com/commandline/cascadia-code/"&gt;部落格文章&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id="visual-studio-codecascadia-code"&gt;在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能&lt;/h2&gt;
-&lt;p&gt;Cascadia Code 的安裝方法在官方的&lt;a href="https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code"&gt;維基&lt;/a&gt;中可以找到，可在&lt;a href="https://github.com/microsoft/cascadia-code/releases"&gt;GitHub&lt;/a&gt;直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;安裝好&lt;strong&gt;Cascadia Code&lt;/strong&gt;字體&lt;/li&gt;
-&lt;li&gt;打開&lt;strong&gt;Visual Studio Code&lt;/strong&gt;的設定頁面，接著打開&lt;strong&gt;Text Editor …&lt;/strong&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://github.com/microsoft/cascadia-code"&gt;Cascadia Code&lt;/a&gt; 是微軟在 Build 2019 隨著&lt;a href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt;一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的&lt;a href="https://devblogs.microsoft.com/commandline/cascadia-code/"&gt;部落格文章&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;親測 icon 恢復之後可以先把權限改回來，可以在系統重新 cache 之前保持正常，以避免潛在問題。&lt;/p&gt;</content><category term="Tips"></category><category term="Tips"></category><category term="Windows 10"></category><category term="Google Drive"></category></entry><entry><title>如何在 Visual Studio Code 中使用 Cascadia Code 字體</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%9C%A8-Visual-Studio-Code-%E4%B8%AD%E4%BD%BF%E7%94%A8-Cascadia-Code-%E5%AD%97%E9%AB%94.html" rel="alternate"></link><published>2019-12-30T14:55:00+08:00</published><updated>2019-12-30T14:55:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2019-12-30:/如何在-Visual-Studio-Code-中使用-Cascadia-Code-字體.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/microsoft/cascadia-code"&gt;Cascadia Code&lt;/a&gt; 是微軟在 Build 2019 隨著&lt;a href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt;一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://github.com/microsoft/cascadia-code"&gt;Cascadia Code&lt;/a&gt; 是微軟在 Build 2019 隨著&lt;a href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt;一起發表的字體，是一種專為命令列與程式碼編輯器開發的等寬字體，並支援程式合字或連字符號，詳細的介紹可以參考原始的&lt;a href="https://devblogs.microsoft.com/commandline/cascadia-code/"&gt;部落格文章&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id="visual-studio-codecascadia-code"&gt;在 Visual Studio Code 中使用 Cascadia Code 字體並啟用合字功能&lt;/h2&gt;
 &lt;p&gt;Cascadia Code 的安裝方法在官方的&lt;a href="https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code"&gt;維基&lt;/a&gt;中可以找到，可在&lt;a href="https://github.com/microsoft/cascadia-code/releases"&gt;GitHub&lt;/a&gt;直接下載最新版的字體。由於官方的維基中的 Visual Studio Code 安裝教學可能因為版本不同或是有安裝其他 Extensions 的關係，啟用字體的方法略有不同，以下是我目前的啟用步驟：&lt;/p&gt;
 &lt;ol&gt;
@@ -65,34 +40,22 @@
 &lt;li&gt;最後一步啟用跟官方的教學不一樣，需要在&lt;strong&gt;Font Ligatures&lt;/strong&gt; 選項中編輯&lt;strong&gt;setting.json&lt;/strong&gt;檔案，在檔案中加入一行&lt;code&gt;"editor.fontLigatures": true&lt;/code&gt;來啟用合字功能。&lt;/li&gt;
 &lt;/ol&gt;</content><category term="Tips"></category><category term="Visual Studio Code"></category><category term="Cascadia Code"></category></entry><entry><title>如何解決執行 bash script 時遇到 " '\r': command not found" 的問題</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E8%A7%A3%E6%B1%BA%E5%9F%B7%E8%A1%8C-bash-script-%E6%99%82%E9%81%87%E5%88%B0-command-not-found-%E7%9A%84%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2019-04-24T20:24:00+08:00</published><updated>2019-04-24T20:24:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2019-04-24:/如何解決執行-bash-script-時遇到-command-not-found-的問題.html</id><summary type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
 &lt;p&gt;在使用&lt;a href="https://docs.microsoft.com/zh-tw/windows/wsl/about"&gt;WSL&lt;/a&gt;執行 bash script 有時會遇到像這樣的錯誤：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-bash: &lt;span class="s1"&gt;&amp;#39;\r&amp;#39;&lt;/span&gt;: &lt;span class="nb"&gt;command&lt;/span&gt; not found
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-bash:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;\r&amp;#39;&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;經過搜尋之後在&lt;a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile"&gt;stackoverflow&lt;/a&gt;找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。&lt;/p&gt;
-&lt;h2 id="_2"&gt;解決方法&lt;/h2&gt;
-&lt;p&gt;由 stackoverflow 提供的解答，方法為在 WSL 之中安裝&lt;code&gt;dos2unix&lt;/code&gt;，以 Debian/Ubuntu 為範例，安裝方法為：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install dos2unix
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;使用方法為：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dos2unix …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
+&lt;p&gt;經過搜尋之後在&lt;a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile"&gt;stackoverflow&lt;/a&gt;找到解答，該錯誤訊息是因為 Windows 的 newline 符 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
 &lt;p&gt;在使用&lt;a href="https://docs.microsoft.com/zh-tw/windows/wsl/about"&gt;WSL&lt;/a&gt;執行 bash script 有時會遇到像這樣的錯誤：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-bash: &lt;span class="s1"&gt;&amp;#39;\r&amp;#39;&lt;/span&gt;: &lt;span class="nb"&gt;command&lt;/span&gt; not found
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-bash:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;\r&amp;#39;&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;經過搜尋之後在&lt;a href="https://stackoverflow.com/questions/11616835/r-command-not-found-bashrc-bash-profile"&gt;stackoverflow&lt;/a&gt;找到解答，該錯誤訊息是因為 Windows 的 newline 符號與 Linux 不同所導致，由於我是在 Windows 的環境下編寫 bash script，然後在 WSL 執行，所以會遇到此錯誤。&lt;/p&gt;
 &lt;h2 id="_2"&gt;解決方法&lt;/h2&gt;
 &lt;p&gt;由 stackoverflow 提供的解答，方法為在 WSL 之中安裝&lt;code&gt;dos2unix&lt;/code&gt;，以 Debian/Ubuntu 為範例，安裝方法為：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install dos2unix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;dos2unix
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;使用方法為：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dos2unix &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;file ...&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;-n infile outfile ...&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dos2unix&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;file&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;infile&lt;span class="w"&gt; &lt;/span&gt;outfile&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;就能夠把 script 轉換成 bash 可以正確讀取的格式。&lt;/p&gt;</content><category term="Tips"></category><category term="Bash"></category><category term="Shell scripts"></category><category term="Linux"></category><category term="Windows Subsystem for Linux"></category></entry></feed>
