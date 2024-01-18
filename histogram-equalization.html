@@ -153,17 +153,17 @@
 <p><img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"></p>
 <p>希望影像的強度值分布變得比較均勻。</p>
 <h2 id="_1">數學理論</h2>
-<p>假設一張灰階影像 ${x}$，且令 $n_i$ 為強度值 $i$ 的數量，則在影像中一個像素出現強度值 $i$ 的機率為</p>
-<p>$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</p>
-<p>其中 $L$ 為強度值的總量 ( 對於一般的 8 bit 影像為 256)，$n$ 像素的總量，通常會將 $i$ 的範圍 normalize 到 $[0,1].$</p>
-<p>定義 $p_x$ 對應的累積分布 (CDF) 為</p>
-<p>$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$</p>
-<p>我們希望創造一個轉換函數 $k=T(i)$，使新的影像 ${p_y(k)}$ 有均勻的值方圖分布，相當於線性化影像的 CDF，例如</p>
-<p>$$cdf_y(k)=kC, \text{for some constant }C.$$</p>
+<p>假設一張灰階影像<span class="math">\({x}\)</span>，且令<span class="math">\(n_i\)</span>為強度值<span class="math">\(i\)</span>的數量，則在影像中一個像素出現強度值<span class="math">\(i\)</span>的機率為</p>
+<div class="math">$$p_x(i)=\frac{n_i}{n}, 0 \leq i &lt; L,$$</div>
+<p>其中<span class="math">\(L\)</span>為強度值的總量 ( 對於一般的 8 bit 影像為 256)，<span class="math">\(n\)</span>像素的總量，通常會將<span class="math">\(i\)</span>的範圍 normalize 到<span class="math">\([0,1].\)</span></p>
+<p>定義<span class="math">\(p_x\)</span>對應的累積分布 (CDF) 為</p>
+<div class="math">$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$</div>
+<p>我們希望創造一個轉換函數<span class="math">\(k=T(i)\)</span>，使新的影像<span class="math">\({p_y(k)}\)</span>有均勻的值方圖分布，相當於線性化影像的 CDF，例如</p>
+<div class="math">$$cdf_y(k)=kC, \text{for some constant }C.$$</div>
 <p>由 CDF 的性質，則我們可以寫出以下的轉換關係</p>
-<p>$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$</p>
-<p>假設 $p_y(k)=C=\frac{1}{i_{min}-i_{max}}$，則</p>
-<p>$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$</p>
+<div class="math">$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$</div>
+<p>假設<span class="math">\(p_y(k)=C=\frac{1}{i_{min}-i_{max}}\)</span>，則</p>
+<div class="math">$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$</div>
 <h2 id="local-histogram-equalization">局部直方圖等化 (Local Histogram Equalization)</h2>
 <p>一般的直方圖等化是對整張影像做，通常新的直方圖只會是大概線性的 CDF，因此後來有一種局部版本的直方圖等化，使 CDF 更加的線性。在 scikit-image 有實作此方法，範例如下：</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -247,6 +247,68 @@
 <h2 id="_2">參考</h2>
 <p><a href="https://en.wikipedia.org/wiki/Histogram_equalization">Histogram equalization</a></p>
 <p><a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py">Local Histogram Equalization</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>

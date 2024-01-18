@@ -37,13 +37,13 @@
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="簡介 Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。 當要 …" />
+<meta name="description" content="簡介 Hadamard matrix 是一種只包含\((-1,+1)\)的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。 當要 …if (!document.getElementById(&#39;mathjaxscript_pelican_#%@#$@#&#39;)) { var align = &#34;center&#34;, indent = &#34;0em&#34;, linebreak = &#34;false&#34;; if (false) { align = (screen.width" />
 <meta name="keywords" content="Linear algebra, Digital signal processing, Python">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="Hadamard Matrix"/>
-<meta property="og:description" content="簡介 Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。 當要 …"/>
+<meta property="og:description" content="簡介 Hadamard matrix 是一種只包含\((-1,+1)\)的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。 當要 …if (!document.getElementById(&#39;mathjaxscript_pelican_#%@#$@#&#39;)) { var align = &#34;center&#34;, indent = &#34;0em&#34;, linebreak = &#34;false&#34;; if (false) { align = (screen.width"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://yaticl.github.io/hadamard-matrix.html"/>
 <meta property="og:type" content="article"/>
@@ -151,27 +151,27 @@
 
   <div>
     <h2 id="_1">簡介</h2>
-<p>Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。<br>
-當要畫出該矩陣時，定義 $+1$ 代表黑色，而 $-1$ 代表白色。</p>
+<p>Hadamard matrix 是一種只包含<span class="math">\((-1,+1)\)</span>的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。<br>
+當要畫出該矩陣時，定義<span class="math">\(+1\)</span>代表黑色，而<span class="math">\(-1\)</span>代表白色。</p>
 <h2 id="_2">特性</h2>
-<p>${n \times n}$ 的 Hadamard matrix $H_n$ 會有 $n \frac{n(n-1)}{2}$ 個 $(-1)$ 方塊以及 $\frac{n(n+1)}{2}$ 個 $(+1)$ 的方塊。<br>
-令 $H_n$ 為 $n$ 階的 Hadamard matrix，則其定義為：</p>
-<p>$$H_n{H_n}^T=nI_n,$$</p>
-<p>其中 $I_n$ 為 $n \times n$ 的單位矩陣。</p>
+<p><span class="math">\({n \times n}\)</span>的 Hadamard matrix <span class="math">\(H_n\)</span>會有<span class="math">\(n \frac{n(n-1)}{2}\)</span>個<span class="math">\((-1)\)</span>方塊以及<span class="math">\(\frac{n(n+1)}{2}\)</span>個<span class="math">\((+1)\)</span>的方塊。<br>
+令<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則其定義為：</p>
+<div class="math">$$H_n{H_n}^T=nI_n,$$</div>
+<p>其中<span class="math">\(I_n\)</span>為<span class="math">\(n \times n\)</span>的單位矩陣。</p>
 <h2 id="sylvesters-construction">Sylvester's construction</h2>
-<p>假設 $H_n$ 為 $n$ 階的 Hadamard matrix，則可以藉由分區矩陣：</p>
-<p>$$\begin{bmatrix}<br>
-H &amp; H \<br>
-H &amp; -H<br>
-\end{bmatrix}.$$</p>
-<p>來形成 $2n$ 階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於 $2\leqslant k \in N$，其通式為：</p>
-<p>$$H_{2^k}=\begin{bmatrix}<br>
-H_{2^{k-1}} &amp; H_{2^{k-1}} \<br>
-H_{2^{k-1}} &amp; -H_{2^{k-1}}<br>
-\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$</p>
-<p>其中 $\otimes$ 為 Kronecker product。</p>
+<p>假設<span class="math">\(H_n\)</span>為<span class="math">\(n\)</span>階的 Hadamard matrix，則可以藉由分區矩陣：</p>
+<div class="math">$$\begin{bmatrix}  
+H &amp; H \\  
+H &amp; -H  
+\end{bmatrix}.$$</div>
+<p>來形成<span class="math">\(2n\)</span>階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於<span class="math">\(2\leqslant k \in N\)</span>，其通式為：</p>
+<div class="math">$$H_{2^k}=\begin{bmatrix}  
+H_{2^{k-1}} &amp; H_{2^{k-1}} \\  
+H_{2^{k-1}} &amp; -H_{2^{k-1}}  
+\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$</div>
+<p>其中<span class="math">\(\otimes\)</span>為 Kronecker product。</p>
 <h2 id="_3">範例</h2>
-<p>在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為 $2$ 的次方整數，回傳 $n$ 階的 Hadamard matrix，以下為文件中的範例：</p>
+<p>在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為<span class="math">\(2\)</span>的次方整數，回傳<span class="math">\(n\)</span>階的 Hadamard matrix，以下為文件中的範例：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">hadamard</span>
 <span class="n">hadamard</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -199,6 +199,68 @@ H_{2^{k-1}} &amp; -H_{2^{k-1}}<br>
 <h2 id="_4">參考</h2>
 <p><a href="http://mathworld.wolfram.com/HadamardMatrix.html">Hadamard Matrix</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Hadamard_matrix">維基百科</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>
@@ -240,7 +302,7 @@ H_{2^{k-1}} &amp; -H_{2^{k-1}}<br>
       ❄
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/hadamard-matrix.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/hadamard-matrix.html&title=Hadamard%20Matrix&summary=%E7%B0%A1%E4%BB%8B%0AHadamard%20matrix%20%E6%98%AF%E4%B8%80%E7%A8%AE%E5%8F%AA%E5%8C%85%E5%90%AB%20%24%28-1%2C%2B1%29%24%20%E7%9A%84%E7%9F%A9%E9%99%A3%EF%BC%8C%E5%85%B6%E7%89%B9%E6%80%A7%E6%98%AF%E5%8F%96%E4%BB%BB%E5%85%A9%E8%A1%8C%E6%88%96%E6%98%AF%E5%88%97%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%AF%94%E8%BC%83%EF%BC%8C%E5%89%87%E6%9C%83%E6%9C%89%E4%B8%80%E5%8D%8A%E6%98%AF%E5%90%8C%E8%99%9F%EF%BC%8C%E5%8F%A6%E4%B8%80%E5%8D%8A%E5%89%87%E6%98%AF%E4%B8%8D%E5%90%8C%E8%99%9F%E3%80%82%0A%E7%95%B6%E8%A6%81%20%E2%80%A6&source=https%3A//yaticl.github.io/hadamard-matrix.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/hadamard-matrix.html&title=Hadamard%20Matrix&summary=%E7%B0%A1%E4%BB%8B%0AHadamard%20matrix%20%E6%98%AF%E4%B8%80%E7%A8%AE%E5%8F%AA%E5%8C%85%E5%90%AB%5C%28%28-1%2C%2B1%29%5C%29%E7%9A%84%E7%9F%A9%E9%99%A3%EF%BC%8C%E5%85%B6%E7%89%B9%E6%80%A7%E6%98%AF%E5%8F%96%E4%BB%BB%E5%85%A9%E8%A1%8C%E6%88%96%E6%98%AF%E5%88%97%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%AF%94%E8%BC%83%EF%BC%8C%E5%89%87%E6%9C%83%E6%9C%89%E4%B8%80%E5%8D%8A%E6%98%AF%E5%90%8C%E8%99%9F%EF%BC%8C%E5%8F%A6%E4%B8%80%E5%8D%8A%E5%89%87%E6%98%AF%E4%B8%8D%E5%90%8C%E8%99%9F%E3%80%82%0A%E7%95%B6%E8%A6%81%20%E2%80%A6&source=https%3A//yaticl.github.io/hadamard-matrix.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
       <a href="https://news.ycombinator.com/submitlink?t=Hadamard%20Matrix&u=https%3A//yaticl.github.io/hadamard-matrix.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
