@@ -152,38 +152,38 @@
     <p>通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。</p>
 <h2 id="image-gradient">影像梯度 (Image gradient)</h2>
 <p>由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。</p>
-<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點 $(x,y)$ 的梯度可以表示為</p>
-<p>$$\triangledown f = \begin{bmatrix}<br>
-\frac{\partial f}{\partial x} \<br>
-\frac{\partial f}{\partial y}<br>
-\end{bmatrix} = \begin{bmatrix}<br>
-g_x \<br>
-g_y \end{bmatrix},$$</p>
+<p>Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&gt; 亮，長度對應變化率。在影像中一點<span class="math">\((x,y)\)</span>的梯度可以表示為</p>
+<div class="math">$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end{bmatrix},$$</div>
 <p>其方向為</p>
-<p>$$\theta = \tan^{-1} \begin{bmatrix}<br>
-\frac{g_y}{g_x}<br>
-\end{bmatrix},$$</p>
+<div class="math">$$\theta = \tan^{-1} \begin{bmatrix}  
+\frac{g_y}{g_x}  
+\end{bmatrix},$$</div>
 <p>其長度為</p>
-<p>$$g = \sqrt{g_{x}^2+g_{y}^2}.$$</p>
+<div class="math">$$g = \sqrt{g_{x}^2+g_{y}^2}.$$</div>
 <h2 id="sobel-operator">Sobel operator</h2>
-<p>Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用 $3 \times 3$ 的 kernel 對影像做 convolution ( 摺積 )。</p>
-<p>假設 $\mathbf{A}$ 為來源影像，$\mathbf{G_x}$ 與 $\mathbf{G_y}$ 分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為</p>
-<p>$$\mathbf{G_x}=\begin{bmatrix}<br>
-1 &amp; 0 &amp; -1\ 
-2 &amp;0 &amp; -2\
+<p>Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用<span class="math">\(3 \times 3\)</span>的 kernel 對影像做 convolution ( 摺積 )。</p>
+<p>假設<span class="math">\(\mathbf{A}\)</span>為來源影像，<span class="math">\(\mathbf{G_x}\)</span>與<span class="math">\(\mathbf{G_y}\)</span>分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為</p>
+<div class="math">$$\mathbf{G_x}=\begin{bmatrix}  
+1 &amp; 0 &amp; -1\\ 
+2 &amp;0 &amp; -2\\
 1 &amp; 0 &amp; -1 
-\end{bmatrix} \ast \mathbf{A} \text{ and }<br>
-\mathbf{G_y}=\begin{bmatrix}<br>
-1 &amp; 2 &amp; 1\ 
-0 &amp; 0 &amp; 0\
--1 &amp; -2 &amp; -1<br>
-\end{bmatrix} \ast \mathbf{A}.$$</p>
+\end{bmatrix} \ast \mathbf{A} \text{ and }  
+\mathbf{G_y}=\begin{bmatrix}  
+1 &amp; 2 &amp; 1\\ 
+0 &amp; 0 &amp; 0\\
+-1 &amp; -2 &amp; -1  
+\end{bmatrix} \ast \mathbf{A}.$$</div>
 <p>所以梯度的強度圖可以寫成</p>
-<p>$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$</p>
+<div class="math">$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$</div>
 <p>同理梯度的方向圖可以寫成</p>
-<p>$$\Theta = \tan^{-1} \begin{bmatrix}<br>
-\frac{\mathbf{G_y}}{\mathbf{G_x}}<br>
-\end{bmatrix}.$$</p>
+<div class="math">$$\Theta = \tan^{-1} \begin{bmatrix}  
+\frac{\mathbf{G_y}}{\mathbf{G_x}}  
+\end{bmatrix}.$$</div>
 <h2 id="canny-edge-detector">Canny edge detector</h2>
 <p>Canny edge detector 是一種用來偵測影像中邊界的演算法，基本版的流程分為五個步驟：</p>
 <ol>
@@ -227,6 +227,68 @@ g_y \end{bmatrix},$$</p>
 <h2 id="_2">參考</h2>
 <p><a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py">Edge operators</a><br>
 <a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py">Canny edge detector</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>

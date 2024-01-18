@@ -660,8 +660,8 @@ Pro X 機身長度比 Pro ( 第五代 ) 短一點點但寬度長一點點，尺�
 &lt;p&gt;&lt;img alt="stress_FPU" src="https://i8xdwq.bn.files.1drv.com/y4mVE6nrj3Qvx5PDDzpKAamNSbOtxhwdqZHys_y1gKgJdr2e_HbEkhiW_mxswbbNVnnLTWSWDXKWnk8IgzFvtLRlAp-qDe8Uf_4nORQ9_KOcXnaus6_CYWnZBX0ZpHrSjYxv77dALI8Du__bnRFDVwStCMuOUzdHL3-qQG11vXfur_G1iG3ECWQOntikWkDmfrxlZhwXQ20etffypdGgvK2Qg?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;由於 AIDA64 很多感測器的數值無法正確讀出，我以工作管理員提供的數值為主，參考一篇&lt;a href="https://zhuanlan.zhihu.com/p/102206313"&gt;文章&lt;/a&gt;，前四個是小核心，後四個是大核心。
 工作管理員的時脈數值，根據我的觀察，其顯示數值應該為：&lt;/p&gt;
-&lt;p&gt;$$(\text{ 核心時脈 } \times \text{ 核心負載 }) \div \text{ 啟用核心數量。}$$&lt;/p&gt;
-&lt;p&gt;在全核心都滿載的情況下，時脈可以一直維持在 $2.38 \text{ GHz} \approxeq (3+1.8) \div 2$，推測是雖然號稱 3 GHz，但其實跟 Snapdragon 855+ 的最高時脈一樣是 2.96 GHz，這樣算出來的數值就完全符合了。&lt;/p&gt;
+&lt;div class="math"&gt;$$(\text{ 核心時脈 } \times \text{ 核心負載 }) \div \text{ 啟用核心數量。}$$&lt;/div&gt;
+&lt;p&gt;在全核心都滿載的情況下，時脈可以一直維持在&lt;span class="math"&gt;\(2.38 \text{ GHz} \approxeq (3+1.8) \div 2\)&lt;/span&gt;，推測是雖然號稱 3 GHz，但其實跟 Snapdragon 855+ 的最高時脈一樣是 2.96 GHz，這樣算出來的數值就完全符合了。&lt;/p&gt;
 &lt;p&gt;在相同的測試環境下，以 3DMark 中唯一支援 ARM 的 Night Raid 做 GPU 的壓力測試，測試結果以 99.9% 的成績通過。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="stress_GPU" src="https://vjlrza.bn.files.1drv.com/y4ml6ojJJelBu3KuGzuCV1dUNL5qH6VAsKGKk6WqBQ1c2IO-BZuctATJh0x9Dk9g9lHYjUbtO305mywn5Er3VMCaMtunN_URQgyyPt2aMpLDcE9kQ_rwpR4CoV48xlS3ui4nlITYa3tjOg5OeG-R7Lfp1n092pydjVvF_ZNKq3m6lrkK-8sjFoN614QGGvYcSjirXLc0uxrDJNTyAC8iDcqDQ?width=1024&amp;amp;height=683&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;在跑壓力測試的時候，用手直接摸機身背後，只感覺溫而已，甚至比手機還不熱，相較於 Pro ( 第五代 )、Book 2 還有 Go 等被動散熱的 Surface，相同的測試要以燙來形容。
@@ -697,7 +697,69 @@ VS 2019 需要編譯的時間需要比較長，也會占用很多 CPU 與 RAM，
 &lt;h2 id="_11"&gt;總結&lt;/h2&gt;
 &lt;p&gt;Pro X 目前的體驗感受，算是比我預期的好，本來我只打算當個能用 Office 和 UWP 的 Edge book，後來發現可以做很多事，就直接拿來作為主力機了。
 到目前為止我認為 Pro X 是一台好機器，但是不適合所有人，而我剛好是目標人群。我覺得很多開發者其實對 Windows on ARM 是很有興趣，但是缺乏工具鏈，微軟你家的 .Net framework 都沒有原生支援，一堆 WinForms 和 WPF 程式是要怎麼搞原生。
-不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;</content><category term="硬體"></category><category term="Microsoft Surface"></category><category term="Windows on ARM"></category></entry><entry><title>如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2020-03-11T11:59:00+08:00</published><updated>2020-03-11T11:59:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2020-03-11:/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html</id><summary type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
+不過最近感覺微軟比較有心要扶植 ARM 了，WinForms 和 WPF 將會在&lt;a href="https://github.com/dotnet/runtime/issues/36699"&gt;.Net 5 下支援 ARM64&lt;/a&gt;，微軟也推出&lt;a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/"&gt;支援 ARM 的 OpenJDK&lt;/a&gt;，甚至&lt;a href="https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/native-clang-for-windows-on-arm"&gt;Clang&lt;/a&gt;也加入支援了，我覺得 Windows on ARM 的未來還是很有潛力，能給消費者帶來更多選擇絕對不是壞事。&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="硬體"></category><category term="Microsoft Surface"></category><category term="Windows on ARM"></category></entry><entry><title>如何暫時解決因為第三方軟體導致 Windows 10 搜尋列中的應用程式 icon 顯示異常問題</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E6%9A%AB%E6%99%82%E8%A7%A3%E6%B1%BA%E5%9B%A0%E7%82%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BB%9F%E9%AB%94%E5%B0%8E%E8%87%B4-Windows-10-%E6%90%9C%E5%B0%8B%E5%88%97%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-icon-%E9%A1%AF%E7%A4%BA%E7%95%B0%E5%B8%B8%E5%95%8F%E9%A1%8C.html" rel="alternate"></link><published>2020-03-11T11:59:00+08:00</published><updated>2020-03-11T11:59:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2020-03-11:/如何暫時解決因為第三方軟體導致-Windows-10-搜尋列中的應用程式-icon-顯示異常問題.html</id><summary type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
 &lt;p&gt;某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;問題原因&lt;/h2&gt;
 &lt;p&gt;某些第三方的檔案同步軟體，例如 Google 的 Drive File Stream，因為會在登錄檔新增機碼，導致系統某些地方異常，使得 Windows 10 的應用程式 icon 在搜尋列顯示異常。&lt;/p&gt;
 &lt;h2 id="_2"&gt;解決方法&lt;/h2&gt;
@@ -812,15 +874,76 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 
 &lt;p&gt;如此就能簡單的安裝完成了。&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category><category term="Anaconda"></category></entry><entry><title>貝氏模型擬合範例 (Bayesian Model Fitting Instance)</title><link href="https://yaticl.github.io/bayesian-model-fitting-instance.html" rel="alternate"></link><published>2018-12-13T01:37:00+08:00</published><updated>2018-12-13T01:37:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-12-13:/bayesian-model-fitting-instance.html</id><summary type="html">&lt;p&gt;一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。&lt;/p&gt;
 &lt;h2 id="bayes-rule"&gt;Bayes rule&lt;/h2&gt;
-&lt;p&gt;定義一個 likelihood $P(D | M)$，其中 $D$ 為來自於 model $M$ 的實驗數據。&lt;/p&gt;
-&lt;p&gt;基於預期知識 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。&lt;/p&gt;
+&lt;p&gt;定義一個 likelihood &lt;span class="math"&gt;\(P(D | M)\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(D\)&lt;/span&gt;為來自於 model &lt;span class="math"&gt;\(M\)&lt;/span&gt;的實驗數據。&lt;/p&gt;
+&lt;p&gt;基於預期知識 …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;p&gt;一個 Bayesian model fitting 的範例，幫助如何使用 Bayesian model 解決問題。&lt;/p&gt;
 &lt;h2 id="bayes-rule"&gt;Bayes rule&lt;/h2&gt;
-&lt;p&gt;定義一個 likelihood $P(D | M)$，其中 $D$ 為來自於 model $M$ 的實驗數據。&lt;/p&gt;
-&lt;p&gt;基於預期知識 $C$，定義一個 model $M$ 的 prior $P(M | C)$，其中 model $M$ 包含一些我們想要找的參數。&lt;/p&gt;
+&lt;p&gt;定義一個 likelihood &lt;span class="math"&gt;\(P(D | M)\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(D\)&lt;/span&gt;為來自於 model &lt;span class="math"&gt;\(M\)&lt;/span&gt;的實驗數據。&lt;/p&gt;
+&lt;p&gt;基於預期知識&lt;span class="math"&gt;\(C\)&lt;/span&gt;，定義一個 model &lt;span class="math"&gt;\(M\)&lt;/span&gt;的 prior &lt;span class="math"&gt;\(P(M | C)\)&lt;/span&gt;，其中 model &lt;span class="math"&gt;\(M\)&lt;/span&gt;包含一些我們想要找的參數。&lt;/p&gt;
 &lt;p&gt;則由 Bayes' theorem 可以得知 posterior：&lt;/p&gt;
-&lt;p&gt;$$P(M | D) \propto P(M | C)P(D | M).$$&lt;/p&gt;
+&lt;div class="math"&gt;$$P(M \| D) \propto P(M | C)P(D | M).$$&lt;/div&gt;
 &lt;h2 id="linear-models"&gt;Linear models&lt;/h2&gt;
-&lt;p&gt;假設有一個感測器，其量測到的信號被一個高斯雜訊影響，則可以將信號產生模型寫成 : $y=a + noise$，其中 $y$ 為量測到的 data，$a$ 是模型的參數。&lt;/p&gt;
+&lt;p&gt;假設有一個感測器，其量測到的信號被一個高斯雜訊影響，則可以將信號產生模型寫成 : &lt;span class="math"&gt;\(y=a + noise\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(y\)&lt;/span&gt;為量測到的 data，&lt;span class="math"&gt;\(a\)&lt;/span&gt;是模型的參數。&lt;/p&gt;
 &lt;p&gt;首先我們先產生人造的 data：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
@@ -832,21 +955,21 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# Generate n data&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;根據 generative model，隱含了 likelihood 可以被表示成 $p(y|a) = \prod_{i=1}^{n} (2 \pi \sigma^2)^{-1/2} e^{-\frac{(y_i-a)^2}{2\sigma^2}}$：&lt;/p&gt;
+&lt;p&gt;根據 generative model，隱含了 likelihood 可以被表示成&lt;span class="math"&gt;\(p(y|a) = \prod_{i=1}^{n} (2 \pi \sigma^2)^{-1/2} e^{-\frac{(y_i-a)^2}{2\sigma^2}}\)&lt;/span&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;va&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;N&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;va&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;lik&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;.5&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;va&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;lik&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lik&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lik&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# normalize&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;在還沒量測之前，我們猜測量測到的信號會是中心為 $0$ 且標準差為 $5$ 的 Gaussian distribution：&lt;/p&gt;
+&lt;p&gt;在還沒量測之前，我們猜測量測到的信號會是中心為&lt;span class="math"&gt;\(0\)&lt;/span&gt;且標準差為&lt;span class="math"&gt;\(5\)&lt;/span&gt;的 Gaussian distribution：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;a0&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
 &lt;span class="n"&gt;s0&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
 &lt;span class="n"&gt;pr&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;.5&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;va&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;s0&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pr&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pr&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;根據 Bayes' theorem，可以推得模型的 posterior： $p(a|y) = p(a) \times p(y|a)$&lt;/p&gt;
+&lt;p&gt;根據 Bayes' theorem，可以推得模型的 posterior： &lt;span class="math"&gt;\(p(a|y) = p(a) \times p(y|a)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;我們將上述的 distribution 都畫出：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;po&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lik&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;pr&lt;/span&gt;
 &lt;span class="n"&gt;po&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;po&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;po&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -872,7 +995,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;p&gt;只藉由少量的 data，可以發現機率最高的參數已經接近我們的真實信號產生模型參數，其中 likelihood 是只利用所量測到的 data 估計模型參數，而 posterior 是加入 prior 修正後的結果或是妥協，如果 data 愈多，則會傾向於相信 data。&lt;/p&gt;
 &lt;h2 id="grid-search-for-two-variables"&gt;Grid search for two variables&lt;/h2&gt;
 &lt;p&gt;若我們不知道雜訊的標準差，則也需要將雜訊的標準差加入為需要尋找的模型參數。&lt;/p&gt;
-&lt;p&gt;舉例來說，一個信號 $x$ 會在感測器上有 $a$ 的增益，但是量測到的信號會被雜訊所影響，則模型可以寫成：$y=a \times x + noise$&lt;/p&gt;
+&lt;p&gt;舉例來說，一個信號&lt;span class="math"&gt;\(x\)&lt;/span&gt;會在感測器上有&lt;span class="math"&gt;\(a\)&lt;/span&gt;的增益，但是量測到的信號會被雜訊所影響，則模型可以寫成：&lt;span class="math"&gt;\(y=a \times x + noise\)&lt;/span&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;a&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="c1"&gt;# true a&lt;/span&gt;
 &lt;span class="n"&gt;sig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# true sigma&lt;/span&gt;
 &lt;span class="n"&gt;x&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -888,7 +1011,7 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img alt="scatter(x,y)" src="https://jpohvq.bn.files.1drv.com/y4mmo5ZJ58Y0pS2HbUe-s0xVMGYkGLvwBAZ43NkxxVdL7VHJ4Unp9BNOdCVxd5hBKx4Fx4jFP3EvKYSZ9COJs6xL021ZLIhyOKPScfyZnycAMTN0KzYHX7hMNZJVpWcukMZXOt-vMX4OZikBOPG6ZESYjqu-nUjpDU8GHytYFACoF61u7eGfhRuRHwIM2lbAAdHl70bXR--VRX4glDulr__Yg?width=388&amp;amp;height=278&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;Grid search 就是取樣大量的參數來尋找最佳的參數組合，因此我們對 $a$ 與 $\sigma^2$ 取樣，希望計算 posterior 最高的參數組合：&lt;/p&gt;
+&lt;p&gt;Grid search 就是取樣大量的參數來尋找最佳的參數組合，因此我們對&lt;span class="math"&gt;\(a\)&lt;/span&gt;與&lt;span class="math"&gt;\(\sigma^2\)&lt;/span&gt;取樣，希望計算 posterior 最高的參數組合：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;normpdf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -940,17 +1063,79 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;p&gt;最後我們就能得到最佳的參數組合。&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Statistical%20Optics/Bayesian%20Model%20Fitting%20Instance.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html"&gt;ONBI - Bayesian model fitting practical&lt;/a&gt;&lt;/p&gt;</content><category term="Statistical Optics"></category><category term="Statistical Optics"></category><category term="Bayesian"></category><category term="Python"></category></entry><entry><title>二維離散小波轉換 (2D Discrete Wavelet Transform)</title><link href="https://yaticl.github.io/2d-discrete-wavelet-transform.html" rel="alternate"></link><published>2018-08-30T17:43:00+08:00</published><updated>2018-08-30T17:43:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-30:/2d-discrete-wavelet-transform.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://users.fmrib.ox.ac.uk/~saad/ONBI/bayes_practical.html"&gt;ONBI - Bayesian model fitting practical&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Statistical Optics"></category><category term="Statistical Optics"></category><category term="Bayesian"></category><category term="Python"></category></entry><entry><title>二維離散小波轉換 (2D Discrete Wavelet Transform)</title><link href="https://yaticl.github.io/2d-discrete-wavelet-transform.html" rel="alternate"></link><published>2018-08-30T17:43:00+08:00</published><updated>2018-08-30T17:43:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-30:/2d-discrete-wavelet-transform.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;小波轉換 (Wavelete transform) 與傅立葉轉換 (Fourier transform) 類似，是一種信號分析的方法，特色是是同時具有空間解析度 (spatial resolution) 與頻率解析度 (frequency resolution)，其中二維小波轉換 (2D Discrete Wavelet Transform) 經常被用於影像分析。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
 &lt;p&gt;一層 2D 小波轉換的實作流程圖如下，先對 rows 做分解再對 columns 做分解，最後會分解成四種成分，解析度變成前一層的 1/2&lt;br&gt;
 &lt;img alt="dwt2" src="https://rvtd4a.bn.files.1drv.com/y4mHusYAwBECdqd0llmBb5HjmlQ2ScqEY_SgozZU7O_UTjCIQIyk336FC9177QTB8cN-UE6kd6mHU2L6MfZvKzP6KocZ_O2FKs5UZsvuq3kJtZK0hUI8djG9ST6XmR-EPoR5YohEgU36U8m_uZcL-RtA8HNj8cJJC1FFuWiHfT74zBGPOqI_9H21aERfGgMNBB__NH7x5tHK0VaoMgUUgo-NQ?width=660&amp;amp;height=405&amp;amp;cropmode=none"&gt;&lt;/p&gt;
-&lt;p&gt;$cA_{i}$:approximation coefficients at level $i$&lt;/p&gt;
-&lt;p&gt;$cH_{i}$:horizontal coefficients at level $i$&lt;/p&gt;
-&lt;p&gt;$cV_{i}$:vertical coefficients at level $i$&lt;/p&gt;
-&lt;p&gt;$cD_{i}$:diagonal coefficients at level $i$&lt;/p&gt;
-&lt;p&gt;初始 $cA_0$ 為原始影像。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(cA_{i}\)&lt;/span&gt;:approximation coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(cH_{i}\)&lt;/span&gt;:horizontal coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(cV_{i}\)&lt;/span&gt;:vertical coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(cD_{i}\)&lt;/span&gt;:diagonal coefficients at level &lt;span class="math"&gt;\(i\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;初始&lt;span class="math"&gt;\(cA\_0\)&lt;/span&gt;為原始影像。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;p&gt;PyWavelets 是一個 Python 的小波函式庫，可以實現多維小波轉換，其中影像的一階離散小波轉換的範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -999,21 +1184,83 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/2D%20Discrete%20Wavelet%20Transform.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.mathworks.com/help/wavelet/ref/dwt2.html"&gt;Mathwork&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital Image Processing"></category><category term="Python"></category></entry><entry><title>局部歸一化 (Local Normalization)</title><link href="https://yaticl.github.io/local-normalization.html" rel="alternate"></link><published>2018-08-29T19:47:00+08:00</published><updated>2018-08-29T19:47:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-29:/local-normalization.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pywavelets.readthedocs.io/en/latest/#main-features"&gt;PyWavelets&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital Image Processing"></category><category term="Python"></category></entry><entry><title>局部歸一化 (Local Normalization)</title><link href="https://yaticl.github.io/local-normalization.html" rel="alternate"></link><published>2018-08-29T19:47:00+08:00</published><updated>2018-08-29T19:47:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-08-29:/local-normalization.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
 &lt;p&gt;對 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。&lt;/p&gt;
 &lt;h2 id="_2"&gt;實作&lt;/h2&gt;
-&lt;p&gt;對原始影像 $f(x,y)$ 的 local normalization 可以寫成：&lt;/p&gt;
-&lt;p&gt;$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$&lt;/p&gt;
+&lt;p&gt;對原始影像&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local normalization 可以寫成：&lt;/p&gt;
+&lt;div class="math"&gt;$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$&lt;/div&gt;
 &lt;p&gt;其中&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;$m_f(x,y)$ 是 $f(x,y)$ 的 local mean 估算值&lt;/li&gt;
-&lt;li&gt;$\sigma_f(x,y)$ 是 local variance 的估算值&lt;/li&gt;
-&lt;li&gt;$g(x,y)$ 是輸出影像。&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(m_f(x,y)\)&lt;/span&gt;是&lt;span class="math"&gt;\(f(x,y)\)&lt;/span&gt;的 local mean 估算值&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\sigma_f(x,y)\)&lt;/span&gt;是 local variance 的估算值&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(g(x,y)\)&lt;/span&gt;是輸出影像。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;local mean 與 variance 的估算通過 Gaussian filter，$\sigma_1$ 與 $\sigma_2$ 是 Gaussian window size，用來控制 local mean 與 local variance，通常 $\sigma_2$ 應該大於 $\sigma_1$。&lt;/p&gt;
+&lt;p&gt;local mean 與 variance 的估算通過 Gaussian filter，&lt;span class="math"&gt;\(\sigma_1\)&lt;/span&gt;與&lt;span class="math"&gt;\(\sigma_2\)&lt;/span&gt;是 Gaussian window size，用來控制 local mean 與 local variance，通常&lt;span class="math"&gt;\(\sigma_2\)&lt;/span&gt;應該大於&lt;span class="math"&gt;\(\sigma_1\)&lt;/span&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="diagram" src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&amp;amp;height=137&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -1059,41 +1306,103 @@ Windows 環境下，我喜歡搭配 Microsoft PowerShell &lt;a href="https://git
 &lt;p&gt;&lt;img alt="imshow(normalized, 'gray')" src="https://pn8dpg.bn.files.1drv.com/y4muM2yxYQdJ-xl7Ozapjd7q4AB85C-t-jsb9roF_N-BCqIo9SMBEnO_GiVFg0ivmbHCZuT83f8wE97-YngO7UM7Y1tgBVJp0C-7wkvv7yKjj2NUCHwuHwZVqR9_zZzlbM2IByXHClPZi7NwpOWXvdrKVebkdTy7DaG9ist5YuKdLCFUu6tWPs0QZCJuFeKA8LHwKr58Omc6nvMib62_DAeOw?width=262&amp;amp;height=264&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Local%20Normalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>邊界偵測 (Edge Detection)</title><link href="https://yaticl.github.io/edge-detection.html" rel="alternate"></link><published>2018-07-06T21:52:00+08:00</published><updated>2018-07-06T21:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-06:/edge-detection.html</id><summary type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bigwww.epfl.ch/sage/soft/localnormalization/"&gt;Local Normalization&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>邊界偵測 (Edge Detection)</title><link href="https://yaticl.github.io/edge-detection.html" rel="alternate"></link><published>2018-07-06T21:52:00+08:00</published><updated>2018-07-06T21:52:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-06:/edge-detection.html</id><summary type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;通常在一張影像當中，我們會感興趣的地方會是亮度變化比較大的地方，因為這些地方可以被當作用來描述該影像的特徵，其中一種由亮度變化形成的特徵就是影像的邊界 (edge) 位置。&lt;/p&gt;
 &lt;h2 id="image-gradient"&gt;影像梯度 (Image gradient)&lt;/h2&gt;
 &lt;p&gt;由於我們對影像有亮度變化的地方有興趣，因此需要一種數學描述這種變化，即為 image gradient。&lt;/p&gt;
-&lt;p&gt;Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&amp;gt; 亮，長度對應變化率。在影像中一點 $(x,y)$ 的梯度可以表示為&lt;/p&gt;
-&lt;p&gt;$$\triangledown f = \begin{bmatrix}&lt;br&gt;
-\frac{\partial f}{\partial x} \&lt;br&gt;
-\frac{\partial f}{\partial y}&lt;br&gt;
-\end{bmatrix} = \begin{bmatrix}&lt;br&gt;
-g_x \&lt;br&gt;
-g_y \end{bmatrix},$$&lt;/p&gt;
+&lt;p&gt;Image gradient 是一 2D 向量 (vector)，對應水平和垂直方向，方向定義為亮度最有可能增加的方向，簡單來說就是暗 -&amp;gt; 亮，長度對應變化率。在影像中一點&lt;span class="math"&gt;\((x,y)\)&lt;/span&gt;的梯度可以表示為&lt;/p&gt;
+&lt;div class="math"&gt;$$\triangledown f = \begin{bmatrix}  
+\frac{\partial f}{\partial x} \\  
+\frac{\partial f}{\partial y}  
+\end{bmatrix} = \begin{bmatrix}  
+g_x \\  
+g_y \end{bmatrix},$$&lt;/div&gt;
 &lt;p&gt;其方向為&lt;/p&gt;
-&lt;p&gt;$$\theta = \tan^{-1} \begin{bmatrix}&lt;br&gt;
-\frac{g_y}{g_x}&lt;br&gt;
-\end{bmatrix},$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\theta = \tan^{-1} \begin{bmatrix}  
+\frac{g_y}{g_x}  
+\end{bmatrix},$$&lt;/div&gt;
 &lt;p&gt;其長度為&lt;/p&gt;
-&lt;p&gt;$$g = \sqrt{g_{x}^2+g_{y}^2}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$g = \sqrt{g_{x}^2+g_{y}^2}.$$&lt;/div&gt;
 &lt;h2 id="sobel-operator"&gt;Sobel operator&lt;/h2&gt;
-&lt;p&gt;Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用 $3 \times 3$ 的 kernel 對影像做 convolution ( 摺積 )。&lt;/p&gt;
-&lt;p&gt;假設 $\mathbf{A}$ 為來源影像，$\mathbf{G_x}$ 與 $\mathbf{G_y}$ 分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為&lt;/p&gt;
-&lt;p&gt;$$\mathbf{G_x}=\begin{bmatrix}&lt;br&gt;
-1 &amp;amp; 0 &amp;amp; -1\ 
-2 &amp;amp;0 &amp;amp; -2\
+&lt;p&gt;Sobel operator 或 Sobel filter 是一種常被用來計算影像梯度運算子，其方法為利用&lt;span class="math"&gt;\(3 \times 3\)&lt;/span&gt;的 kernel 對影像做 convolution ( 摺積 )。&lt;/p&gt;
+&lt;p&gt;假設&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;為來源影像，&lt;span class="math"&gt;\(\mathbf{G_x}\)&lt;/span&gt;與&lt;span class="math"&gt;\(\mathbf{G_y}\)&lt;/span&gt;分別對應水平與垂直方向的梯度圖，代表來源影像中每一個點的梯度，則可以表示為&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{G_x}=\begin{bmatrix}  
+1 &amp;amp; 0 &amp;amp; -1\\ 
+2 &amp;amp;0 &amp;amp; -2\\
 1 &amp;amp; 0 &amp;amp; -1 
-\end{bmatrix} \ast \mathbf{A} \text{ and }&lt;br&gt;
-\mathbf{G_y}=\begin{bmatrix}&lt;br&gt;
-1 &amp;amp; 2 &amp;amp; 1\ 
-0 &amp;amp; 0 &amp;amp; 0\
--1 &amp;amp; -2 &amp;amp; -1&lt;br&gt;
-\end{bmatrix} \ast \mathbf{A}.$$&lt;/p&gt;
+\end{bmatrix} \ast \mathbf{A} \text{ and }  
+\mathbf{G_y}=\begin{bmatrix}  
+1 &amp;amp; 2 &amp;amp; 1\\ 
+0 &amp;amp; 0 &amp;amp; 0\\
+-1 &amp;amp; -2 &amp;amp; -1  
+\end{bmatrix} \ast \mathbf{A}.$$&lt;/div&gt;
 &lt;p&gt;所以梯度的強度圖可以寫成&lt;/p&gt;
-&lt;p&gt;$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{G} = \sqrt{\mathbf{G_x}^2 + \mathbf{G_y}^2}.$$&lt;/div&gt;
 &lt;p&gt;同理梯度的方向圖可以寫成&lt;/p&gt;
-&lt;p&gt;$$\Theta = \tan^{-1} \begin{bmatrix}&lt;br&gt;
-\frac{\mathbf{G_y}}{\mathbf{G_x}}&lt;br&gt;
-\end{bmatrix}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\Theta = \tan^{-1} \begin{bmatrix}  
+\frac{\mathbf{G_y}}{\mathbf{G_x}}  
+\end{bmatrix}.$$&lt;/div&gt;
 &lt;h2 id="canny-edge-detector"&gt;Canny edge detector&lt;/h2&gt;
 &lt;p&gt;Canny edge detector 是一種用來偵測影像中邊界的演算法，基本版的流程分為五個步驟：&lt;/p&gt;
 &lt;ol&gt;
@@ -1136,21 +1445,83 @@ g_y \end{bmatrix},$$&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Edge%20Detection.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html#sphx-glr-auto-examples-edges-plot-edge-filter-py"&gt;Edge operators&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>直方圖等化 (Histogram Equalization)</title><link href="https://yaticl.github.io/histogram-equalization.html" rel="alternate"></link><published>2018-07-04T22:26:00+08:00</published><updated>2018-07-04T22:26:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/histogram-equalization.html</id><summary type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。&lt;/p&gt;
+&lt;a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_canny.html#sphx-glr-auto-examples-edges-plot-canny-py"&gt;Canny edge detector&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>直方圖等化 (Histogram Equalization)</title><link href="https://yaticl.github.io/histogram-equalization.html" rel="alternate"></link><published>2018-07-04T22:26:00+08:00</published><updated>2018-07-04T22:26:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/histogram-equalization.html</id><summary type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;影像的 histogram 指的是，在一張影像當中強度值統計分布，通常橫軸代表強度值，縱軸代表數量。histogram equalization，是一種利用影像的直方圖增強影像對比的方法，其概念如下圖 ( 來自維基百科 )。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="histeq" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Histogrammeinebnung.png"&gt;&lt;/p&gt;
 &lt;p&gt;希望影像的強度值分布變得比較均勻。&lt;/p&gt;
 &lt;h2 id="_1"&gt;數學理論&lt;/h2&gt;
-&lt;p&gt;假設一張灰階影像 ${x}$，且令 $n_i$ 為強度值 $i$ 的數量，則在影像中一個像素出現強度值 $i$ 的機率為&lt;/p&gt;
-&lt;p&gt;$$p_x(i)=\frac{n_i}{n}, 0 \leq i &amp;lt; L,$$&lt;/p&gt;
-&lt;p&gt;其中 $L$ 為強度值的總量 ( 對於一般的 8 bit 影像為 256)，$n$ 像素的總量，通常會將 $i$ 的範圍 normalize 到 $[0,1].$&lt;/p&gt;
-&lt;p&gt;定義 $p_x$ 對應的累積分布 (CDF) 為&lt;/p&gt;
-&lt;p&gt;$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$&lt;/p&gt;
-&lt;p&gt;我們希望創造一個轉換函數 $k=T(i)$，使新的影像 ${p_y(k)}$ 有均勻的值方圖分布，相當於線性化影像的 CDF，例如&lt;/p&gt;
-&lt;p&gt;$$cdf_y(k)=kC, \text{for some constant }C.$$&lt;/p&gt;
+&lt;p&gt;假設一張灰階影像&lt;span class="math"&gt;\({x}\)&lt;/span&gt;，且令&lt;span class="math"&gt;\(n_i\)&lt;/span&gt;為強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的數量，則在影像中一個像素出現強度值&lt;span class="math"&gt;\(i\)&lt;/span&gt;的機率為&lt;/p&gt;
+&lt;div class="math"&gt;$$p_x(i)=\frac{n_i}{n}, 0 \leq i &amp;lt; L,$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(L\)&lt;/span&gt;為強度值的總量 ( 對於一般的 8 bit 影像為 256)，&lt;span class="math"&gt;\(n\)&lt;/span&gt;像素的總量，通常會將&lt;span class="math"&gt;\(i\)&lt;/span&gt;的範圍 normalize 到&lt;span class="math"&gt;\([0,1].\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;定義&lt;span class="math"&gt;\(p_x\)&lt;/span&gt;對應的累積分布 (CDF) 為&lt;/p&gt;
+&lt;div class="math"&gt;$$cdf_x(i)=\sum_{j=0}^{i}p_x(j),$$&lt;/div&gt;
+&lt;p&gt;我們希望創造一個轉換函數&lt;span class="math"&gt;\(k=T(i)\)&lt;/span&gt;，使新的影像&lt;span class="math"&gt;\({p_y(k)}\)&lt;/span&gt;有均勻的值方圖分布，相當於線性化影像的 CDF，例如&lt;/p&gt;
+&lt;div class="math"&gt;$$cdf_y(k)=kC, \text{for some constant }C.$$&lt;/div&gt;
 &lt;p&gt;由 CDF 的性質，則我們可以寫出以下的轉換關係&lt;/p&gt;
-&lt;p&gt;$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$&lt;/p&gt;
-&lt;p&gt;假設 $p_y(k)=C=\frac{1}{i_{min}-i_{max}}$，則&lt;/p&gt;
-&lt;p&gt;$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$cdf_y(k)=cdf_y(T(i))=cdf_x(i).$$&lt;/div&gt;
+&lt;p&gt;假設&lt;span class="math"&gt;\(p_y(k)=C=\frac{1}{i_{min}-i_{max}}\)&lt;/span&gt;，則&lt;/p&gt;
+&lt;div class="math"&gt;$$T(i)=\frac{1}{C} \int_{i_{min}}^{i} p_x(i)di+\min(x) \text{ for } i_{min} \leq i \leq i_{max}.$$&lt;/div&gt;
 &lt;h2 id="local-histogram-equalization"&gt;局部直方圖等化 (Local Histogram Equalization)&lt;/h2&gt;
 &lt;p&gt;一般的直方圖等化是對整張影像做，通常新的直方圖只會是大概線性的 CDF，因此後來有一種局部版本的直方圖等化，使 CDF 更加的線性。在 scikit-image 有實作此方法，範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
@@ -1233,7 +1604,69 @@ g_y \end{bmatrix},$$&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Histogram%20Equalization.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_2"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Histogram_equalization"&gt;Histogram equalization&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>Python 心得</title><link href="https://yaticl.github.io/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/python-心得.html</id><summary type="html">&lt;h2 id="python"&gt;Python&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html#sphx-glr-auto-examples-color-exposure-plot-local-equalize-py"&gt;Local Histogram Equalization&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Image Processing"></category><category term="Digital image processing"></category><category term="Python"></category></entry><entry><title>Python 心得</title><link href="https://yaticl.github.io/python-%E5%BF%83%E5%BE%97.html" rel="alternate"></link><published>2018-07-04T17:22:00+08:00</published><updated>2020-09-07T15:39:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-07-04:/python-心得.html</id><summary type="html">&lt;h2 id="python"&gt;Python&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="python"&gt;Python&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://zh.wikipedia.org/zh-tw/Python"&gt;Python&lt;/a&gt;是一種直譯式高階程式語言，由 Guido van Rossum 發明，其哲學是強調 code 的可讀性和簡潔的語法，而且具有動態型別與自動記憶體管理功能。Python 常被用於 Web 開發與科學計算，特別是最近機器學習函式庫幾乎都有提供 Python API。&lt;/p&gt;
 &lt;h3 id="python_1"&gt;為什麼我要選擇 Python？&lt;/h3&gt;
@@ -1435,16 +1868,79 @@ g_y \end{bmatrix},$$&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 古猗園 " src="https://76otaw.bn.files.1drv.com/y4mQKWohcjLTb3HvoFEQWo4PXjZy-R-8wAp4HGK4QATgVLRP3_g5l9Db9F_xy1F63ix8uVAqefGstdC0Xs6lKJ0RCM8ICKTjX7Yqode-NsSwkq4ol3XvS0v-mM2geEVxClpicAi_VsGnEDn7lPnQ76olMR0W1m_XKl6axvTd5XFID8UILYD7_d7xuoZeadpSLxeIJ1NcNohcCcRbFT3IhU3IA?width=768&amp;amp;height=1024&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 古猗園 " src="https://9vfyma.bn.files.1drv.com/y4mRbyn24mCkTAqt2f0d7w0WIHrzxA4Qg0rp1HhWP9TK-whfxKcxZuH87vUDVDFc1nOOjYFUOur_tQrLoglIEcvnkG8aPFfO0N2VhDRo7F4qJOKBSHGHlFQY-aDgW5YkWICbfoM4iDFZFiSLSBDvTvDmUTNPSuCxzsASPR4RgoOkelQ38KR_mLJpTf1bIUfcsNT5Q4GEkeWW6pKMXOTUX5axg?width=1024&amp;amp;height=769&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 古猗園 " src="https://qdi5xq.bn.files.1drv.com/y4m8pIzIZztPXRZDulV8p1qQC5X6tSeZ6pals-Sk0FPS9lY5tDG9dHLbaHyV3itVmDIhISS-uFieOtiu5T3ANNTLDfhLxRLgFFYlsIV0cpipBZ9lo-rrA8Pc8ZX72dtBg2yXCB9szaWmftYUGst4E_1tFxG9qmBNirpD7tp3DuYXi0neJLGiCSdQIoGgIeE2mLnJAU4JDNHAKB-ElWyTOA9Cg?width=1024&amp;amp;height=768&amp;amp;cropmode=none"&gt;&lt;/p&gt;</content><category term="旅遊"></category><category term="中國"></category><category term="上海"></category></entry><entry><title>Maximum-Length Sequence</title><link href="https://yaticl.github.io/maximum-length-sequence.html" rel="alternate"></link><published>2018-03-16T21:23:00+08:00</published><updated>2018-03-16T21:23:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-16:/maximum-length-sequence.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度 $P=2^N-1$，其中 $N$ 代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
-&lt;p&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/p&gt;
-&lt;p&gt;其中 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度 $P=2^N-1$，其中 $N$ 代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
-&lt;p&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/p&gt;
-&lt;p&gt;其中 $\oplus$ 代表 XOR 運算。若將將產生出來的 $0,1$ 邏輯值由下式轉換成 $1,-1$，則為 MLS 訊號：&lt;/p&gt;
-&lt;p&gt;$$0 \rightarrow 1$$&lt;br&gt;
-$$1 \rightarrow -1.$$&lt;/p&gt;
+&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度&lt;span class="math"&gt;\(P=2^N-1\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(N\)&lt;/span&gt;代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
+&lt;div class="math"&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/div&gt;
+&lt;p&gt;其中 …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度&lt;span class="math"&gt;\(P=2^N-1\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(N\)&lt;/span&gt;代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
+&lt;div class="math"&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(\oplus\)&lt;/span&gt;代表 XOR 運算。若將將產生出來的&lt;span class="math"&gt;\(0,1\)&lt;/span&gt;邏輯值由下式轉換成&lt;span class="math"&gt;\(1,-1\)&lt;/span&gt;，則為 MLS 訊號：&lt;/p&gt;
+&lt;div class="math"&gt;$$0 \rightarrow 1$$&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$$1 \rightarrow -1.$$&lt;/div&gt;
 &lt;h2 id="_2"&gt;性質&lt;/h2&gt;
-&lt;p&gt;在 MLS 當中，$0$ 與 $1$ 的數量大約相同，有 $2^{N-1}$ 個 $1$ 和 $2^{N-1}-1$ 個 $0$。另一個的性質是 MLS 訊號的自相關為 delta function。&lt;/p&gt;
+&lt;p&gt;在 MLS 當中，&lt;span class="math"&gt;\(0\)&lt;/span&gt;與&lt;span class="math"&gt;\(1\)&lt;/span&gt;的數量大約相同，有&lt;span class="math"&gt;\(2^{N-1}\)&lt;/span&gt;個&lt;span class="math"&gt;\(1\)&lt;/span&gt;和&lt;span class="math"&gt;\(2^{N-1}-1\)&lt;/span&gt;個&lt;span class="math"&gt;\(0\)&lt;/span&gt;。另一個的性質是 MLS 訊號的自相關為 delta function。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;p&gt;在 Scipy 的函示庫中的 signal 模組有實作 MLS，其範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
@@ -1476,22 +1972,145 @@ $$1 \rightarrow -1.$$&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Signal%20Processing/Maximum-Length%20Sequences.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Signal Processing"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>Toeplitz Matrix</title><link href="https://yaticl.github.io/toeplitz-matrix.html" rel="alternate"></link><published>2018-03-09T21:18:00+08:00</published><updated>2018-03-09T21:18:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-09:/toeplitz-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Signal Processing"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>Toeplitz Matrix</title><link href="https://yaticl.github.io/toeplitz-matrix.html" rel="alternate"></link><published>2018-03-09T21:18:00+08:00</published><updated>2018-03-09T21:18:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-09:/toeplitz-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。&lt;br&gt;
-對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=\begin{bmatrix}&lt;br&gt;
-a_0 &amp;amp; a_{-1} &amp;amp; a_ …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+對任一&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的矩陣&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;，可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=\begin{bmatrix}  
+a_0 &amp;amp; a_{-1} &amp;amp; a_ …&lt;/div&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。&lt;br&gt;
-對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=\begin{bmatrix}&lt;br&gt;
-a_0 &amp;amp; a_{-1} &amp;amp; a_{-2} &amp;amp; \cdots &amp;amp; a_{-(n-1)} \&lt;br&gt;
-a_1 &amp;amp; a_0 &amp;amp; a_{-1} &amp;amp; \ddots &amp;amp; \vdots \&lt;br&gt;
-a_2 &amp;amp; a_1 &amp;amp; \ddots &amp;amp; \ddots &amp;amp; \vdots \&lt;br&gt;
-\vdots &amp;amp; \ddots &amp;amp; \ddots &amp;amp; a_0 &amp;amp; a_{-1} \&lt;br&gt;
-a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0&lt;br&gt;
-\end{bmatrix},$$&lt;/p&gt;
+對任一&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的矩陣&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;，可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=\begin{bmatrix}  
+a_0 &amp;amp; a_{-1} &amp;amp; a_{-2} &amp;amp; \cdots &amp;amp; a_{-(n-1)} \\  
+a_1 &amp;amp; a_0 &amp;amp; a_{-1} &amp;amp; \ddots &amp;amp; \vdots \\  
+a_2 &amp;amp; a_1 &amp;amp; \ddots &amp;amp; \ddots &amp;amp; \vdots \\  
+\vdots &amp;amp; \ddots &amp;amp; \ddots &amp;amp; a_0 &amp;amp; a_{-1} \\  
+a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0  
+\end{bmatrix},$$&lt;/div&gt;
 &lt;p&gt;其通式可以寫成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$&lt;/div&gt;
 &lt;h2 id="_2"&gt;範例&lt;/h2&gt;
 &lt;p&gt;Scipy 中有實作創造 Toeplitz matrix：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;toeplitz&lt;/span&gt;
@@ -1515,50 +2134,173 @@ a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0&lt;br&gt;
 
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Toeplitz%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="convolution"&gt;Convolution&lt;/h2&gt;
-&lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。$h$ 與 $x$ 的 convolution 可以表示成：&lt;/p&gt;
-&lt;p&gt;$$y=h\ast x=\begin{bmatrix}&lt;br&gt;
-h_1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; 0 \&lt;br&gt;
-h_2 &amp;amp; h_1 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \
-h_3 &amp;amp; h_2 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
-\vdots &amp;amp; h_3 &amp;amp; \ddots &amp;amp; h_1 &amp;amp; \vdots \&lt;br&gt;
-h_m &amp;amp; \vdots &amp;amp; \ddots &amp;amp; h_2 &amp;amp; h_1 \&lt;br&gt;
-0 &amp;amp; h_m &amp;amp; \ddots &amp;amp; h_3 &amp;amp; h_2 \&lt;br&gt;
-0 &amp;amp; 0 &amp;amp; h_m &amp;amp; \vdots &amp;amp; h_3 \&lt;br&gt;
-\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; h_m &amp;amp; \vdots \&lt;br&gt;
-0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; h_m&lt;br&gt;
-\end{bmatrix} \begin{bmatrix}&lt;br&gt;
-x_1 \&lt;br&gt;
-x_2 \&lt;br&gt;
-x_3 \&lt;br&gt;
-\vdots \&lt;br&gt;
-x_n&lt;br&gt;
-\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。&lt;span class="math"&gt;\(h\)&lt;/span&gt;與&lt;span class="math"&gt;\(x\)&lt;/span&gt;的 convolution 可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$y=h\ast x=\begin{bmatrix}  
+h_1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; 0 \\  
+h_2 &amp;amp; h_1 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\
+h_3 &amp;amp; h_2 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\  
+\vdots &amp;amp; h_3 &amp;amp; \ddots &amp;amp; h_1 &amp;amp; \vdots \\  
+h_m &amp;amp; \vdots &amp;amp; \ddots &amp;amp; h_2 &amp;amp; h_1 \\  
+0 &amp;amp; h_m &amp;amp; \ddots &amp;amp; h_3 &amp;amp; h_2 \\  
+0 &amp;amp; 0 &amp;amp; h_m &amp;amp; \vdots &amp;amp; h_3 \\  
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; h_m &amp;amp; \vdots \\  
+0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; h_m  
+\end{bmatrix} \begin{bmatrix}  
+x_1 \\  
+x_2 \\  
+x_3 \\  
+\vdots \\  
+x_n  
+\end{bmatrix}$$&lt;/div&gt;
 &lt;h2 id="_3"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Toeplitz_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://yaticl.github.io/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
-當要 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
-當要畫出該矩陣時，定義 $+1$ 代表黑色，而 $-1$ 代表白色。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Toeplitz_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://yaticl.github.io/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
+當要 …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
+當要畫出該矩陣時，定義&lt;span class="math"&gt;\(+1\)&lt;/span&gt;代表黑色，而&lt;span class="math"&gt;\(-1\)&lt;/span&gt;代表白色。&lt;/p&gt;
 &lt;h2 id="_2"&gt;特性&lt;/h2&gt;
-&lt;p&gt;${n \times n}$ 的 Hadamard matrix $H_n$ 會有 $n \frac{n(n-1)}{2}$ 個 $(-1)$ 方塊以及 $\frac{n(n+1)}{2}$ 個 $(+1)$ 的方塊。&lt;br&gt;
-令 $H_n$ 為 $n$ 階的 Hadamard matrix，則其定義為：&lt;/p&gt;
-&lt;p&gt;$$H_n{H_n}^T=nI_n,$$&lt;/p&gt;
-&lt;p&gt;其中 $I_n$ 為 $n \times n$ 的單位矩陣。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\({n \times n}\)&lt;/span&gt;的 Hadamard matrix &lt;span class="math"&gt;\(H_n\)&lt;/span&gt;會有&lt;span class="math"&gt;\(n \frac{n(n-1)}{2}\)&lt;/span&gt;個&lt;span class="math"&gt;\((-1)\)&lt;/span&gt;方塊以及&lt;span class="math"&gt;\(\frac{n(n+1)}{2}\)&lt;/span&gt;個&lt;span class="math"&gt;\((+1)\)&lt;/span&gt;的方塊。&lt;br&gt;
+令&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則其定義為：&lt;/p&gt;
+&lt;div class="math"&gt;$$H_n{H_n}^T=nI_n,$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(I_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的單位矩陣。&lt;/p&gt;
 &lt;h2 id="sylvesters-construction"&gt;Sylvester's construction&lt;/h2&gt;
-&lt;p&gt;假設 $H_n$ 為 $n$ 階的 Hadamard matrix，則可以藉由分區矩陣：&lt;/p&gt;
-&lt;p&gt;$$\begin{bmatrix}&lt;br&gt;
-H &amp;amp; H \&lt;br&gt;
-H &amp;amp; -H&lt;br&gt;
-\end{bmatrix}.$$&lt;/p&gt;
-&lt;p&gt;來形成 $2n$ 階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於 $2\leqslant k \in N$，其通式為：&lt;/p&gt;
-&lt;p&gt;$$H_{2^k}=\begin{bmatrix}&lt;br&gt;
-H_{2^{k-1}} &amp;amp; H_{2^{k-1}} \&lt;br&gt;
-H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
-\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$&lt;/p&gt;
-&lt;p&gt;其中 $\otimes$ 為 Kronecker product。&lt;/p&gt;
+&lt;p&gt;假設&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則可以藉由分區矩陣：&lt;/p&gt;
+&lt;div class="math"&gt;$$\begin{bmatrix}  
+H &amp;amp; H \\  
+H &amp;amp; -H  
+\end{bmatrix}.$$&lt;/div&gt;
+&lt;p&gt;來形成&lt;span class="math"&gt;\(2n\)&lt;/span&gt;階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於&lt;span class="math"&gt;\(2\leqslant k \in N\)&lt;/span&gt;，其通式為：&lt;/p&gt;
+&lt;div class="math"&gt;$$H_{2^k}=\begin{bmatrix}  
+H_{2^{k-1}} &amp;amp; H_{2^{k-1}} \\  
+H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}  
+\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(\otimes\)&lt;/span&gt;為 Kronecker product。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
-&lt;p&gt;在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為 $2$ 的次方整數，回傳 $n$ 階的 Hadamard matrix，以下為文件中的範例：&lt;/p&gt;
+&lt;p&gt;在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為&lt;span class="math"&gt;\(2\)&lt;/span&gt;的次方整數，回傳&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，以下為文件中的範例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;hadamard&lt;/span&gt;
 &lt;span class="n"&gt;hadamard&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1585,7 +2327,69 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Hadamard%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://mathworld.wolfram.com/HadamardMatrix.html"&gt;Hadamard Matrix&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry><entry><title>如何取得免費 SSL 憑證</title><link href="https://yaticl.github.io/%E5%A6%82%E4%BD%95%E5%8F%96%E5%BE%97%E5%85%8D%E8%B2%BB-SSL-%E6%86%91%E8%AD%89.html" rel="alternate"></link><published>2018-02-25T17:56:00+08:00</published><updated>2018-02-25T17:56:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-02-25:/如何取得免費-SSL-憑證.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;更新：網站已經改版，變成 &lt;a href="https://zerossl.com/"&gt;ZeroSSL&lt;/a&gt; 的系統，使用方式跟以前比起來略有不同。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有鑑於 Google 將會把沒有加密的網站認定為不安全，因此我也把我的網站改為加密連線。&lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; 是一個免費提供 SSL 憑證的機構，很多主機商有支援取得此機構的 SSL 認證，但是我的主機商是付費的服務，因此我只好自己動手了。&lt;/p&gt;
 &lt;h2 id="_1"&gt;取得憑證&lt;/h2&gt;
@@ -1608,16 +2412,16 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
 &lt;p&gt;驗證成功後會生成 SSL 認證給你下載，之後到主機上的 cPanel 貼上剛剛取得的金鑰，&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" 上傳 SSL" src="https://lculsg.bn.files.1drv.com/y4mPgENB51CiroUYLRNuCZxDS0FVuc0_KOwNx40ahEo7zoDFgV4f1tY_YyrzZhLDnhopc21CJJsc-2yEJXQ5cG1cCAnK32feTFynQByUV_mrvHaFjKkTCRkybJCAU_8thSNMlBQd9Lx_c2JfIumTKBmvi8LE6qgfRnVX0e_-KszoNjkUtSdfT4qdouq0JXuwGa4mGYl3KV2MVRVW3RwMC1Qug?width=773&amp;amp;height=1024&amp;amp;cropmode=none"&gt;&lt;/p&gt;
 &lt;p&gt;如此一來申請的網域就取得 SSL 憑證了。&lt;/p&gt;
-&lt;p&gt;最後一個重點是，此方法取得的 SSL 憑證效力只有 90 天，過期要重新認證，因此建議註冊帳號，讓認證快過期時發提醒給你。&lt;/p&gt;</content><category term="架站相關"></category><category term="SSL"></category></entry><entry><title>Modified Uniformly Redundant Array (MURA) Mask</title><link href="https://yaticl.github.io/modified-uniformly-redundant-array-mura-mask.html" rel="alternate"></link><published>2018-02-21T21:03:00+08:00</published><updated>2018-02-21T21:03:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-02-21:/modified-uniformly-redundant-array-mura-mask.html</id><summary type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度 $L$，但是 $L$ 必須為一質數，則一維的 MURA 加密序列 $A$ 可以表示為：&lt;/p&gt;
-&lt;p&gt;$$A_i=\begin{cases} 0 &amp;amp; \text{ if } i=0 \ 1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \ 0 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/p&gt;
-&lt;p&gt;根據 $A$，則可以得到解碼序列 $G$：&lt;/p&gt;
-&lt;p&gt;$$G_i=\begin{cases} +1 &amp;amp; \text{ if } i=0 \ +1 &amp;amp; \text{ if } A_i=1,i \neq 0 \ -1 &amp;amp; \text{ if } A_i=0,i \neq 0 \ \end{cases}.$$&lt;/p&gt;
-&lt;p&gt;長寬為 $p \times p$ 的二維 MURA 編碼遮罩可以表示成 $\mathbf{A}= { A_{ij} }$，其中：&lt;/p&gt;
-&lt;p&gt;$$A_{i_j}=\begin{cases} 0 &amp;amp; \text{ if } i=0 \ 1 &amp;amp; \text{ if } j=0,i\neq 0 \ 1 &amp;amp; \text{ if } C_i C_j=1 \ 0 &amp;amp; \text{ otherwise } \end{cases} \text{ 當中 } C_i=\begin{cases} +1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } p \ -1 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/p&gt;
-&lt;p&gt;則二維的解碼遮罩 $\mathbf{G}$ 一樣可以由 $\mathbf{A}$ 求得：&lt;/p&gt;
-&lt;p&gt;$$G_{ij}=\begin{cases} +1 &amp;amp; \text{ if } i=0,j=0 \ +1 &amp;amp; \text{ if } A_{ij}=1 \ -1 &amp;amp; \text{ if } A_{ij}=0 \end{cases}.$$&lt;/p&gt;
-&lt;p&gt;上述的 quadratic residue 為二次剩餘，當存在某個 $x$，且 $x^2 \equiv q(\text{mod }n)$，則 $q$ 是 $n$ 的二次剩餘。由於長寬必須要為質數，因此可以用 Euler's criterion 來判斷一個整數是否為某質數的二次剩餘：&lt;/p&gt;
-&lt;p&gt;$$a^{\frac{p-1}{2}}\equiv \begin{cases} +1 (\text{mod } p) &amp;amp; \text{ if there is an integer x such that } a \equiv x^2(\text{mod }p) \ -1 (\text{mod } p)&amp;amp; \text{ if there is no such integer} \end{cases}.$$&lt;/p&gt;
+&lt;p&gt;最後一個重點是，此方法取得的 SSL 憑證效力只有 90 天，過期要重新認證，因此建議註冊帳號，讓認證快過期時發提醒給你。&lt;/p&gt;</content><category term="架站相關"></category><category term="SSL"></category></entry><entry><title>Modified Uniformly Redundant Array (MURA) Mask</title><link href="https://yaticl.github.io/modified-uniformly-redundant-array-mura-mask.html" rel="alternate"></link><published>2018-02-21T21:03:00+08:00</published><updated>2018-02-21T21:03:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-02-21:/modified-uniformly-redundant-array-mura-mask.html</id><summary type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;MURA 常被應用於編碼，而 MURA mask 是一種利用 MURA sequence 生成的遮罩，因此首先介紹如何生成一維序列。MURA 序列是二元序列，可為任何的自定義長度&lt;span class="math"&gt;\(L\)&lt;/span&gt;，但是&lt;span class="math"&gt;\(L\)&lt;/span&gt;必須為一質數，則一維的 MURA 加密序列&lt;span class="math"&gt;\(A\)&lt;/span&gt;可以表示為：&lt;/p&gt;
+&lt;div class="math"&gt;$$A_i=\begin{cases} 0 &amp;amp; \text{ if } i=0 \\ 1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } L \text{ and } i\neq 0 \\ 0 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/div&gt;
+&lt;p&gt;根據&lt;span class="math"&gt;\(A\)&lt;/span&gt;，則可以得到解碼序列&lt;span class="math"&gt;\(G\)&lt;/span&gt;：&lt;/p&gt;
+&lt;div class="math"&gt;$$G_i=\begin{cases} +1 &amp;amp; \text{ if } i=0 \\ +1 &amp;amp; \text{ if } A_i=1,i \neq 0 \\ -1 &amp;amp; \text{ if } A_i=0,i \neq 0 \\ \end{cases}.$$&lt;/div&gt;
+&lt;p&gt;長寬為&lt;span class="math"&gt;\(p \times p\)&lt;/span&gt;的二維 MURA 編碼遮罩可以表示成&lt;span class="math"&gt;\(\mathbf{A}= \{ A_{ij} \}\)&lt;/span&gt;，其中：&lt;/p&gt;
+&lt;div class="math"&gt;$$A_{i_j}=\begin{cases} 0 &amp;amp; \text{ if } i=0 \\ 1 &amp;amp; \text{ if } j=0,i\neq 0 \\ 1 &amp;amp; \text{ if } C_i C_j=1 \\ 0 &amp;amp; \text{ otherwise } \end{cases} \text{ 當中 } C_i=\begin{cases} +1 &amp;amp; \text{ if } i \text{ is a quadratic residue modulo } p \\ -1 &amp;amp; \text{ otherwise } \end{cases}.$$&lt;/div&gt;
+&lt;p&gt;則二維的解碼遮罩&lt;span class="math"&gt;\(\mathbf{G}\)&lt;/span&gt;一樣可以由&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;求得：&lt;/p&gt;
+&lt;div class="math"&gt;$$G_{ij}=\begin{cases} +1 &amp;amp; \text{ if } i=0,j=0 \\ +1 &amp;amp; \text{ if } A_{ij}=1 \\ -1 &amp;amp; \text{ if } A_{ij}=0 \end{cases}.$$&lt;/div&gt;
+&lt;p&gt;上述的 quadratic residue 為二次剩餘，當存在某個&lt;span class="math"&gt;\(x\)&lt;/span&gt;，且&lt;span class="math"&gt;\(x^2 \equiv q(\text{mod }n)\)&lt;/span&gt;，則&lt;span class="math"&gt;\(q\)&lt;/span&gt;是&lt;span class="math"&gt;\(n\)&lt;/span&gt;的二次剩餘。由於長寬必須要為質數，因此可以用 Euler's criterion 來判斷一個整數是否為某質數的二次剩餘：&lt;/p&gt;
+&lt;div class="math"&gt;$$a^{\frac{p-1}{2}}\equiv \begin{cases} +1 (\text{mod } p) &amp;amp; \text{ if there is an integer x such that } a \equiv x^2(\text{mod }p) \\ -1 (\text{mod } p)&amp;amp; \text{ if there is no such integer} \end{cases}.$$&lt;/div&gt;
 &lt;hr&gt;
 &lt;p&gt;以下為二維 MURA 編碼遮罩的 MATLAB 範例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[ t ] = generateMURAs2D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; p &lt;span class="p"&gt;)&lt;/span&gt;
@@ -1666,4 +2470,66 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;Optical Imaging and Spectroscopy. By David J. Brady&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Modified_Uniformly_Redundant_Array"&gt;維基百科&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Computational Imaging"></category><category term="Computational imaging"></category><category term="Digital signal processing"></category><category term="Coded aperture"></category></entry></feed>
