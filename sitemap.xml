@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yaticl.github.io/</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/tags.html</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/categories.html</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/authors.html</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/archives.html</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/search.html</loc>
-<lastmod>2024-01-18T16:24:24-00:00</lastmod>
+<lastmod>2024-01-26T18:00:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -48,6 +48,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://yaticl.github.io/pages/about.html</loc>
 <lastmod>2018-01-20T15:34:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yaticl.github.io/build-opencv-on-windows-arm64.html</loc>
+<lastmod>2024-01-26T15:30:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -277,6 +284,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://yaticl.github.io/category/computer-vision.html</loc>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://yaticl.github.io/category/digital-image-processing.html</loc>
 <lastmod>2018-08-30T17:43:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -349,6 +363,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://yaticl.github.io/category/ying-ti.html</loc>
 <lastmod>2020-09-01T17:30:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yaticl.github.io/tag/computer-vision.html</loc>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yaticl.github.io/tag/opencv.html</loc>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yaticl.github.io/tag/windows.html</loc>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yaticl.github.io/tag/arm64.html</loc>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -508,13 +550,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://yaticl.github.io/tag/windows.html</loc>
-<lastmod>2019-04-23T20:05:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://yaticl.github.io/tag/youtube.html</loc>
 <lastmod>2019-04-23T01:11:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -614,7 +649,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yaticl.github.io/author/ya-ti.html</loc>
-<lastmod>2024-01-15T16:00:00+08:06</lastmod>
+<lastmod>2024-01-26T15:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
