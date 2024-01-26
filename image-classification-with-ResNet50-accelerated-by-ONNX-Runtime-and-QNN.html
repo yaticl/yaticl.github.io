@@ -38,7 +38,7 @@
 
 <meta name="author" content="Ya-Ti" />
 <meta name="description" content="背景 由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC，Intel、AMD 與高通等廠商，開始直接在處理器當中內 …" />
-<meta name="keywords" content="Machine Learning, AI, ONNX, DirectML">
+<meta name="keywords" content="Machine Learning, AI, ONNX, DirectML, ARM64">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
@@ -55,6 +55,7 @@
 <meta property="article:tag" content="AI"/>
 <meta property="article:tag" content="ONNX"/>
 <meta property="article:tag" content="DirectML"/>
+<meta property="article:tag" content="ARM64"/>
 <meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
 
   <title>Ya-Ti's Blog &ndash; 使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理</title>
@@ -310,6 +311,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
       <a href="https://yaticl.github.io/tag/ai.html">AI</a>
       <a href="https://yaticl.github.io/tag/onnx.html">ONNX</a>
       <a href="https://yaticl.github.io/tag/directml.html">DirectML</a>
+      <a href="https://yaticl.github.io/tag/arm64.html">ARM64</a>
     </p>
   </div>
 
@@ -318,6 +320,9 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
     <a class="btn float-left" href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" title="使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理">
       <i class="fa fa-angle-left"></i> 上一篇文章
     </a>
+    <a class="btn float-right" href="https://yaticl.github.io/build-opencv-on-windows-arm64.html" title="建置支援 Windows ARM64 的 OpenCV">
+      下一篇文章 <i class="fa fa-angle-right"></i>
+    </a>
   </div>
 
   <div class="related-posts">
@@ -325,6 +330,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
     <ul class="related-posts">
       <li><a href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</a></li>
       <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</a></li>
+      <li><a href="https://yaticl.github.io/build-opencv-on-windows-arm64.html">建置支援 Windows ARM64 的 OpenCV</a></li>
     </ul>
   </div>
 
@@ -335,7 +341,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
       分享到:
       <a href="https://sharetodiaspora.github.io/?title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html&hashtags=machine-learning,ai,onnx,directml" target="_blank" title="分享到 Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html&hashtags=machine-learning,ai,onnx,directml,arm64" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄

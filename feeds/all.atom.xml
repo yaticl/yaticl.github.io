@@ -1,5 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/all.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2024-01-15T16:00:00+08:00</updated><entry><title>使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理</title><link href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" rel="alternate"></link><published>2024-01-15T16:00:00+08:00</published><updated>2024-01-15T16:00:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-15:/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/all.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2024-01-26T15:30:00+08:00</updated><entry><title>建置支援 Windows ARM64 的 OpenCV</title><link href="https://yaticl.github.io/build-opencv-on-windows-arm64.html" rel="alternate"></link><published>2024-01-26T15:30:00+08:00</published><updated>2024-01-26T15:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-26:/build-opencv-on-windows-arm64.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+&lt;p&gt;OpenCV 是一個知名的開源電腦視覺函示庫，包含超過 2500 種的演算法。由於 OpenCV 官方提供的預建置二進位檔案沒有包含 Windows ARM64 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+&lt;p&gt;OpenCV 是一個知名的開源電腦視覺函示庫，包含超過 2500 種的演算法。由於 OpenCV 官方提供的預建置二進位檔案沒有包含 Windows ARM64，所以只好嘗試從原始碼建置支援 ARM64 的二進位檔案。&lt;/p&gt;
+&lt;h2 id="_2"&gt;事先準備&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;一台支援 Windows 11 ARM64 的電腦。&lt;/li&gt;
+&lt;li&gt;安裝 &lt;a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8"&gt;Visual Studio 2022 (VS)&lt;/a&gt; 或更新的版本&lt;/li&gt;
+&lt;li&gt;安裝 &lt;a href="https://cmake.org/download/"&gt;CMake&lt;/a&gt;，也可使用 &lt;code&gt;winget&lt;/code&gt; 安裝：&lt;code&gt;winget install Kitware.CMake&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;下載並解壓縮 &lt;a href="https://opencv.org/releases/"&gt;OpenCV&lt;/a&gt;，可下載包含 Windows x64 預建置二進位檔案的版本。&lt;/li&gt;
+&lt;li&gt;下載並解壓縮&lt;a href="https://github.com/opencv/opencv_contrib"&gt;額外模組&lt;/a&gt;( 可選 )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="opencv"&gt;建置 OpenCV&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;首先要用 CMake 產生用來建置 OpenCV 的 VS 方案，打開 &lt;code&gt;CMake (cmake-gui)&lt;/code&gt; 設定原始碼的路徑 (ex. &lt;code&gt;C:/opencv/sources&lt;/code&gt;) 與建置用的資料夾路徑 (ex. &lt;code&gt;C:/opencv/builds&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;點選 &lt;code&gt;Configure&lt;/code&gt;，設定編譯器與目標平台，這裡選擇 &lt;code&gt;ARM64&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="cmake_compiler" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647133&amp;amp;authkey=%21AB8bVxq20hZSFxI&amp;amp;width=660"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;接著要調整 CMake 的設定，用來產生合適的 VS 方案來建置 OpenCV，這裡紀錄有修改的非預設設定&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;BUILD_opencv_world&lt;/td&gt;
+&lt;td&gt;ON&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CV_ENABLE_INTRINSICS&lt;/td&gt;
+&lt;td&gt;OFF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU_BASELINE&lt;/td&gt;
+&lt;td&gt;NEON&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;BUILD_opencv_world&lt;/code&gt; 設定為 &lt;code&gt;ON&lt;/code&gt; 會將多個模組合併成一個單一檔案，讓之後用起來方便。
+取消 &lt;code&gt;CV_ENABLE_INTRINSICS&lt;/code&gt; 是為了通過建置。
+&lt;code&gt;CPU_BASELINE&lt;/code&gt; 是最低的指令集規格，預設多了一項 &lt;code&gt;FP16&lt;/code&gt;，會導致相容性問題，故刪除。
+若要加入額外模組，則需要將額外模組所在的路徑加入設定，如&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OPENCV_EXTRA_MODULES_PATH&lt;/td&gt;
+&lt;td&gt;C:/opencv/opencv_contrib-4.x/modules&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;其餘的設定選項可以參考&lt;a href="https://docs.opencv.org/4.x/db/d05/tutorial_config_reference.html"&gt;官網&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;調整完設定後點選 &lt;code&gt;Configure&lt;/code&gt; 直到紅底都消失，再點選 &lt;code&gt;Generate&lt;/code&gt; 產生 VS 方案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="make_config" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647134&amp;amp;authkey=%21ADgyPWSRZ4xvV1w&amp;amp;height=660"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打開產生出來的 &lt;code&gt;OpenCV.sln&lt;/code&gt; 方案，點選 &lt;code&gt;CMakeTargets/INSTALL&lt;/code&gt; 專案，滑鼠右鍵選單選擇 &lt;code&gt;Build&lt;/code&gt;，開始建置 OpenCV，接下來可以去喝杯咖啡等待建置完成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="vs_install" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647137&amp;amp;authkey=%21AE1CEMbiaAp0EwI&amp;amp;height=660"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建置完成後，二進位檔案會在建置資料夾中的 &lt;code&gt;install/&lt;/code&gt; 資料夾內，所含內容相當於下載來的預建置檔案，最好將其複製到一個單純的路徑，如 &lt;code&gt;C:\opencv\build_ARM64\&lt;/code&gt;，以利使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="opencv_1"&gt;測試 OpenCV&lt;/h2&gt;
+&lt;p&gt;為了測試建置好的檔案，創建一個簡單的 C++ 控制台應用程式。
+- 建立專案後，在專案的屬性設定頁中在 &lt;code&gt;C/C++/General&lt;/code&gt; 的頁面增加額外的 Include 路徑，如 &lt;code&gt;C:\opencv\build_ARM64\include&lt;/code&gt;。
+- 在 &lt;code&gt;Linker\General&lt;/code&gt; 頁面當中的 &lt;code&gt;Additional Library Directories&lt;/code&gt; 加入額外函式庫的路徑，如 &lt;code&gt;C:\opencv\build_ARM64\ARM64\vc17\lib&lt;/code&gt;。
+- 在 &lt;code&gt;Linker\Input&lt;/code&gt; 頁面當中的 &lt;code&gt;Additional Dependencies&lt;/code&gt; 加入額外的相依性，如 &lt;code&gt;opencv_world490.lib&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;這裡使官方的&lt;a href="https://docs.opencv.org/4.x/dd/d6e/tutorial_windows_visual_studio_opencv.html"&gt;範例&lt;/a&gt;來測試，用 OpenCV 讀取並顯示一張影像，程式碼：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;opencv2/opencv.hpp&amp;gt;&lt;/span&gt;
+&lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;namespace&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;cv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;imread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;C:&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;Path&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;to&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;image.jpg&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;IMREAD_COLOR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No image data &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;-1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;namedWindow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Display Image&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WINDOW_AUTOSIZE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;imshow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Display Image&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;waitKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;建置並執行後，成功的顯示指定的影像。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="display_img" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647136&amp;amp;authkey=%21APDuAZEKgCH4pNA&amp;amp;width=636&amp;amp;height=696"&gt;&lt;/p&gt;
+&lt;h2 id="_3"&gt;心得&lt;/h2&gt;
+&lt;p&gt;建置的過程遇到的坑比想像中的少，實際要改的設定不多。
+目前雖然成功的建置原生支援 Windows ARM64 的 OpenCV，但是其他模組會不會有問題還需要近一步的測試。&lt;/p&gt;</content><category term="Computer Vision"></category><category term="Computer Vision"></category><category term="OpenCV"></category><category term="Windows"></category><category term="ARM64"></category></entry><entry><title>使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理</title><link href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" rel="alternate"></link><published>2024-01-15T16:00:00+08:00</published><updated>2024-01-15T16:00:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-15:/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC，Intel、AMD 與高通等廠商，開始直接在處理器當中內 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC，Intel、AMD 與高通等廠商，開始直接在處理器當中內建 Neural Processing Unit (NPU) 來加速 AI 模型的推理。
 在之前的測試中，實現了使用 ONNX Runtime 與 DirectML 實現對 ResNet50 分類器的加速推理，這裡想嘗試使用基於 NPU 的推理加速。&lt;/p&gt;
@@ -151,7 +258,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 &lt;h2 id="_5"&gt;心得&lt;/h2&gt;
 &lt;p&gt;經過測試，ONNX Runtime 與 QNN EP 的組合，似乎在 Microsoft SQ 3 上無法順利地執行，不知道原因是否是由於無法將 SQ3 辨認為 8cx Gen 3。
 奇妙的是，我的開發機器 (Surface Pro 9 5g) 內建 Windows Studio Effects，其負載應該就是在 NPU 上，也許這功能不是透過 ONNX 來調用 NPU？
-在這個簡單的分類器範例，QNN EP 的相容性似乎不太好，希望微軟與高通可以持續改善 QNN EP 在 ONNX 的開發體驗。&lt;/p&gt;</content><category term="Machine Learning"></category><category term="Machine Learning"></category><category term="AI"></category><category term="ONNX"></category><category term="DirectML"></category></entry><entry><title>使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</title><link href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" rel="alternate"></link><published>2024-01-14T15:30:00+08:00</published><updated>2024-01-14T15:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-14:/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
+在這個簡單的分類器範例，QNN EP 的相容性似乎不太好，希望微軟與高通可以持續改善 QNN EP 在 ONNX 的開發體驗。&lt;/p&gt;</content><category term="Machine Learning"></category><category term="Machine Learning"></category><category term="AI"></category><category term="ONNX"></category><category term="DirectML"></category><category term="ARM64"></category></entry><entry><title>使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</title><link href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" rel="alternate"></link><published>2024-01-14T15:30:00+08:00</published><updated>2024-01-14T15:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-14:/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;在先前的&lt;a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html#image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML"&gt;實測&lt;/a&gt;中，已經利用 ONNX Runtime 與 DirectML 來加速 ResNet50 影像分類器的推理，所以接下來就測試比較複雜也比較實用的生成式 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
 &lt;p&gt;在先前的&lt;a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html#image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML"&gt;實測&lt;/a&gt;中，已經利用 ONNX Runtime 與 DirectML 來加速 ResNet50 影像分類器的推理，所以接下來就測試比較複雜也比較實用的生成式模型。
 這裡嘗試使用 ONNX Runtime 與 DirectML 來實現對 Stable Diffusion 的加速推理。&lt;/p&gt;

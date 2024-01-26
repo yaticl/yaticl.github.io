@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://yaticl.github.io/theme/pygments/github.min.css">
+
+    <script src="https://yaticl.github.io/theme/tipuesearch/jquery.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="https://yaticl.github.io/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="https://yaticl.github.io/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="https://yaticl.github.io/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://yaticl.github.io/theme/font-awesome/css/solid.css">
+
+
+    <link href="https://yaticl.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ya-Ti's Blog Atom">
+
+
+    <link rel="shortcut icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://yaticl.github.io/icons/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Ya-Ti" />
+<meta name="description" content="背景 OpenCV 是一個知名的開源電腦視覺函示庫，包含超過 2500 種的演算法。由於 OpenCV 官方提供的預建置二進位檔案沒有包含 Windows ARM64 …" />
+<meta name="keywords" content="Computer Vision, OpenCV, Windows, ARM64">
+
+
+<meta property="og:site_name" content="Ya-Ti's Blog"/>
+<meta property="og:title" content="建置支援 Windows ARM64 的 OpenCV"/>
+<meta property="og:description" content="背景 OpenCV 是一個知名的開源電腦視覺函示庫，包含超過 2500 種的演算法。由於 OpenCV 官方提供的預建置二進位檔案沒有包含 Windows ARM64 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://yaticl.github.io/build-opencv-on-windows-arm64.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2024-01-26 15:30:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
+<meta property="article:section" content="Computer Vision"/>
+<meta property="article:tag" content="Computer Vision"/>
+<meta property="article:tag" content="OpenCV"/>
+<meta property="article:tag" content="Windows"/>
+<meta property="article:tag" content="ARM64"/>
+<meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
+
+  <title>Ya-Ti's Blog &ndash; 建置支援 Windows ARM64 的 OpenCV</title>
+
+  <style>
+    a {color: #0078D7;}
+    a:hover {color: #0063B1;}
+    a.btn {background-color: #0078D7;}
+    a.btn:hover {
+                  color: white;
+                  background-color: #0063B1;
+                }
+    .tag-cloud a {
+                    background-color: #0078D7;
+                    padding: .2em .6em .2em;
+                    font-size: .74em;
+                    line-height: 1;
+                    color: white;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: .25em;
+                  }
+
+    .tag-cloud a:hover {background-color: #0063B1;}
+  </style>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://yaticl.github.io">
+        <img src="https://yaticl.github.io/images/profile.jpg" alt="" title="">
+      </a>
+
+      <h1>
+        <a href="https://yaticl.github.io"></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="搜尋...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://yaticl.github.io/pages/about.html#about">
+                  關於我
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/yaticl/MyNotebooks" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="https://yaticl.github.io/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://yaticl.github.io">Home</a>
+
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://yaticl.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="build-opencv-on-windows-arm64">建置支援 Windows ARM64 的 OpenCV</h1>
+    <p>
+      Posted on Fri 26 January 2024 in <a href="https://yaticl.github.io/category/computer-vision.html">Computer Vision</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2 id="_1">背景</h2>
+<p>OpenCV 是一個知名的開源電腦視覺函示庫，包含超過 2500 種的演算法。由於 OpenCV 官方提供的預建置二進位檔案沒有包含 Windows ARM64，所以只好嘗試從原始碼建置支援 ARM64 的二進位檔案。</p>
+<h2 id="_2">事先準備</h2>
+<ul>
+<li>一台支援 Windows 11 ARM64 的電腦。</li>
+<li>安裝 <a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8">Visual Studio 2022 (VS)</a> 或更新的版本</li>
+<li>安裝 <a href="https://cmake.org/download/">CMake</a>，也可使用 <code>winget</code> 安裝：<code>winget install Kitware.CMake</code>。</li>
+<li>下載並解壓縮 <a href="https://opencv.org/releases/">OpenCV</a>，可下載包含 Windows x64 預建置二進位檔案的版本。</li>
+<li>下載並解壓縮<a href="https://github.com/opencv/opencv_contrib">額外模組</a>( 可選 )</li>
+</ul>
+<h2 id="opencv">建置 OpenCV</h2>
+<ul>
+<li>首先要用 CMake 產生用來建置 OpenCV 的 VS 方案，打開 <code>CMake (cmake-gui)</code> 設定原始碼的路徑 (ex. <code>C:/opencv/sources</code>) 與建置用的資料夾路徑 (ex. <code>C:/opencv/builds</code>)。</li>
+<li>點選 <code>Configure</code>，設定編譯器與目標平台，這裡選擇 <code>ARM64</code>。</li>
+</ul>
+<p><img alt="cmake_compiler" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647133&amp;authkey=%21AB8bVxq20hZSFxI&amp;width=660"></p>
+<ul>
+<li>
+<p>接著要調整 CMake 的設定，用來產生合適的 VS 方案來建置 OpenCV，這裡紀錄有修改的非預設設定</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BUILD_opencv_world</td>
+<td>ON</td>
+</tr>
+<tr>
+<td>CV_ENABLE_INTRINSICS</td>
+<td>OFF</td>
+</tr>
+<tr>
+<td>CPU_BASELINE</td>
+<td>NEON</td>
+</tr>
+</tbody>
+</table>
+<p><code>BUILD_opencv_world</code> 設定為 <code>ON</code> 會將多個模組合併成一個單一檔案，讓之後用起來方便。
+取消 <code>CV_ENABLE_INTRINSICS</code> 是為了通過建置。
+<code>CPU_BASELINE</code> 是最低的指令集規格，預設多了一項 <code>FP16</code>，會導致相容性問題，故刪除。
+若要加入額外模組，則需要將額外模組所在的路徑加入設定，如</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPENCV_EXTRA_MODULES_PATH</td>
+<td>C:/opencv/opencv_contrib-4.x/modules</td>
+</tr>
+</tbody>
+</table>
+<p>其餘的設定選項可以參考<a href="https://docs.opencv.org/4.x/db/d05/tutorial_config_reference.html">官網</a>。</p>
+</li>
+<li>
+<p>調整完設定後點選 <code>Configure</code> 直到紅底都消失，再點選 <code>Generate</code> 產生 VS 方案。</p>
+</li>
+</ul>
+<p><img alt="make_config" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647134&amp;authkey=%21ADgyPWSRZ4xvV1w&amp;height=660"></p>
+<ul>
+<li>打開產生出來的 <code>OpenCV.sln</code> 方案，點選 <code>CMakeTargets/INSTALL</code> 專案，滑鼠右鍵選單選擇 <code>Build</code>，開始建置 OpenCV，接下來可以去喝杯咖啡等待建置完成。</li>
+</ul>
+<p><img alt="vs_install" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647137&amp;authkey=%21AE1CEMbiaAp0EwI&amp;height=660"></p>
+<ul>
+<li>建置完成後，二進位檔案會在建置資料夾中的 <code>install/</code> 資料夾內，所含內容相當於下載來的預建置檔案，最好將其複製到一個單純的路徑，如 <code>C:\opencv\build_ARM64\</code>，以利使用。</li>
+</ul>
+<h2 id="opencv_1">測試 OpenCV</h2>
+<p>為了測試建置好的檔案，創建一個簡單的 C++ 控制台應用程式。
+- 建立專案後，在專案的屬性設定頁中在 <code>C/C++/General</code> 的頁面增加額外的 Include 路徑，如 <code>C:\opencv\build_ARM64\include</code>。
+- 在 <code>Linker\General</code> 頁面當中的 <code>Additional Library Directories</code> 加入額外函式庫的路徑，如 <code>C:\opencv\build_ARM64\ARM64\vc17\lib</code>。
+- 在 <code>Linker\Input</code> 頁面當中的 <code>Additional Dependencies</code> 加入額外的相依性，如 <code>opencv_world490.lib</code>。</p>
+<p>這裡使官方的<a href="https://docs.opencv.org/4.x/dd/d6e/tutorial_windows_visual_studio_opencv.html">範例</a>來測試，用 OpenCV 讀取並顯示一張影像，程式碼：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;opencv2/opencv.hpp&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">cv</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="w"> </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Mat</span><span class="w"> </span><span class="n">image</span><span class="p">;</span>
+<span class="w">    </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imread</span><span class="p">(</span><span class="s">&quot;C:</span><span class="se">\\</span><span class="s">Path</span><span class="se">\\</span><span class="s">to</span><span class="se">\\</span><span class="s">image.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">IMREAD_COLOR</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">image</span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;No image data </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">namedWindow</span><span class="p">(</span><span class="s">&quot;Display Image&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">WINDOW_AUTOSIZE</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">imshow</span><span class="p">(</span><span class="s">&quot;Display Image&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">image</span><span class="p">);</span>
+<span class="w">    </span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>建置並執行後，成功的顯示指定的影像。</p>
+<p><img alt="display_img" src="https://onedrive.live.com/embed?resid=0ac6f83c0ab8f9e1%211647136&amp;authkey=%21APDuAZEKgCH4pNA&amp;width=636&amp;height=696"></p>
+<h2 id="_3">心得</h2>
+<p>建置的過程遇到的坑比想像中的少，實際要改的設定不多。
+目前雖然成功的建置原生支援 Windows ARM64 的 OpenCV，但是其他模組會不會有問題還需要近一步的測試。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://yaticl.github.io/tag/computer-vision.html">Computer Vision</a>
+      <a href="https://yaticl.github.io/tag/opencv.html">OpenCV</a>
+      <a href="https://yaticl.github.io/tag/windows.html">Windows</a>
+      <a href="https://yaticl.github.io/tag/arm64.html">ARM64</a>
+    </p>
+  </div>
+
+
+  <div class="neighbors">
+    <a class="btn float-left" href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" title="使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理">
+      <i class="fa fa-angle-left"></i> 上一篇文章
+    </a>
+  </div>
+
+  <div class="related-posts">
+    <h4>你可能也感興趣</h4>
+    <ul class="related-posts">
+      <li><a href="https://yaticl.github.io/解決-Windows-系統下-Matplotlib-在-HiDPI-顯示器顯示過小的問題.html">如何解決 Windows 系統下 Matplotlib 在 HiDPI 顯示器顯示過小的問題</a></li>
+      <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html">使用 ONNX Runtime 與 Qualcomm QNN 加速 ResNet50 影像分類推理</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <p id="post-share-links">
+      分享到:
+      <a href="https://sharetodiaspora.github.io/?title=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV&url=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      ❄
+      <a href="https://twitter.com/intent/tweet?text=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV&url=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html&hashtags=computer-vision,opencv,windows,arm64" target="_blank" title="分享到 Twitter">Twitter</a>
+      ❄
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      ❄
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html&title=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV&summary=%E8%83%8C%E6%99%AF%0AOpenCV%20%E6%98%AF%E4%B8%80%E5%80%8B%E7%9F%A5%E5%90%8D%E7%9A%84%E9%96%8B%E6%BA%90%E9%9B%BB%E8%85%A6%E8%A6%96%E8%A6%BA%E5%87%BD%E7%A4%BA%E5%BA%AB%EF%BC%8C%E5%8C%85%E5%90%AB%E8%B6%85%E9%81%8E%202500%20%E7%A8%AE%E7%9A%84%E6%BC%94%E7%AE%97%E6%B3%95%E3%80%82%E7%94%B1%E6%96%BC%20OpenCV%20%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E7%9A%84%E9%A0%90%E5%BB%BA%E7%BD%AE%E4%BA%8C%E9%80%B2%E4%BD%8D%E6%AA%94%E6%A1%88%E6%B2%92%E6%9C%89%E5%8C%85%E5%90%AB%20Windows%20ARM64%20%E2%80%A6&source=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      ❄
+      <a href="https://news.ycombinator.com/submitlink?t=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV&u=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      ❄
+      <a href="mailto:?subject=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV&amp;body=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html" target="_blank" title="從 Email 分享">Email</a>
+      ❄
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/build-opencv-on-windows-arm64.html&title=%E5%BB%BA%E7%BD%AE%E6%94%AF%E6%8F%B4%20Windows%20ARM64%20%E7%9A%84%20OpenCV" target="_blank" title="從 Reddit 分享">Reddit</a>
+    </p>
+  </section>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ya-Ti's Blog ",
+  "url" : "https://yaticl.github.io",
+  "image": "https://yaticl.github.io/images/profile.jpg",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>
