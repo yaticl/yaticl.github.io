@@ -1,15 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Digital Signal Processing</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/digital-signal-processing.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2018-03-16T21:23:00+08:00</updated><entry><title>Maximum-Length Sequence</title><link href="https://yaticl.github.io/maximum-length-sequence.html" rel="alternate"></link><published>2018-03-16T21:23:00+08:00</published><updated>2018-03-16T21:23:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-16:/maximum-length-sequence.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度 $P=2^N-1$，其中 $N$ 代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
-&lt;p&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/p&gt;
-&lt;p&gt;其中 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度 $P=2^N-1$，其中 $N$ 代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
-&lt;p&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/p&gt;
-&lt;p&gt;其中 $\oplus$ 代表 XOR 運算。若將將產生出來的 $0,1$ 邏輯值由下式轉換成 $1,-1$，則為 MLS 訊號：&lt;/p&gt;
-&lt;p&gt;$$0 \rightarrow 1$$&lt;br&gt;
-$$1 \rightarrow -1.$$&lt;/p&gt;
+&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度&lt;span class="math"&gt;\(P=2^N-1\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(N\)&lt;/span&gt;代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
+&lt;div class="math"&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/div&gt;
+&lt;p&gt;其中 …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Maximum-Length Sequence (MLS) 是一種二值序列，長度&lt;span class="math"&gt;\(P=2^N-1\)&lt;/span&gt;，其中&lt;span class="math"&gt;\(N\)&lt;/span&gt;代表整數。MLS 可以利用以下的關係式遞迴產生：&lt;/p&gt;
+&lt;div class="math"&gt;$$n(k+3)=n(k) \oplus n(k+2),$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(\oplus\)&lt;/span&gt;代表 XOR 運算。若將將產生出來的&lt;span class="math"&gt;\(0,1\)&lt;/span&gt;邏輯值由下式轉換成&lt;span class="math"&gt;\(1,-1\)&lt;/span&gt;，則為 MLS 訊號：&lt;/p&gt;
+&lt;div class="math"&gt;$$0 \rightarrow 1$$&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;$$1 \rightarrow -1.$$&lt;/div&gt;
 &lt;h2 id="_2"&gt;性質&lt;/h2&gt;
-&lt;p&gt;在 MLS 當中，$0$ 與 $1$ 的數量大約相同，有 $2^{N-1}$ 個 $1$ 和 $2^{N-1}-1$ 個 $0$。另一個的性質是 MLS 訊號的自相關為 delta function。&lt;/p&gt;
+&lt;p&gt;在 MLS 當中，&lt;span class="math"&gt;\(0\)&lt;/span&gt;與&lt;span class="math"&gt;\(1\)&lt;/span&gt;的數量大約相同，有&lt;span class="math"&gt;\(2^{N-1}\)&lt;/span&gt;個&lt;span class="math"&gt;\(1\)&lt;/span&gt;和&lt;span class="math"&gt;\(2^{N-1}-1\)&lt;/span&gt;個&lt;span class="math"&gt;\(0\)&lt;/span&gt;。另一個的性質是 MLS 訊號的自相關為 delta function。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
 &lt;p&gt;在 Scipy 的函示庫中的 signal 模組有實作 MLS，其範例如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
@@ -41,4 +104,66 @@ $$1 \rightarrow -1.$$&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Signal%20Processing/Maximum-Length%20Sequences.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.commsp.ee.ic.ac.uk/~mrt102/projects/mls/MLS%20Theory.pdf"&gt;MLS Theory&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;</content><category term="Digital Signal Processing"></category><category term="Digital signal processing"></category><category term="Python"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.max_len_seq.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Digital Signal Processing"></category><category term="Digital signal processing"></category><category term="Python"></category></entry></feed>

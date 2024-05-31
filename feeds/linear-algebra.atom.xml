@@ -1,20 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Ya-Ti's Blog - Linear Algebra</title><link href="https://yaticl.github.io/" rel="alternate"></link><link href="https://yaticl.github.io/feeds/linear-algebra.atom.xml" rel="self"></link><id>https://yaticl.github.io/</id><updated>2018-03-09T21:18:00+08:00</updated><entry><title>Toeplitz Matrix</title><link href="https://yaticl.github.io/toeplitz-matrix.html" rel="alternate"></link><published>2018-03-09T21:18:00+08:00</published><updated>2018-03-09T21:18:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-09:/toeplitz-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。&lt;br&gt;
-對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=\begin{bmatrix}&lt;br&gt;
-a_0 &amp;amp; a_{-1} &amp;amp; a_ …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+對任一&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的矩陣&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;，可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=\begin{bmatrix}  
+a_0 &amp;amp; a_{-1} &amp;amp; a_ …&lt;/div&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
 &lt;p&gt;Toeplitz matrix 又被稱為常對角矩陣，是一個對角線都是常數的矩陣。&lt;br&gt;
-對任一 $n \times n$ 的矩陣 $\mathbf{A}$，可以表示成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=\begin{bmatrix}&lt;br&gt;
-a_0 &amp;amp; a_{-1} &amp;amp; a_{-2} &amp;amp; \cdots &amp;amp; a_{-(n-1)} \&lt;br&gt;
-a_1 &amp;amp; a_0 &amp;amp; a_{-1} &amp;amp; \ddots &amp;amp; \vdots \&lt;br&gt;
-a_2 &amp;amp; a_1 &amp;amp; \ddots &amp;amp; \ddots &amp;amp; \vdots \&lt;br&gt;
-\vdots &amp;amp; \ddots &amp;amp; \ddots &amp;amp; a_0 &amp;amp; a_{-1} \&lt;br&gt;
-a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0&lt;br&gt;
-\end{bmatrix},$$&lt;/p&gt;
+對任一&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的矩陣&lt;span class="math"&gt;\(\mathbf{A}\)&lt;/span&gt;，可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=\begin{bmatrix}  
+a_0 &amp;amp; a_{-1} &amp;amp; a_{-2} &amp;amp; \cdots &amp;amp; a_{-(n-1)} \\  
+a_1 &amp;amp; a_0 &amp;amp; a_{-1} &amp;amp; \ddots &amp;amp; \vdots \\  
+a_2 &amp;amp; a_1 &amp;amp; \ddots &amp;amp; \ddots &amp;amp; \vdots \\  
+\vdots &amp;amp; \ddots &amp;amp; \ddots &amp;amp; a_0 &amp;amp; a_{-1} \\  
+a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0  
+\end{bmatrix},$$&lt;/div&gt;
 &lt;p&gt;其通式可以寫成：&lt;/p&gt;
-&lt;p&gt;$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\mathbf{A}=A_{i,j}=A_{i+1,j+1}=a_{i-j}.$$&lt;/div&gt;
 &lt;h2 id="_2"&gt;範例&lt;/h2&gt;
 &lt;p&gt;Scipy 中有實作創造 Toeplitz matrix：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;toeplitz&lt;/span&gt;
@@ -38,50 +99,173 @@ a_{n-1} &amp;amp; \cdots &amp;amp; a_2 &amp;amp; a_1 &amp;amp; a_0&lt;br&gt;
 
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Toeplitz%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="convolution"&gt;Convolution&lt;/h2&gt;
-&lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。$h$ 與 $x$ 的 convolution 可以表示成：&lt;/p&gt;
-&lt;p&gt;$$y=h\ast x=\begin{bmatrix}&lt;br&gt;
-h_1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; 0 \&lt;br&gt;
-h_2 &amp;amp; h_1 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \
-h_3 &amp;amp; h_2 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
-\vdots &amp;amp; h_3 &amp;amp; \ddots &amp;amp; h_1 &amp;amp; \vdots \&lt;br&gt;
-h_m &amp;amp; \vdots &amp;amp; \ddots &amp;amp; h_2 &amp;amp; h_1 \&lt;br&gt;
-0 &amp;amp; h_m &amp;amp; \ddots &amp;amp; h_3 &amp;amp; h_2 \&lt;br&gt;
-0 &amp;amp; 0 &amp;amp; h_m &amp;amp; \vdots &amp;amp; h_3 \&lt;br&gt;
-\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; h_m &amp;amp; \vdots \&lt;br&gt;
-0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; h_m&lt;br&gt;
-\end{bmatrix} \begin{bmatrix}&lt;br&gt;
-x_1 \&lt;br&gt;
-x_2 \&lt;br&gt;
-x_3 \&lt;br&gt;
-\vdots \&lt;br&gt;
-x_n&lt;br&gt;
-\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;convolution 運算中的輸入，可以轉換成 toeplitz matrix，使運算可以寫成矩陣乘法。&lt;span class="math"&gt;\(h\)&lt;/span&gt;與&lt;span class="math"&gt;\(x\)&lt;/span&gt;的 convolution 可以表示成：&lt;/p&gt;
+&lt;div class="math"&gt;$$y=h\ast x=\begin{bmatrix}  
+h_1 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; 0 \\  
+h_2 &amp;amp; h_1 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\
+h_3 &amp;amp; h_2 &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\  
+\vdots &amp;amp; h_3 &amp;amp; \ddots &amp;amp; h_1 &amp;amp; \vdots \\  
+h_m &amp;amp; \vdots &amp;amp; \ddots &amp;amp; h_2 &amp;amp; h_1 \\  
+0 &amp;amp; h_m &amp;amp; \ddots &amp;amp; h_3 &amp;amp; h_2 \\  
+0 &amp;amp; 0 &amp;amp; h_m &amp;amp; \vdots &amp;amp; h_3 \\  
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; h_m &amp;amp; \vdots \\  
+0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 &amp;amp; h_m  
+\end{bmatrix} \begin{bmatrix}  
+x_1 \\  
+x_2 \\  
+x_3 \\  
+\vdots \\  
+x_n  
+\end{bmatrix}$$&lt;/div&gt;
 &lt;h2 id="_3"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html"&gt;Scipy&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Toeplitz_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://yaticl.github.io/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
-當要 …&lt;/p&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
-&lt;p&gt;Hadamard matrix 是一種只包含 $(-1,+1)$ 的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
-當要畫出該矩陣時，定義 $+1$ 代表黑色，而 $-1$ 代表白色。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Toeplitz_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Python"></category></entry><entry><title>Hadamard Matrix</title><link href="https://yaticl.github.io/hadamard-matrix.html" rel="alternate"></link><published>2018-03-06T22:35:00+08:00</published><updated>2018-03-06T22:35:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2018-03-06:/hadamard-matrix.html</id><summary type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
+當要 …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2 id="_1"&gt;簡介&lt;/h2&gt;
+&lt;p&gt;Hadamard matrix 是一種只包含&lt;span class="math"&gt;\((-1,+1)\)&lt;/span&gt;的矩陣，其特性是取任兩行或是列放在一起比較，則會有一半是同號，另一半則是不同號。&lt;br&gt;
+當要畫出該矩陣時，定義&lt;span class="math"&gt;\(+1\)&lt;/span&gt;代表黑色，而&lt;span class="math"&gt;\(-1\)&lt;/span&gt;代表白色。&lt;/p&gt;
 &lt;h2 id="_2"&gt;特性&lt;/h2&gt;
-&lt;p&gt;${n \times n}$ 的 Hadamard matrix $H_n$ 會有 $n \frac{n(n-1)}{2}$ 個 $(-1)$ 方塊以及 $\frac{n(n+1)}{2}$ 個 $(+1)$ 的方塊。&lt;br&gt;
-令 $H_n$ 為 $n$ 階的 Hadamard matrix，則其定義為：&lt;/p&gt;
-&lt;p&gt;$$H_n{H_n}^T=nI_n,$$&lt;/p&gt;
-&lt;p&gt;其中 $I_n$ 為 $n \times n$ 的單位矩陣。&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\({n \times n}\)&lt;/span&gt;的 Hadamard matrix &lt;span class="math"&gt;\(H_n\)&lt;/span&gt;會有&lt;span class="math"&gt;\(n \frac{n(n-1)}{2}\)&lt;/span&gt;個&lt;span class="math"&gt;\((-1)\)&lt;/span&gt;方塊以及&lt;span class="math"&gt;\(\frac{n(n+1)}{2}\)&lt;/span&gt;個&lt;span class="math"&gt;\((+1)\)&lt;/span&gt;的方塊。&lt;br&gt;
+令&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則其定義為：&lt;/p&gt;
+&lt;div class="math"&gt;$$H_n{H_n}^T=nI_n,$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(I_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n \times n\)&lt;/span&gt;的單位矩陣。&lt;/p&gt;
 &lt;h2 id="sylvesters-construction"&gt;Sylvester's construction&lt;/h2&gt;
-&lt;p&gt;假設 $H_n$ 為 $n$ 階的 Hadamard matrix，則可以藉由分區矩陣：&lt;/p&gt;
-&lt;p&gt;$$\begin{bmatrix}&lt;br&gt;
-H &amp;amp; H \&lt;br&gt;
-H &amp;amp; -H&lt;br&gt;
-\end{bmatrix}.$$&lt;/p&gt;
-&lt;p&gt;來形成 $2n$ 階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於 $2\leqslant k \in N$，其通式為：&lt;/p&gt;
-&lt;p&gt;$$H_{2^k}=\begin{bmatrix}&lt;br&gt;
-H_{2^{k-1}} &amp;amp; H_{2^{k-1}} \&lt;br&gt;
-H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
-\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$&lt;/p&gt;
-&lt;p&gt;其中 $\otimes$ 為 Kronecker product。&lt;/p&gt;
+&lt;p&gt;假設&lt;span class="math"&gt;\(H_n\)&lt;/span&gt;為&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，則可以藉由分區矩陣：&lt;/p&gt;
+&lt;div class="math"&gt;$$\begin{bmatrix}  
+H &amp;amp; H \\  
+H &amp;amp; -H  
+\end{bmatrix}.$$&lt;/div&gt;
+&lt;p&gt;來形成&lt;span class="math"&gt;\(2n\)&lt;/span&gt;階的的 Hadamard matrix，這個方法被稱為 Sylvester's construction，對於&lt;span class="math"&gt;\(2\leqslant k \in N\)&lt;/span&gt;，其通式為：&lt;/p&gt;
+&lt;div class="math"&gt;$$H_{2^k}=\begin{bmatrix}  
+H_{2^{k-1}} &amp;amp; H_{2^{k-1}} \\  
+H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}  
+\end{bmatrix}=H_2 \otimes H_{2^{k-1}},$$&lt;/div&gt;
+&lt;p&gt;其中&lt;span class="math"&gt;\(\otimes\)&lt;/span&gt;為 Kronecker product。&lt;/p&gt;
 &lt;h2 id="_3"&gt;範例&lt;/h2&gt;
-&lt;p&gt;在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為 $2$ 的次方整數，回傳 $n$ 階的 Hadamard matrix，以下為文件中的範例：&lt;/p&gt;
+&lt;p&gt;在 Scipy 的函式庫有用 Sylvester’s construction 實作，輸入必須為&lt;span class="math"&gt;\(2\)&lt;/span&gt;的次方整數，回傳&lt;span class="math"&gt;\(n\)&lt;/span&gt;階的 Hadamard matrix，以下為文件中的範例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sp&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.linalg&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;hadamard&lt;/span&gt;
 &lt;span class="n"&gt;hadamard&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -108,4 +292,66 @@ H_{2^{k-1}} &amp;amp; -H_{2^{k-1}}&lt;br&gt;
 &lt;p&gt;&lt;a href="https://github.com/yaticl/MyNotebooks/blob/master/Linear%20Algebra/Hadamard%20Matrix.ipynb"&gt;&lt;strong&gt;Jupyter notebook 版本&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_4"&gt;參考&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://mathworld.wolfram.com/HadamardMatrix.html"&gt;Hadamard Matrix&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Hadamard_matrix"&gt;維基百科&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Linear Algebra"></category><category term="Linear algebra"></category><category term="Digital signal processing"></category><category term="Python"></category></entry></feed>

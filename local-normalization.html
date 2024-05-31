@@ -152,15 +152,15 @@
     <h2 id="_1">簡介</h2>
 <p>局部歸一化的目標是使影像亮度的 mean 與 variance 在局部相鄰區域趨於一致，用來改善不均勻照明或是遮蔽的影響。</p>
 <h2 id="_2">實作</h2>
-<p>對原始影像 $f(x,y)$ 的 local normalization 可以寫成：</p>
-<p>$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</p>
+<p>對原始影像<span class="math">\(f(x,y)\)</span>的 local normalization 可以寫成：</p>
+<div class="math">$$g(x)=\frac{f(x,y)-m_{f}(x,y)}{\sigma_f(x,y)},$$</div>
 <p>其中</p>
 <ul>
-<li>$m_f(x,y)$ 是 $f(x,y)$ 的 local mean 估算值</li>
-<li>$\sigma_f(x,y)$ 是 local variance 的估算值</li>
-<li>$g(x,y)$ 是輸出影像。</li>
+<li><span class="math">\(m_f(x,y)\)</span>是<span class="math">\(f(x,y)\)</span>的 local mean 估算值</li>
+<li><span class="math">\(\sigma_f(x,y)\)</span>是 local variance 的估算值</li>
+<li><span class="math">\(g(x,y)\)</span>是輸出影像。</li>
 </ul>
-<p>local mean 與 variance 的估算通過 Gaussian filter，$\sigma_1$ 與 $\sigma_2$ 是 Gaussian window size，用來控制 local mean 與 local variance，通常 $\sigma_2$ 應該大於 $\sigma_1$。</p>
+<p>local mean 與 variance 的估算通過 Gaussian filter，<span class="math">\(\sigma_1\)</span>與<span class="math">\(\sigma_2\)</span>是 Gaussian window size，用來控制 local mean 與 local variance，通常<span class="math">\(\sigma_2\)</span>應該大於<span class="math">\(\sigma_1\)</span>。</p>
 <p><img alt="diagram" src="https://qx8gvg.bn.files.1drv.com/y4m0ba09PJWrsnL2is21byyE8oMvX-56GfJgDO6-fEcXK8RobCa4hJcKiFRXTyZlJ5imnRJY-i0KQbintR2nrZuHbDodpOq0-XSW5cav190QJdrVqIHhY9IpgTdz7cbaDHrdSL4cRSX_fJgAYYIma3Geqf-9A9uCSQ0tWrUsno7qi32vtxdY0ghHNkW7Hxas9WGfDXbk0aEeTRm7ko4mCw4HA?width=618&amp;height=137&amp;cropmode=none"></p>
 <h2 id="_3">範例</h2>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -207,6 +207,68 @@
 <p><a href="https://github.com/yaticl/MyNotebooks/blob/master/Digital%20Image%20Processing/Local%20Normalization.ipynb"><strong>Jupyter notebook 版本</strong></a></p>
 <h2 id="_4">參考</h2>
 <p><a href="http://bigwww.epfl.ch/sage/soft/localnormalization/">Local Normalization</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>
