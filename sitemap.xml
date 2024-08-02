@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yaticl.github.io/</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/tags.html</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/categories.html</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/authors.html</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/archives.html</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yaticl.github.io/search.html</loc>
-<lastmod>2024-05-24T14:51:27-00:00</lastmod>
+<lastmod>2024-08-02T16:14:49-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -207,13 +207,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://yaticl.github.io/北京天壇.html</loc>
-<lastmod>2018-04-15T21:52:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://yaticl.github.io/上海豫園.html</loc>
 <lastmod>2018-04-15T21:19:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -320,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yaticl.github.io/category/lu-you.html</loc>
-<lastmod>2018-04-15T21:52:00+08:06</lastmod>
+<lastmod>2018-04-15T21:19:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -593,14 +586,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yaticl.github.io/tag/zhong-guo.html</loc>
-<lastmod>2018-04-15T21:52:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://yaticl.github.io/tag/bei-jing.html</loc>
-<lastmod>2018-04-15T21:52:00+08:06</lastmod>
+<lastmod>2018-04-15T21:19:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
