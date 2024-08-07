@@ -168,8 +168,8 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <ol>
 <li>安裝 <a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8">Visual Studio 2022 (VS)</a> 或更新的版本。</li>
 <li>在 VS 中創建一個 C# Console App，.NET 版本選擇 6.0 或更高。</li>
-<li>在方案的相依性安裝支援 QNN 的 <a href="https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.QNN/1.18.0?_src=template">ONNX Runtime</a>。</li>
-<li>安裝前處理用的<a href="https://www.nuget.org/packages/SixLabors.ImageSharp/3.1.2?_src=template">相依性</a>。</li>
+<li>在方案的相依性安裝支援 QNN 的 <a href="https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.QNN">ONNX Runtime</a>。</li>
+<li>安裝前處理用的<a href="https://www.nuget.org/packages/SixLabors.ImageSharp">相依性</a>。</li>
 <li>下載 ONNX 模型<a href="https://github.com/onnx/models/blob/main/validated/vision/classification/resnet/model/resnet50-v1-12.onnx">檔案</a>( 提醒：為了要能用 NPU 來推理，模型檔案的 Opset version 需要大於等於 11)</li>
 <li>下載一張待推理的<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/dog.jpeg">影像</a>，或其他影像。</li>
 <li>準備一個有安裝 <a href="https://pypi.org/project/onnxruntime-qnn/"><code>onnxruntime-qnn</code></a> 的 Python 環境。</li>
@@ -522,6 +522,7 @@ Label: Sussex Spaniel, Confidence: 0.0028180785
     <ul class="related-posts">
       <li><a href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</a></li>
       <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</a></li>
+      <li><a href="https://yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html">使用 ONNX Runtime 與 OpenVINO 加速影像分類模型推理</a></li>
       <li><a href="https://yaticl.github.io/build-opencv-on-windows-arm64.html">建置支援 Windows ARM64 的 OpenCV</a></li>
     </ul>
   </div>

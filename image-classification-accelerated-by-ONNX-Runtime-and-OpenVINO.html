@@ -38,26 +38,26 @@
 
 <meta name="author" content="Ya-Ti" />
 <meta name="description" content="背景 由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。 因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得 …" />
-<meta name="keywords" content="Machine Learning, AI, ONNX, DirectML">
+<meta name="keywords" content="Machine Learning, AI, ONNX, OpenVINO">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
-<meta property="og:title" content="使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理"/>
+<meta property="og:title" content="使用 ONNX Runtime 與 OpenVINO 加速影像分類模型推理"/>
 <meta property="og:description" content="背景 由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。 因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得 …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html"/>
+<meta property="og:url" content="https://yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2024-01-12 17:00:00+08:00"/>
+<meta property="article:published_time" content="2024-08-07 17:00:00+08:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="https://yaticl.github.io/author/ya-ti.html">
 <meta property="article:section" content="Machine Learning"/>
 <meta property="article:tag" content="Machine Learning"/>
 <meta property="article:tag" content="AI"/>
 <meta property="article:tag" content="ONNX"/>
-<meta property="article:tag" content="DirectML"/>
+<meta property="article:tag" content="OpenVINO"/>
 <meta property="og:image" content="https://yaticl.github.io/images/profile.jpg">
 
-  <title>Ya-Ti's Blog &ndash; 使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</title>
+  <title>Ya-Ti's Blog &ndash; 使用 ONNX Runtime 與 OpenVINO 加速影像分類模型推理</title>
 
   <style>
     a {color: #0078D7;}
@@ -142,9 +142,9 @@
 <article class="single">
   <header>
       
-    <h1 id="image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</h1>
+    <h1 id="image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO">使用 ONNX Runtime 與 OpenVINO 加速影像分類模型推理</h1>
     <p>
-      Posted on Fri 12 January 2024 in <a href="https://yaticl.github.io/category/machine-learning.html">Machine Learning</a>
+      Posted on Wed 07 August 2024 in <a href="https://yaticl.github.io/category/machine-learning.html">Machine Learning</a>
 
     </p>
   </header>
@@ -153,21 +153,22 @@
   <div>
     <h2 id="_1">背景</h2>
 <p>由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC。
-因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得很重要。為了實現加速推理各種的 AI 模型，ONNX Runtime 是微軟與 Meta 等公司主推的 AI 加速方案。
-所以我這裡就來測試如何使用 ONNX Runtime 實現對 ResNet50 分類器的加速推理。</p>
+因此，客戶端 ( 邊緣 ) 裝置的 AI 模型推理速度變得很重要。為了實現加速推理各種的 AI 模型，老伙伴 Intel 為開發者提供了一套主要用來加速自家硬體推理速度的開發套件：OpenVINO。
+在之前的<a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">測試</a>中，實現了使用 ONNX Runtime 與 DirectML 實現對影像分類器的加速推理，這裡想嘗試使用基於 OpenVINO EP 的推理加速。</p>
 <h2 id="onnx-runtime">ONNX Runtime</h2>
 <p><a href="https://onnxruntime.ai/">ONNX Runtime</a> 是一種跨平台的 AI 加速框架，支援主流的作業系統與程式語言，以及主流的深度學習框架所訓練出來的模型，如 PyTorch 與 TensorFlow。
 ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU, CUDA, DirectML 等等，其餘的 EP 與細節可以參考官方的<a href="https://onnxruntime.ai/docs/execution-providers/">文件</a>。
-這裡以 <a href="https://onnxruntime.ai/docs/execution-providers/DirectML-ExecutionProvider.html">DirectML EP</a> 來實作，因為 DirectML 理論上可以支援所有相容 DirectX 12 的 GPU，應該在 Windows 上有最好的泛用性。</p>
+這裡以 <a href="https://onnxruntime.ai/docs/execution-providers/OpenVINO-ExecutionProvider.html">OpenVINO EP</a> 搭配 Intel GPU 來加速模型推理。</p>
 <h2 id="_2">實作</h2>
 <p>這裡以官方的 ResNet50 C# <a href="https://onnxruntime.ai/docs/tutorials/csharp/resnet50_csharp.html">範例</a>為基礎來實作。
 由於範例的文件比較舊，我做了一些修改以適用最新版本的 ONNX 與執行環境。</p>
 <h3 id="_3">環境準備</h3>
 <ol>
 <li>安裝 <a href="https://apps.microsoft.com/detail/XPDCFJDKLZJLP8">Visual Studio 2022 (VS)</a> 或更新的版本。</li>
-<li>在 VS 中創建一個 C# Console App，.NET 版本選擇 6.0 或更高。</li>
-<li>在方案的相依性安裝支援 DirectML 的 <a href="https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.DirectML">ONNX Runtime</a>。</li>
-<li>安裝前處理用的<a href="https://www.nuget.org/packages/SixLabors.ImageSharp">相依性</a>。</li>
+<li>在 VS 中創建一個 C# Console App，.NET 版本可選擇 6.0 或更高。</li>
+<li>依照官方文件安裝 <a href="https://docs.openvino.ai/2024/get-started/install-openvino/install-openvino-archive-windows.html">OpenVINO Runtime</a>。</li>
+<li>在方案的相依性安裝支援 OpenVINO EP 的 <a href="https://github.com/intel/onnxruntime/releases">ONNX Runtime</a>。由於需要手動安裝 NuGet 套件，要在 Visual Studio 的 NuGet 管理頁面新增來源資料夾並勾選 <code>Include prerelease</code> 才能看到下載來的套件。</li>
+<li>安裝前處理用的<a href="https://www.nuget.org/packages/SixLabors.ImageSharp/">相依性</a>。</li>
 <li>下載 ONNX 模型<a href="https://github.com/onnx/models/blob/main/validated/vision/classification/resnet/model/resnet50-v2-7.onnx">檔案</a>。</li>
 <li>下載一張待推理的<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/dog.jpeg">影像</a>，或其他影像。</li>
 </ol>
@@ -178,6 +179,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 </ol>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Diagnostics</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.ML.OnnxRuntime.Tensors</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">SixLabors.ImageSharp</span><span class="p">;</span>
@@ -192,8 +194,8 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">// Read paths</span>
-<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">modelFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Path\\to\\model\\resnet50-v2-7.onnx&quot;</span><span class="p">;</span>
-<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">imageFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Path\\to\\image\\dog.jpeg&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">modelFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// Path to model</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">imageFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// Path to image</span>
 
 <span class="w">            </span><span class="c1">// Read image</span>
 <span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">Image</span><span class="o">&lt;</span><span class="n">Rgb24</span><span class="o">&gt;</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SixLabors</span><span class="p">.</span><span class="n">ImageSharp</span><span class="p">.</span><span class="n">Image</span><span class="p">.</span><span class="n">Load</span><span class="o">&lt;</span><span class="n">Rgb24</span><span class="o">&gt;</span><span class="p">(</span><span class="n">imageFilePath</span><span class="p">);</span>
@@ -232,14 +234,18 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="w">                </span><span class="n">NamedOnnxValue</span><span class="p">.</span><span class="n">CreateFromTensor</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
 <span class="w">            </span><span class="p">};</span>
 
-<span class="w">            </span><span class="c1">// Enable the DirectML EP</span>
+<span class="w">            </span><span class="c1">// Enable the OpenVINO EP</span>
 <span class="w">            </span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">sessionOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SessionOptions</span><span class="p">();</span>
-<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">GraphOptimizationLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphOptimizationLevel</span><span class="p">.</span><span class="n">ORT_ENABLE_ALL</span><span class="p">;</span>
-<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">AppendExecutionProvider_DML</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">GraphOptimizationLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphOptimizationLevel</span><span class="p">.</span><span class="n">ORT_DISABLE_ALL</span><span class="p">;</span>
+<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">AppendExecutionProvider_OpenVINO</span><span class="p">(</span><span class="s">&quot;GPU&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// CPU or GPU or NPU</span>
+<span class="w">            </span><span class="n">sessionOptions</span><span class="p">.</span><span class="n">AppendExecutionProvider_CPU</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
 
 <span class="w">            </span><span class="c1">// Run inference</span>
+<span class="w">            </span><span class="n">Stopwatch</span><span class="w"> </span><span class="n">stopwatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stopwatch</span><span class="p">.</span><span class="n">StartNew</span><span class="p">();</span><span class="w"> </span><span class="c1">// Calculate inference time</span>
 <span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">modelFilePath</span><span class="p">,</span><span class="w"> </span><span class="n">sessionOptions</span><span class="p">);</span>
 <span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="nn">IDisposableReadOnlyCollection</span><span class="o">&lt;</span><span class="n">DisposableNamedOnnxValue</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="n">inputs</span><span class="p">);</span>
+<span class="w">            </span><span class="n">stopwatch</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Inference time: {stopwatch.ElapsedMilliseconds} ms&quot;</span><span class="p">);</span>
 
 <span class="w">            </span><span class="c1">// Postprocess to get softmax vector</span>
 <span class="w">            </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">results</span><span class="p">.</span><span class="n">First</span><span class="p">().</span><span class="n">AsEnumerable</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
@@ -252,7 +258,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="w">                               </span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
 
 <span class="w">            </span><span class="c1">// Print results to console</span>
-<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Top 10 predictions for ResNet50 v2...&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Top 10 predictions...&quot;</span><span class="p">);</span>
 <span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;--------------------------------------------------------------&quot;</span><span class="p">);</span>
 <span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">top10</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
@@ -269,41 +275,54 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="p">}</span>
 </code></pre></div>
 
-<p>輸出結果：</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">predictions</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">ResNet50</span><span class="w"> </span><span class="nv">v2</span>...
-<span class="o">--------------------------------------------------------------</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">70073485</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Kuvasz</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">17292742</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Otterhound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">019890321</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Clumber</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">018660849</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Saluki</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">011093369</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Sussex</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0072962483</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Labrador</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">007059277</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Pyrenean</span><span class="w"> </span><span class="nv">Mountain</span><span class="w"> </span><span class="nv">Dog</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">006370869</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Tibetan</span><span class="w"> </span><span class="nv">Terrier</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">006168284</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">English</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">004178419</span>
+<h3 id="_5">建置與執行</h3>
+<p>為了在 ONNX Runtime 中啟用 OpenVINO EP，執行程式前需要先設定環境變數，可用安裝包內提供的腳本實現。
+從 Visual Studio 選單的 <code>Tools -&gt; Command Line -&gt; Developer Command Prompt</code> 啟動 CLI，執行：</p>
+<div class="highlight"><pre><span></span><code><span class="err">提醒：若使用</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="err">虛擬環境記得先啟用。</span>
+<span class="n">C</span><span class="p">:</span>\<span class="o">&lt;</span><span class="n">openvino_install_directory</span><span class="o">&gt;</span>\<span class="n">setupvars</span><span class="o">.</span><span class="n">bat</span>
 </code></pre></div>
 
-<h2 id="_5">心得</h2>
-<p>經過測試，此範例在 NVIDIA RTX 4070、Intel Iris Xe Graphics (Intel Core i5-11300H)，甚至是高通的 Adreno 8CX Gen 3 (Microsoft SQ 3)，雖然在 SQ3 上會回報未知的 ARM CPU，但都可以順利執行加速推理。
-在這個簡單的分類器範例，DirectML 的相容性看起來不錯，希望微軟持續維護 DirectML EP。</p>
+<p>然後就可以在 CLI 中執行建置命令：</p>
+<div class="highlight"><pre><span></span><code>dotnet build
+</code></pre></div>
+
+<p>最後再用 CLI 執行程式：</p>
+<div class="highlight"><pre><span></span><code>dotnet run [path-to-model] [path-to-image]
+</code></pre></div>
+
+<p>輸出結果：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Inference</span><span class="w"> </span><span class="nv">time</span>:<span class="w"> </span><span class="mi">3205</span><span class="w"> </span><span class="nv">ms</span><span class="w"> </span><span class="ss">(</span><span class="mi">234</span><span class="w"> </span><span class="nv">ms</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">DirectML</span><span class="ss">)</span>
+<span class="nv">Top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">predictions</span>...
+<span class="o">--------------------------------------------------------------</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">70304483</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Kuvasz</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">17094779</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Otterhound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">019788643</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Clumber</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">018589709</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Saluki</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">011143869</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Sussex</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0072231824</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Labrador</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0070834733</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Pyrenean</span><span class="w"> </span><span class="nv">Mountain</span><span class="w"> </span><span class="nv">Dog</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">006349585</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Tibetan</span><span class="w"> </span><span class="nv">Terrier</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0060825297</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">English</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0042629093</span>
+</code></pre></div>
+
+<h2 id="_6">心得</h2>
+<p>此範例在 Intel Iris Xe Graphics (Intel Core i5-11300H) 上測試，推理速度似乎不如 DirectML EP 快，出乎我的意料之外，本來以為專有硬體設計的 OpenVINO 會更快，也許是因為透過 ONNX 呼叫的關係，多了一些 API 的開銷，或真的是 DirectML 的實作方法更優。
+目前來說，在 ONNX 搭配 OpenVINO EP 使用上還是比 DirectML EP 麻煩，NuGet 套件沒有上傳到官方的伺服器，安裝與更新不方便，而且執行程式前每次都需要啟用環境變數。希望以後使用上可以更方便一些。</p>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="https://yaticl.github.io/tag/machine-learning.html">Machine Learning</a>
       <a href="https://yaticl.github.io/tag/ai.html">AI</a>
       <a href="https://yaticl.github.io/tag/onnx.html">ONNX</a>
-      <a href="https://yaticl.github.io/tag/directml.html">DirectML</a>
+      <a href="https://yaticl.github.io/tag/openvino.html">OpenVINO</a>
     </p>
   </div>
 
 
   <div class="neighbors">
-    <a class="btn float-left" href="https://yaticl.github.io/如何將OneNote筆記搬到另一個帳戶.html" title="如何將 OneNote 筆記搬到另一個帳戶">
+    <a class="btn float-left" href="https://yaticl.github.io/build-opencv-on-windows-arm64.html" title="建置支援 Windows ARM64 的 OpenCV">
       <i class="fa fa-angle-left"></i> 上一篇文章
-    </a>
-    <a class="btn float-right" href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" title="使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理">
-      下一篇文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
 
@@ -312,7 +331,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
     <ul class="related-posts">
       <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html">使用 ONNX Runtime 與 Qualcomm QNN 加速影像分類模型推理</a></li>
       <li><a href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</a></li>
-      <li><a href="https://yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html">使用 ONNX Runtime 與 OpenVINO 加速影像分類模型推理</a></li>
+      <li><a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">使用 ONNX Runtime 與 DirectML 加速 ResNet50 影像分類推理</a></li>
     </ul>
   </div>
 
@@ -321,19 +340,19 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
   <section>
     <p id="post-share-links">
       分享到:
-      <a href="https://sharetodiaspora.github.io/?title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
+      <a href="https://sharetodiaspora.github.io/?title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html" target="_blank" title="分享到 Diaspora">Diaspora</a>
       ❄
-      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&hashtags=machine-learning,ai,onnx,directml" target="_blank" title="分享到 Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&url=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html&hashtags=machine-learning,ai,onnx,openvino" target="_blank" title="分享到 Twitter">Twitter</a>
       ❄
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 Facebook">Facebook</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&summary=%E8%83%8C%E6%99%AF%0A%E7%94%B1%E6%96%BC%E6%9C%80%E8%BF%91%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E7%9A%84%E8%88%88%E8%B5%B7%EF%BC%8C%E5%A6%82%20ChatGPT%20%E8%88%87%20DALL%C2%B7E%EF%BC%8C%E5%BE%AE%E8%BB%9F%E6%94%9C%E6%89%8B%E5%BB%A0%E5%95%86%E5%80%91%E9%96%8B%E5%A7%8B%E6%8E%A8%E5%BB%A3%20AI%20PC%E3%80%82%0A%E5%9B%A0%E6%AD%A4%EF%BC%8C%E5%AE%A2%E6%88%B6%E7%AB%AF%20%28%20%E9%82%8A%E7%B7%A3%20%29%20%E8%A3%9D%E7%BD%AE%E7%9A%84%20AI%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E9%80%9F%E5%BA%A6%E8%AE%8A%E5%BE%97%20%E2%80%A6&source=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&summary=%E8%83%8C%E6%99%AF%0A%E7%94%B1%E6%96%BC%E6%9C%80%E8%BF%91%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E7%9A%84%E8%88%88%E8%B5%B7%EF%BC%8C%E5%A6%82%20ChatGPT%20%E8%88%87%20DALL%C2%B7E%EF%BC%8C%E5%BE%AE%E8%BB%9F%E6%94%9C%E6%89%8B%E5%BB%A0%E5%95%86%E5%80%91%E9%96%8B%E5%A7%8B%E6%8E%A8%E5%BB%A3%20AI%20PC%E3%80%82%0A%E5%9B%A0%E6%AD%A4%EF%BC%8C%E5%AE%A2%E6%88%B6%E7%AB%AF%20%28%20%E9%82%8A%E7%B7%A3%20%29%20%E8%A3%9D%E7%BD%AE%E7%9A%84%20AI%20%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E9%80%9F%E5%BA%A6%E8%AE%8A%E5%BE%97%20%E2%80%A6&source=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
-      <a href="https://news.ycombinator.com/submitlink?t=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
+      <a href="https://news.ycombinator.com/submitlink?t=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&u=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
-      <a href="mailto:?subject=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86&amp;body=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html" target="_blank" title="從 Email 分享">Email</a>
+      <a href="mailto:?subject=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&amp;body=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html" target="_blank" title="從 Email 分享">Email</a>
       ❄
-      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20DirectML%20%E5%8A%A0%E9%80%9F%20ResNet50%20%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%8E%A8%E7%90%86" target="_blank" title="從 Reddit 分享">Reddit</a>
+      <a href="https://www.reddit.com/submit?url=https%3A//yaticl.github.io/image-classification-accelerated-by-ONNX-Runtime-and-OpenVINO.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20OpenVINO%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86" target="_blank" title="從 Reddit 分享">Reddit</a>
     </p>
   </section>
 </article>
