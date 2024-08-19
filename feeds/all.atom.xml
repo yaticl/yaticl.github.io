@@ -612,7 +612,7 @@ Label: Sussex Spaniel, Confidence: 0.0028180785
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;雖然出現了額外的警告訊息，提示某些運算不支援，還是有成功跑出結果。雖然分類結果正確，但是數值跟未經過量化模型的數值有明顯的差異，可能體現出了量化誤差。
-從分數可看出兩種兩種量化模型的表現差異很大，雖然不知道官方是用什麼資料做模型量化，但可以看出校正資料的影響很大，要準備對預期目標有代表性的資料才會有好的效果。&lt;/p&gt;
+從分數可看出兩種量化模型的表現差異很大，雖然不知道官方是用什麼資料做模型量化，但可以看出校正資料的影響很大，要準備對預期目標有代表性的資料才會有好的效果。&lt;/p&gt;
 &lt;h2 id="_7"&gt;心得&lt;/h2&gt;
 &lt;p&gt;經過測試，ONNX Runtime 與 QNN EP 的組合，要使用 NPU 需要做不少額外的前置處理，且不支援部分運算或是存在 bug。
 此外，量化模型需要使用 QNN 版 ONNX 專用的量化 API，似乎不能直接相容用一般 ONNX API 量化的模型，否則推理可能會有問題，是一個比較麻煩的地方。希望微軟與高通可以讓 QNN EP 在 ONNX 的開發體驗更友好。&lt;/p&gt;</content><category term="Machine Learning"></category><category term="Machine Learning"></category><category term="AI"></category><category term="ONNX"></category><category term="DirectML"></category><category term="ARM64"></category></entry><entry><title>使用 ONNX Runtime 與 DirectML 加速 Stable Diffusing 模型推理</title><link href="https://yaticl.github.io/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html" rel="alternate"></link><published>2024-01-14T15:30:00+08:00</published><updated>2024-01-14T15:30:00+08:00</updated><author><name>Ya-Ti</name></author><id>tag:yaticl.github.io,2024-01-14:/stable-diffusion-accelerated-by-ONNX-Runtime-and-directML.html</id><summary type="html">&lt;h2 id="_1"&gt;背景&lt;/h2&gt;
