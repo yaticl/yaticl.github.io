@@ -37,13 +37,13 @@
 
 
 <meta name="author" content="Ya-Ti" />
-<meta name="description" content="2024-05-24 更新：由於 ONNX QNN EP 文件更新很多，因此文章因應而大幅更新。 2024-08-15 更新：更正 MobileNet 相關的內文錯誤 背景 由於最近生成式 AI 的興 …" />
+<meta name="description" content="2024-05-24 更新：由於 ONNX QNN EP 文件更新很多，因此文章因應而大幅更新。 2024-08-15 更新：更正 MobileNet 相關的內文錯誤 2024-08-19 更新：更新模型量化的相關 …" />
 <meta name="keywords" content="Machine Learning, AI, ONNX, DirectML, ARM64">
 
 
 <meta property="og:site_name" content="Ya-Ti's Blog"/>
 <meta property="og:title" content="使用 ONNX Runtime 與 Qualcomm QNN 加速影像分類模型推理"/>
-<meta property="og:description" content="2024-05-24 更新：由於 ONNX QNN EP 文件更新很多，因此文章因應而大幅更新。 2024-08-15 更新：更正 MobileNet 相關的內文錯誤 背景 由於最近生成式 AI 的興 …"/>
+<meta property="og:description" content="2024-05-24 更新：由於 ONNX QNN EP 文件更新很多，因此文章因應而大幅更新。 2024-08-15 更新：更正 MobileNet 相關的內文錯誤 2024-08-19 更新：更新模型量化的相關 …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html"/>
 <meta property="og:type" content="article"/>
@@ -154,6 +154,7 @@
   <div>
     <p><strong>2024-05-24 更新：由於 ONNX QNN EP 文件更新很多，因此文章因應而大幅更新。</strong></p>
 <p><strong>2024-08-15 更新：更正 MobileNet 相關的內文錯誤</strong></p>
+<p><strong>2024-08-19 更新：更新模型量化的相關內容與結果</strong></p>
 <h2 id="_1">背景</h2>
 <p>由於最近生成式 AI 的興起，如 ChatGPT 與 DALL·E，微軟攜手廠商們開始推廣 AI PC，Intel、AMD 與高通等廠商，開始直接在處理器當中內建 Neural Processing Unit (NPU) 來加速 AI 模型的推理，且相較於在 GPU 推理有著更低的功耗。
 在之前的<a href="https://yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-directML.html">測試</a>中，實現了使用 ONNX Runtime 與 DirectML 實現對影像分類器的加速推理，這裡想嘗試使用基於 NPU 的推理加速。</p>
@@ -186,7 +187,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 
 <p>轉換完成之後可以再用 Netron 確認是否已經成功修改。</p>
 <h4 id="model-quantization">模型量化 (Model quantization)</h4>
-<p>由於 NPU 只接受量化過的模型，可能需要將模型做量化，參考網頁的<a href="https://github.com/microsoft/onnxruntime-inference-examples/tree/main/quantization/image_classification/cpu">範例</a>，需要準備校正用的資料來做模型量化，經過修改之後，在這個例子的讀檔案實現如下：</p>
+<p>由於 NPU 只接受量化過的模型，可能需要將模型做量化，參考網頁的<a href="https://github.com/microsoft/onnxruntime-inference-examples/tree/main/quantization/image_classification/cpu">範例</a>，需要準備校正用的資料來做模型量化，為了讀圖方便而經過修改之後，在這個例子的讀檔案實現如下：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># resnet50_data_reader.py</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
@@ -205,15 +206,17 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
 <span class="sd">    parameter size_limit: number of images to load. Default is 0 which means all images are picked.</span>
 <span class="sd">    return: list of matrices characterizing multiple images</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">image_names</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">images_folder</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">size_limit</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_names</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">size_limit</span><span class="p">:</span>
-        <span class="n">batch_filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">image_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size_limit</span><span class="p">)]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">batch_filenames</span> <span class="o">=</span> <span class="n">image_names</span>
+    <span class="n">batch_filenames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">images_folder</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">size_limit</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_filenames</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">size_limit</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="n">batch_filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+
     <span class="n">unconcatenated_batch_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">image_name</span> <span class="ow">in</span> <span class="n">batch_filenames</span><span class="p">:</span>
-        <span class="n">image_filepath</span> <span class="o">=</span> <span class="n">images_folder</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">image_name</span>
+    <span class="k">for</span> <span class="n">image_filepath</span> <span class="ow">in</span> <span class="n">batch_filenames</span><span class="p">:</span>
         <span class="n">pillow_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
         <span class="n">pillow_img</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_filepath</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)))</span>
         <span class="n">input_data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">pillow_img</span><span class="p">)</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
@@ -226,7 +229,6 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
         <span class="n">numpy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">unconcatenated_batch_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">batch_data</span>
-
 
 <span class="k">class</span> <span class="nc">ResNet50DataReader</span><span class="p">(</span><span class="n">CalibrationDataReader</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">calibration_image_folder</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -285,7 +287,7 @@ ONNX 支援多種的加速方式 (Execution Providers, EP)，常見的像是 CPU
     <span class="n">quantize</span><span class="p">(</span><span class="n">model_to_quantize</span><span class="p">,</span> <span class="n">output_model_path</span><span class="p">,</span> <span class="n">qnn_config</span><span class="p">)</span>
 </code></pre></div>
 
-<p>執行 <code>quantize_model.py</code> 後就可以得到量化後的模型 <code>resnet50-v1-12.qdq.onnx</code>。</p>
+<p>這裡準備了 10000 張來自 ImageNet dataset 的影像來當作校正資料，其中每一類別隨機挑選了 10 張影像。執行 <code>quantize_model.py</code> 後就可以得到量化後的模型 <code>resnet50-v1-12.qdq.onnx</code>。</p>
 <h3 id="_6">推理程式碼</h3>
 <ol>
 <li>先準備分類<a href="https://github.com/microsoft/onnxruntime/blob/main/csharp/sample/Microsoft.ML.OnnxRuntime.ResNet50v2Sample/LabelMap.cs">標籤</a>。</li>
@@ -444,20 +446,20 @@ Label: Sussex Spaniel, Confidence: 0.0028180785
 <span class="nv">Completed</span><span class="w"> </span><span class="nv">stage</span>:<span class="w"> </span><span class="nv">Completion</span><span class="w"> </span><span class="ss">(</span><span class="mi">217</span><span class="w"> </span><span class="nv">us</span><span class="ss">)</span>
 <span class="nv">Top</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">predictions</span>...
 <span class="o">--------------------------------------------------------------</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Cocker</span><span class="w"> </span><span class="nv">Spaniels</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">47969297</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">1477721</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Standard</span><span class="w"> </span><span class="nv">Poodle</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">08921216</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Airedale</span><span class="w"> </span><span class="nv">Terrier</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">063725926</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">English</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">045520637</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Otterhound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">03847344</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Clumber</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">03251625</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Irish</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">019631129</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Miniature</span><span class="w"> </span><span class="nv">Poodle</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">016591465</span>
-<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Toy</span><span class="w"> </span><span class="nv">Poodle</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">010016814</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Golden</span><span class="w"> </span><span class="nv">Retriever</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">59277284</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Kuvasz</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">08672298</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Clumber</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">08043996</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Saluki</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">06905809</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Otterhound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">058527183</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Sussex</span><span class="w"> </span><span class="nv">Spaniel</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">02276213</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">English</span><span class="w"> </span><span class="nv">Setter</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">02189854</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Tibetan</span><span class="w"> </span><span class="nv">Terrier</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">011933949</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Pyrenean</span><span class="w"> </span><span class="nv">Mountain</span><span class="w"> </span><span class="nv">Dog</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">0105469</span>
+<span class="nv">Label</span>:<span class="w"> </span><span class="nv">Afghan</span><span class="w"> </span><span class="nv">Hound</span>,<span class="w"> </span><span class="nv">Confidence</span>:<span class="w"> </span><span class="mi">0</span>.<span class="mi">010070729</span>
 </code></pre></div>
 
-<p>成功地使用 NPU 來加速推理，但是分類的結果錯誤 (CPU: Label: Golden Retriever, Confidence: 0.43511143)。
-應該是因為校正資料用太少張影像了，量化誤差過大，需要增加校正資料的數量才較能維持模型原本的表現。</p>
+<p>成功地使用 NPU 來加速推理，且分類的結果正確 (CPU: Label: Golden Retriever, Confidence: 0.43511143)。
+有趣的是量化後的模型得到的分數比未量化的模型還要高，但這裡只測試了一張影像，可能沒有代表性，也許是 overfitting。</p>
 <p>ONNX 的 GitHub 也有上傳用標準 ONNX 量化的 <a href="https://github.com/onnx/models/blob/main/validated/vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx">MobileNet V2</a>，這裡也嘗試直接用 NPU 推理這個模型，部分輸出如下：</p>
 <div class="highlight"><pre><span></span><code><span class="mi">2024</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">24</span><span class="w"> </span><span class="mi">13</span><span class="o">:</span><span class="mi">59</span><span class="o">:</span><span class="mf">17.9089996</span><span class="w"> </span><span class="err">[</span><span class="n">W</span><span class="o">:</span><span class="n">onnxruntime</span><span class="o">:</span><span class="p">,</span><span class="w"> </span><span class="n">qnn_model_wrapper</span><span class="p">.</span><span class="n">cc</span><span class="o">:</span><span class="mi">240</span><span class="w"> </span><span class="n">onnxruntime</span><span class="o">::</span><span class="n">qnn</span><span class="o">::</span><span class="n">QnnModelWrapper</span><span class="o">::</span><span class="n">CreateQnnNode</span><span class="err">]</span><span class="w"> </span><span class="n">QNN</span><span class="p">.</span><span class="n">backendValidateOpConfig</span><span class="p">()</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n n-Quoted">`Add_26`</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="n n-Quoted">`ElementWiseAdd`</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">error</span><span class="w"> </span><span class="k">code</span><span class="w"> </span><span class="mi">3110</span>
 
@@ -494,7 +496,8 @@ Label: Sussex Spaniel, Confidence: 0.0028180785
 <span class="n">Label</span><span class="o">:</span><span class="w"> </span><span class="n">Pyrenean</span><span class="w"> </span><span class="n">Mountain</span><span class="w"> </span><span class="n">Dog</span><span class="p">,</span><span class="w"> </span><span class="n">Confidence</span><span class="o">:</span><span class="w"> </span><span class="mf">0.010476385</span>
 </code></pre></div>
 
-<p>雖然出現了額外的警告訊息，提示某些運算不支援，還是有成功跑出結果。雖然分類結果正確，但是數值跟未經過量化模型的數值有明顯的差異，依然體現出了量化誤差。</p>
+<p>雖然出現了額外的警告訊息，提示某些運算不支援，還是有成功跑出結果。雖然分類結果正確，但是數值跟未經過量化模型的數值有明顯的差異，可能體現出了量化誤差。
+從分數可看出兩種兩種量化模型的表現差異很大，雖然不知道官方是用什麼資料做模型量化，但可以看出校正資料的影響很大，要準備對預期目標有代表性的資料才會有好的效果。</p>
 <h2 id="_7">心得</h2>
 <p>經過測試，ONNX Runtime 與 QNN EP 的組合，要使用 NPU 需要做不少額外的前置處理，且不支援部分運算或是存在 bug。
 此外，量化模型需要使用 QNN 版 ONNX 專用的量化 API，似乎不能直接相容用一般 ONNX API 量化的模型，否則推理可能會有問題，是一個比較麻煩的地方。希望微軟與高通可以讓 QNN EP 在 ONNX 的開發體驗更友好。</p>
@@ -540,7 +543,7 @@ Label: Sussex Spaniel, Confidence: 0.0028180785
       ❄
       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 Facebook">Facebook</a>
       ❄
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&summary=2024-05-24%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E7%94%B1%E6%96%BC%20ONNX%20QNN%20EP%20%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E5%BE%88%E5%A4%9A%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%96%87%E7%AB%A0%E5%9B%A0%E6%87%89%E8%80%8C%E5%A4%A7%E5%B9%85%E6%9B%B4%E6%96%B0%E3%80%82%0A2024-08-15%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9B%B4%E6%AD%A3%20MobileNet%20%E7%9B%B8%E9%97%9C%E7%9A%84%E5%85%A7%E6%96%87%E9%8C%AF%E8%AA%A4%0A%E8%83%8C%E6%99%AF%0A%E7%94%B1%E6%96%BC%E6%9C%80%E8%BF%91%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E7%9A%84%E8%88%88%20%E2%80%A6&source=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html&title=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&summary=2024-05-24%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E7%94%B1%E6%96%BC%20ONNX%20QNN%20EP%20%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E5%BE%88%E5%A4%9A%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%96%87%E7%AB%A0%E5%9B%A0%E6%87%89%E8%80%8C%E5%A4%A7%E5%B9%85%E6%9B%B4%E6%96%B0%E3%80%82%0A2024-08-15%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9B%B4%E6%AD%A3%20MobileNet%20%E7%9B%B8%E9%97%9C%E7%9A%84%E5%85%A7%E6%96%87%E9%8C%AF%E8%AA%A4%0A2024-08-19%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%9B%B4%E6%96%B0%E6%A8%A1%E5%9E%8B%E9%87%8F%E5%8C%96%E7%9A%84%E7%9B%B8%E9%97%9C%20%E2%80%A6&source=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 LinkedIn">LinkedIn</a>
       ❄
       <a href="https://news.ycombinator.com/submitlink?t=%E4%BD%BF%E7%94%A8%20ONNX%20Runtime%20%E8%88%87%20Qualcomm%20QNN%20%E5%8A%A0%E9%80%9F%E5%BD%B1%E5%83%8F%E5%88%86%E9%A1%9E%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86&u=https%3A//yaticl.github.io/image-classification-with-ResNet50-accelerated-by-ONNX-Runtime-and-QNN.html" target="_blank" title="分享到 HackerNews">HackerNews</a>
       ❄
